@@ -1,0 +1,84 @@
+---
+title: Impacts from Changing Mangrove Distributions in the Everglades National Forest, Flordia
+subtitle: Final Project, ENV 872
+author: Isaac Benaka, Hanna Bliska, and Caroline Rowley
+date: Fall 2022
+output:
+ pdf_document: default
+editor_options: 
+  chunk_output_type: console
+---
+\newpage
+\tableofcontents 
+\newpage
+\listoftables 
+\newpage
+\listoffigures 
+\newpage
+
+```{r setup, include=FALSE}
+# Set your working directory
+setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
+getwd()
+
+# Load your packages
+library(tidyverse)
+library(lubridate)
+library(scales)
+library(cowplot)
+library(trend)
+library(zoo)
+library(Kendall)
+library(sf)
+library(mapview)
+library(agricolae)
+
+# Set your ggplot theme
+my_theme <- theme_classic(base_size=12) + theme(
+  axis.text=element_text(color="black"), 
+  lengend.position="right")
+
+# Load your datasets
+FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv")
+
+```
+
+
+# Rationale and Research Questions
+
+
+
+\newpage
+
+# Dataset Information
+
+
+
+\newpage
+
+# Exploratory Analysis 
+
+
+
+\newpage
+
+# Analysis
+
+
+
+## Question 1: <insert specific question here and add additional subsections for additional questions below, if needed>
+
+## Question 2: 
+
+
+
+
+\newpage
+
+# Summary and Conclusions
+
+
+\newpage
+
+# References
+<add references here if relevant, otherwise delete this section> 
