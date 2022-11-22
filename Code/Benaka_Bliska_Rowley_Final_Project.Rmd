@@ -51,6 +51,7 @@ FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
                               stringsAsFactors = TRUE)
 FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
                           stringsAsFactors = TRUE)
+mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 ```
 
 
