@@ -68,6 +68,10 @@ mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habi
 \newpage
 
 # Exploratory Analysis 
+```{r}
+mapview(mangrove.sf)
+
+```
 
 
 
