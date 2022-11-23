@@ -18,7 +18,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 # Set your working directory
-setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
+#setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
 getwd()
 
 # Load your packages
@@ -70,8 +70,12 @@ counties.sf <- st_read("./Data/Spatial/counties/cb_2018_us_county_20m.shp") %>% 
 
 # Exploratory Analysis 
 ```{r}
-mapview(mangrove.sf)
-mapview(counties.sf)
+area <- counties.sf %>% group_by(STATEFP) %>% summarise()
+area.utm <- st_transform(area,32617)
+mangrove.utm <- st_transform(mangrove.sf,32617)
+mangrove.area <- mangrove.utm[area.utm,]
+mapview(mangrove.area)
+
 ```
 
 
