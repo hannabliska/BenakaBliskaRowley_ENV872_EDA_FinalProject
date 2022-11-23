@@ -52,7 +52,7 @@ FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
 FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
                           stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
-counties.sf <- st_read("./Data/Spatial/counties/cb_2018_us_county_20m.shp")
+counties.sf <- st_read("./Data/Spatial/counties/cb_2018_us_county_20m.shp") %>% filter(STATEFP == 12) %>% filter(NAME == "Collier" | NAME == "Monroe" | NAME == "Miami-Dade")
 ```
 
 
