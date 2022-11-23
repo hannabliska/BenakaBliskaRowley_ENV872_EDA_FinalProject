@@ -52,7 +52,8 @@ FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
 FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
                           stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
-counties.sf <- st_read("./Data/Spatial/counties/cb_2018_us_county_20m.shp") %>% filter(STATEFP == 12) %>% filter(NAME == "Collier" | NAME == "Monroe" | NAME == "Miami-Dade")
+park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
+
 ```
 
 
@@ -70,12 +71,13 @@ counties.sf <- st_read("./Data/Spatial/counties/cb_2018_us_county_20m.shp") %>% 
 
 # Exploratory Analysis 
 ```{r}
-area <- counties.sf %>% group_by(STATEFP) %>% summarise()
-area.utm <- st_transform(area,32617)
 mangrove.utm <- st_transform(mangrove.sf,32617)
-mangrove.area <- mangrove.utm[area.utm,]
+park.utm <- st_transform(park.boundary,32617)
+mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 mapview(mangrove.area)
 
+mangrove2016 <- mangrove.area %>% filter(SOURCEDATE == "2014-2016")
+mapview(mangrove2016)
 ```
 
 
