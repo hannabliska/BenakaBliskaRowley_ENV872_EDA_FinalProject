@@ -74,10 +74,7 @@ park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT
 mangrove.utm <- st_transform(mangrove.sf,32617)
 park.utm <- st_transform(park.boundary,32617)
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
-mapview(mangrove.area)
-
-mangrove2016 <- mangrove.area %>% filter(SOURCEDATE == "2014-2016")
-mapview(mangrove2016)
+mapview(mangrove.area) + mapview(park.boundary, color = 'black', alpha.regions = 0)
 ```
 
 
