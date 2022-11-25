@@ -53,6 +53,9 @@ FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
                           stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
+# Project spatial data to UTM 17N
+mangrove.utm <- st_transform(mangrove.sf,32617)
+park.utm <- st_transform(park.boundary,32617)
 
 ```
 
@@ -71,9 +74,9 @@ park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT
 
 # Exploratory Analysis 
 ```{r}
-mangrove.utm <- st_transform(mangrove.sf,32617)
-park.utm <- st_transform(park.boundary,32617)
+# Crop mangrove shapefile to Everglades National Park boundary.
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
+# Generate map of mangrove habitat in Everglades National Park.
 mapview(mangrove.area) + mapview(park.boundary, color = 'black', alpha.regions = 0)
 ```
 
