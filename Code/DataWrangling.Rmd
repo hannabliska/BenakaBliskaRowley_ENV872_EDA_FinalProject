@@ -69,20 +69,27 @@ colnames(FCE.site.coordinates) <- c(
   "Latitude (Degrees, minutes)", "Longitude (Degrees, minutes)",
   "Northing (UTM)", "Easting (UTM)")
 FCE.site.coordinates=FCE.site.coordinates[-1,]
+FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE)
+FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
+FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE)
+FCE.tree.data <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE) %>% 
+  st_as_sf(coords = c('Latitude (Decimal Degrees)','Longitude (Decimal Degrees'), crs=32617)
 
 colnames(FCE.tree.data) <- c(
-  "SITE_NAME", "DATE", "Plot_ID", "Tree_TagNumber",
+  "SITE", "DATE", "Plot_ID", "Tree_TagNumber",
   "Species.Tree", "Tree_DBH", "Tree_Height")
 FCE.tree.data=FCE.tree.data[-1,]
 
 ```
 
 ```{r, formatting nutrients data set}
-FCE.nutrients.data$DATE <- as.Date(
-  FCE.nutrients.data$DATE, format="%Y-%m-%d")
+FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
+FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
+FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
 
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
 FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
+FCE.tree.data$Tree_DBH <- as.numeric(FCE.tree.data$Tree_DBH)
   
 ```
 
