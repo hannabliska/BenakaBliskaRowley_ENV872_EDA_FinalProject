@@ -29,15 +29,14 @@ library(agricolae)
 # Set your ggplot theme
 my_theme <- theme_classic(base_size=12) + theme(
   axis.text=element_text(color="black"), 
-  lengend.position="right")
+  legend.position="right")
+theme_set(my_theme)
 
 # Load your datasets
 FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
                                 stringsAsFactors = TRUE)
 FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv",
                                  stringsAsFactors = TRUE)
-FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
-                               stringsAsFactors = TRUE)
 FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
                                stringsAsFactors = TRUE)
 FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
@@ -48,5 +47,51 @@ FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
 
 
 # Data Exploration
+
+```{r, exploring LTER data sets}
+#exploring nutrients data set
+head(FCE.nutrients.data)
+summary(FCE.nutrients.data)
+str(FCE.nutrients.data)
+
+#exploring tree data set
+head(FCE.tree.data)
+summary(FCE.tree.data)
+str(FCE.tree.data)
+
+#exploring sawgrass data set
+head(FCE.sawgrass.data)
+summary(FCE.sawgrass.data)
+str(FCE.sawgrass.data)
+
+#exploring site coordinates data set
+head(FCE.site.coordinates)
+summary(FCE.site.coordinates)
+str(FCE.site.coordinates)
+
+#exploring mean sea levels data set
+head(FCE.mean.sea.levels)
+summary(FCE.mean.sea.levels)
+str(FCE.mean.sea.levels)
+
+
+```
+
+```{r, initial visualizations of nutrient data}
+phos.plot <- ggplot(FCE.phos.data, aes(x=YEAR, y=MEAN_TP)) +
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE, color="blue")+
+  xlab(expression("Date")) +
+  ylab(expression("Mean Total Phosphorus (mcmol/L)"))
+phos.plot
+  
+nitro.plot <- ggplot(FCE.nitro.data, aes(x=YEAR, y=MEAN_TN)) +
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE, color="blue") +
+  xlab(expression("Date")) +
+  ylab(expression("Mean Total Nitrogen (mcmol/L)"))
+nitro.plot
+```
+
 
 

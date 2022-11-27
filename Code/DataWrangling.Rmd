@@ -29,15 +29,14 @@ library(agricolae)
 # Set your ggplot theme
 my_theme <- theme_classic(base_size=12) + theme(
   axis.text=element_text(color="black"), 
-  lengend.position="right")
+  legend.position="right")
+theme_set(my_theme)
 
 # Load your datasets
 FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
                                 stringsAsFactors = TRUE)
 FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv",
                                  stringsAsFactors = TRUE)
-FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
-                               stringsAsFactors = TRUE)
 FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
                                stringsAsFactors = TRUE)
 FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
@@ -48,4 +47,59 @@ FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
 
 
 # Data Wrangling
+```{r, renaming the columns for the data sets}
+colnames(FCE.mean.sea.levels) <- c(
+  "Station_ID", "Year", "Month", "MSL") #renaming the column names
+FCE.mean.sea.levels=FCE.mean.sea.levels[-1,]
+#removing the repeated header row
+
+colnames(FCE.nutrients.data) <- c(
+  "SITE_NAME", "DATE", "TIME", "Salinity", "TN", "TP",
+  "TOC", "NH4", "NandN", "NO2", "SRP", "DOC", "NO3") #renaming the column names
+FCE.nutrients.data=FCE.nutrients.data[-1,]
+#removing the repeated header row
+
+colnames(FCE.sawgrass.data) <- c(
+  "SITE_NAME", "DATE", "Sawgrass_AG_Biomass", "Sawgrass_AG_Biomass_STD",
+  "Sawgrass_Culm_Density", "Sawgrass_Culm_Density_STD")
+FCE.sawgrass.data=FCE.sawgrass.data[-1,]
+
+colnames(FCE.site.coordinates) <- c(
+  "SITE", "Latitude (Decimal Degrees)", "Longitude (Decimal Degrees",
+  "Latitude (Degrees, minutes)", "Longitude (Degrees, minutes)",
+  "Northing (UTM)", "Easting (UTM)")
+FCE.site.coordinates=FCE.site.coordinates[-1,]
+
+colnames(FCE.tree.data) <- c(
+  "SITE_NAME", "DATE", "Plot_ID", "Tree_TagNumber",
+  "Species.Tree", "Tree_DBH", "Tree_Height")
+FCE.tree.data=FCE.tree.data[-1,]
+
+```
+
+```{r, formatting nutrients data set}
+FCE.nutrients.data$DATE <- as.Date(
+  FCE.nutrients.data$DATE, format="%Y-%m-%d")
+
+FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
+FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
+  
+```
+
+```{r, wrangling nutrients data set for phosphorus}
+FCE.phos.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP) %>%
+  mutate(YEAR=year(DATE)) %>%
+  group_by(YEAR) %>%
+  summarise(MEAN_TP=mean(TP))
+
+  
+FCE.nitro.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TN) %>%
+  mutate(YEAR=year(DATE)) %>%
+  group_by(YEAR) %>%
+  summarise(MEAN_TN=mean(TN))
+  
+  
+```
 

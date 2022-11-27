@@ -36,15 +36,14 @@ library(agricolae)
 # Set your ggplot theme
 my_theme <- theme_classic(base_size=12) + theme(
   axis.text=element_text(color="black"), 
-  lengend.position="right")
+  legend.position="right")
+theme_set(my_theme)
 
 # Load your datasets
 FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
                                 stringsAsFactors = TRUE)
 FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv",
                                  stringsAsFactors = TRUE)
-FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
-                               stringsAsFactors = TRUE)
 FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
                                stringsAsFactors = TRUE)
 FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
