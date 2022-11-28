@@ -95,7 +95,27 @@ nitro.plot <- ggplot(FCE.nitro.data, aes(x=YEAR, y=MEAN_TN)) +
   ggtitle(expression("Mean Total Nitrogen Measurements"),
           subtitle="Florida Coastal Everglades")
 nitro.plot
+
+nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Total Nitrogen (mcmol/L)")) +
+  ggtitle(expression("Total Nitrogen Measurements for Sites"),
+          subtitle="Florida Coastal Everglades")
+nitro.site.plot
+
+phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Total Phosphorus (mcmol/L)")) +
+  ggtitle(expression("Total Phosphorus Measurements for Sites"),
+          subtitle="Florida Coastal Everglades")
+phos.site.plot
 ```
 
+```{r, visualizing monitoring sites with high N and P}
+mapview(site.locations.nutrients.sf, zcol="TN")
+mapview(site.locations.nutrients.sf, zcol="TP")
+```
 
 

@@ -82,7 +82,7 @@ FCE.tree.data=FCE.tree.data[-1,]
 
 ```
 
-```{r, formatting nutrients data set}
+```{r, formatting data sets}
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
 FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
 FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
@@ -93,7 +93,7 @@ FCE.tree.data$Tree_DBH <- as.numeric(FCE.tree.data$Tree_DBH)
   
 ```
 
-```{r, wrangling nutrients data set for phosphorus}
+```{r, wrangling nutrients data set for mean phosphorus and nitrogen}
 FCE.phos.data <- FCE.nutrients.data %>%
   select(SITE_NAME, DATE, TP) %>%
   mutate(YEAR=year(DATE)) %>%
@@ -107,8 +107,23 @@ FCE.nitro.data <- FCE.nutrients.data %>%
   group_by(YEAR) %>%
   summarise(MEAN_TN=mean(TN))
   
-  
 ```
+
+```{r, wrangling nutrients data set for site differences}
+FCE.site.nutrient.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP, TN) 
+```
+
+```{r, adding site coordinates to the nutrients data set}
+site.locations.sf <- st_as_sf(FCE.site.coordinates, coords=c('Longitude (Decimal Degrees)', 'Latitude (Decimal Degrees)'),crs=32617)
+
+site.locations.nutrients.sf <-
+  merge(x=site.locations.sf, 
+        y=FCE.site.nutrient.data,
+        by.x="SITE",
+        by.y="SITE_NAME")
+```
+
 
 ```{r, wrangling and plotting DBH tree data by species}
 #DBH for Conacarpus erectus
@@ -275,4 +290,5 @@ mapview(tree.data.sf)
 #split tree data into separate tree types for spatial analysis
 
 ```
+
 

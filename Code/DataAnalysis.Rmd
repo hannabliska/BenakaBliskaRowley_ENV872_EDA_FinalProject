@@ -47,4 +47,38 @@ FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
 
 # Exploratory Analysis 
 
+```{r, site analysis for nutrients}
+#running anova to see if particular sites have more nitrogen
+
+nitrogen.site.anova <- aov(data=FCE.site.nutrient.data, 
+                           TN ~ SITE_NAME)
+summary(nitrogen.site.anova)
+
+#evaluating groups
+nitrogen.site.anova.groups <- HSD.test(nitrogen.site.anova, 
+                                       "SITE_NAME", 
+                                       group = TRUE)
+#printing groups
+nitrogen.site.anova.groups
+
+#results indicate that there are three groups of sites: a, b, and c.
+
+#running anova to see if particular sites have more phosphorus
+phos.site.anova <- aov(data=FCE.site.nutrient.data, 
+                           TP ~ SITE_NAME)
+summary(phos.site.anova)
+
+#evaluating groups
+phos.site.anova.groups <- HSD.test(phos.site.anova, 
+                                       "SITE_NAME", 
+                                       group = TRUE)
+#printing groups
+phos.site.anova.groups
+
+#results indicate that there are four groups of sites: a, b, c, d. There is only one site that is in group a and only one site in group b. 
+```
+
+```{r, time series analysis for nutrients}
+
+```
 
