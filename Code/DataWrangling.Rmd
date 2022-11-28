@@ -43,6 +43,11 @@ FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
                               stringsAsFactors = TRUE)
 FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
                           stringsAsFactors = TRUE)
+mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
+park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
+# Project spatial data to UTM 17N
+mangrove.utm <- st_transform(mangrove.sf,32617)
+park.utm <- st_transform(park.boundary,32617)
 ```
 
 
@@ -65,15 +70,10 @@ colnames(FCE.sawgrass.data) <- c(
 FCE.sawgrass.data=FCE.sawgrass.data[-1,]
 
 colnames(FCE.site.coordinates) <- c(
-  "SITE", "Latitude (Decimal Degrees)", "Longitude (Decimal Degrees",
+  "SITE", "Latitude (Decimal Degrees)", "Longitude (Decimal Degrees)",
   "Latitude (Degrees, minutes)", "Longitude (Degrees, minutes)",
   "Northing (UTM)", "Easting (UTM)")
 FCE.site.coordinates=FCE.site.coordinates[-1,]
-FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE)
-FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
-FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE)
-FCE.tree.data <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE) %>% 
-  st_as_sf(coords = c('Latitude (Decimal Degrees)','Longitude (Decimal Degrees'), crs=32617)
 
 colnames(FCE.tree.data) <- c(
   "SITE", "DATE", "Plot_ID", "Tree_TagNumber",
@@ -108,5 +108,171 @@ FCE.nitro.data <- FCE.nutrients.data %>%
   summarise(MEAN_TN=mean(TN))
   
   
+```
+
+```{r, wrangling and plotting DBH tree data by species}
+#DBH for Conacarpus erectus
+C.trees <- FCE.tree.data %>%
+  select(DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="C") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(C.trees, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+#DBH for Avicennia germinans
+A.trees <- FCE.tree.data %>%
+  select(DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="A") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(A.trees, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+#DBH for Laguncularia racemosa
+L.trees <- FCE.tree.data %>%
+  select(DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="L") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(L.trees, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+#DBH for Rhizophora mangle
+R.trees <- FCE.tree.data %>%
+  select(DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="R") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(R.trees, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+```
+
+```{r, compare DBH of tree species by site}
+
+#DBH of species in SRS4
+C.trees.SRS4 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="C", SITE == "SRS4") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(C.trees.SRS4, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+L.trees.SRS4 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="L", SITE == "SRS4") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(L.trees.SRS4, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+R.trees.SRS4 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="R", SITE == "SRS4") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(R.trees.SRS4, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+#DBH of species in SRS5 (A and L increasing, R flat)
+A.trees.SRS5 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="A", SITE == "SRS5") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(A.trees.SRS5, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method=lm)
+
+L.trees.SRS5 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="L", SITE == "SRS5") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(L.trees.SRS5, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+R.trees.SRS5 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="R", SITE == "SRS5") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(R.trees.SRS5, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+#DBH of species in SRS6 (all decreasing)
+A.trees.SRS6 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="A", SITE == "SRS6") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(A.trees.SRS6, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+L.trees.SRS6 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="L", SITE == "SRS6") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(L.trees.SRS6, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+R.trees.SRS6 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="R", SITE=="SRS6") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(R.trees.SRS6, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+#DBH of species in TS/Ph8 (all increasing)
+C.trees.TSPh8 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="C", SITE == "TS/Ph8") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(C.trees.TSPh8, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+  
+L.trees.TSPh8 <- FCE.tree.data %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="L", SITE == "TS/Ph8") %>%
+  group_by(DATE) %>%
+  summarise(mean.DBH=mean(Tree_DBH))
+ggplot(L.trees.TSPh8, aes(x=DATE,y=mean.DBH))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+
+```
+
+
+```{r, wrangling tree data for geospatial analysis}
+#FCE.tree.data <- FCE.tree.data$Species.Tree %>% recode(FCE.tree.data$Species.Tree, C="Conacarpus erectus", A="Avicennia germinans", L="Laguncularia racemosa", R="Rhizophora mangle")
+FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) #convert to character.
+FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
+FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) #convert back to factor.
+FCE.tree.data <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+#make sf dataframe from tree data (not showing over basemap correctly)
+tree.data.sf <- st_as_sf(FCE.tree.data, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=32617) %>% 
+  group_by(SITE, DATE) %>%
+  summarize(
+    meanDBH=mean(Tree_DBH)
+  )
+mapview(tree.data.sf)
+#split tree data into separate tree types for spatial analysis
+
 ```
 
