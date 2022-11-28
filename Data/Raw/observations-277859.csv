@@ -1,0 +1,101 @@
+id,observed_on,time_observed_at,time_zone,user_name,created_at,quality_grade,num_identification_agreements,num_identification_disagreements,captive_cultivated,latitude,longitude,scientific_name,common_name,iconic_taxon_name,taxon_id
+2585187,2015-11-04,2015-11-05 03:40:57 UTC,Pacific Time (US & Canada),Stevie Kennedy-Gold,2016-01-16 05:27:07 UTC,research,9,0,false,25.212945,-80.855131,Python bivittatus,Burmese Python,Reptilia,238252
+4619755,2007-02-07,2007-02-07 15:27:00 UTC,Eastern Time (US & Canada),Pablo L Ruiz,2016-11-23 04:19:55 UTC,research,9,0,false,25.4976037832,-80.771420002,Python bivittatus,Burmese Python,Reptilia,238252
+4619843,2009-02-20,2009-02-20 18:18:00 UTC,Eastern Time (US & Canada),Pablo L Ruiz,2016-11-23 04:49:34 UTC,research,10,0,false,25.5733514113,-80.7591301203,Python bivittatus,Burmese Python,Reptilia,238252
+5419079,2017-03-13,2017-03-14 00:24:21 UTC,Central Time (US & Canada),,2017-03-21 20:06:22 UTC,research,10,0,false,25.4028142865,-80.6153291182,Python bivittatus,Burmese Python,Reptilia,238252
+7054721,2017-07-13,2017-07-14 02:35:00 UTC,Eastern Time (US & Canada),Noah Frade,2017-07-14 23:50:50 UTC,research,10,0,false,25.3863780133,-80.9176394029,Python bivittatus,Burmese Python,Reptilia,238252
+7394608,2016-10-17,2016-10-18 02:15:34 UTC,Eastern Time (US & Canada),,2017-08-07 18:09:28 UTC,research,7,0,false,25.7476716667,-80.7669666667,Python bivittatus,Burmese Python,Reptilia,238252
+9440357,2018-01-10,2018-01-10 22:11:46 UTC,Eastern Time (US & Canada),,2018-01-11 18:42:02 UTC,research,10,0,false,25.3843166667,-80.80832,Python bivittatus,Burmese Python,Reptilia,238252
+9904052,2016-02-27,2016-02-28 02:53:00 UTC,Eastern Time (US & Canada),"",2018-02-18 08:27:48 UTC,research,10,0,false,25.2997824578,-80.7989501953,Python bivittatus,Burmese Python,Reptilia,238252
+13884389,2017-08-04,2017-08-04 04:46:00 UTC,Eastern Time (US & Canada),Janson Jones,2018-06-29 14:10:56 UTC,research,13,0,false,25.2883068429,-80.6554383438,Python bivittatus,Burmese Python,Reptilia,238252
+14517752,2006-12-13,2006-12-13 12:55:00 UTC,Central Time (US & Canada),David LeGros,2018-07-19 17:05:02 UTC,research,11,0,false,25.3823998,-80.6064611,Python bivittatus,Burmese Python,Reptilia,238252
+15271090,2013-05-30,2013-05-31 01:23:00 UTC,Eastern Time (US & Canada),Michiko,2018-08-09 20:42:39 UTC,research,10,0,false,25.7600452857,-80.6737420381,Python bivittatus,Burmese Python,Reptilia,238252
+17466089,2017-10-13,2017-10-13 06:00:12 UTC,Eastern Time (US & Canada),An person,2018-10-13 15:54:11 UTC,research,10,0,false,25.2570020913,-80.7986110297,Python bivittatus,Burmese Python,Reptilia,238252
+19249825,2018-12-27,2018-12-27 14:54:14 UTC,Eastern Time (US & Canada),Noah Frade,2018-12-27 15:08:06 UTC,research,11,0,false,25.6033516093,-80.7817530421,Python bivittatus,Burmese Python,Reptilia,238252
+19276988,2018-12-28,2018-12-28 07:26:14 UTC,Eastern Time (US & Canada),,2018-12-28 22:27:25 UTC,research,9,0,false,25.3130493198,-80.7321486183,Python bivittatus,Burmese Python,Reptilia,238252
+19417587,2019-01-04,2019-01-04 13:49:23 UTC,Eastern Time (US & Canada),Hunter Howell,2019-01-04 13:51:41 UTC,research,10,0,false,25.690912684,-80.7595647889,Python bivittatus,Burmese Python,Reptilia,238252
+19660349,2009-11-11,,UTC,"",2019-01-15 19:04:57 UTC,research,23,0,false,25.4481622953,-80.7850938761,Python bivittatus,Burmese Python,Reptilia,238252
+22727638,2018-07-01,2018-07-02 01:21:54 UTC,Mountain Time (US & Canada),Brandon Bourassa,2019-04-19 22:03:38 UTC,research,8,0,false,25.332455,-80.8015883333,Python bivittatus,Burmese Python,Reptilia,238252
+24975031,2019-04-15,2019-04-16 02:01:33 UTC,Eastern Time (US & Canada),,2019-05-12 02:40:37 UTC,research,11,0,false,25.2122833333,-80.8562916667,Python bivittatus,Burmese Python,Reptilia,238252
+26046358,2017-12-17,2017-12-17 07:26:00 UTC,Central Time (US & Canada),Bryan Box,2019-05-30 07:01:46 UTC,research,10,0,false,25.4623143748,-80.613868755,Python bivittatus,Burmese Python,Reptilia,238252
+28508621,2019-07-05,2019-07-06 02:18:49 UTC,Eastern Time (US & Canada),,2019-07-09 17:45:09 UTC,research,11,0,false,25.2111833333,-80.858025,Python bivittatus,Burmese Python,Reptilia,238252
+28510935,2019-07-07,2019-07-08 02:36:43 UTC,Eastern Time (US & Canada),,2019-07-09 18:21:45 UTC,research,11,0,false,25.3954716667,-80.7980116667,Python bivittatus,Burmese Python,Reptilia,238252
+30018781,2019-07-13,2019-07-13 05:27:22 UTC,Eastern Time (US & Canada),,2019-08-02 02:04:38 UTC,research,9,0,false,25.2018133333,-80.8732833333,Python bivittatus,Burmese Python,Reptilia,238252
+30019840,2019-07-31,2019-08-01 02:49:00 UTC,Eastern Time (US & Canada),Joe MDO,2019-08-02 02:27:29 UTC,research,9,0,false,25.4034359671,-80.6089971587,Python bivittatus,Burmese Python,Reptilia,238252
+30022483,2019-07-24,2019-07-25 01:48:36 UTC,Eastern Time (US & Canada),,2019-08-02 03:22:08 UTC,research,10,0,false,25.34128,-80.81488,Python bivittatus,Burmese Python,Reptilia,238252
+30367984,2019-06-28,2019-06-28 04:13:00 UTC,Eastern Time (US & Canada),Joey,2019-08-07 15:33:16 UTC,research,10,0,false,25.360862951,-80.8207856635,Python bivittatus,Burmese Python,Reptilia,238252
+33590987,2019-07-23,2019-07-23 06:23:04 UTC,Eastern Time (US & Canada),Adam Gabriel,2019-09-29 14:48:14 UTC,research,8,0,false,25.4218921661,-80.6783981323,Python bivittatus,Burmese Python,Reptilia,238252
+33733052,2014-08-03,2014-08-03 13:45:00 UTC,Eastern Time (US & Canada),Jake Scott,2019-10-02 01:23:03 UTC,research,10,0,false,25.4444803698,-80.4604855531,Python bivittatus,Burmese Python,Reptilia,238252
+33863489,2017-12-08,2017-12-09 04:51:00 UTC,Pacific Time (US & Canada),Matt Berger,2019-10-04 22:07:49 UTC,research,8,0,false,25.326964,-80.797714,Python bivittatus,Burmese Python,Reptilia,238252
+34436087,2019-10-15,2019-10-16 00:08:29 UTC,Eastern Time (US & Canada),,2019-10-16 01:20:14 UTC,research,9,0,false,25.256625,-80.7984083333,Python bivittatus,Burmese Python,Reptilia,238252
+34598903,2019-10-18,2019-10-19 02:59:34 UTC,Eastern Time (US & Canada),Joshua Sands,2019-10-19 19:38:46 UTC,research,8,0,false,25.0519987099,-80.9678485413,Python bivittatus,Burmese Python,Reptilia,238252
+34670527,2019-10-10,2019-10-10 04:00:00 UTC,Eastern Time (US & Canada),Jance S Carter,2019-10-21 02:19:30 UTC,research,8,0,false,25.2866155,-80.8986509,Python bivittatus,Burmese Python,Reptilia,238252
+34980159,2019-10-27,2019-10-27 21:13:03 UTC,Eastern Time (US & Canada),,2019-10-27 21:14:58 UTC,research,9,0,false,25.1822489501,-80.8980569377,Python bivittatus,Burmese Python,Reptilia,238252
+35153472,2018-07-06,2018-07-07 03:42:48 UTC,Eastern Time (US & Canada),,2019-11-01 03:04:27 UTC,research,6,0,false,25.2192216667,-80.8448416667,Python bivittatus,Burmese Python,Reptilia,238252
+35153502,2019-04-11,2019-04-12 01:56:03 UTC,Eastern Time (US & Canada),,2019-11-01 03:05:35 UTC,research,8,0,false,25.2182116667,-80.84652,Python bivittatus,Burmese Python,Reptilia,238252
+35317262,2019-11-04,2019-11-05 03:53:05 UTC,Eastern Time (US & Canada),Wayne Fidler,2019-11-05 06:04:51 UTC,research,9,0,false,25.17820833,-80.90201667,Python bivittatus,Burmese Python,Reptilia,238252
+35324661,2019-11-02,2019-11-02 22:24:14 UTC,Eastern Time (US & Canada),Wayne Fidler,2019-11-05 13:17:21 UTC,research,8,0,false,25.43666167,-80.71212,Python bivittatus,Burmese Python,Reptilia,238252
+35350568,2019-11-05,2019-11-05 23:21:16 UTC,Eastern Time (US & Canada),Wayne Fidler,2019-11-06 01:33:57 UTC,research,7,0,false,25.16400833,-80.91162833,Python bivittatus,Burmese Python,Reptilia,238252
+35585367,2019-11-10,2019-11-11 03:04:09 UTC,Eastern Time (US & Canada),,2019-11-11 21:55:45 UTC,research,7,0,false,25.1662220509,-80.9109185941,Python bivittatus,Burmese Python,Reptilia,238252
+36162417,2019-11-27,2019-11-28 00:49:24 UTC,Eastern Time (US & Canada),,2019-11-28 16:37:28 UTC,research,9,0,false,25.21868,-80.845795,Python bivittatus,Burmese Python,Reptilia,238252
+36162544,2019-11-27,2019-11-28 02:00:58 UTC,Eastern Time (US & Canada),,2019-11-28 16:42:31 UTC,research,7,0,false,25.1772262847,-80.9030702075,Python bivittatus,Burmese Python,Reptilia,238252
+36693495,2015-02-23,2015-02-23 13:17:00 UTC,Eastern Time (US & Canada),David Hochadel,2019-12-16 03:52:22 UTC,research,7,0,false,25.4137977149,-80.6289815621,Python bivittatus,Burmese Python,Reptilia,238252
+37622428,2020-01-14,2020-01-14 13:44:00 UTC,Pacific Time (US & Canada),John Sullivan,2020-01-15 19:07:12 UTC,research,9,0,false,25.1861666667,-80.8945388889,Python bivittatus,Burmese Python,Reptilia,238252
+37699929,2009-02-06,2009-02-06 22:28:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-18 04:11:49 UTC,research,8,0,false,25.7777267323,-80.729211707,Python bivittatus,Burmese Python,Reptilia,238252
+37735668,2009-11-07,2009-11-08 04:39:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-19 05:35:56 UTC,research,9,0,false,25.2039985026,-80.8268827004,Python bivittatus,Burmese Python,Reptilia,238252
+37735669,2009-11-10,2009-11-11 05:23:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-19 05:35:56 UTC,research,9,0,false,25.17133,-80.90803,Python bivittatus,Burmese Python,Reptilia,238252
+37735671,2009-11-08,2009-11-09 02:18:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-19 05:35:59 UTC,research,9,0,false,25.20951,-80.86083,Python bivittatus,Burmese Python,Reptilia,238252
+37772827,2014-08-16,2014-08-16 19:34:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-20 05:24:05 UTC,research,9,0,false,25.7000306924,-80.5983562108,Python bivittatus,Burmese Python,Reptilia,238252
+37772829,2013-05-28,2013-05-28 13:26:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-20 05:24:07 UTC,research,9,0,false,25.28367,-80.79835,Python bivittatus,Burmese Python,Reptilia,238252
+37772830,2009-11-10,2009-11-11 03:27:00 UTC,Central Time (US & Canada),J.D. Willson,2020-01-20 05:24:07 UTC,research,9,0,false,25.1771,-80.90308,Python bivittatus,Burmese Python,Reptilia,238252
+42893072,2012-03-22,2012-03-22 16:10:00 UTC,Eastern Time (US & Canada),"",2020-04-22 21:28:28 UTC,research,9,0,false,25.4032036225,-80.9619754369,Python bivittatus,Burmese Python,Reptilia,238252
+46779419,2020-05-21,2020-05-21 16:26:58 UTC,Eastern Time (US & Canada),"",2020-05-21 22:42:20 UTC,research,7,0,false,25.2904808498,-80.7235248613,Python bivittatus,Burmese Python,Reptilia,238252
+47939622,2019-12-05,,UTC,Nereus,2020-05-31 03:50:55 UTC,research,8,0,false,25.739910452,-80.7592335469,Python bivittatus,Burmese Python,Reptilia,238252
+50503324,2020-06-01,2020-06-01 06:58:03 UTC,Eastern Time (US & Canada),,2020-06-22 02:06:22 UTC,research,9,0,false,25.41741167,-80.77973,Python bivittatus,Burmese Python,Reptilia,238252
+66761027,2016-08-15,2016-08-16 01:17:26 UTC,Eastern Time (US & Canada),ethanroyal,2020-12-19 02:56:08 UTC,research,11,0,false,25.3048455523,-80.9424204062,Python bivittatus,Burmese Python,Reptilia,238252
+67036079,2020-12-24,2020-12-25 02:23:51 UTC,Eastern Time (US & Canada),,2020-12-25 07:37:51 UTC,research,10,0,false,25.4172966667,-80.6448366667,Python bivittatus,Burmese Python,Reptilia,238252
+67346292,2020-12-30,2020-12-30 23:56:35 UTC,Eastern Time (US & Canada),Yuming Zou,2020-12-31 09:00:44 UTC,research,6,0,false,25.43405333,-80.72666167,Python bivittatus,Burmese Python,Reptilia,238252
+67548699,2021-01-03,2021-01-03 16:31:00 UTC,Eastern Time (US & Canada),Joe MDO,2021-01-04 01:35:51 UTC,research,11,0,false,25.1898004736,-80.7757907946,Python bivittatus,Burmese Python,Reptilia,238252
+67632302,2018-04-15,2018-04-15 21:49:00 UTC,UTC,Court Harding,2021-01-05 20:07:55 UTC,research,9,0,false,25.4110630825,-80.6539044216,Python bivittatus,Burmese Python,Reptilia,238252
+68300368,2021-01-03,2021-01-04 00:38:00 UTC,Central Time (US & Canada),Johnny Baakliny,2021-01-19 00:03:03 UTC,research,9,0,false,25.5017909549,-80.6258243448,Python bivittatus,Burmese Python,Reptilia,238252
+68974271,2021-02-01,2021-02-01 15:05:12 UTC,Eastern Time (US & Canada),"",2021-02-02 20:54:24 UTC,research,4,0,false,25.6467267797,-81.2723251639,Python bivittatus,Burmese Python,Reptilia,238252
+68980607,2020-10-11,2020-10-12 01:41:26 UTC,Eastern Time (US & Canada),gotcritters,2021-02-02 23:50:56 UTC,research,8,0,false,25.2392883333,-80.8119283333,Python bivittatus,Burmese Python,Reptilia,238252
+68981087,2020-09-28,2020-09-28 23:57:24 UTC,Eastern Time (US & Canada),gotcritters,2021-02-03 00:00:06 UTC,research,8,0,false,25.429,-80.687425,Python bivittatus,Burmese Python,Reptilia,238252
+71467332,2019-12-06,2019-12-06 13:22:24 UTC,Eastern Time (US & Canada),"",2021-03-18 03:47:39 UTC,research,8,0,false,25.2593806561,-80.7984002346,Python bivittatus,Burmese Python,Reptilia,238252
+74363520,2020-12-19,2020-12-19 19:17:50 UTC,Eastern Time (US & Canada),,2021-04-18 13:06:54 UTC,research,8,0,false,25.1477305,-80.9242783333,Python bivittatus,Burmese Python,Reptilia,238252
+80054819,2021-05-22,2021-05-23 02:22:00 UTC,Eastern Time (US & Canada),Joshua Doby,2021-05-24 02:23:20 UTC,research,6,0,false,25.3258983333,-80.7985883333,Python bivittatus,Burmese Python,Reptilia,238252
+86714824,2004-12-29,2004-12-29 18:07:00 UTC,Eastern Time (US & Canada),Keith Bradley,2021-07-12 14:18:22 UTC,research,9,0,false,25.7547766667,-80.6735983333,Python bivittatus,Burmese Python,Reptilia,238252
+93307545,2013-01-01,2013-01-02 02:42:00 UTC,Arizona,Mike Ostrowski,2021-09-01 22:47:40 UTC,research,5,0,false,25.1529755169,-80.9170353141,Python bivittatus,Burmese Python,Reptilia,238252
+100735464,2018-06-30,2018-06-30 21:35:00 UTC,UTC,"",2021-11-10 01:30:25 UTC,research,7,0,false,25.1392846173,-80.9553949036,Python bivittatus,Burmese Python,Reptilia,238252
+102220803,2021-11-24,2021-11-25 01:37:00 UTC,Alaska,"",2021-11-30 04:29:27 UTC,research,7,0,false,25.1545539096,-80.915396464,Python bivittatus,Burmese Python,Reptilia,238252
+103399493,2021-12-19,2021-12-20 00:28:40 UTC,Eastern Time (US & Canada),"",2021-12-21 03:23:04 UTC,research,4,0,false,25.524329283,-80.6338770532,Python bivittatus,Burmese Python,Reptilia,238252
+103399684,2021-12-20,2021-12-20 15:56:15 UTC,Eastern Time (US & Canada),"",2021-12-21 03:27:30 UTC,research,7,0,false,25.2296642835,-80.726146968,Python bivittatus,Burmese Python,Reptilia,238252
+103601003,2021-12-24,2021-12-24 21:15:41 UTC,Eastern Time (US & Canada),,2021-12-24 21:17:23 UTC,research,6,0,false,25.7879166667,-81.3061216667,Python bivittatus,Burmese Python,Reptilia,238252
+104177685,2019-08-02,2019-08-03 01:53:28 UTC,Eastern Time (US & Canada),Tommy Hamrick,2022-01-02 12:51:43 UTC,research,5,0,false,25.3984189683,-80.8794737802,Python bivittatus,Burmese Python,Reptilia,238252
+104234260,2011-09-05,2011-09-05 13:56:00 UTC,Eastern Time (US & Canada),Jake Scott,2022-01-03 01:03:24 UTC,research,6,0,false,25.5276946288,-80.6755173732,Python bivittatus,Burmese Python,Reptilia,238252
+106662800,2007-04-13,2007-04-14 00:07:00 UTC,Eastern Time (US & Canada),Richard Gary,2022-02-13 07:30:36 UTC,research,5,0,false,25.4339678509,-80.6917769018,Python bivittatus,Burmese Python,Reptilia,238252
+106864401,2022-02-12,2022-02-13 00:03:02 UTC,Eastern Time (US & Canada),Dom Kemmett,2022-02-16 17:00:16 UTC,research,9,0,false,25.2904217122,-80.6410077778,Python bivittatus,Burmese Python,Reptilia,238252
+115186699,2022-04-28,2022-04-29 02:52:00 UTC,Eastern Time (US & Canada),Adam Cushen,2022-05-03 19:06:39 UTC,research,4,0,false,25.4499949414,-80.6906039689,Python bivittatus,Burmese Python,Reptilia,238252
+115402204,2022-04-27,2022-04-28 02:56:00 UTC,Eastern Time (US & Canada),Adam Cushen,2022-05-04 17:20:30 UTC,research,4,0,false,25.5511594132,-80.6338323375,Python bivittatus,Burmese Python,Reptilia,238252
+119013803,2012-07-23,2012-07-24 01:39:00 UTC,Eastern Time (US & Canada),,2022-05-28 04:09:08 UTC,research,5,0,false,25.1386691545,-80.9374275531,Python bivittatus,Burmese Python,Reptilia,238252
+120073838,2022-03-16,2022-03-17 00:33:34 UTC,Eastern Time (US & Canada),Valentina Forrester,2022-06-03 22:07:47 UTC,research,5,0,false,25.4336735011,-80.7288189371,Python bivittatus,Burmese Python,Reptilia,238252
+121092565,2022-06-07,2022-06-07 04:03:08 UTC,Eastern Time (US & Canada),,2022-06-10 14:35:05 UTC,research,4,0,false,25.70575,-80.7668,Python bivittatus,Burmese Python,Reptilia,238252
+121093106,2022-06-08,2022-06-09 02:09:08 UTC,Eastern Time (US & Canada),,2022-06-10 14:40:06 UTC,research,4,0,false,25.3745116667,-80.814925,Python bivittatus,Burmese Python,Reptilia,238252
+121853022,2010-02-12,2010-02-12 22:05:38 UTC,Eastern Time (US & Canada),Leif-Erik Hvide,2022-06-15 10:04:09 UTC,research,3,0,false,25.4195527168,-80.9140359936,Python bivittatus,Burmese Python,Reptilia,238252
+122230100,2022-06-14,2022-06-15 02:29:13 UTC,Eastern Time (US & Canada),,2022-06-17 23:17:41 UTC,research,1,0,false,25.295975,-80.7983866667,Python bivittatus,Burmese Python,Reptilia,238252
+122230170,2022-06-14,2022-06-15 03:27:56 UTC,Eastern Time (US & Canada),,2022-06-17 23:18:33 UTC,research,1,0,false,25.2047783333,-80.8685216667,Python bivittatus,Burmese Python,Reptilia,238252
+122230351,2022-06-16,2022-06-17 02:20:26 UTC,Eastern Time (US & Canada),,2022-06-17 23:20:31 UTC,research,1,0,false,25.1476333333,-80.92408,Python bivittatus,Burmese Python,Reptilia,238252
+123038865,2021-10-16,2021-10-17 00:03:02 UTC,Eastern Time (US & Canada),BaylenHerps,2022-06-23 03:10:48 UTC,research,4,0,false,25.1661611667,-80.9107966667,Python bivittatus,Burmese Python,Reptilia,238252
+123156271,2022-06-22,2022-06-23 02:13:23 UTC,Eastern Time (US & Canada),,2022-06-23 23:50:54 UTC,research,3,0,false,25.2013633333,-80.8739916667,Python bivittatus,Burmese Python,Reptilia,238252
+124959531,2022-07-01,2022-07-02 01:35:15 UTC,Eastern Time (US & Canada),,2022-07-06 00:56:26 UTC,research,4,0,false,25.4214616667,-80.777175,Python bivittatus,Burmese Python,Reptilia,238252
+124959950,2022-07-02,2022-07-02 04:47:43 UTC,Eastern Time (US & Canada),,2022-07-06 01:00:28 UTC,research,4,0,false,25.2090083333,-80.86155,Python bivittatus,Burmese Python,Reptilia,238252
+124960145,2022-07-02,2022-07-02 05:41:38 UTC,Eastern Time (US & Canada),,2022-07-06 01:02:23 UTC,research,5,0,false,25.2383366667,-80.8134916667,Python bivittatus,Burmese Python,Reptilia,238252
+125717331,2022-07-10,2022-07-10 05:50:07 UTC,Eastern Time (US & Canada),,2022-07-11 01:29:35 UTC,research,5,0,false,25.246975,-80.8002466667,Python bivittatus,Burmese Python,Reptilia,238252
+128024082,2022-07-21,2022-07-22 03:40:49 UTC,Eastern Time (US & Canada),,2022-07-26 17:45:46 UTC,research,4,0,false,25.2454083333,-80.8020633333,Python bivittatus,Burmese Python,Reptilia,238252
+130008270,2022-08-07,2022-08-08 01:48:00 UTC,Eastern Time (US & Canada),Tom Bisko,2022-08-08 18:10:00 UTC,research,5,0,false,25.2350999722,-80.8188999722,Python bivittatus,Burmese Python,Reptilia,238252
+130572390,2022-08-09,2022-08-10 01:09:53 UTC,Eastern Time (US & Canada),,2022-08-13 01:00:34 UTC,research,6,0,false,25.3602,-80.820945,Python bivittatus,Burmese Python,Reptilia,238252
+130572615,2022-08-09,2022-08-10 03:22:48 UTC,Eastern Time (US & Canada),,2022-08-13 01:02:24 UTC,research,5,0,false,25.1641221667,-80.9116133333,Python bivittatus,Burmese Python,Reptilia,238252
+138890885,2018-12-28,2018-12-29 00:53:06 UTC,Eastern Time (US & Canada),,2022-10-15 20:56:13 UTC,research,2,0,false,25.3781971857,-80.9379870331,Python bivittatus,Burmese Python,Reptilia,238252
+140727194,2022-10-31,2022-11-01 00:01:43 UTC,Eastern Time (US & Canada),Ty Williams,2022-11-01 01:55:25 UTC,research,1,0,false,25.2637342176,-80.7984886551,Python bivittatus,Burmese Python,Reptilia,238252
+140841909,2022-11-01,2022-11-01 22:18:42 UTC,Eastern Time (US & Canada),Ty Williams,2022-11-02 02:55:34 UTC,research,1,0,false,25.4093573909,-80.6492097998,Python bivittatus,Burmese Python,Reptilia,238252
+142878107,2022-11-25,2022-11-25 22:37:46 UTC,Eastern Time (US & Canada),,2022-11-26 02:07:46 UTC,research,4,0,false,25.1375146986,-80.6842703533,Python bivittatus,Burmese Python,Reptilia,238252
