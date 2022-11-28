@@ -76,7 +76,7 @@ park.utm <- st_transform(park.boundary,32617)
 # Crop mangrove shapefile to Everglades National Park boundary.
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 # Generate map of mangrove habitat in Everglades National Park.
-mapview(mangrove.area) + mapview(park.boundary, color = 'black', alpha.regions = 0)
+mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4) + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0)
 ```
 
 
