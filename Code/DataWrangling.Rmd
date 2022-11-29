@@ -372,6 +372,7 @@ tree.data.sf <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Deg
     meanDBH=mean(Tree_DBH)
   )
 mapview(tree.data.sf)
+
 #split tree data into separate tree types for spatial analysis
 
 ```
