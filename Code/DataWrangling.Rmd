@@ -250,7 +250,7 @@ C.trees.SRS4 <- FCE.tree.data %>%
 C.SRS4.plot <- ggplot(C.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
-  labs(title="Conacarpus erectus", y="Mean DBH")
+  labs(title="Conacarpus erectus", y="Mean DBH (cm)")
   
 
 L.trees.SRS4 <- FCE.tree.data %>%
@@ -261,7 +261,7 @@ L.trees.SRS4 <- FCE.tree.data %>%
 L.SRS4plot <- ggplot(L.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
-  labs(title="Laguncularia racemosa", y="Mean DBH")
+  labs(title="Laguncularia racemosa", y="Mean DBH (cm)")
 
 R.trees.SRS4 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -271,7 +271,7 @@ R.trees.SRS4 <- FCE.tree.data %>%
 R.SRS4.plot <- ggplot(R.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
-  labs(title="Rhizophora mangle", y="Mean DBH")
+  labs(title="Rhizophora mangle", y="Mean DBH (cm)")
 
 #DBH of species in SRS5 (A and L increasing, R flat)
 A.trees.SRS5 <- FCE.tree.data %>%
@@ -281,7 +281,8 @@ A.trees.SRS5 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 A.SRS5.plot <- ggplot(A.trees.SRS5, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method=lm, se=F)
+  geom_smooth(method=lm, se=F)+
+  labs(title="Avicennia germinans", y="Mean DBH (cm)")
 
 L.trees.SRS5 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -290,7 +291,8 @@ L.trees.SRS5 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 L.SRS5.plot <- ggplot(L.trees.SRS5, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Laguncularia racemosa", y="Mean DBH (cm)")
 
 R.trees.SRS5 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -299,7 +301,8 @@ R.trees.SRS5 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 R.SRS5.plot <- ggplot(R.trees.SRS5, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Rhizophora mangle", y="Mean DBH (cm)")
 
 #DBH of species in SRS6 (all decreasing)
 A.trees.SRS6 <- FCE.tree.data %>%
@@ -309,7 +312,8 @@ A.trees.SRS6 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 A.SRS6plot <- ggplot(A.trees.SRS6, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Avicennia germinans", y="Mean DBH (cm)")
 
 L.trees.SRS6 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -318,7 +322,8 @@ L.trees.SRS6 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 L.SRS6plot <- ggplot(L.trees.SRS6, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Laguncularia racemosa", y="Mean DBH (cm)")
 
 R.trees.SRS6 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -327,7 +332,8 @@ R.trees.SRS6 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 R.SRS6.plot <- ggplot(R.trees.SRS6, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Rhizophora mangle", y="Mean DBH (cm)")
 
 #DBH of species in TS/Ph8 (all increasing)
 C.trees.TSPh8 <- FCE.tree.data %>%
@@ -337,7 +343,8 @@ C.trees.TSPh8 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 ggplot(C.trees.TSPh8, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Conacarpus erectus", y="Mean DBH (cm)")
   
 L.trees.TSPh8 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -346,7 +353,8 @@ L.trees.TSPh8 <- FCE.tree.data %>%
   summarise(mean.DBH=mean(Tree_DBH))
 ggplot(L.trees.TSPh8, aes(x=DATE,y=mean.DBH))+
   geom_point()+
-  geom_smooth(method = "lm", se=F)
+  geom_smooth(method = "lm", se=F)+
+  labs(title="Laguncularia racemosa", y="Mean DBH (cm)")
 
 
 ```
