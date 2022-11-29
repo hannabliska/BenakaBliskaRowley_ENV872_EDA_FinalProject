@@ -250,7 +250,7 @@ C.trees.SRS4 <- FCE.tree.data %>%
 C.SRS4.plot <- ggplot(C.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
-  labs(title="DBH for Conacarpus erectus in SRS4", y="Mean Diameter at Breast Height")
+  labs(title="Conacarpus erectus", y="Mean DBH")
   
 
 L.trees.SRS4 <- FCE.tree.data %>%
@@ -261,7 +261,7 @@ L.trees.SRS4 <- FCE.tree.data %>%
 L.SRS4plot <- ggplot(L.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
-  labs(title="DBH for Laguncularia racemosa in SRS4", y="Mean Diameter at Breast Height")
+  labs(title="Laguncularia racemosa", y="Mean DBH")
 
 R.trees.SRS4 <- FCE.tree.data %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height) %>%
@@ -271,7 +271,7 @@ R.trees.SRS4 <- FCE.tree.data %>%
 R.SRS4.plot <- ggplot(R.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
-  labs(title="DBH for Rhizophora mangle in SRS4", y="Mean Diameter at Breast Height")
+  labs(title="Rhizophora mangle", y="Mean DBH")
 
 #DBH of species in SRS5 (A and L increasing, R flat)
 A.trees.SRS5 <- FCE.tree.data %>%
