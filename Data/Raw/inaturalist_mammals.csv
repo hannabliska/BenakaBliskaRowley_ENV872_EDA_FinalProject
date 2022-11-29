@@ -1,0 +1,677 @@
+id,observed_on_string,observed_on,time_observed_at,latitude,longitude,scientific_name,common_name,iconic_taxon_name,taxon_id,taxon_order_name,taxon_genus_name
+2677,2009-05-15,2009-05-15,,25.7436218262,-81.2521362305,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+2690,2009-05-14,2009-05-14,,25.1539380909,-80.8517896342,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+45156,2011-12-21,2011-12-21,,25.1891488886,-80.9790421108,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+132859,2012-09-29 20:10:18,2012-09-29,2012-09-30 00:10:18 UTC,25.3856891605,-80.566884817,Puma concolor couguar,North American Mountain Lion,Mammalia,143589,Carnivora,Puma
+421592,2004-02-20,2004-02-20,,25.138661,-80.930722,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+435431,2008-04-10 10:24:48,2008-04-10,2008-04-10 14:24:48 UTC,25.685836,-80.762515,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+631837,2000-03-08,2000-03-08,,25.810709,-81.456413,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+1229010,2015-01-18 11:41:25,2015-01-18,2015-01-18 16:41:25 UTC,25.1697929484,-80.8666262333,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+1297333,2015-03-12,2015-03-12,,25.0925314717,-80.91817612,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+1308000,2015-03-17,2015-03-17,,25.820939,-81.465425,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+1308348,2015-03-18,2015-03-18,,25.788392,-81.418948,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+1338249,2015-03-12,2015-03-12,,25.0323906682,-80.8036505155,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+1459396,Tue May 05 2015 09:43:15 GMT-0400 (EDT),2015-05-05,2015-05-05 13:43:15 UTC,25.1679377886,-80.9806941157,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2275848,2012-12-19,2012-12-19,,25.0893635345,-80.8506814388,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2306418,2009-02-11 22:18:40,2009-02-11,2009-02-11 22:18:40 UTC,25.1017152017,-80.9022313671,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2337241,2013-12-20,2013-12-20,,25.286616,-80.898651,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+2563532,2016-01-07 13:37:09,2016-01-07,2016-01-07 19:37:09 UTC,25.0676213686,-80.9802575465,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2586245,2016-01-07,2016-01-07,,25.1405613371,-80.8558349132,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2704330,Tue Oct 27 2015,2015-10-27,,25.1972779977,-80.8150606786,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2790717,2016-03-11,2016-03-11,,25.5836414096,-80.6561542706,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2818054,Tue Mar 22 2016 13:09:45 GMT-0400 (EDT),2016-03-22,2016-03-22 17:09:45 UTC,25.1381204032,-80.9012070248,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+2823221,Tue Mar 22 2016 15:08:07 GMT-0400 (EDT),2016-03-22,2016-03-22 19:08:07 UTC,25.1197604321,-80.9829160596,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+2949669,2016-02-04,2016-02-04,,25.1908640696,-80.8267136262,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+2965517,Mon Apr 18 2016 09:05:53 GMT-0400 (EDT),2016-04-18,2016-04-18 13:05:53 UTC,25.3978979414,-80.5992569059,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+3502205,2016-05-21 17:22,2016-05-21,2016-05-21 22:22:00 UTC,25.0493215293,-80.9614515371,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+3567827,2016/05/22 6:01 PM CDT,2016-05-22,2016-05-22 23:01:00 UTC,25.3997737509,-80.654468312,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+3669921,2014/11/29 12:57 PM CST,2014-11-29,2014-11-29 18:57:00 UTC,25.0041097392,-80.867522697,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+3828982,2016/08/06 9:55 AM CDT,2016-08-06,2016-08-06 14:55:00 UTC,25.0621803963,-80.8373627916,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+3857695,2016/01/03 2:30 PM EST,2016-01-03,2016-01-03 19:30:00 UTC,25.1323512484,-80.9571647056,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+3917651,2010/02/11 11:28 AM EST,2010-02-11,2010-02-11 16:28:00 UTC,25.8200280912,-81.4598654104,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+3917652,2008/01/04 2:05 PM EST,2008-01-04,2008-01-04 19:05:00 UTC,25.8237370614,-81.4660451776,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+4008817,Thu Sep 01 2016 12:07:10 GMT-0400 (EDT),2016-09-01,2016-09-01 16:07:10 UTC,25.1348911961,-80.9084782271,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+4409320,Thu Oct 08 2015 11:49:16 GMT-0400 (EDT),2015-10-08,2015-10-08 15:49:16 UTC,25.6372252958,-80.5664867042,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+4409614,2016/09/04 1:29 PM CDT,2016-09-04,2016-09-04 18:29:00 UTC,25.0293983115,-80.8673347158,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+4470949,2016/10/30 1:44 AM EDT,2016-10-30,2016-10-30 05:44:00 UTC,25.4100974507,-80.5745887756,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+4520992,2016/11/08 1:23 PM EST,2016-11-08,2016-11-08 18:23:00 UTC,25.3003006,-81.0257763,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+4578577,2016-11-02,2016-11-02,,25.0801749837,-80.9079062185,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+4619292,2016/03/19 5:27 PM EDT,2016-03-19,2016-03-19 21:27:00 UTC,25.3820595584,-80.6096881628,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+4620975,2011-11-23 15:25:31,2011-11-23,2011-11-23 20:25:31 UTC,25.827552,-81.382599,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+4676854,2016/03/17 11:07 AM EDT,2016-03-17,2016-03-17 15:07:00 UTC,25.2948169444,-81.0064315556,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+4786715,2016/12/14 9:57 AM PST,2016-12-14,2016-12-14 17:57:00 UTC,25.1428083093,-81.02967062,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+4816908,2016/12/19 8:12 AM EST,2016-12-19,2016-12-19 13:12:00 UTC,25.3864407948,-80.686902254,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+4854973,2005-01-14,2005-01-14,,25.297268,-80.933533,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+4913836,2016/12/30,2016-12-30,,25.0898084029,-80.9418420274,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+4965284,2016/07/18 1:40 PM CDT,2016-07-18,2016-07-18 18:40:00 UTC,25.0663649523,-80.9566336978,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+4979875,2017/01/08 9:49 AM EST,2017-01-08,2017-01-08 14:49:00 UTC,25.0452174751,-80.9285065957,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+5037518,Wed Feb 01 2017 08:15:02 GMT-0500 (EST),2017-02-01,2017-02-01 13:15:02 UTC,25.3956721165,-80.5940373895,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+5062439,2017-01-26 1:03:17 pm GMT-05:00,2017-01-26,2017-01-26 08:03:17 UTC,25.1004984923,-80.9419447261,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+5076668,Wed Feb 08 2017 13:01:29 GMT-0500 (EST),2017-02-08,2017-02-08 18:01:29 UTC,25.6944132038,-81.3489890379,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+5096986,2009-02-07 16:41:22,2009-02-07,2009-02-07 16:41:22 UTC,25.383192,-80.609865,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+5153088,2010/03/20 3:56 PM MDT,2010-03-20,2010-03-20 21:56:00 UTC,25.3989792885,-80.6571275222,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+5203192,2012/03/31 3:25 PM CDT,2012-03-31,2012-03-31 20:25:00 UTC,25.1008338329,-80.9211733879,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+5203193,2012/03/31 4:09 PM CDT,2012-03-31,2012-03-31 21:09:00 UTC,25.1850179802,-80.9344951445,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+5228420,2017/01/02 12:32 PM CST,2017-01-02,2017-01-02 18:32:00 UTC,25.1558142323,-80.8139938069,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+5247472,2014/07/26 3:15 PM EDT,2014-07-26,2014-07-26 19:15:00 UTC,25.1673246833,-80.8042172515,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+5559154,2015/04/23 2:36 PM ,2015-04-23,2015-04-23 14:36:00 UTC,25.8134908106,-81.4572715759,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+5648601,2014/06/04 2:42 AM EDT,2014-06-04,2014-06-04 06:42:00 UTC,25.4008686,-80.6549846,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+5699516,Fri Apr 14 2017 13:37:07 GMT-0400 (EDT),2017-04-14,2017-04-14 17:37:07 UTC,25.181455903,-80.8160427329,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+5782105,2011-09-15,2011-09-15,,25.823435,-81.375686,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+5790503,Sun Jan 01 2017 12:07:09 GMT-0500 (EST),2017-01-01,2017-01-01 17:07:09 UTC,25.0291760848,-80.9660164252,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+5921184,2009/12/06 11:21 AM MST,2009-12-06,2009-12-06 18:21:00 UTC,25.1485854737,-80.9734588014,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+6100887,2017/05/03 2:19 PM EDT,2017-05-03,2017-05-03 18:19:00 UTC,25.7978027778,-81.4118333333,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+6257890,2017/04/17 7:23 PM CEST,2017-04-17,2017-04-17 17:23:00 UTC,25.8381361577,-81.4416503906,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+6524110,2017/05/22 11:54 AM EDT,2017-05-22,2017-05-22 15:54:00 UTC,25.3833717651,-80.610266178,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+6582085,2005/05/01 1:46 PM PDT,2005-05-01,2005-05-01 20:46:00 UTC,25.210142,-80.859954,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+6765037,2017/06/21 7:25 PM EDT,2017-06-21,2017-06-21 23:25:00 UTC,25.1865648345,-80.9546444233,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+6765075,2017/06/22 7:58 PM EDT,2017-06-22,2017-06-22 23:58:00 UTC,25.3824595,-80.6096129,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+6838956,2017-06-28,2017-06-28,,25.1616873386,-80.8653502102,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+6986477,2016/01/06 5:15 PM EST,2016-01-06,2016-01-06 22:15:00 UTC,25.0229756813,-80.9572992562,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+7054724,Thu Jul 13 2017 22:47:00 GMT-0400 (EDT),2017-07-13,2017-07-14 02:47:00 UTC,25.3009929765,-80.7989501953,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+7132529,2017-07-19 9:58:57 PM EDT,2017-07-19,2017-07-20 01:58:57 UTC,25.3365039825,-80.8242797852,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+7291128,2011/11/28 10:10 AM UTC,2011-11-28,,25.1570388285,-80.8535275338,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+7477987,2016/02/04 10:13 AM EST,2016-02-04,2016-02-04 15:13:00 UTC,25.1228106032,-80.9541376415,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+7662381,2010-06-03,2010-06-03,,25.4066961544,-80.789345075,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+8229498,2017/03/19 9:15 AM MDT,2017-03-19,2017-03-19 15:15:00 UTC,25.0375949872,-80.8990372736,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8501783,2005-02-08 1:56:33 PM PST,2005-02-08,2005-02-08 21:56:33 UTC,25.129263828,-80.847841725,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8552933,2017/10/19 5:13 PM EDT,2017-10-19,2017-10-19 21:13:00 UTC,25.1429139844,-80.9271681301,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8553105,2017/10/19 5:22 PM EDT,2017-10-19,2017-10-19 21:22:00 UTC,25.0917663086,-80.8209399816,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8553106,2017/10/19 5:26 PM EDT,2017-10-19,2017-10-19 21:26:00 UTC,25.0937152033,-80.8324016192,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8600567,2017/04/06 5:09 PM EDT,2017-04-06,2017-04-06 21:09:00 UTC,25.1110566519,-80.8569690581,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8851166,2016/04/17 4:02 PM EDT,2016-04-17,2016-04-17 20:02:00 UTC,25.2442817154,-80.8053858664,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+8924674,2007/01/09 9:28 AM EST,2007-01-09,2007-01-09 14:28:00 UTC,25.7499609914,-81.3784790039,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+8924675,2007/01/09 9:30 AM EST,2007-01-09,2007-01-09 14:30:00 UTC,25.7509378,-81.3798019,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+9032690,2015-07-27 5:33:18 PM EDT,2015-07-27,2015-07-27 21:33:18 UTC,25.1764971004,-80.8254178163,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+9210240,1990/04/30 12:00 AM +0100,1990-04-30,1990-04-29 22:00:00 UTC,25.3376216908,-80.6655211933,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+9335630,Mon Jan 01 2018 10:36:20 GMT-0500 (EST),2018-01-01,2018-01-01 15:36:20 UTC,25.8069851734,-81.3137797473,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+9345610,Tue Jan 02 2018 07:13:59 GMT-0500 (EST),2018-01-02,2018-01-02 12:13:59 UTC,25.3868366667,-80.6659383333,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+9345612,Tue Jan 02 2018 07:14:08 GMT-0500 (EST),2018-01-02,2018-01-02 12:14:08 UTC,25.38682,-80.6659383333,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+9360163,2018/01/02 7:38 AM EST,2018-01-02,2018-01-02 12:38:00 UTC,25.1185172842,-81.090951044,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+9364152,Thu Jan 04 2018 08:16:04 GMT-0500 (EST),2018-01-04,2018-01-04 13:16:04 UTC,25.390845,-80.68937,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+9445661,2018/01/11 5:01 AM PST,2018-01-11,2018-01-11 13:01:00 UTC,25.3892601624,-80.6982064247,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+9487139,2017-03-20 13:29:42,2017-03-20,2017-03-20 23:29:42 UTC,25.0775554484,-80.9832694984,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+9489756,2018-01-15 1:16:17 PM EST,2018-01-15,2018-01-15 18:16:17 UTC,25.1168986859,-80.8464201831,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+9556926,Thu Jan 18 2018 10:21:12 GMT-0700 (MST),2018-01-18,2018-01-18 17:21:12 UTC,25.1022026619,-80.8210353529,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+9765856,2018/01/19 12:40 PM SAST,2018-01-19,2018-01-19 10:40:00 UTC,25.1556175782,-80.8577062137,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+9818791,2018-02-04 12:38:21,2018-02-04,2018-02-04 20:38:21 UTC,25.376772,-80.81332,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+10049778,2006/03/04 9:15 AM EST,2006-03-04,2006-03-04 14:15:00 UTC,25.7495744492,-80.7665061984,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+10060748,2018/02/27 11:14 AM EST,2018-02-27,2018-02-27 16:14:00 UTC,25.3558257623,-80.967489481,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+10061265,2004/08/15 7:42 PM EDT,2004-08-15,2004-08-15 23:42:00 UTC,25.4030422509,-80.6084060669,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+10077344,Sat Mar 03 2018 13:26:08 GMT-0500 (EST),2018-03-03,2018-03-03 18:26:08 UTC,25.1603116342,-80.8063419836,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+10163797,2018/03/09 5:28 AM PST,2018-03-09,2018-03-09 13:28:00 UTC,25.0264108367,-80.8257551925,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+10397431,2013/03/14 10:39 AM EDT,2013-03-14,2013-03-14 14:39:00 UTC,25.7574066667,-80.8215033333,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+10466794,2017-01-14 5:00:00 PM PST,2017-01-14,2017-01-15 01:00:00 UTC,25.1841321381,-80.8938486984,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+10493364,Wed Mar 28 2018 16:54:05 GMT-0400 (EDT),2018-03-28,2018-03-28 20:54:05 UTC,25.3852876762,-80.9594356206,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+10537764,2018-03-29 11:50:17 AM EDT,2018-03-29,2018-03-29 15:50:17 UTC,25.0337584166,-80.9831176908,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+10594336,2018/03/28 4:56 PM EDT,2018-03-28,2018-03-28 20:56:00 UTC,25.1362410708,-80.9790806338,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+10621110,2018/04/01 9:49 AM EDT,2018-04-01,2018-04-01 13:49:00 UTC,25.0974861747,-80.9091666088,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+10621170,2018/01/14 9:35 AM EST,2018-01-14,2018-01-14 14:35:00 UTC,25.3870501663,-80.667071466,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+10642476,Thu Apr 05 2018 10:33:57 GMT-0400 (EDT),2018-04-05,2018-04-05 14:33:57 UTC,25.1503221667,-80.9222116667,Lynx rufus,Bobcat,Mammalia,41976,Carnivora,Lynx
+10665793,2017-12-26 2:57:00 PM MST,2017-12-26,2017-12-26 21:57:00 UTC,25.0101880198,-80.9153717964,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+11291841,2018-04-21 3:08:59 PM EDT,2018-04-21,2018-04-21 19:08:59 UTC,25.1527997958,-80.8014269386,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+11814345,2018/04/29 11:55 AM MDT,2018-04-29,2018-04-29 17:55:00 UTC,25.1781053952,-80.9503902876,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+12213455,2018/04/29 10:04 AM EDT,2018-04-29,2018-04-29 14:04:00 UTC,25.1197990676,-80.9611205977,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+12243781,2018/04/30 1:31 AM EDT,2018-04-30,2018-04-30 05:31:00 UTC,25.1658179469,-80.9249636577,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+12256780,2007/03/04 9:16 AM MST,2007-03-04,2007-03-04 16:16:00 UTC,25.1417914,-80.9253491,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+12368710,Sun Feb 12 2017 14:25:32 GMT-0500 (EST),2017-02-12,2017-02-12 19:25:32 UTC,25.1968771526,-80.7736233866,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+12587388,2017/03/14 12:41 PM PDT,2017-03-14,2017-03-14 19:41:00 UTC,25.0435289687,-80.832869342,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+12651733,2018/05/19 8:00 AM EDT,2018-05-19,2018-05-19 12:00:00 UTC,25.4008690825,-80.6573664584,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+12651734,2018/05/19 7:59 AM EDT,2018-05-19,2018-05-19 11:59:00 UTC,25.4008959029,-80.6573175267,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+12946505,Fri May 04 2018 14:04:57 GMT-0700 (PDT),2018-05-04,2018-05-04 21:04:57 UTC,25.2561323185,-80.851802605,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+13415304,2018/04/22 10:26 AM PDT,2018-04-22,2018-04-22 17:26:00 UTC,25.3837115639,-80.5921748306,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+13431257,2016/03/05 2:36 AM EST,2016-03-05,2016-03-05 07:36:00 UTC,25.1124179924,-80.8115632419,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+13692214,2016/01/05 10:48 PM EST,2016-01-05,2016-01-06 03:48:00 UTC,25.0154346113,-80.9454219208,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+14230261,2018/07/03 3:06 AM EDT,2018-07-03,2018-07-03 07:06:00 UTC,25.7934583756,-81.3465058678,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+14381972,2018-07-13 5:34:19 PM EDT,2018-07-13,2018-07-13 21:34:19 UTC,25.1832646819,-80.881984814,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+14514039,Wed Jul 18 2018 19:49:34 GMT-0400 (EDT),2018-07-18,2018-07-18 23:49:34 UTC,25.3893283333,-80.665795,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+14517598,2006/12/11 6:41 PM CST,2006-12-11,2006-12-12 00:41:00 UTC,25.1316672853,-80.9763293424,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+14517756,2006/12/13 5:29 PM CST,2006-12-13,2006-12-13 23:29:00 UTC,25.3823998,-80.6064611,Lontra canadensis,North American River Otter,Mammalia,41777,Carnivora,Lontra
+14620874,Wed May 16 2018 14:08:33 GMT-0400 (EDT),2018-05-16,2018-05-16 18:08:33 UTC,25.2778838892,-80.9070580672,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+14867479,2012/01/01 12:33 PM UTC,2012-01-01,2012-01-01 12:33:00 UTC,25.0615980034,-80.8282589194,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+15112041,2017/01/22 9:04 AM EST,2017-01-22,2017-01-22 14:04:00 UTC,25.1165838268,-80.9488963636,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+15322087,2012/01/13 1:29 PM PST,2012-01-13,2012-01-13 21:29:00 UTC,25.1570869209,-80.8781553323,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+16013321,2018/08/25 2:43 PM PDT,2018-08-25,2018-08-25 21:43:00 UTC,25.0581864635,-80.8619543027,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+16106208,Mon Aug 24 2015 11:32:43 GMT-0700 (PDT),2015-08-24,2015-08-24 18:32:43 UTC,25.0851349496,-80.8413951865,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+16217202,2018-07-23 7:39:00 PM EDT,2018-07-23,2018-07-23 23:39:00 UTC,25.1784571502,-80.8988853847,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+17428220,2016/06/10 2:12 PM CDT,2016-06-10,2016-06-10 19:12:00 UTC,25.1396290173,-80.967513469,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+18023482,Sun Oct 21 2018 10:58:58 GMT-0400 (EDT),2018-10-21,2018-10-21 14:58:58 UTC,25.0085791642,-80.8106015653,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+18385586,2018/11/07 11:47 AM EST,2018-11-07,2018-11-07 16:47:00 UTC,25.0146953941,-80.9491340257,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+18502749,2011/12/16 1:17 PM CST,2011-12-16,2011-12-16 19:17:00 UTC,25.1381195963,-80.9953113298,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+18600768,Sun Nov 18 2018 23:19:33 GMT-0500 (EST),2018-11-18,2018-11-19 04:19:33 UTC,25.1279651794,-80.9472289725,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+18815749,2018/11/22 11:38 PM EST,2018-11-22,2018-11-23 04:38:00 UTC,25.7287933823,-80.7591028971,Rattus rattus,Black Rat,Mammalia,44575,Rodentia,Rattus
+19071998,Mon Dec 17 2018 08:39:20 GMT-0500 (EST),2018-12-17,2018-12-17 13:39:20 UTC,25.36757,-80.662255,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+19072008,Mon Dec 17 2018 10:06:13 GMT-0500 (EST),2018-12-17,2018-12-17 15:06:13 UTC,25.2565361211,-80.6314957166,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+19170013,2012/10/14 2:43 PM CEST,2012-10-14,2012-10-14 12:43:00 UTC,25.1338818351,-80.9245967158,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+19238891,Wed Dec 26 2018 17:25:16 GMT-0500 (EST),2018-12-26,2018-12-26 22:25:16 UTC,25.1238833333,-80.9109416667,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+19303430,Sat Dec 29 2018 12:15:47 GMT-0500 (EST),2018-12-29,2018-12-29 17:15:47 UTC,25.1667523874,-80.9753906544,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+19314741,Sun Dec 30 2018 10:20:01 GMT-0500 (EST),2018-12-30,2018-12-30 15:20:01 UTC,25.1945786158,-80.8383607395,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+19340603,2018/12/11 4:49 PM PST,2018-12-11,2018-12-12 00:49:00 UTC,25.0086366415,-80.8266901392,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+19388133,2019/01/02 7:15 AM EST,2019-01-02,2019-01-02 12:15:00 UTC,25.3915213558,-80.6893702975,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+19399196,2019-01-02 3:02:19 PM EST,2019-01-02,2019-01-02 20:02:19 UTC,25.5765818942,-80.6890180763,Puma concolor couguar,North American Mountain Lion,Mammalia,143589,Carnivora,Puma
+19407370,2019/01/02 4:01 PM EST,2019-01-02,2019-01-02 21:01:00 UTC,25.389395,-80.644676,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+19480965,2019/01/02 3:00 PM EST,2019-01-02,2019-01-02 20:00:00 UTC,25.400753,-80.642128,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+19561242,Sat Dec 15 2018 11:24:15 GMT-0500 (EST),2018-12-15,2018-12-15 16:24:15 UTC,25.0619040463,-80.89465865,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+19605931,2019/01/12 2:16 PM CST,2019-01-12,2019-01-12 20:16:00 UTC,25.0145084424,-80.9568749463,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+19853900,Fri Jan 11 2019 13:59:11 GMT-0600 (CST),2019-01-11,2019-01-11 19:59:11 UTC,25.8101466667,-81.4607616667,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+20236912,2006/12/12 8:19 PM CST,2006-12-12,2006-12-13 02:19:00 UTC,25.2024434279,-80.838174122,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+20244265,2019-02-09 12:49:28 PM EST,2019-02-09,2019-02-09 17:49:28 UTC,25.1744717435,-80.8741828054,Lynx rufus,Bobcat,Mammalia,41976,Carnivora,Lynx
+20266560,2017/01/09 11:54 AM CST,2017-01-09,2017-01-09 17:54:00 UTC,25.1811382057,-80.9011953473,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+20267808,2019/02/09 9:12 AM EST,2019-02-09,2019-02-09 14:12:00 UTC,25.137312,-80.953308,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+20538201,Thu Feb 21 2019 12:31:32 GMT-0500 (EST),2019-02-21,2019-02-21 17:31:32 UTC,25.0903051407,-80.8782907817,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+20933800,Thu Feb 21 2019 12:30:44 GMT-0600 (CST),2019-02-21,2019-02-21 18:30:44 UTC,25.0221285075,-80.9199954008,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+20935465,2019/03/03 8:01 AM EST,2019-03-03,2019-03-03 13:01:00 UTC,25.403069,-80.6306689999,Ursus americanus,American Black Bear,Mammalia,41638,Carnivora,Ursus
+21033531,2019/03/03 6:49 AM EST,2019-03-03,2019-03-03 11:49:00 UTC,25.410339,-80.624359,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+21087285,Sat Mar 09 2019 10:17:50 GMT-0500 (EST),2019-03-09,2019-03-09 15:17:50 UTC,25.7632416667,-81.375375,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+21109663,2019-03-09 10:54:46 AM EST,2019-03-09,2019-03-09 15:54:46 UTC,25.177743134,-80.8361254641,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21145821,Sat Mar 09 2019 10:54:44 GMT-0500 (EST),2019-03-09,2019-03-09 15:54:44 UTC,25.1008271028,-80.8118480902,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21299321,2019-03-16 3:28:05 PM EDT,2019-03-16,2019-03-16 19:28:05 UTC,25.1466129433,-80.8945796543,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21340827,Sat Mar 16 2019 15:23:05 GMT-0400 (EDT),2019-03-16,2019-03-16 19:23:05 UTC,25.0388830215,-80.8545712493,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21435639,2019-03-19 9:53:28 AM EDT,2019-03-19,2019-03-19 13:53:28 UTC,25.1218888953,-80.8786180396,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21538604,2019-03-16 3:23:09 PM EDT,2019-03-16,2019-03-16 19:23:09 UTC,25.1130863162,-80.9229882096,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21645902,Tue Mar 26 2019 13:37:18 GMT-0400 (EDT),2019-03-26,2019-03-26 17:37:18 UTC,25.0134414298,-80.8916069378,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21722723,2019/03/06 11:33 PM EST,2019-03-06,2019-03-07 04:33:00 UTC,25.4029810022,-80.6308835001,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+21722940,2019/03/14 5:06 PM EDT,2019-03-14,2019-03-14 21:06:00 UTC,25.1356502951,-80.9842075931,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21722941,2019/03/14 5:06 PM EDT,2019-03-14,2019-03-14 21:06:00 UTC,25.0374873719,-80.8775342419,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21722943,2019/03/14 5:10 PM EDT,2019-03-14,2019-03-14 21:10:00 UTC,25.0201438143,-80.9768100894,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21722945,2019/03/14 5:10 PM EDT,2019-03-14,2019-03-14 21:10:00 UTC,25.1872776211,-80.8093466346,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21722947,2019/03/14 5:11 PM EDT,2019-03-14,2019-03-14 21:11:00 UTC,25.0353835121,-80.9178952511,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21761468,Wed Mar 27 2019 15:24:04 GMT-0400 (EDT),2019-03-27,2019-03-27 19:24:04 UTC,25.1804081255,-80.9866369452,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21773118,Tue Mar 12 2019 17:25:26 GMT-0400 (EDT),2019-03-12,2019-03-12 21:25:26 UTC,25.1550590604,-80.8946444897,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21780327,2019/03/14 5:02 PM EDT,2019-03-14,2019-03-14 21:02:00 UTC,25.0183295264,-80.8089636354,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21888428,2019/03/15 1:31 PM EDT,2019-03-15,2019-03-15 17:31:00 UTC,25.1645775371,-80.8491953325,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21888429,2019/03/15 1:32 PM EDT,2019-03-15,2019-03-15 17:32:00 UTC,25.0036500693,-80.8969081721,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+21889382,2019/03/31 7:10 AM EDT,2019-03-31,2019-03-31 11:10:00 UTC,25.3954809226,-80.693881406,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+21966362,2019/03/31 10:44 AM EDT,2019-03-31,2019-03-31 14:44:00 UTC,25.5836244507,-80.7980512187,Puma concolor couguar,North American Mountain Lion,Mammalia,143589,Carnivora,Puma
+21966363,2019/03/31 10:45 AM EDT,2019-03-31,2019-03-31 14:45:00 UTC,25.408804,-80.727219,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+21966376,2019/03/31 10:53 AM EDT,2019-03-31,2019-03-31 14:53:00 UTC,25.41016,-80.729683,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+21966777,2019/03/31 10:59 AM EDT,2019-03-31,2019-03-31 14:59:00 UTC,25.5034708423,-80.7593171224,Puma concolor couguar,North American Mountain Lion,Mammalia,143589,Carnivora,Puma
+21982963,2019/04/01 12:13 PM EDT,2019-04-01,2019-04-01 16:13:00 UTC,25.0254547591,-80.8433608135,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+21999414,2019/03/31 12:01 PM EDT,2019-03-31,2019-03-31 16:01:00 UTC,25.4346549356,-80.6099493809,Puma concolor couguar,North American Mountain Lion,Mammalia,143589,Carnivora,Puma
+22006907,2019/03/31 12:31 PM EDT,2019-03-31,2019-03-31 16:31:00 UTC,25.4129509999,-80.735054,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+22234179,2019/04/03 3:44 PM EDT,2019-04-03,2019-04-03 19:44:00 UTC,25.0084960672,-80.9844805283,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+22255863,2019/04/01 6:50 AM EDT,2019-04-01,2019-04-01 10:50:00 UTC,25.3956568347,-80.6884519757,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+22269558,Fri Mar 22 2019 09:27:32 GMT-0500 (CDT),2019-03-22,2019-03-22 09:27:32 UTC,25.0153918343,-80.8622336376,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+22456072,Sat Apr 06 2019 15:00:00 GMT-0400 (EDT),2019-04-06,2019-04-06 19:00:00 UTC,25.0956537101,-80.9508888656,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+22589824,2019-04-16 6:16:31 PM EDT,2019-04-16,2019-04-16 22:16:31 UTC,25.0097407988,-80.91259165,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+23053674,Wed Apr 24 2019 20:35:32 GMT-0400 (EDT),2019-04-24,2019-04-25 00:35:32 UTC,25.4022666667,-80.7912,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+23335075,Fri Apr 26 2019 13:38:01 GMT-0400 (EDT),2019-04-26,2019-04-26 17:38:01 UTC,25.1487149221,-80.9813626862,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+23351032,Fri Apr 26 2019 13:33:44 GMT-0400 (EDT),2019-04-26,2019-04-26 17:33:44 UTC,25.1326461063,-80.8666718223,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+24190866,2019/04/29 7:46 PM EDT,2019-04-29,2019-04-29 23:46:00 UTC,25.3909993985,-80.6893393966,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+24216565,2019/04/28 3:41 PM EDT,2019-04-28,2019-04-28 19:41:00 UTC,25.389239036,-80.6656569105,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+24479789,2016/02/14 5:41 PM CST,2016-02-14,2016-02-14 23:41:00 UTC,25.3911678623,-80.6084648045,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+24634581,2019/05/05 2:41 PM PDT,2019-05-05,2019-05-05 21:41:00 UTC,25.1568692181,-80.8973384002,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+24678028,Mon May 06 2019 00:19:25 GMT-0400 (EDT),2019-05-06,2019-05-06 04:19:25 UTC,25.4016699789,-80.655059753,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+24970802,2019/05/11 6:42 PM EDT,2019-05-11,2019-05-11 22:42:00 UTC,25.4038535964,-80.6541906661,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+25206801,2008/11/01 1:48 PM CDT,2008-11-01,2008-11-01 18:48:00 UTC,25.04774074,-80.8433132102,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+26260713,2019/06/01 11:58 AM PDT,2019-06-01,2019-06-01 18:58:00 UTC,25.4237866667,-80.6793683333,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+26569083,2019/05/26 1:23 AM EDT,2019-05-26,2019-05-26 05:23:00 UTC,25.2915883333,-80.7984016667,Lasiurus,Hairy-tailed Bats,Mammalia,40516,Chiroptera,Lasiurus
+26694772,2009/04/22 6:14 PM EDT,2009-04-22,2009-04-22 22:14:00 UTC,25.1583768182,-80.9506332096,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+26775467,2019/05/28 11:45 PM UTC,2019-05-28,,25.0753516682,-80.8687638365,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+26775688,2019/06/03 4:10 AM UTC,2019-06-03,,25.1510244557,-80.8811137863,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+26775782,2019/06/03 4:00 AM UTC,2019-06-03,,25.1690432609,-80.9341484451,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+26775829,2019/06/03 3:59 AM UTC,2019-06-03,,25.1649536166,-80.893430222,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+26843803,2019/05/30 2:51 AM UTC,2019-05-30,,25.1024547282,-80.8125591203,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+26843873,2019/06/03 3:39 AM UTC,2019-06-03,,25.1291605307,-80.9081999909,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+26849228,2019-06-11 7:43:08 PM EDT,2019-06-11,2019-06-11 23:43:08 UTC,25.3941402435,-80.6183319092,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+26969203,2019/05/25 4:57 PM EDT,2019-05-25,2019-05-25 20:57:00 UTC,25.1101092201,-80.806241023,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+27064982,Sat Jun 15 2019 18:05:12 GMT-0400 (EDT),2019-06-15,2019-06-15 22:05:12 UTC,25.0634351432,-80.8023142842,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+27083300,Sat Jun 15 2019 15:44:58 GMT-0400 (EDT),2019-06-15,2019-06-15 19:44:58 UTC,25.0629026318,-80.9383384736,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+28227656,2016/03/03,2016-03-03,,25.1374428926,-80.911000532,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+28420558,2017/04/21 10:10 AM CDT,2017-04-21,2017-04-21 15:10:00 UTC,25.0371470529,-80.852110763,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+28420581,2017/04/21 1:06 PM CDT,2017-04-21,2017-04-21 18:06:00 UTC,25.1661656412,-80.9033098722,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+28430080,2016/03/03 1:44PM,2016-03-03,2016-03-03 18:44:00 UTC,25.195627918,-80.9793888301,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+28513808,Tue Jul 09 2019 14:32:53 GMT-0400 (EDT),2019-07-09,2019-07-09 18:32:53 UTC,25.0616173976,-80.8281975333,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+28520053,Tue Jul 09 2019 14:47:06 GMT-0400 (EDT),2019-07-09,2019-07-09 18:47:06 UTC,25.019634301,-80.8470980935,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+28816784,2016/12/21 7:10 PM EST,2016-12-21,2016-12-22 00:10:00 UTC,25.0597667432,-80.9321575216,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+28848452,2019/07/13 5:17 PM EDT,2019-07-13,2019-07-13 21:17:00 UTC,25.1741910322,-80.9913872864,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+28893820,2016/03/03 11:22 AM EST,2016-03-03,2016-03-03 16:22:00 UTC,25.0034169171,-80.8707614414,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+28893823,2016/03/03 12:35 PM EST,2016-03-03,2016-03-03 17:35:00 UTC,25.1558097079,-80.920837498,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+29038193,Mon Jul 15 2019 07:21:33 GMT-0400 (EDT),2019-07-15,2019-07-15 11:21:33 UTC,25.007979182,-80.8866240812,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+30372187,2019/08/04 11:30 AM HST,2019-08-04,2019-08-04 21:30:00 UTC,25.0517111049,-80.9042940846,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+30372189,2019/08/04 11:31 AM HST,2019-08-04,2019-08-04 21:31:00 UTC,25.1291686231,-80.8126720525,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+30372192,2019/08/04 11:32 AM HST,2019-08-04,2019-08-04 21:32:00 UTC,25.1802270375,-80.9789267122,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+30372193,2019/08/04 11:32 AM HST,2019-08-04,2019-08-04 21:32:00 UTC,25.1820219171,-80.9505050687,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+30378187,2019/08/04 1:03 PM HST,2019-08-04,2019-08-04 23:03:00 UTC,25.2170063883,-80.934235555,Tursiops truncatus truncatus,Common Bottlenose Dolphin,Mammalia,705323,Artiodactyla,Tursiops
+31396920,2019-08-23 4:43:07 PM EDT,2019-08-23,2019-08-23 20:43:07 UTC,25.0715810992,-80.8166213619,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+31544560,2017/01/19 3:38 PM CST,2017-01-19,2017-01-19 21:38:00 UTC,25.1937205985,-80.9657713867,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+31590163,2019/08/24 11:03 AM EDT,2019-08-24,2019-08-24 15:03:00 UTC,25.807047,-81.4653594,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+31590165,2019/08/24 11:00 PM EDT,2019-08-24,2019-08-25 03:00:00 UTC,25.807047,-81.4653594,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+32015547,2018/06/28 9:31 AM EDT,2018-06-28,2018-06-28 13:31:00 UTC,25.3782068649,-80.8130794374,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+32799296,Sun Sep 15 2019 18:46:07 GMT-0400 (EDT),2019-09-15,2019-09-15 22:46:07 UTC,25.1464503324,-80.4940822711,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+32963185,2015/09/12 11:13 AM UTC,2015-09-12,,25.1753138803,-80.8572931314,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+33040268,Wed Sep 18 2019 22:23:43 GMT-0400 (EDT),2019-09-18,2019-09-19 02:23:43 UTC,25.2089333333,-80.8620216667,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+33487901,1998/10/25 16:00,1998-10-25,1998-10-25 21:00:00 UTC,25.7012,-80.7641,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+33488210,2002/10/20 12:00,2002-10-20,2002-10-20 16:00:00 UTC,25.7012,-80.7641,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+33489021,1998/10/25 16:00,1998-10-25,1998-10-25 21:00:00 UTC,25.7012,-80.7641,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+33569028,2019/09/26 11:38 AM EDT,2019-09-26,2019-09-26 15:38:00 UTC,25.1661324181,-80.950975246,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+33620020,2019/09/28 9:41 AM PDT,2019-09-28,2019-09-28 16:41:00 UTC,25.4034933333,-80.660385,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+33911608,2005/01/20 18:00,2005-01-20,2005-01-20 23:00:00 UTC,25.1492,-80.9222,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+35539177,Tue Oct 22 2019 16:59:43 GMT-0400 (EDT),2019-10-22,2019-10-22 20:59:43 UTC,25.1133681405,-80.922570141,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+35722110,2019/11/07 5:37 PM EST,2019-11-07,2019-11-07 22:37:00 UTC,25.1109272954,-80.9233040915,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+35776693,2019/11/11 6:14 PM EST,2019-11-11,2019-11-11 23:14:00 UTC,25.39652,-80.5759433333,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+35877751,2004-10-05T13:50:37Z,2004-10-05,2004-10-05 13:50:37 UTC,25.265309,-80.735391,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+35990345,2003/12/12 2:16 PM PST,2003-12-12,2003-12-12 22:16:00 UTC,25.3820373867,-80.6063666866,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+35993599,2019/11/23 11:03 AM EST,2019-11-23,2019-11-23 16:03:00 UTC,25.417425,-80.6954722167,Ursus americanus,American Black Bear,Mammalia,41638,Carnivora,Ursus
+36423024,Fri Dec 06 2019 13:51:53 GMT-0500 (EST),2019-12-06,2019-12-06 18:51:53 UTC,25.1592445828,-80.8131532008,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+36440366,2019/11/30 3:02 PM EST,2019-11-30,2019-11-30 20:02:00 UTC,25.0627996994,-80.9971398516,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+36484509,Sun Dec 08 2019 14:25:00 GMT-0500 (EST),2019-12-08,2019-12-08 19:25:00 UTC,25.42481667,-80.69748,Ursus americanus,American Black Bear,Mammalia,41638,Carnivora,Ursus
+36536412,2014/11/18 1:35 PM EST,2014-11-18,2014-11-18 18:35:00 UTC,25.8587117,-81.4817484,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+36536444,2014/11/18 1:45 PM EST,2014-11-18,2014-11-18 18:45:00 UTC,25.8587117,-81.4817484,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+36710804,Mon Dec 16 2019 08:58:26 GMT-0500 (EST),2019-12-16,2019-12-16 13:58:26 UTC,25.385655,-80.63801667,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+36710845,Mon Dec 16 2019 10:11:34 GMT-0500 (EST),2019-12-16,2019-12-16 15:11:34 UTC,25.37712,-80.63153,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+36769425,2019/12/15 4:44 PM EST,2019-12-15,2019-12-15 21:44:00 UTC,25.333635,-80.648361,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+36807418,2019/12/09 1:04 PM EST,2019-12-09,2019-12-09 18:04:00 UTC,25.083223556,-80.8578571819,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+36823499,Thu Dec 19 2019 15:08:02 GMT-0500 (EST),2019-12-19,2019-12-19 20:08:02 UTC,25.1131212543,-80.854053148,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+36871857,Sun Dec 22 2019 17:06:18 GMT-0500 (EST),2019-12-22,2019-12-22 22:06:18 UTC,25.2588276465,-80.7628514997,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+36916682,Tue Dec 24 2019 10:23:19 GMT-0500 (EST),2019-12-24,2019-12-24 15:23:19 UTC,25.0051154228,-80.8417543791,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+37044887,Sat Dec 28 2019 13:29:51 GMT-0500 (EST),2019-12-28,2019-12-28 18:29:51 UTC,25.0563441376,-80.8113781166,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37084241,2011/04/09 2:48 PM EDT,2011-04-09,2011-04-09 18:48:00 UTC,25.831102997,-81.3814463507,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+37100613,Sun Dec 29 2019 15:39:53 GMT-0500 (EST),2019-12-29,2019-12-29 20:39:53 UTC,25.0631670524,-80.9285875523,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+37136418,2019-12-30 2:57:11 PM EST,2019-12-30,2019-12-30 19:57:11 UTC,25.1881652296,-80.8403899004,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+37275641,2017/02/16 6:00 PM EST,2017-02-16,2017-02-16 23:00:00 UTC,25.1256370134,-80.9292040205,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+37323450,2020-01-04 10:48:52 AM EST,2020-01-04,2020-01-04 15:48:52 UTC,25.1623959756,-80.9931889375,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+37359327,2020/01/02 2:35 PM EST,2020-01-02,2020-01-02 19:35:00 UTC,25.0550736387,-80.8275356672,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37361013,2020-01-06 3:50:27 PM EST,2020-01-06,2020-01-06 20:50:27 UTC,25.8076896667,-81.4606018066,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+37371426,2019/11/05 6:31 PM EST,2019-11-05,2019-11-05 23:31:00 UTC,25.1143624332,-80.9613382432,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37392620,Sat Nov 09 2019 11:43:09 GMT-0500 (EST),2019-11-09,2019-11-09 16:43:09 UTC,25.0331113282,-80.8249402766,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37398147,2020/01/06 3:17 PM EST,2020-01-06,2020-01-06 20:17:00 UTC,25.1504580536,-80.9676487893,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37416702,2020/01/08 12:26 PM PST,2020-01-08,2020-01-08 20:26:00 UTC,25.0329005288,-80.8998668161,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37416703,2020/01/08 3:17 PM PST,2020-01-08,2020-01-08 23:17:00 UTC,25.1735795725,-80.8699265194,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37478475,Sun Dec 15 2019 22:41:21 GMT-0600 (CST),2019-12-15,2019-12-15 22:41:21 UTC,25.0572490162,-80.8826211975,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+37494182,2020/01/03 2:54 PM EST,2020-01-03,2020-01-03 19:54:00 UTC,25.1758470697,-80.943120091,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+37507814,2020/01/11 10:38 AM EST,2020-01-11,2020-01-11 15:38:00 UTC,25.3732777945,-80.6634588195,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+37520148,2020/01/11 1:02 PM PST,2020-01-11,2020-01-11 21:02:00 UTC,25.1553259504,-80.9457991621,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37638103,2019/12/26 5:19 PM EST,2019-12-26,2019-12-26 22:19:00 UTC,25.0417713812,-80.9650209423,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37698867,2020/01/17 12:11 PM MST,2020-01-17,2020-01-17 19:11:00 UTC,25.0598530497,-80.8869689993,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37831754,Mon Dec 30 2019 12:22:45 GMT-0500 (EST),2019-12-30,2019-12-30 17:22:45 UTC,25.015681716,-80.8252518636,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37866224,2020/01/11 2:30 PM EST,2020-01-11,2020-01-11 19:30:00 UTC,25.1916784314,-80.9950263033,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+37995970,2020-01-16 3:37:15 PM EST,2020-01-16,2020-01-16 20:37:15 UTC,25.3817596436,-80.6114501953,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+38045368,2020/01/14 4:38 PM EST,2020-01-14,2020-01-14 21:38:00 UTC,25.0262354921,-80.8649204987,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38097069,Wed Jan 29 2020 11:50:14 GMT-0500 (EST),2020-01-29,2020-01-29 16:50:14 UTC,25.0073857229,-80.8638322798,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38121889,2020/01/17 12:44 PM EST,2020-01-17,2020-01-17 17:44:00 UTC,25.014253153,-80.8121494874,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38161881,2018/03/14 1:15 PM EDT,2018-03-14,2018-03-14 17:15:00 UTC,25.165542298,-80.9976309023,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38358624,2012/12/20 8:04 AM EST,2012-12-20,2012-12-20 13:04:00 UTC,25.3858726368,-81.1473655694,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+38439651,2020/02/02 9:22 AM CST,2020-02-02,2020-02-02 15:22:00 UTC,25.1327301076,-80.9473507009,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38489110,2020/02/09 12:00 PM EST,2020-02-09,2020-02-09 17:00:00 UTC,25.3702723889,-80.6505614722,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+38510472,Mon Feb 10 2020 10:24:51 GMT-0500 (EST),2020-02-10,2020-02-10 15:24:51 UTC,25.1952691924,-80.8868333268,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38686635,2018/11/22 11:00 PM CST,2018-11-22,2018-11-23 05:00:00 UTC,25.7865075475,-81.4180945698,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+38695860,2020/02/10 9:24 AM CST,2020-02-10,2020-02-10 15:24:00 UTC,25.0084544206,-80.9429227247,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+38731601,Sun Feb 16 2020 14:36:31 GMT-0500 (EST),2020-02-16,2020-02-16 19:36:31 UTC,25.0125238517,-80.8817461435,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39056959,2020/02/16 1:00 PM PST,2020-02-16,2020-02-16 21:00:00 UTC,25.1128260505,-80.9235158801,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39056966,2020/02/16 3:15 PM PST,2020-02-16,2020-02-16 23:15:00 UTC,25.1970986704,-80.8868284,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39097293,Wed Feb 19 2020 20:56:02 GMT-0500 (EST),2020-02-19,2020-02-20 01:56:02 UTC,25.1375482967,-80.972004824,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+39276303,2020/02/22 10:01 AM CST,2020-02-22,2020-02-22 16:01:00 UTC,25.1165484727,-80.809664533,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+39321989,2000/01/01 12:00 AM UTC,2000-01-01,2000-01-01 00:00:00 UTC,25.7795001909,-81.3290231467,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+39336554,2016-01-10 8:58:37 PM CST,2016-01-10,2016-01-11 04:58:37 UTC,25.151338622,-80.8206943619,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39362745,2020/02/21 10:39 AM CST,2020-02-21,2020-02-21 16:39:00 UTC,25.0208972773,-80.8090203974,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39379565,2020/02/29 9:50 AM EST,2020-02-29,2020-02-29 14:50:00 UTC,25.3748333889,-80.6471461389,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+39379587,2020/02/29 9:03 AM EST,2020-02-29,2020-02-29 14:03:00 UTC,25.3893640496,-80.6262288803,Didelphis virginiana,Virginia Opossum,Mammalia,42652,Didelphimorphia,Didelphis
+39531073,2020/03/01 4:28 PM CST,2020-03-01,2020-03-01 22:28:00 UTC,25.4233179613,-80.6798221444,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+39660095,2020/02/26 4:48 PM CET,2020-02-26,2020-02-26 15:48:00 UTC,25.0720683996,-80.8893160027,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39742615,2020/03/04 3:31 PM EST,2020-03-04,2020-03-04 20:31:00 UTC,25.0683948847,-80.8348105428,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+39950583,2020/03/11 10:47 AM EDT,2020-03-11,2020-03-11 14:47:00 UTC,25.1741904355,-80.8724317648,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+40106515,2016/03/14 10:15 AM EDT,2016-03-14,2016-03-14 14:15:00 UTC,25.185460142,-80.9566992176,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+40340586,2020/03/03 10:43 PM EST,2020-03-03,2020-03-04 03:43:00 UTC,25.8251088621,-81.4444559293,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+40340595,2020/03/03 11:41 PM EST,2020-03-03,2020-03-04 04:41:00 UTC,25.8171192655,-81.4544143882,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+40898036,2019-11-24 3:37pm,2019-11-24,2019-11-24 20:37:00 UTC,25.046580958,-80.9018268815,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+41227682,2018/04/27 6:54 PM EDT,2018-04-27,2018-04-27 22:54:00 UTC,25.4008327027,-80.6571988425,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+41423066,2020/02/20 12:40 PM PST,2020-02-20,2020-02-20 20:40:00 UTC,25.800336,-81.414021,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+42154165,2018/03/14 4:03 AM EDT,2018-03-14,2018-03-14 08:03:00 UTC,25.1622422701,-80.9225730755,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+42310574,Tue Dec 20 2016 13:54:38 GMT-0500 (EST),2016-12-20,2016-12-20 18:54:38 UTC,25.1282812291,-80.8081596895,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+42728405,2017/11/16,2017-11-16,,25.19256543,-80.8315431294,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+42891451,2012/03/21 8:08 AM EDT,2012-03-21,2012-03-21 12:08:00 UTC,25.4032036225,-80.9619754369,Oryctolagus cuniculus domesticus,Domestic Rabbit,Mammalia,334341,Lagomorpha,Oryctolagus
+43470683,2014/02/05 6:09 PM EST,2014-02-05,2014-02-05 23:09:00 UTC,25.3809378285,-80.7695628722,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+43471472,2014/02/06 3:42 PM EST,2014-02-06,2014-02-06 20:42:00 UTC,25.4156840381,-80.7146299039,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+44221340,2020/03/04 1:01 PM EST,2020-03-04,2020-03-04 18:01:00 UTC,25.1617868233,-80.955330233,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+44443990,2018/11/12 1:37 PM MST,2018-11-12,2018-11-12 20:37:00 UTC,25.0704637135,-80.8517264881,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+45976561,2020-05-15 10:44:53 AM EDT,2020-05-15,2020-05-15 14:44:53 UTC,25.3977967,-80.6044167997,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+46447708,2020/05/16 2:43 PM EDT,2020-05-16,2020-05-16 18:43:00 UTC,25.0160619189,-80.9849452814,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+46616661,Tue Mar 12 2019 15:15:39 GMT-0500 (CDT),2019-03-12,2019-03-12 20:15:39 UTC,25.0132772112,-80.8804680182,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+46649008,2019/12/28 10:15 AM PST,2019-12-28,2019-12-28 18:15:00 UTC,25.1830880933,-80.957162016,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+46649367,2019/12/28 10:42 AM PST,2019-12-28,2019-12-28 18:42:00 UTC,25.177743479,-80.8767645442,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+47538685,Wed May 27 2020 09:37:35 GMT-0400 (EDT),2020-05-27,2020-05-27 13:37:35 UTC,25.3975716167,-80.6584405044,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+47557962,2013/03/05 2:50 PM PST,2013-03-05,2013-03-05 22:50:00 UTC,25.0917817804,-80.8850698924,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+48069690,2020/05/30 2:53 PM EDT,2020-05-30,2020-05-30 18:53:00 UTC,25.424145,-80.6791533333,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+48407291,2016/03/02 2:32 PM EST,2016-03-02,2016-03-02 19:32:00 UTC,25.79737,-81.3881666667,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+49086019,2003/11/07 12:43 PM EST,2003-11-07,2003-11-07 17:43:00 UTC,25.1385409322,-80.9383129532,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+49772065,Mon Jun 15 2020 16:55:04 GMT-0400 (EDT),2020-06-15,2020-06-15 20:55:04 UTC,25.1192268173,-80.950658553,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+49772387,Mon Jun 15 2020 16:54:15 GMT-0400 (EDT),2020-06-15,2020-06-15 20:54:15 UTC,25.0945632024,-80.8201200724,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+52053339,2019/02/24 2:09 PM EST,2019-02-24,2019-02-24 19:09:00 UTC,25.1439894444,-80.92527,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+52315655,2018/03/28 2:01 PM UTC,2018-03-28,,25.0763413126,-80.9823390839,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+53389181,2016/02/21 3:21 PM EST,2016-02-21,2016-02-21 20:21:00 UTC,25.0276367268,-80.8538978701,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+53547016,Sat Jul 18 2020 11:19:12 GMT-0400 (EDT),2020-07-18,2020-07-18 15:19:12 UTC,25.48860333,-80.56690333,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+53626677,2018/12/28 2:52 PM UTC,2018-12-28,,25.1891679109,-80.8713971392,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+56084453,2016/03/15 12:35 PM EDT,2016-03-15,2016-03-15 16:35:00 UTC,25.8570051048,-81.3540419379,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+57476860,Fri Oct 21 2016 13:54:41 GMT-0500 (CDT),2016-10-21,2016-10-21 18:54:41 UTC,25.0113607479,-80.9059834991,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+57505199,2017/04/06 10:10 AM PDT,2017-04-06,2017-04-06 17:10:00 UTC,25.1210644918,-80.9585370486,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+57934387,2020/08/18 10:48 PM EDT,2020-08-18,2020-08-19 02:48:00 UTC,25.1465292521,-80.8128948391,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+58459758,Sun Aug 30 2020 14:16:35 GMT-0400 (EDT),2020-08-30,2020-08-30 18:16:35 UTC,25.1607476105,-80.8836119398,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+58642260,2020/02/18 5:15 PM HST,2020-02-18,2020-02-19 03:15:00 UTC,25.796262485,-81.426945216,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+58909667,Mon Dec 30 2019 12:58:05 GMT-0500 (EST),2019-12-30,2019-12-30 17:58:05 UTC,25.3112451062,-80.9445480118,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+59396693,2013/03/03 3:25 PM UTC,2013-03-03,,25.0799397522,-80.8547019444,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+59396724,2013/03/04 10:23 AM UTC,2013-03-04,,25.4071094651,-80.651096383,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+59803280,2014-04-28,2014-04-28,,25.8587115613,-81.4817484096,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+61244988,2011/08/03 11:28 PM UTC,2011-08-03,2011-08-03 23:28:00 UTC,25.1002131621,-80.9129481893,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+62552221,2020/09/16 8:34 AM EDT,2020-09-16,2020-09-16 12:34:00 UTC,25.3926717607,-80.6210828661,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+62729433,1993/01/04 10:23 AM EST,1993-01-04,1993-01-04 15:23:00 UTC,25.1448572776,-80.9248638153,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+62746868,Sun Oct 11 2020 17:19:24 GMT-0400 (EDT),2020-10-11,2020-10-11 21:19:24 UTC,25.4394202004,-80.7647191346,Ursus americanus,American Black Bear,Mammalia,41638,Carnivora,Ursus
+63581673,Mon Oct 26 2020 13:08:49 GMT-0400 (EDT),2020-10-26,2020-10-26 17:08:49 UTC,25.0805832938,-80.9304519705,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+63648156,Mon Oct 26 2020 13:14:19 GMT-0400 (EDT),2020-10-26,2020-10-26 17:14:19 UTC,25.0466026451,-80.9922701717,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+64001956,2008/04/07 11:54 AM UTC,2008-04-07,2008-04-07 11:54:00 UTC,25.8149819264,-81.3861394037,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+64734420,2018/11/03 1:55 PM UTC,2018-11-03,2018-11-03 13:55:00 UTC,25.070604387,-80.8388365421,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+64735129,2018/03/23 10:38 AM HST,2018-03-23,2018-03-23 20:38:00 UTC,25.1373830672,-80.932007745,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+65412683,2020/11/21 12:16 PM UTC,2020-11-21,2020-11-21 12:16:00 UTC,25.0935416493,-80.9581846187,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+65412686,2020/11/21 12:19 PM UTC,2020-11-21,2020-11-21 12:19:00 UTC,25.0695887582,-80.9452915273,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+65412688,2020/11/21 2:20 PM UTC,2020-11-21,2020-11-21 14:20:00 UTC,25.4085363516,-80.6959188753,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+65795058,Thu Nov 26 2020 17:37:43 GMT-0500 (EST),2020-11-26,2020-11-26 22:37:43 UTC,25.0868380703,-80.9039397008,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+65979272,Wed Jun 28 2017 15:32:36 GMT-0400 (EDT),2017-06-28,2017-06-28 19:32:36 UTC,25.2687111896,-80.9856432422,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+66209786,Sun Dec 06 2020 12:55:21 GMT-0500 (EST),2020-12-06,2020-12-06 17:55:21 UTC,25.1128341682,-80.8071442775,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+66276049,Thu Jan 11 2018 12:22:30 GMT-0800 (PST),2018-01-11,2018-01-11 12:22:30 UTC,25.1311713686,-80.8873682478,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+66690116,2016/11/04 10:10 AM PDT,2016-11-04,2016-11-04 17:10:00 UTC,25.0329469245,-80.8449806083,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+66690138,2016/11/04 12:10 AM PDT,2016-11-04,2016-11-04 07:10:00 UTC,25.0277279407,-80.823420686,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+66940921,Tue Dec 22 2020 17:40:43 GMT-0500 (EST),2020-12-22,2020-12-22 22:40:43 UTC,25.0193940543,-80.8293594946,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+67140050,2020/12/04 10:19 PM EST,2020-12-04,2020-12-05 03:19:00 UTC,25.1877045997,-80.8955641084,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+67157287,Sun Dec 27 2020 16:34:13 GMT-0500 (EST),2020-12-27,2020-12-27 21:34:13 UTC,25.0600246622,-80.8022750545,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+67157928,Sun Dec 27 2020 16:49:49 GMT-0500 (EST),2020-12-27,2020-12-27 21:49:49 UTC,25.0240031955,-80.8167607664,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+67281515,2020/12/29 2:30 PM EST,2020-12-29,2020-12-29 19:30:00 UTC,25.8071859698,-81.3729321723,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+67773595,2021/01/05 10:18 AM EST,2021-01-05,2021-01-05 15:18:00 UTC,25.7891316667,-81.4208166667,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+67818515,2021/01/03 2:44 PM EST,2021-01-03,2021-01-03 19:44:00 UTC,25.8188,-81.4000638889,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+67876089,Thu Jan 07 2021 14:40:39 GMT-0500 (EST),2021-01-07,2021-01-07 19:40:39 UTC,25.0428772793,-80.8190417617,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+67986053,2011/06/14 5:49 PM EDT,2011-06-14,2011-06-14 21:49:00 UTC,25.2866155,-80.8986509,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+68192415,Sat Jan 16 2021 14:18:50 GMT-0500 (EST),2021-01-16,2021-01-16 19:18:50 UTC,25.0992322405,-80.9668913825,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+68196369,2021/01/16 8:33 AM EST,2021-01-16,2021-01-16 13:33:00 UTC,25.3894126667,-80.6624535278,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+68270049,2021-01-16 4:28:51 PM EST,2021-01-16,2021-01-16 21:28:51 UTC,25.1097089538,-80.9626025603,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+68411766,Tue Jan 19 2021 12:05:20 GMT-0500 (EST),2021-01-19,2021-01-19 17:05:20 UTC,25.050532975,-80.8246583387,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+68622762,2021/01/20 4:24 PM HST,2021-01-20,2021-01-21 02:24:00 UTC,25.0728619586,-80.8493850687,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+68665647,2021-01-26 12:24:48 PM EST,2021-01-26,2021-01-26 17:24:48 UTC,25.1896344876,-80.9260486644,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+68985312,Fri Jan 29 2021 11:08:00 GMT-0500 (EST),2021-01-29,2021-01-29 16:08:00 UTC,25.4103832695,-81.008905984,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+69047684,2004/07/17,2004-07-17,,25.1390142892,-80.9375949045,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+69589735,2021-02-14T18:43:30-05:00,2021-02-14,2021-02-14 23:43:30 UTC,25.0054442776,-80.8798370667,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+69795040,2021/02/05 12:40 PM EST,2021-02-05,2021-02-05 17:40:00 UTC,25.0018300032,-80.9971193189,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+69795053,2021/02/05 12:34 PM EST,2021-02-05,2021-02-05 17:34:00 UTC,25.0046996611,-80.8546359173,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+69795055,2021/02/05 12:35 PM EST,2021-02-05,2021-02-05 17:35:00 UTC,25.0570873633,-80.8662481719,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+69816786,2004/03/07 7:37 PM EST,2004-03-07,2004-03-08 00:37:00 UTC,25.1376492904,-80.9402481935,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+69846021,Fri Feb 19 2021 23:47:43 GMT-0500 (EST),2021-02-19,2021-02-20 04:47:43 UTC,25.4114666667,-80.6246416667,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+69944008,Sun Feb 21 2021 15:33:39 GMT-0500 (EST),2021-02-21,2021-02-21 20:33:39 UTC,25.0463802759,-80.9668781552,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+69955328,Fri Feb 19 2021 09:01:40 GMT-0500 (EST),2021-02-19,2021-02-19 14:01:40 UTC,25.8144359611,-81.4774351744,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+69959075,Sun Feb 21 2021 15:25:04 GMT-0500 (EST),2021-02-21,2021-02-21 20:25:04 UTC,25.1076292075,-80.8978729277,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+69959347,Thu Feb 18 2021 14:34:15 GMT-0500 (EST),2021-02-18,2021-02-18 19:34:15 UTC,25.8237383333,-81.4838166667,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+70011721,Fri Jan 15 2021 12:02:05 GMT-0500 (EST),2021-01-15,2021-01-15 17:02:05 UTC,25.0033963903,-80.8913536382,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+70046721,Tue Feb 23 2021 13:13:25 GMT-0500 (EST),2021-02-23,2021-02-23 18:13:25 UTC,25.0812206691,-80.8372738081,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+70256253,Tue Feb 23 2021 17:12:40 GMT-0500 (EST),2021-02-23,2021-02-23 22:12:40 UTC,25.1461384767,-80.9622886724,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+70976011,Wed Mar 10 2021 12:39:24 GMT-0500 (EST),2021-03-10,2021-03-10 17:39:24 UTC,25.1008878185,-80.8156829388,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71155167,Sat Mar 13 2021 12:26:53 GMT-0500 (EST),2021-03-13,2021-03-13 17:26:53 UTC,25.0320776017,-80.896557213,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71155440,Sat Mar 13 2021 12:34:52 GMT-0500 (EST),2021-03-13,2021-03-13 17:34:52 UTC,25.0002556615,-80.8424388593,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71180299,Sat Mar 13 2021 12:27:22 GMT-0500 (EST),2021-03-13,2021-03-13 17:27:22 UTC,25.0976073206,-80.8498393756,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71249505,2021/03/07 2:16 PM EST,2021-03-07,2021-03-07 19:16:00 UTC,25.0557878506,-80.8504303926,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71250559,2021/03/08 3:50 PM EST,2021-03-08,2021-03-08 20:50:00 UTC,25.1364084226,-80.959348568,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+71256416,2021/03/14 9:04 AM EDT,2021-03-14,2021-03-14 13:04:00 UTC,25.3812913889,-80.6371975556,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+71256425,2021/03/14 11:33 AM EDT,2021-03-14,2021-03-14 15:33:00 UTC,25.3762670833,-80.6374484167,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+71279564,2021/03/03 9:55 AM UTC,2021-03-03,2021-03-03 09:55:00 UTC,25.1231902954,-80.9093348435,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+71305937,2013/10/21 6:52 PM UTC,2013-10-21,2013-10-21 18:52:00 UTC,25.7593287051,-80.7757252001,Sus scrofa,Wild Boar,Mammalia,42134,Artiodactyla,Sus
+71312235,2021/03/12 2:11 PM EST,2021-03-12,2021-03-12 19:11:00 UTC,25.1663595217,-80.8605522357,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+71316220,2021/03/13 1:30 PM EST,2021-03-13,2021-03-13 18:30:00 UTC,25.0276255467,-80.8340572683,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+71515848,2021-03-18 7:48:38 AM EDT,2021-03-18,2021-03-18 11:48:38 UTC,25.0889504858,-80.8748494718,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71521084,Sun Jan 10 2021 02:21:55 GMT-0500 (EST),2021-01-10,2021-01-10 07:21:55 UTC,25.0494325781,-80.9815542164,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71709351,Thu Mar 18 2021 12:18:42 GMT-0500 (CDT),2021-03-18,2021-03-18 12:18:42 UTC,25.0797073374,-80.9980600542,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71720447,2021-03-18,2021-03-18,,25.0950711911,-80.9664141696,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+71980597,Wed Mar 24 2021 18:38:38 GMT-0400 (EDT),2021-03-24,2021-03-24 22:38:38 UTC,25.3893583333,-80.6269833333,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+72189533,Fri Mar 26 2021 11:08:02 GMT-0400 (EDT),2021-03-26,2021-03-26 15:08:02 UTC,25.1448477821,-80.8667557963,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72199791,Sat Mar 27 2021 08:28:12 GMT-0400 (EDT),2021-03-27,2021-03-27 12:28:12 UTC,25.0822906273,-80.9845929504,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72240511,2021-03-24 2:43:11 PM EDT,2021-03-24,2021-03-24 18:43:11 UTC,25.0820040048,-80.8443591663,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72286028,Fri Mar 26 2021 18:12:39 GMT-0400 (EDT),2021-03-26,2021-03-26 22:12:39 UTC,25.1045760196,-80.8723563804,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72341006,Mon Mar 08 2021 15:55:36 GMT-0500 (EST),2021-03-08,2021-03-08 20:55:36 UTC,25.4161983552,-80.6983379949,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72346672,Fri Apr 12 2019 10:07:12 GMT-0700 (PDT),2019-04-12,2019-04-12 17:07:12 UTC,25.0726261903,-80.8698898868,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72517874,2017/08/09 1:25 AM UTC,2017-08-09,2017-08-09 01:25:00 UTC,25.1003964221,-80.9327699628,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+72574552,Wed Mar 31 2021 15:59:19 GMT-0400 (EDT),2021-03-31,2021-03-31 19:59:19 UTC,25.0376183517,-80.8289871561,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72597087,Wed Mar 31 2021 12:22:00 GMT-0400 (EDT),2021-03-31,2021-03-31 16:22:00 UTC,25.0620202336,-80.9389314515,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+72605837,2021-04-01 9:59:27 AM EDT,2021-04-01,2021-04-01 13:59:27 UTC,25.4328571655,-80.7469200343,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+73167367,2019/01/01 2:00 PM CST,2019-01-01,2019-01-01 20:00:00 UTC,25.1586849483,-80.8889437941,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+74696235,2021/04/17 3:04 PM EDT,2021-04-17,2021-04-17 19:04:00 UTC,25.1178598157,-80.8224026054,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+75163305,2021-04-16 8:59:44 AM EDT,2021-04-16,2021-04-16 12:59:44 UTC,25.1784152324,-80.8352947211,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+75265890,Sun Apr 25 2021 15:37:24 GMT-0400 (EDT),2021-04-25,2021-04-25 19:37:24 UTC,25.1598744701,-80.8291889572,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+75414972,2021/04/12 12:02 PM EDT,2021-04-12,2021-04-12 16:02:00 UTC,25.8368288384,-81.4485273346,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+76402955,2021/04/06 4:41 PM UTC,2021-04-06,2021-04-06 16:41:00 UTC,25.1563286358,-80.8468827069,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+76403941,2021/04/06 4:14 PM UTC,2021-04-06,2021-04-06 16:14:00 UTC,25.1083488372,-80.821253511,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+76862066,2021/05/02 5:40 PM EDT,2021-05-02,2021-05-02 21:40:00 UTC,25.3814069999,-80.633987,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+76862087,2021/05/02 5:58 PM EDT,2021-05-02,2021-05-02 21:58:00 UTC,25.382996,-80.633156,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+77417433,2005/04/03 12:18 AM PST,2005-04-04,2005-04-04 07:18:00 UTC,25.3993674498,-80.6013462306,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+77643601,Tue Jun 26 2018 08:19:28 GMT-0400 (EDT),2018-06-26,2018-06-26 12:19:28 UTC,25.4937666667,-80.672775,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+77697876,2019/11/09 4:31 PM EST,2019-11-09,2019-11-09 21:31:00 UTC,25.1672213301,-80.9183981488,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+77698118,2020/05/09 6:55 AM EDT,2020-05-09,2020-05-09 10:55:00 UTC,25.7614902,-80.8270097,Sciurus niger avicennia,Big Cypress Fox Squirrel,Mammalia,238456,Rodentia,Sciurus
+77877694,2021/05/05 12:59 PM EDT,2021-05-05,2021-05-05 16:59:00 UTC,25.0087778749,-80.9157897306,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+78287024,Thu Apr 22 2021 13:29:03 GMT-0400 (EDT),2021-04-22,2021-04-22 17:29:03 UTC,25.1862257661,-80.8775868829,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+79287736,2021-05-07 07:06:18,2021-05-07,2021-05-07 14:06:18 UTC,25.0338952949,-80.9638514006,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+80476968,2006/03/27 8:12 AM EST,2006-03-27,2006-03-27 13:12:00 UTC,25.3873517758,-80.6835182433,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+80564388,Wed May 26 2021 19:24:15 GMT-0400 (EDT),2021-05-26,2021-05-26 23:24:15 UTC,25.1198446088,-80.9383460506,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+80831303,2021-04-04 11:59:59,2021-04-04,2021-04-04 15:59:59 UTC,25.0942940827,-80.8611761034,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+80847394,Wed May 26 2021 19:24:47 GMT-0500 (CDT),2021-05-26,2021-05-26 23:24:47 UTC,25.0373370277,-80.9975400284,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+80847531,Wed May 26 2021 19:25:36 GMT-0500 (CDT),2021-05-26,2021-05-26 23:25:36 UTC,25.0714422653,-80.8325173637,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+81032535,2021/05/30 10:22 PM ,2021-05-30,2021-05-30 12:22:00 UTC,25.2773327517,-80.8066013069,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+81618924,2021-06-04 14:28:11,2021-06-04,2021-06-04 18:28:11 UTC,25.1802041899,-80.9599685077,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+81698422,2018/06/30 10:18 AM EDT,2018-06-30,2018-06-30 14:18:00 UTC,25.3991904408,-80.6572893319,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+82273702,Mon Jun 07 2021 15:23:23 GMT-0400 (EDT),2021-06-07,2021-06-07 19:23:23 UTC,25.2787853216,-80.8951251959,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+82531529,Tue Dec 27 2016 03:42:04 GMT+0800 (GMT+8),2016-12-27,2016-12-26 19:42:04 UTC,25.3013814924,-80.8464394404,Dasypus novemcinctus,Nine-banded Armadillo,Mammalia,47075,Cingulata,Dasypus
+82929086,2021/06/12 7:07 AM UTC,2021-06-12,2021-06-12 07:07:00 UTC,25.4019549911,-80.6552790846,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+83464592,2008/12/30 10:35 AM MST,2008-12-30,2008-12-30 17:35:00 UTC,25.6735348311,-80.7174178924,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+83570732,Fri Jun 18 2021 10:04:57 GMT-0400 (EDT),2021-06-18,2021-06-18 14:04:57 UTC,25.1177007327,-80.8526839643,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+83608582,2021/06/11 9:28 AM BST,2021-06-11,2021-06-11 08:28:00 UTC,25.1865043415,-80.8658717728,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+83873547,2021/06/17 10:34 AM CDT,2021-06-17,2021-06-17 15:34:00 UTC,25.1769684289,-80.9444890859,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+83873563,2021/06/17 10:34 AM CDT,2021-06-17,2021-06-17 15:34:00 UTC,25.0095240681,-80.835111147,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+84525050,Sat Jan 17 2015 07:00:00 GMT-0600 (CST),2015-01-17,2015-01-17 07:00:00 UTC,25.0566253462,-80.8527049186,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+84989638,2018/03/08 4:00 AM CET,2018-03-08,2018-03-08 03:00:00 UTC,25.1722356816,-80.9873995943,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+85195733,Sat Jun 26 2021 10:02:00 GMT-0400 (EDT),2021-06-26,2021-06-26 14:02:00 UTC,25.3365961903,-80.8897529972,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+85283505,Thu Jul 01 2021 12:52:03 GMT-0400 (EDT),2021-07-01,2021-07-01 16:52:03 UTC,25.3924083015,-80.9601563787,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+85973144,2021/07/04 11:06 AM EDT,2021-07-04,2021-07-04 15:06:00 UTC,25.4018793057,-80.6588745199,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+86760784,Mon Jul 12 2021 13:56:02 GMT-0400 (EDT),2021-07-12,2021-07-12 17:56:02 UTC,25.1552259741,-80.8008969386,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+86760947,Mon Jul 12 2021 13:57:54 GMT-0400 (EDT),2021-07-12,2021-07-12 17:57:54 UTC,25.1711278017,-80.8809119583,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+86761175,Mon Jul 12 2021 14:04:14 GMT-0400 (EDT),2021-07-12,2021-07-12 18:04:14 UTC,25.1439059564,-80.8581162547,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+87267442,Sat Oct 03 2020 09:54:00 GMT-0400 (EDT),2020-10-03,2020-10-03 13:54:00 UTC,25.0609818629,-80.8480930445,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+88019904,Wed Jul 21 2021 11:16:18 GMT-0400 (EDT),2021-07-21,2021-07-21 15:16:18 UTC,25.090749533,-80.4367276702,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+88209620,2018-08-03 2:56:41 PM MST,2018-08-03,2018-08-03 20:56:41 UTC,25.0403214339,-80.8282079077,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+88769473,Fri May 28 2021 08:50:00 GMT-0500 (CDT),2021-05-28,2021-05-28 08:50:00 UTC,25.3798835207,-80.8988987971,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+89092187,2021/07/23 3:31 PM UTC,2021-07-23,2021-07-23 15:31:00 UTC,25.1409245192,-80.8504979503,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+89401598,2020/12/26 12:37 PM EST,2020-12-26,2020-12-26 17:37:00 UTC,25.1589839391,-80.995743056,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+90587702,2016/01/16 7:57 PM EST,2016-01-16,2016-01-17 00:57:00 UTC,25.0614685559,-80.9330112459,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+90804459,Wed Aug 11 2021 12:48:21 GMT -0400 (EDT),2021-08-11,2021-08-11 16:48:21 UTC,25.0391685149,-80.9559748504,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+90930042,2015-02-01,2015-02-01,,25.0923031,-80.8118429995,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+92596157,Sat Jan 31 2015 16:27:20 GMT-0500 (EST),2015-01-31,2015-01-31 21:27:20 UTC,25.0013741087,-80.8279957652,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+92716131,Mon May 27 2019 13:35:20 GMT-0400 (EDT),2019-05-27,2019-05-27 17:35:20 UTC,25.1892055754,-80.8974606874,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+93204618,2017/11/16 11:08 AM MST,2017-11-16,2017-11-16 18:08:00 UTC,25.0823789952,-80.8405174945,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+93282810,2021-09-01 14:03:06,2021-09-01,2021-09-01 19:03:06 UTC,25.1616602117,-80.8639909942,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+93759378,2021-09-05 11:57:44,2021-09-05,2021-09-05 15:57:44 UTC,25.3434851602,-80.8165210113,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+94655849,Sun Sep 12 2021 13:22:12 GMT-0400 (EDT),2021-09-12,2021-09-12 17:22:12 UTC,25.014458242,-80.8898385224,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+94656011,Sun Sep 12 2021 13:27:00 GMT-0400 (EDT),2021-09-12,2021-09-12 17:27:00 UTC,25.0181572655,-80.8691033582,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+96308472,Sun Sep 26 2021 17:48:54 GMT-0400 (EDT),2021-09-26,2021-09-26 21:48:54 UTC,25.1382445,-80.92968,Lynx rufus,Bobcat,Mammalia,41976,Carnivora,Lynx
+98354523,Sun Sep 26 2021 17:05:07 GMT-0400 (EDT),2021-09-26,2021-09-26 21:05:07 UTC,25.0320850891,-80.9788069422,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+98354579,Sun Sep 26 2021 17:21:31 GMT-0400 (EDT),2021-09-26,2021-09-26 21:21:31 UTC,25.0061268911,-80.9056734086,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+99156665,2020/12/23 3:55 PM UTC,2020-12-23,2020-12-23 15:55:00 UTC,25.814439276,-81.4604988299,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+99452167,2021/10/25 10:42 AM UTC,2021-10-25,2021-10-25 10:42:00 UTC,25.0674537103,-80.9284518783,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+99469093,2017/02/14 2:18 PM CET,2017-02-14,2017-02-14 13:18:00 UTC,25.1935621579,-80.9222765238,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+99469094,2017/02/14 2:25 PM CET,2017-02-14,2017-02-14 13:25:00 UTC,25.0816096057,-80.8337694519,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+99901529,2016/03/29 10:57 AM UTC,2016-03-29,2016-03-29 10:57:00 UTC,25.1747855621,-80.8314477181,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+100632682,Mon Nov 08 2021 12:48:38 GMT-0500 (EST),2021-11-08,2021-11-08 17:48:38 UTC,25.816155,-81.4541083333,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+100812460,2021/06/04 12:09 PM -0500,2021-06-04,2021-06-04 17:09:00 UTC,25.1396713414,-80.8715171373,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+100972748,2021-06-04,2021-06-04,,25.3632664528,-80.4487617643,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+101890852,2021/11/25 5:31 AM AEDT,2021-11-25,2021-11-24 18:31:00 UTC,25.3444335377,-80.9355127364,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+102051077,2021/11/09 2:29 PM PST,2021-11-09,2021-11-09 22:29:00 UTC,25.8147189708,-81.3745434949,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+102339883,2018/07/07 10:22 AM UTC,2018-07-07,2018-07-07 10:22:00 UTC,25.4152115458,-80.6322310005,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+102341782,2019/04/17 12:31 PM UTC,2019-04-17,2019-04-17 12:31:00 UTC,25.0710038776,-80.8972365777,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+102526926,2021-12-04 07:17:13,2021-12-04,2021-12-04 12:17:13 UTC,25.1208763658,-80.825258769,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+102566023,2021/11/24 11:39 AM AKST,2021-11-24,2021-11-24 20:39:00 UTC,25.0259140432,-80.9332996545,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+102710257,2021-12-07 21:02:28,2021-12-07,2021-12-08 02:02:28 UTC,25.0236939483,-80.8687038607,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+102964023,2021/12/09 8:18 PM EST,2021-12-09,2021-12-10 01:18:00 UTC,25.6470923289,-81.2721306381,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+102965796,Sat Dec 11 2021 11:15:19 GMT-0500 (EST),2021-12-11,2021-12-11 16:15:19 UTC,25.1506124189,-80.8775650829,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+102972769,2021-11-26 11:16:07,2021-11-26,2021-11-26 16:16:07 UTC,25.0306024325,-80.9986650464,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+103174755,Thu Dec 16 2021 13:00:29 GMT-0500 (EST),2021-12-16,2021-12-16 18:00:29 UTC,25.0188413808,-80.8955683856,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+103628688,2021-12-24 11:02:26,2021-12-24,2021-12-24 16:02:26 UTC,25.2203568163,-80.93611623,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+103712048,2021-12-26 12:54:29,2021-12-26,2021-12-26 17:54:29 UTC,25.3708409722,-80.6870289722,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+103712346,2021-12-26 13:21:29,2021-12-26,2021-12-26 18:21:29 UTC,25.1237201463,-80.8271131493,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+103721400,Tue Dec 21 2021 12:42:03 GMT-0500 (EST),2021-12-21,2021-12-21 17:42:03 UTC,25.1324907408,-80.8998014798,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+103855350,2021-12-28 13:16:23,2021-12-28,2021-12-28 18:16:23 UTC,25.1315050102,-80.841645494,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+104113311,Fri Dec 31 2021 19:40:14 GMT-0500 (EST),2021-12-31,2022-01-01 00:40:14 UTC,25.25903,-80.79837,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+104155850,2021/12/21 11:21 AM CST,2021-12-21,2021-12-21 17:21:00 UTC,25.1703180857,-80.847425008,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+104207456,2022-01-01 21:13:16,2022-01-01,2022-01-01 21:13:16 UTC,25.1474200398,-80.9238794446,Lynx rufus,Bobcat,Mammalia,41976,Carnivora,Lynx
+104208554,Sat Dec 25 2021 15:01:50 GMT-0500 (EST),2021-12-25,2021-12-25 20:01:50 UTC,25.1607346542,-80.8644256073,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+104246001,2015/12/29 10:25 AM CST,2015-12-29,2015-12-29 16:25:00 UTC,25.1698154184,-80.9605281123,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+104421515,Mon Jan 03 2022 14:12:59 GMT-0500 (EST),2022-01-03,2022-01-03 19:12:59 UTC,25.1380369409,-80.8455858795,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+104683334,2022/01/08 4:18 PM EST,2022-01-08,2022-01-08 21:18:00 UTC,25.1183632398,-80.9269971407,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+104785977,2022/01/11 10:38 AM EST,2022-01-11,2022-01-11 15:38:00 UTC,25.1103868215,-80.9450927679,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+104787575,2022/01/11 10:37 AM UTC,2022-01-11,2022-01-11 15:37:00 UTC,25.090018587,-80.8043590971,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+104877954,2011/03/14 3:32 PM -0300,2011-03-14,2011-03-14 18:32:00 UTC,25.5191754646,-81.0713135219,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+104879917,2011/03/15 1:39 PM -0300,2011-03-15,2011-03-15 16:39:00 UTC,25.5505739105,-80.8368429506,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+104882089,2022/01/13 10:26 AM EST,2022-01-13,2022-01-13 15:26:00 UTC,25.3936383333,-80.6599683333,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+105133306,Sun Jan 16 2022 13:38:45 GMT-0500 (EST),2022-01-16,2022-01-16 18:38:45 UTC,25.0491559383,-80.9973132182,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+105323896,Sun Jan 16 2022 14:26:07 GMT-0500 (EST),2022-01-16,2022-01-16 19:26:07 UTC,25.0807046138,-80.8213662115,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+105539964,2022/01/23 1:51 PM EST,2022-01-23,2022-01-23 18:51:00 UTC,25.1976422751,-80.8845113801,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+105574032,2022/01/16 11:15 AM MST,2022-01-16,2022-01-16 18:15:00 UTC,25.1922807264,-80.857860511,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+105582291,2022-01-25 09:15:00,2022-01-25,2022-01-25 14:15:00 UTC,25.393322,-80.6893649722,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+105651099,2019-12-28 11:59:59,2019-12-28,2019-12-28 16:59:59 UTC,25.1876941104,-80.94738084,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+105691056,Wed Jan 26 2022 13:25:06 GMT-0500 (EST),2022-01-26,2022-01-26 18:25:06 UTC,25.0157581509,-80.8296787519,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+105816531,2019/03/13 6:00 PM UTC,2019-03-13,2019-03-13 18:00:00 UTC,25.8261207114,-81.4366378394,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+105999084,2021/03/13 7:18 AM UTC,2021-03-13,2021-03-13 07:18:00 UTC,25.3976577005,-80.6594188207,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+106065080,2022-01-30 12:48:11,2022-01-30,2022-01-30 17:48:11 UTC,25.4962852296,-80.7735827531,Ursus americanus,American Black Bear,Mammalia,41638,Carnivora,Ursus
+106090466,Thu Feb 03 2022 16:56:01 GMT-0500 (EST),2022-02-03,2022-02-03 21:56:01 UTC,25.801149414,-81.4451820799,Tursiops truncatus truncatus,Common Bottlenose Dolphin,Mammalia,705323,Artiodactyla,Tursiops
+106380542,2022/01/19 2:19 PM EST,2022-01-19,2022-01-19 19:19:00 UTC,25.0973821445,-80.9336072769,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+106445791,2022/01/20 1:22 PM EST,2022-01-20,2022-01-20 18:22:00 UTC,25.1798350534,-80.8125228433,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+106531715,2022-02-10 16:49:48,2022-02-10,2022-02-10 21:49:48 UTC,25.1214413,-80.92720319,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+106639197,2022/02/12 11:34 AM EST,2022-02-12,2022-02-12 16:34:00 UTC,25.003289511,-80.9089226787,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+106710963,Sat Feb 12 2022 16:35:37 GMT -0500 (EST),2022-02-12,2022-02-12 21:35:37 UTC,25.1244564056,-80.9362869263,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+106974234,Fri Feb 18 2022 09:51:04 GMT -0500 (EST),2022-02-18,2022-02-18 14:51:04 UTC,25.166597972,-80.9632514709,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+106993178,Thu Feb 17 2022 11:33:03 GMT-0500 (EST),2022-02-17,2022-02-17 16:33:03 UTC,25.3146948648,-80.5718559887,Procyon lotor elucus,Florida Raccoon,Mammalia,936534,Carnivora,Procyon
+107001298,Fri Feb 18 2022 15:03:36 GMT-0500 (EST),2022-02-18,2022-02-18 20:03:36 UTC,25.0386657491,-80.9626984286,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+107084044,Wed Jan 26 2022 16:26:29 GMT-0600 (CST),2022-01-26,2022-01-27 02:26:29 UTC,25.0843614678,-80.9383461631,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+107180107,Mon Feb 21 2022 08:36:27 GMT-0500 (EST),2022-02-21,2022-02-21 13:36:27 UTC,25.3852083333,-80.622245,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+107180178,Mon Feb 21 2022 08:00:29 GMT-0500 (EST),2022-02-21,2022-02-21 13:00:29 UTC,25.3814616667,-80.6178283333,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+107180288,Fri Feb 18 2022 08:04:38 GMT-0500 (EST),2022-02-18,2022-02-18 13:04:38 UTC,25.3898166667,-80.6221866667,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+107213704,2022/02/21 2:50 PM EST,2022-02-21,2022-02-21 19:50:00 UTC,25.3816663611,-80.6412477778,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+107350125,Tue Apr 06 2021 12:21:00 GMT-0600 (MDT),2021-04-06,2021-04-06 18:21:00 UTC,25.0951326047,-80.945003045,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+107383886,Thu Feb 24 2022 14:02:35 GMT -0500 (EST),2022-02-24,2022-02-24 19:02:35 UTC,25.0673284519,-80.8435612008,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+107631981,Mon Feb 28 2022 08:06:18 GMT-0500 (EST),2022-02-28,2022-02-28 13:06:18 UTC,25.3901583333,-80.622125,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+107897127,Sat Jan 05 2019 11:34:47 GMT-0500 (EST),2019-01-05,2019-01-05 16:34:47 UTC,25.0220226408,-80.8071925277,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+108161340,Wed Aug 14 2019 14:08:00 GMT-0400 (EDT),2019-08-14,2019-08-14 18:08:00 UTC,25.0976927438,-80.9710502357,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+108696487,Tue Mar 08 2022 14:35:11 GMT-0500 (EST),2022-03-08,2022-03-08 19:35:11 UTC,25.0957591463,-80.8226004658,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+108699372,2022-03-14 14:51:53,2022-03-14,2022-03-14 18:51:53 UTC,25.0417452303,-80.8865827225,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+108905665,Fri Mar 26 2021 19:23:55 GMT-0400 (EDT),2021-03-26,2021-03-26 23:23:55 UTC,25.0174961192,-80.8023148182,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+109239178,2022/02/07 3:06 PM PST,2022-02-07,2022-02-07 23:06:00 UTC,25.0323491815,-80.8566927569,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+109508207,Tue Jan 11 2022 20:35:00 GMT-0500 (EST),2022-01-11,2022-01-12 01:35:00 UTC,25.3942644552,-80.6190300774,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+109671449,2022/03/26 8:35 PM CDT,2022-03-26,2022-03-27 01:35:00 UTC,25.1620317789,-80.9118401743,Lynx rufus,Bobcat,Mammalia,41976,Carnivora,Lynx
+109771604,2022/03/27 2:06 PM EDT,2022-03-27,2022-03-27 18:06:00 UTC,25.3708333333,-80.6241666667,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+109964897,2022/03/30 9:02 AM CEST,2022-03-30,2022-03-30 07:02:00 UTC,25.3719,-80.8161,Procyon lotor,Common Raccoon,Mammalia,41663,Carnivora,Procyon
+109975248,2022/03/30 12:03 PM EDT,2022-03-30,2022-03-30 16:03:00 UTC,25.760515935,-80.5614008037,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+110022652,Thu Mar 17 2022 20:09:00 GMT-0400 (EDT),2022-03-17,2022-03-18 00:09:00 UTC,25.1388166667,-80.9361283333,Lynx rufus,Bobcat,Mammalia,41976,Carnivora,Lynx
+110030371,2022/03/30 12:02 PM HST,2022-03-30,2022-03-30 22:02:00 UTC,25.1182322522,-80.8069214643,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+110035388,Thu Mar 31 2022 15:34:00 GMT-0400 (EDT),2022-03-31,2022-03-31 19:34:00 UTC,25.3934045925,-80.6199218867,Ursus americanus americanus,Eastern Black Bear,Mammalia,132830,Carnivora,Ursus
+110328204,2022-04-03 13:48:36,2022-04-03,2022-04-03 17:48:36 UTC,25.075793299,-80.4874944314,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+111311927,2022/04/10 1:30 PM EDT,2022-04-10,2022-04-10 17:30:00 UTC,25.0965900332,-80.8802723734,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+111343544,2022/03/18 8:29 AM EDT,2022-03-18,2022-03-18 12:29:00 UTC,25.0301523315,-80.8859086856,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+111464732,2022-04-14 18:00:52-04:00,2022-04-14,2022-04-14 22:00:52 UTC,25.8092754423,-81.3596765482,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+111590356,2022-04-15 12:13:16-04:00,2022-04-15,2022-04-15 16:13:16 UTC,25.7247341586,-81.3932155136,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+111703015,2022/04/16 4:21 PM EDT,2022-04-16,2022-04-16 20:21:00 UTC,25.8117437461,-81.3643419737,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+111817397,2022/04/16 1:36 PM EDT,2022-04-16,2022-04-16 17:36:00 UTC,25.1694318861,-80.8326437974,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+111984895,2022/04/14 3:56 PM MST,2022-04-14,2022-04-14 22:56:00 UTC,25.3970882554,-80.6577008535,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+112136742,2022/02/26 2:35 PM,2022-02-26,2022-02-26 19:35:00 UTC,25.1661200072,-80.9890237429,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+112201450,2022-04-20 10:48:00-04:00,2022-04-20,2022-04-20 14:48:00 UTC,25.0280300367,-80.9924871962,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+112264344,2022/04/16 10:42 AM,2022-04-16,2022-04-16 14:42:00 UTC,25.1849919297,-80.9908948961,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+112601788,2022/04/16 11:42 AM,2022-04-16,2022-04-16 15:42:00 UTC,25.1656885195,-80.9471438977,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+112601789,2022/04/16 11:44 AM,2022-04-16,2022-04-16 15:44:00 UTC,25.1840128186,-80.8965276148,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+112616396,2022/04/19 7:14 PM,2022-04-19,2022-04-19 23:14:00 UTC,25.1894232663,-80.8618493853,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+112652699,2022/04/16 4:58 PM,2022-04-16,2022-04-16 20:58:00 UTC,25.3975396307,-80.6580275054,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+112881722,2022/04/25 11:59 AM,2022-04-25,2022-04-25 15:59:00 UTC,25.0208601844,-80.812580681,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+113187238,2022-02-21 13:22:26-05:00,2022-02-21,2022-02-21 18:22:26 UTC,25.1966290163,-80.9427656199,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+114309019,2022-05-01 13:42:36-04:00,2022-05-01,2022-05-01 17:42:36 UTC,25.3906788208,-80.6154755715,Didelphis virginiana,Virginia Opossum,Mammalia,42652,Didelphimorphia,Didelphis
+114376734,2022/04/25 6:08 AM,2022-04-25,2022-04-25 10:08:00 UTC,25.3991655784,-80.6560420893,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+114376736,2022/04/24 7:13 AM,2022-04-24,2022-04-24 11:13:00 UTC,25.4009503981,-80.6551006084,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+114383001,2022/04/07 1:52 PM,2022-04-07,2022-04-07 17:52:00 UTC,25.0835380174,-80.987611533,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+114383010,2022/04/07 1:51 PM,2022-04-07,2022-04-07 17:51:00 UTC,25.0194514283,-80.9975143749,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+114561545,2021/04/09 5:53 AM,2021-04-09,2021-04-09 09:53:00 UTC,25.3953191,-80.5830722,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+114763358,2022-05-02 08:07:00-04:00,2022-05-02,2022-05-02 12:07:00 UTC,25.38897,-80.6307616667,Ursus americanus,American Black Bear,Mammalia,41638,Carnivora,Ursus
+115262178,2022/04/30 9:13 PM,2022-04-30,2022-05-01 01:13:00 UTC,25.3822749085,-80.6096962849,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+115503172,2022/04/30 9:01 AM,2022-04-30,2022-04-30 13:01:00 UTC,25.393036,-80.689369,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+115727445,2022/04/30 12:02 PM,2022-04-30,2022-04-30 16:02:00 UTC,25.395596,-80.69976,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+115742502,2022/04/30 3:08 PM,2022-04-30,2022-04-30 19:08:00 UTC,25.40881,-80.727058,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+115753144,2022/04/30 3:33 PM,2022-04-30,2022-04-30 19:33:00 UTC,25.4775970799,-80.6293246966,Odocoileus virginianus seminolus,Florida White-tailed Deer,Mammalia,334689,Artiodactyla,Odocoileus
+115798764,2022/04/30 7:20 PM,2022-04-30,2022-04-30 23:20:00 UTC,25.393692,-80.617584,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+116090335,2022/05/07 7:09 PM,2022-05-07,2022-05-07 23:09:00 UTC,25.3999546301,-80.6560359452,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+116188064,2022/04/30 11:37 PM,2022-04-30,2022-05-01 03:37:00 UTC,25.3821962575,-80.6096689936,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+116336447,2022-05-06 10:16:59-04:00,2022-05-06,2022-05-06 14:16:59 UTC,25.1444312417,-80.9472730636,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+116509537,2022/04/25 9:33 AM,2022-04-25,2022-04-25 13:33:00 UTC,25.7716322787,-81.3649952327,Tursiops truncatus truncatus,Common Bottlenose Dolphin,Mammalia,705323,Artiodactyla,Tursiops
+116806448,Sun Sep 26 2021 16:56:42 GMT-0400 (EDT),2021-09-26,2021-09-26 20:56:42 UTC,25.1728404313,-80.9107575943,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+117364388,2017/02/04,2017-02-04,,25.1438558894,-80.8910221799,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+117514910,2022/05/11 3:03 PM,2022-05-11,2022-05-11 19:03:00 UTC,25.0950252347,-80.8676613781,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+117668092,2022/05/11 5:07 PM,2022-05-11,2022-05-11 21:07:00 UTC,25.1805322999,-80.9930872567,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+118276201,2022/05/10 4:14 PM,2022-05-10,2022-05-10 20:14:00 UTC,25.1108308583,-80.8163316692,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+118462503,2022/05/21 3:06 AM,2022-05-21,2022-05-21 07:06:00 UTC,25.3905563157,-80.6393774713,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+118603970,2022-05-20 16:12:27-04:00,2022-05-20,2022-05-20 20:12:27 UTC,25.424295,-80.6792883333,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+119353764,2022-05-29 17:09:26-04:00,2022-05-29,2022-05-29 21:09:26 UTC,25.8334533333,-81.4439866667,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+119419739,2022/05/28 8:42 AM,2022-05-28,2022-05-28 12:42:00 UTC,25.4210347777,-80.7132764664,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+121014090,2022/06/09 9:34 AM,2022-06-09,2022-06-09 13:34:00 UTC,25.3524905171,-80.8209006885,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+122016222,2022-06-13 01:01:45-04:00,2022-06-13,2022-06-13 05:01:45 UTC,25.1420528333,-80.926055,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+122662775,2022-06-20 11:40:55-04:00,2022-06-20,2022-06-20 15:40:55 UTC,25.351216801,-81.0802677484,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+122902939,2022-06-20 16:43:05-04:00,2022-06-20,2022-06-20 20:43:05 UTC,25.1719362936,-80.8429117057,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+123216918,2022-06-24 09:00:38-04:00,2022-06-24,2022-06-24 13:00:38 UTC,25.4083253274,-80.8480870382,Sylvilagus palustris,Marsh Rabbit,Mammalia,43102,Lagomorpha,Sylvilagus
+124815225,2022-07-04 13:19:47-04:00,2022-07-04,2022-07-04 17:19:47 UTC,25.0932671868,-80.9299042002,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+124815526,2022-07-04 13:04:27-04:00,2022-07-04,2022-07-04 17:04:27 UTC,25.1124139735,-80.8914190433,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+125065281,2022-07-05 17:58:03-04:00,2022-07-05,2022-07-05 21:58:03 UTC,25.14096442,-80.924752517,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+126457192,2019/05/30 12:23,2019-05-30,2019-05-30 16:23:00 UTC,25.1310964995,-80.8180619942,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+126834423,2019/12/29 17:08,2019-12-29,2019-12-29 22:08:00 UTC,25.0936244758,-80.9814609891,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+127607063,2022-07-23 16:12:00,2022-07-23,2022-07-23 20:12:00 UTC,25.1146579644,-80.9628198209,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+127748030,2022-07-24 14:48:39-04:00,2022-07-24,2022-07-24 18:48:39 UTC,25.1661284459,-80.8693952636,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+128761478,2022/07/29 9:52 AM,2022-07-29,2022-07-29 13:52:00 UTC,25.2760374063,-80.8588830837,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+129148701,2014/10/29 11:29 AM,2014-10-29,2014-10-29 15:29:00 UTC,25.7898671427,-81.3701483918,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+129185487,2022-03-02 16:42:12-05:00,2022-03-02,2022-03-02 21:42:12 UTC,25.1652343207,-80.836916614,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+129216545,2022-08-02 12:10:51-04:00,2022-08-02,2022-08-02 16:10:51 UTC,25.0698334115,-80.9953896614,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+129354753,2022/04/23 4:15 PM,2022-04-23,2022-04-23 20:15:00 UTC,25.4091743133,-80.5742062154,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+129881221,2022/08/06 3:37 PM,2022-08-06,2022-08-06 19:37:00 UTC,25.3985263443,-80.7034028215,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+130624823,2022/06/19 2:15 PM,2022-06-19,2022-06-19 18:15:00 UTC,25.0348565955,-80.9603193531,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+130624824,2022/06/19 2:20 PM,2022-06-19,2022-06-19 18:20:00 UTC,25.0631245313,-80.8043975047,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+131500435,2022-08-19 15:08:47,2022-08-19,2022-08-19 19:08:47 UTC,25.0714527988,-80.8838017938,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+132050124,2022-08-23 15:45:08,2022-08-23,2022-08-23 19:45:08 UTC,25.3999535,-80.65925383,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+132072850,2018/01/21 11:56 AM,2018-01-21,2018-01-21 16:56:00 UTC,25.4285933633,-80.6462175325,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+132356484,2022/08/24 5:17 PM,2022-08-24,2022-08-24 21:17:00 UTC,25.393234,-80.689362,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+132356530,2022/08/24 5:33 PM,2022-08-24,2022-08-24 21:33:00 UTC,25.396538,-80.6952210001,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+133036827,2022/08/24 9:04 PM,2022-08-24,2022-08-25 01:04:00 UTC,25.389241541,-80.6258121974,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+133036829,2022/08/24 9:18 PM,2022-08-24,2022-08-25 01:18:00 UTC,25.3892443601,-80.6258085094,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+133617619,2022/09/01 4:34 PM,2022-09-01,2022-09-01 20:34:00 UTC,25.0011536477,-80.8316033776,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+133674518,1985-08-04,1985-08-04,,25.4104473921,-80.8749183305,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+134692449,2020-01-12 10:42:48-05:00,2020-01-12,2020-01-12 15:42:48 UTC,25.0198862606,-80.9079906751,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+135293518,2021/04/06 1:16 PM,2021-04-06,2021-04-06 17:16:00 UTC,25.2024207947,-80.8338158928,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+135367950,2022-09-16 11:53:20,2022-09-16,2022-09-16 15:53:20 UTC,25.1929742242,-80.8853286917,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+135948287,2022-08-21 17:49:04,2022-08-21,2022-08-21 21:49:04 UTC,25.1390095229,-80.933518298,Canis latrans,Coyote,Mammalia,42051,Carnivora,Canis
+136299356,2022-09-24 08:30:39-04:00,2022-09-24,2022-09-24 12:30:39 UTC,25.3824583333,-80.6100616667,Sciurus carolinensis,Eastern Gray Squirrel,Mammalia,46017,Rodentia,Sciurus
+136432310,2021-10-16 16:25:41-04:00,2021-10-16,2021-10-16 20:25:41 UTC,25.824505,-81.4855716667,Procyon lotor elucus,Florida Raccoon,Mammalia,936534,Carnivora,Procyon
+137101343,2022/09/24 9:20PM,2022-09-24,2022-09-25 01:20:00 UTC,25.3822989422,-80.609870159,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+137102321,2022/06/28 9:44 PM,2022-06-28,2022-06-29 01:44:00 UTC,25.7604595756,-80.4984367218,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+137102322,2022/06/29 12:22 AM,2022-06-29,2022-06-29 04:22:00 UTC,25.7604617125,-80.4984331455,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+137106738,2022/08/07 11:24 PM,2022-08-07,2022-08-08 03:24:00 UTC,25.7527030998,-80.7664352872,Tadarida brasiliensis,Mexican Free-tailed Bat,Mammalia,41301,Chiroptera,Tadarida
+138108019,2022-10-04 11:05:31-05:00,2022-10-04,2022-10-04 16:05:31 UTC,24.948201232,-80.6674507091,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+138445464,2016/07/24 11:23,2016-07-24,2016-07-24 15:23:00 UTC,25.12189564,-80.94125748,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+138484244,2021/06/30 1:49 PM,2021-06-30,2021-06-30 17:49:00 UTC,25.2429685571,-80.8756775426,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+138499616,2021-12-27 15:58:36-05:00,2021-12-27,2021-12-27 20:58:36 UTC,25.1175786881,-80.9880124893,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+138499723,2021-12-30 09:49:05-05:00,2021-12-30,2021-12-30 14:49:05 UTC,25.1822012367,-80.9324813394,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+138892184,2018-12-29 14:57:53-05:00,2018-12-29,2018-12-29 19:57:53 UTC,25.1670826151,-80.8472917526,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+138892354,2018-12-29 20:44:36-05:00,2018-12-29,2018-12-30 01:44:36 UTC,25.305345,-80.7982116667,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+139187274,2022-10-16 09:19:27-04:00,2022-10-16,2022-10-16 13:19:27 UTC,25.4035116667,-80.6578,Urocyon cinereoargenteus,Gray Fox,Mammalia,42076,Carnivora,Urocyon
+139483100,2022-10-20 14:15:00-04:00,2022-10-20,2022-10-20 18:15:00 UTC,25.7857396249,-81.4141035602,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+139512998,2021-03-10 18:47:26-05:00,2021-03-10,2021-03-10 23:47:26 UTC,25.3986601038,-80.6593692921,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+139593800,2022/06/19 10:33 AM,2022-06-19,2022-06-19 14:33:00 UTC,25.0731345969,-80.9392037365,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+139841419,2021/06/20 10:11 AM,2021-06-20,2021-06-20 14:11:00 UTC,25.0323927991,-80.8047369501,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+139906897,2021-03-13 07:13:07-05:00,2021-03-13,2021-03-13 12:13:07 UTC,25.3976204457,-80.6597666353,Sigmodon hispidus,Hispid Cotton Rat,Mammalia,44902,Rodentia,Sigmodon
+140021223,2017/02/12 10:43 AM,2017-02-12,2017-02-12 15:43:00 UTC,25.1552493585,-80.8526287002,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+140341813,2021/03/21 10:56 PM,2021-03-21,2021-03-22 02:56:00 UTC,25.3976472222,-80.6597888889,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+141082975,2018/04/27 12:59 PM,2018-04-27,2018-04-27 16:59:00 UTC,25.063513169,-80.831264811,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+141377653,2022-11-05 16:08:27-04:00,2022-11-05,2022-11-05 20:08:27 UTC,25.1147002518,-80.888898602,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+141823056,2022-11-12 12:39:34-05:00,2022-11-12,2022-11-12 17:39:34 UTC,25.11664723,-80.8124741044,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+142082733,2022-11-09 15:42:46-05:00,2022-11-09,2022-11-09 20:42:46 UTC,25.1299854721,-80.9620607669,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+142137674,2022-11-15 07:26:36-05:00,2022-11-15,2022-11-15 12:26:36 UTC,25.4930633333,-80.5739966667,Odocoileus virginianus,White-tailed Deer,Mammalia,42223,Artiodactyla,Odocoileus
+142267957,2022-11-13 11:50:26-05:00,2022-11-13,2022-11-13 16:50:26 UTC,25.1259285923,-80.959229763,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+142395512,2021/03/07 4:58 PM,2021-03-07,2021-03-07 21:58:00 UTC,25.0991805284,-80.9099284352,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+142399937,2022-11-19 08:12:52-05:00,2022-11-19,2022-11-19 13:12:52 UTC,25.156969375,-80.8519862883,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
+142416999,2022/08/20 2:38 PM,2022-08-20,2022-08-20 18:38:00 UTC,25.0541433085,-80.8585450451,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+142560403,2022-11-21 09:30:47-04:00,2022-11-21,2022-11-21 13:30:47 UTC,25.0204693263,-80.8464485838,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+142560456,2022-11-21 09:31:44-04:00,2022-11-21,2022-11-21 13:31:44 UTC,25.0596297913,-80.8562403735,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+142560530,2022-11-21 09:51:20-04:00,2022-11-21,2022-11-21 13:51:20 UTC,25.1191415461,-80.9239352792,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+142578484,2022/11/15 2:45 PM,2022-11-15,2022-11-15 19:45:00 UTC,25.0076883155,-80.901278634,Trichechus manatus,West Indian Manatee,Mammalia,46316,Sirenia,Trichechus
+142779849,2022/11/23 8:55 AM,2022-11-23,2022-11-23 13:55:00 UTC,25.1187127135,-81.0913979447,Tursiops truncatus,Common Bottlenose Dolphin,Mammalia,41482,Artiodactyla,Tursiops
+142821275,2022/11/21 9:04 AM,2022-11-21,2022-11-21 14:04:00 UTC,25.0885444595,-80.8828546572,Trichechus manatus latirostris,Florida Manatee,Mammalia,147881,Sirenia,Trichechus
