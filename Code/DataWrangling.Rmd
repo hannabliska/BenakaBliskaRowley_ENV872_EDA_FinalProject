@@ -247,7 +247,7 @@ C.trees.SRS4 <- FCE.tree.data %>%
   filter(Species.Tree=="C", SITE == "SRS4") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(C.trees.SRS4, aes(x=DATE,y=mean.DBH))+
+C.SRS4.plot <- ggplot(C.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
   labs(title="DBH for Conacarpus erectus in SRS4", y="Mean Diameter at Breast Height")
@@ -258,7 +258,7 @@ L.trees.SRS4 <- FCE.tree.data %>%
   filter(Species.Tree=="L", SITE == "SRS4") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(L.trees.SRS4, aes(x=DATE,y=mean.DBH))+
+L.SRS4plot <- ggplot(L.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
   labs(title="DBH for Laguncularia racemosa in SRS4", y="Mean Diameter at Breast Height")
@@ -268,7 +268,7 @@ R.trees.SRS4 <- FCE.tree.data %>%
   filter(Species.Tree=="R", SITE == "SRS4") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(R.trees.SRS4, aes(x=DATE,y=mean.DBH))+
+R.SRS4.plot <- ggplot(R.trees.SRS4, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)+
   labs(title="DBH for Rhizophora mangle in SRS4", y="Mean Diameter at Breast Height")
@@ -279,7 +279,7 @@ A.trees.SRS5 <- FCE.tree.data %>%
   filter(Species.Tree=="A", SITE == "SRS5") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(A.trees.SRS5, aes(x=DATE,y=mean.DBH))+
+A.SRS5.plot <- ggplot(A.trees.SRS5, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method=lm, se=F)
 
@@ -288,7 +288,7 @@ L.trees.SRS5 <- FCE.tree.data %>%
   filter(Species.Tree=="L", SITE == "SRS5") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(L.trees.SRS5, aes(x=DATE,y=mean.DBH))+
+L.SRS5.plot <- ggplot(L.trees.SRS5, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)
 
@@ -297,7 +297,7 @@ R.trees.SRS5 <- FCE.tree.data %>%
   filter(Species.Tree=="R", SITE == "SRS5") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(R.trees.SRS5, aes(x=DATE,y=mean.DBH))+
+R.SRS5.plot <- ggplot(R.trees.SRS5, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)
 
@@ -307,7 +307,7 @@ A.trees.SRS6 <- FCE.tree.data %>%
   filter(Species.Tree=="A", SITE == "SRS6") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(A.trees.SRS6, aes(x=DATE,y=mean.DBH))+
+A.SRS6plot <- ggplot(A.trees.SRS6, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)
 
@@ -316,7 +316,7 @@ L.trees.SRS6 <- FCE.tree.data %>%
   filter(Species.Tree=="L", SITE == "SRS6") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(L.trees.SRS6, aes(x=DATE,y=mean.DBH))+
+L.SRS6plot <- ggplot(L.trees.SRS6, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)
 
@@ -325,7 +325,7 @@ R.trees.SRS6 <- FCE.tree.data %>%
   filter(Species.Tree=="R", SITE=="SRS6") %>%
   group_by(DATE) %>%
   summarise(mean.DBH=mean(Tree_DBH))
-ggplot(R.trees.SRS6, aes(x=DATE,y=mean.DBH))+
+R.SRS6.plot <- ggplot(R.trees.SRS6, aes(x=DATE,y=mean.DBH))+
   geom_point()+
   geom_smooth(method = "lm", se=F)
 
