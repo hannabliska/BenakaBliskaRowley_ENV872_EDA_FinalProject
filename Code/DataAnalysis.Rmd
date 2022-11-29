@@ -82,3 +82,15 @@ phos.site.anova.groups
 
 ```
 
+```{r, plots of mangrove DBH over time by site}
+# SRS4
+plot_grid(R.SRS4.plot, C.SRS4.plot, L.SRS4plot,  ncol=1)
+
+#SRS5
+plot_grid(R.SRS5.plot, A.SRS5.plot, L.SRS5.plot, ncol=1)
+
+#SRS6
+plot_grid(R.SRS6.plot, A.SRS6plot, L.SRS6plot, ncol=1)
+
+```
+
