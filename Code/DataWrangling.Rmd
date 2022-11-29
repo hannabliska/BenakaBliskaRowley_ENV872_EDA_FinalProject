@@ -119,20 +119,24 @@ inat.all <- rbind(inat.amphibians, inat.birds, inat.fishnbugs, inat.mammals, ina
 
 inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
 
-
-
 ```
 
 ```{r, formatting data sets}
+#formatting date columns
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
 FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
 FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
-
 inat.animals$observed_on <- as.Date(inat.animals$observed_on, format("%Y-%m-%d"))
 
+#formatting numeric values
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
 FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
 FCE.tree.data$Tree_DBH <- as.numeric(FCE.tree.data$Tree_DBH)
+
+#wrangling site coordinates data frame to have matching sites
+FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) #convert to character.
+FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
+FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) #convert back to factor.
   
 ```
 
@@ -167,24 +171,24 @@ inat.animals.processed.pipe <- inat.animals.processed.pipe %>%
   group_by(YEAR, species) %>% 
   summarise(scientific_name=n())
 
-
-
-
 animal.plot <- ggplot(inat.animals.processed.pipe) +
   geom_line(aes(x = YEAR, y = scientific_name, color = species), show.legend = FALSE)+
   xlim(2010,2023)+
   ylim(0,100)
 
-
-
 print(animal.plot)
-
 
 ```
 
 
-```{r, adding site coordinates to the nutrients data set}
+```{r, changing site coordinates to spatial data frame}
 site.locations.sf <- st_as_sf(FCE.site.coordinates, coords=c('Longitude (Decimal Degrees)', 'Latitude (Decimal Degrees)'),crs=4326)
+
+mapview(site.locations.sf)
+
+```
+
+```{r, adding site coordinates to the nutrient data set}
 
 site.locations.nutrients.sf <-
   merge(x=site.locations.sf, 
@@ -192,7 +196,6 @@ site.locations.nutrients.sf <-
         by.x="SITE",
         by.y="SITE_NAME")
 
-mapview(site.locations.sf)
 ```
 
 
@@ -347,20 +350,11 @@ ggplot(L.trees.TSPh8, aes(x=DATE,y=mean.DBH))+
 
 ```{r, wrangling tree data for geospatial analysis}
 #FCE.tree.data <- FCE.tree.data$Species.Tree %>% recode(FCE.tree.data$Species.Tree, C="Conacarpus erectus", A="Avicennia germinans", L="Laguncularia racemosa", R="Rhizophora mangle")
-FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) #convert to character.
-FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
-FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) #convert back to factor.
 
-#make lat and long numeric
-FCE.site.coordinates$`Latitude (Decimal Degrees)`<-as.float(FCE.site.coordinates$`Latitude (Decimal Degrees)`)
-FCE.site.coordinates$`Longitude (Decimal Degrees)`<-as.float(FCE.site.coordinates$`Longitude (Decimal Degrees)`)
-
-FCE.site.coordinates.sf <- st_as_sf(FCE.site.coordinates, coords=c(""))
-
-FCE.tree.data <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+FCE.tree.data.sites <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
 
 #make sf dataframe from tree data (not showing over basemap correctly)
-tree.data.sf <- st_as_sf(FCE.tree.data, coords = c("Longitude (Decimal Degrees).y","Latitude (Decimal Degrees).y"), crs=4326) %>% 
+tree.data.sf <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>% 
   group_by(SITE, DATE) %>%
   summarize(
     meanDBH=mean(Tree_DBH)
