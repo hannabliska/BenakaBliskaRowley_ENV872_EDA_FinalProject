@@ -35,8 +35,7 @@ theme_set(my_theme)
 # Load your datasets
 FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
                                 stringsAsFactors = TRUE)
-FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv",
-                                 stringsAsFactors = TRUE)
+FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv")
 FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
                                stringsAsFactors = TRUE)
 FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
@@ -185,13 +184,15 @@ print(animal.plot)
 
 
 ```{r, adding site coordinates to the nutrients data set}
-site.locations.sf <- st_as_sf(FCE.site.coordinates, coords=c('Longitude (Decimal Degrees)', 'Latitude (Decimal Degrees)'),crs=32617)
+site.locations.sf <- st_as_sf(FCE.site.coordinates, coords=c('Longitude (Decimal Degrees)', 'Latitude (Decimal Degrees)'),crs=4326)
 
 site.locations.nutrients.sf <-
   merge(x=site.locations.sf, 
         y=FCE.site.nutrient.data,
         by.x="SITE",
         by.y="SITE_NAME")
+
+mapview(site.locations.sf)
 ```
 
 
@@ -349,9 +350,17 @@ ggplot(L.trees.TSPh8, aes(x=DATE,y=mean.DBH))+
 FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) #convert to character.
 FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
 FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) #convert back to factor.
+
+#make lat and long numeric
+FCE.site.coordinates$`Latitude (Decimal Degrees)`<-as.float(FCE.site.coordinates$`Latitude (Decimal Degrees)`)
+FCE.site.coordinates$`Longitude (Decimal Degrees)`<-as.float(FCE.site.coordinates$`Longitude (Decimal Degrees)`)
+
+FCE.site.coordinates.sf <- st_as_sf(FCE.site.coordinates, coords=c(""))
+
 FCE.tree.data <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+
 #make sf dataframe from tree data (not showing over basemap correctly)
-tree.data.sf <- st_as_sf(FCE.tree.data, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=32617) %>% 
+tree.data.sf <- st_as_sf(FCE.tree.data, coords = c("Longitude (Decimal Degrees).y","Latitude (Decimal Degrees).y"), crs=4326) %>% 
   group_by(SITE, DATE) %>%
   summarize(
     meanDBH=mean(Tree_DBH)
