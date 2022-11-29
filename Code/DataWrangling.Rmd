@@ -11,7 +11,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 # Set your working directory
-setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
+#setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
 getwd()
 
 # Load your packages
@@ -43,13 +43,27 @@ FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
                               stringsAsFactors = TRUE)
 FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
                           stringsAsFactors = TRUE)
+inat.birds <- read.csv("./Data/Raw/inaturalist_birds.csv",
+                       stringsAsFactors = TRUE)
+inat.reptiles <- read.csv("./Data/Raw/inaturalist_reptiles2.csv",
+                          stringsAsFactors = TRUE)
+inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
+                         stringsAsFactors = TRUE)  
+inat.fishnbugs <- read.csv("./Data/Raw/inaturalist_fish_arachninds_insects.csv", 
+                           stringsAsFactors = TRUE)  
+inat.amphibians <- read.csv("./Data/Raw/inaturalist_amphibians.csv",
+                            stringsAsFactors = TRUE)
+inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
+                        stringsAsFactors = TRUE)
+
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
 # Project spatial data to UTM 17N
 mangrove.utm <- st_transform(mangrove.sf,32617)
 park.utm <- st_transform(park.boundary,32617)
-```
 
+
+```
 
 # Data Wrangling
 ```{r, renaming the columns for the data sets}
@@ -80,12 +94,42 @@ colnames(FCE.tree.data) <- c(
   "Species.Tree", "Tree_DBH", "Tree_Height")
 FCE.tree.data=FCE.tree.data[-1,]
 
+#wrangling the inaturalist data sets to have the same columns
+
+inat.birds <- inat.birds %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.reptiles <- inat.reptiles %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.mammals <- inat.mammals %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.fishnbugs <- inat.fishnbugs %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.amphibians <- inat.amphibians %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.plants <- inat.plants %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+#combining the inaturalist data sets into one data frame
+
+inat.all <- rbind(inat.amphibians, inat.birds, inat.fishnbugs, inat.mammals, inat.plants, inat.reptiles)
+
+inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
+
+
+
 ```
 
 ```{r, formatting data sets}
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
 FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
 FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
+
+inat.animals$observed_on <- as.Date(inat.animals$observed_on, format("%Y-%m-%d"))
 
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
 FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
@@ -113,6 +157,32 @@ FCE.nitro.data <- FCE.nutrients.data %>%
 FCE.site.nutrient.data <- FCE.nutrients.data %>%
   select(SITE_NAME, DATE, TP, TN) 
 ```
+
+
+```{r, wrangling inaturalist data into counts by year}
+inat.animals.processed.pipe <- inat.animals %>% 
+  mutate(YEAR=year(observed_on))
+  
+inat.animals.processed.pipe <- inat.animals.processed.pipe %>% 
+  mutate(species = scientific_name) %>%
+  group_by(YEAR, species) %>% 
+  summarise(scientific_name=n())
+
+
+
+
+animal.plot <- ggplot(inat.animals.processed.pipe) +
+  geom_line(aes(x = YEAR, y = scientific_name, color = species), show.legend = FALSE)+
+  xlim(2010,2023)+
+  ylim(0,100)
+
+
+
+print(animal.plot)
+
+
+```
+
 
 ```{r, adding site coordinates to the nutrients data set}
 site.locations.sf <- st_as_sf(FCE.site.coordinates, coords=c('Longitude (Decimal Degrees)', 'Latitude (Decimal Degrees)'),crs=32617)
