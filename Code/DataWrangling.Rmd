@@ -140,7 +140,7 @@ FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) #convert back 
   
 ```
 
-```{r, wrangling nutrients data set for mean phosphorus and nitrogen}
+```{r, wrangling nutrients data set for mean phosphorus and nitrogen for each year}
 FCE.phos.data <- FCE.nutrients.data %>%
   select(SITE_NAME, DATE, TP) %>%
   mutate(YEAR=year(DATE)) %>%
@@ -155,6 +155,41 @@ FCE.nitro.data <- FCE.nutrients.data %>%
   summarise(MEAN_TN=mean(TN))
   
 ```
+
+```{r, wranging nutrients data for mean phosphorus and nitrogen for each month}
+#phosphorus
+FCE.phos.monthly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP) %>%
+  mutate(month = month(DATE)) %>% #adding month column
+  mutate(year = year(DATE)) %>% #adding a year column
+  group_by(year, month) %>%
+  summarise(MEAN_TP=mean(TP))
+
+FCE.phos.monthly.data <- FCE.phos.monthly.data %>%
+  mutate("Date"=my(paste0(month,"-",year)))
+
+Months <- as.data.frame(seq(
+  as.Date("2001-05-01"), as.Date("2021-12-01"),"months"))
+
+colnames(Months) <- c("Date")
+
+FCE.phos.monthly.data <- left_join(Months, FCE.phos.monthly.data, by = c("Date"))
+  
+#nitrogen 
+FCE.nitro.monthly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TN) %>%
+  mutate(month = month(DATE)) %>% #adding month column
+  mutate(year = year(DATE)) %>% #adding a year column
+  group_by(year, month) %>%
+  summarise(MEAN_TN=mean(TN))
+
+FCE.nitro.monthly.data <- FCE.nitro.monthly.data %>%
+  mutate("Date"=my(paste0(month,"-",year)))
+
+FCE.nitro.monthly.data <- left_join(Months, FCE.nitro.monthly.data, by = c("Date"))
+  
+```
+
 
 ```{r, wrangling nutrients data set for site differences}
 FCE.site.nutrient.data <- FCE.nutrients.data %>%

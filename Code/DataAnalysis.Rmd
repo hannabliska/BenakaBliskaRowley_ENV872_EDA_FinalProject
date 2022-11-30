@@ -78,9 +78,87 @@ phos.site.anova.groups
 #results indicate that there are four groups of sites: a, b, c, d. There is only one site that is in group a and only one site in group b. 
 ```
 
-```{r, time series analysis for nutrients}
+```{r, time series analysis for phosphorus}
+FCE.phos.monthly.data$MEAN_TP <- 
+  na.approx(FCE.phos.monthly.data$MEAN_TP) #using`na.approx`
+#to fill in missing monthly data
+
+FCE.phos.monthly.ts <- ts(
+  FCE.phos.monthly.data$MEAN_TP, 
+  start=c(2001,5), end=c(2021,12),frequency=12) 
+#generating time series object
+#monthly measurements, using 12
+
+FCE.phos.monthly.ts.decomposed <- stl(
+  FCE.phos.monthly.ts, s.window = "periodic") 
+#decomposing daily time series
+plot(FCE.phos.monthly.ts.decomposed) #plotting components
+
+#running mann kendall
+FCE.phos.monthly.ts.trend <- MannKendall(FCE.phos.monthly.ts) 
+#using `MannKendall` for trend analysis
+summary(FCE.phos.monthly.ts.trend) #summary
 
 ```
+
+```{r, time series analysis for nitrogen}
+FCE.nitro.monthly.data$MEAN_TN <- 
+  na.approx(FCE.nitro.monthly.data$MEAN_TN) #using`na.approx`
+#to fill in missing monthly data
+
+FCE.nitro.monthly.ts <- ts(
+  FCE.nitro.monthly.data$MEAN_TN, 
+  start=c(2001,5), end=c(2021,12),frequency=12) 
+#generating time series object
+#monthly measurements, using 12
+
+FCE.nitro.monthly.ts.decomposed <- stl(
+  FCE.nitro.monthly.ts, s.window = "periodic") 
+#decomposing daily time series
+plot(FCE.nitro.monthly.ts.decomposed) #plotting components
+
+#running mann kendall
+FCE.nitro.monthly.ts.trend <- MannKendall(FCE.nitro.monthly.ts) 
+#using `MannKendall` for trend analysis
+summary(FCE.nitro.monthly.ts.trend) #summary
+```
+
+```{r, visualizations of time series results}
+
+plot.mean.monthly.phos <- ggplot(
+  FCE.phos.monthly.data, aes(
+    x=Date, y=MEAN_TP)) + #setting axes
+  geom_point() + #generating scatter plot
+  geom_line() + #generating line plot
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%d-%Y")) +
+  #using `scale_x_date` to generate a break every 6 months
+  #labels to show month-date-year
+  theme(axis.text.x=element_text(angle=60, hjust=1)) + 
+  #angle for the day-month-year labels
+  xlab(expression("Date")) + #setting x axis label
+  ylab(expression ("Mean Monthly Phosphorus Levels (mcmol/L)")) +
+#setting y axis label
+  geom_smooth(method=lm, se = FALSE, color="red") #adding linear trend
+print(plot.mean.monthly.phos) #printing plot
+
+plot.mean.monthly.nitro <- ggplot(
+  FCE.nitro.monthly.data, aes(
+    x=Date, y=MEAN_TN)) + #setting axes
+  geom_point() + #generating scatter plot
+  geom_line() + #generating line plot
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%d-%Y")) +
+  #using `scale_x_date` to generate a break every 6 months
+  #labels to show month-date-year
+  theme(axis.text.x=element_text(angle=60, hjust=1)) + 
+  #angle for the day-month-year labels
+  xlab(expression("Date")) + #setting x axis label
+  ylab(expression ("Mean Monthly Nitrogen Levels (mcmol/L)")) +
+#setting y axis label
+  geom_smooth(method=lm, se = FALSE, color="red") #adding linear trend
+print(plot.mean.monthly.nitro) #printing plot
+
+```
+
 
 ```{r, plots of mangrove DBH over time by site}
 # SRS4
