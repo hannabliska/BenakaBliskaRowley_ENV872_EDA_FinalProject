@@ -138,7 +138,9 @@ plot.mean.monthly.phos <- ggplot(
   xlab(expression("Date")) + #setting x axis label
   ylab(expression ("Mean Monthly Phosphorus Levels (mcmol/L)")) +
 #setting y axis label
-  geom_smooth(method=lm, se = FALSE, color="red") #adding linear trend
+  geom_smooth(method=lm, se = FALSE, color="red") + #adding linear trend
+  ggtitle(expression("Mean Monthly Phosphorus Levels"),
+          subtitle="Florida Coastal Everglades")
 print(plot.mean.monthly.phos) #printing plot
 
 plot.mean.monthly.nitro <- ggplot(
@@ -154,7 +156,9 @@ plot.mean.monthly.nitro <- ggplot(
   xlab(expression("Date")) + #setting x axis label
   ylab(expression ("Mean Monthly Nitrogen Levels (mcmol/L)")) +
 #setting y axis label
-  geom_smooth(method=lm, se = FALSE, color="red") #adding linear trend
+  geom_smooth(method=lm, se = FALSE, color="red") + #adding linear trend
+  ggtitle(expression("Mean Monthly Nitrogen Levels"),
+          subtitle="Florida Coastal Everglades")
 print(plot.mean.monthly.nitro) #printing plot
 
 ```
