@@ -50,8 +50,6 @@ Data were accessed on 2022-11-15.
 
 ## Folder structure, file formats, and naming conventions 
 
-<describe the folders contained in the repository, including what type of files they contain>
-
 ### Folder Structure
 1. Code: Contains the RMarkdown files for our data exploration, analysis, and wranging code. All of the final code was then merged into our final project code, saved as `Benaka_Bliska_Rowley_Final_Project.rmd`
 2. Data: Contains the raw, processed, and spatial data for our final project.
@@ -94,13 +92,29 @@ Files are named according to the following naming convention: `databaseinfo_data
 | NO3         | Nitrate                     | micro moles per liter |
 
 3. FCE_LTER_site_coordinates.csv
+| Column Name                  | Column Description | Format           |
+| ---------------------------- | ------------------ | ---------------- |
+| SITE                         | Name of LTER site  | text             |
+| LATITUDE (Decimal degrees)   | Latitude of site   | Decimal degrees  |
+| LONGITUDE (Decimal degrees)  | Longitude of site  | Decimal degrees  |
+| LATITUDE (Degrees, minutes)  | Latitude of site   | Degrees, minutes |
+| LONGITUDE (Degrees, minutes) | Longitude of site  | Degrees, minutes |
+| NORTHING (UTM)               | Northing of site   | UTM              |
+| EASTING (UTM)                | Easting of site    | UTM              |
+
 4. **others**
 
 <For each data file in the repository, describe the data contained in each column. Include the column name, a description of the information, the class of data, and any units associated with the data. Create a list or table for each data file.> 
 
 ## Scripts and code
 
-<list any software scripts/code contained in the repository and a description of their purpose.>
+Code is saved in the code folder of the repository. The following files are detailed:
+
+| Code Name           | Code Contents        | File Format |
+| ------------------- | -------------------- | ----------- |
+| DataAnalysis.Rmd    | Data analysis        | Rmd         |
+| DataExploration.Rmd | Data exploration     | Rmd         |
+| DataWrangling.Rmd   | Data wrangling       | Rmd         |
 
 ## Quality assurance/quality control
 
