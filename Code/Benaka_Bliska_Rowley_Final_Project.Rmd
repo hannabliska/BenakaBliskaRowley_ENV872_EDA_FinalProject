@@ -72,6 +72,8 @@ park.utm <- st_transform(park.boundary,32617)
 \newpage
 
 # Exploratory Analysis 
+
+## Mangrove Data
 ```{r}
 # Crop mangrove shapefile to Everglades National Park boundary.
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
@@ -79,7 +81,9 @@ mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4) + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0)
 ```
 
+## Nutrient Data
 
+## Species Data
 
 \newpage
 
