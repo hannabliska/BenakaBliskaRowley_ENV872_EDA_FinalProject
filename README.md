@@ -55,9 +55,13 @@ Data were accessed on 2022-11-15.
 ### Folder Structure
 1. Code: Contains the RMarkdown files for our data exploration, analysis, and wranging code. All of the final code was then merged into our final project code, saved as `Benaka_Bliska_Rowley_Final_Project.rmd`
 2. Data: Contains the raw, processed, and spatial data for our final project.
-  *Raw: holds raw data files (.csv format)
-  *Processed: holds processed data files (.csv format)
-  *Spatial: holds spatial data files (.shp format)
+
+| Folder Name | Folder Contents      | File Format |
+| ----------- | -------------------- | ----------- |
+| Raw         | Raw data files       | .csv        |
+| Processed   | Processed data files | .csv        |
+| Spatial     | Spatial data files   | .shp        |
+
 3. Output: Contains final visualizations from analysis (.jpg format)
 
 ### Naming Conventions and File Formats
@@ -73,19 +77,21 @@ Files are named according to the following naming convention: `databaseinfo_data
 1. FCE_LTER_Mangroves.csv
 
 2. FCE_LTER_Nutrients.csv
-*SITE_NAME: Name of LTER site, text
-*DATE: Date of collection, date in YYYY-MM-DD format
-*TIME: Time of collection, time in hh:mm format
-*Salinity: Composite salinity, PSU
-*TN: Composite total nitrogen, micro moles per liter
-*TP: Composite total phosphorus, micro moles per liter
-*TOC: Total organic carbon, micro moles per liter
-*NH4: Ammonium, micro moles per liter 
-*NandN: Nitrate and nitrite, micro moles per liter
-*NO2: Nitrite, micro moles per liter
-*SRP: Soluble reactive phosphorus, micro moles per liter
-*DOC: Dissolved organic carbon, micro moles per liter
-*NO3: Nitrate, micro moles per liter
+| Column Name | Column Description          | Format                |
+| ----------- | --------------------------- | --------------------- |
+| SITE_NAME   | Name of LTER site           | text                  |
+| DATE        | Date of collection          | YYYY-MM-DD            |
+| TIME        | Time of collection          | hh:mm                 |
+| Salinity    | Composite salinity          | PSU                   |
+| TN          | Composite total nitrogen    | micro moles per liter |
+| TP          | Composite total phosphorus  | micro moles per liter |
+| TOC         | Total organic carbon        | micro moles per liter |
+| NH4         | Ammonium                    | micro moles per liter |
+| NandN       | Nitrate and nitrite         | micro moles per liter |
+| NO2         | Nitrite                     | micro moles per liter |
+| SRP         | Soluble reactive phosphorus | micro moles per liter |
+| DOC         | Dissolved organic carbon    | micro moles per liter |
+| NO3         | Nitrate                     | micro moles per liter |
 
 3. FCE_LTER_site_coordinates.csv
 4. **others**
