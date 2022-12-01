@@ -33,14 +33,10 @@ my_theme <- theme_classic(base_size=12) + theme(
 theme_set(my_theme)
 
 # Load your datasets
-FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
-                                stringsAsFactors = TRUE)
 FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv")
-FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
+FCE.nutrients.data <- read.csv("./Data/Raw/FCE_LTER_Nutrients.csv",
                                stringsAsFactors = TRUE)
-FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
-                              stringsAsFactors = TRUE)
-FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
+FCE.tree.data <- read.csv("./Data/Raw/FCE_LTER_Mangroves.csv",
                           stringsAsFactors = TRUE)
 ```
 
