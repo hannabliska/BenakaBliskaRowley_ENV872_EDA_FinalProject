@@ -57,29 +57,28 @@ inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
 
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
+
 # Project spatial data to UTM 17N
 mangrove.utm <- st_transform(mangrove.sf,32617)
 park.utm <- st_transform(park.boundary,32617)
-
 
 ```
 
 # Data Wrangling
 ```{r, renaming the columns for the data sets}
+#renaming column names and removing repeated header row
 colnames(FCE.mean.sea.levels) <- c(
-  "Station_ID", "Year", "Month", "MSL") #renaming the column names
+  "Station_ID", "Year", "Month", "MSL")
 FCE.mean.sea.levels=FCE.mean.sea.levels[-1,]
-#removing the repeated header row
 
 colnames(FCE.nutrients.data) <- c(
   "SITE_NAME", "DATE", "TIME", "Salinity", "TN", "TP",
-  "TOC", "NH4", "NandN", "NO2", "SRP", "DOC", "NO3") #renaming the column names
+  "TOC", "NH4", "NandN", "NO2", "SRP", "DOC", "NO3")
 FCE.nutrients.data=FCE.nutrients.data[-1,]
-#removing the repeated header row
 
 colnames(FCE.sawgrass.data) <- c(
   "SITE_NAME", "DATE", "Sawgrass_AG_Biomass", "Sawgrass_AG_Biomass_STD",
-  "Sawgrass_Culm_Density", "Sawgrass_Culm_Density_STD")
+  "Sawgrass_Culm_Density", "Sawgrass_Culm_Density_STD") 
 FCE.sawgrass.data=FCE.sawgrass.data[-1,]
 
 colnames(FCE.site.coordinates) <- c(
@@ -94,7 +93,6 @@ colnames(FCE.tree.data) <- c(
 FCE.tree.data=FCE.tree.data[-1,]
 
 #wrangling the inaturalist data sets to have the same columns
-
 inat.birds <- inat.birds %>% 
   select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
 
@@ -114,7 +112,6 @@ inat.plants <- inat.plants %>%
   select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
 
 #combining the inaturalist data sets into one data frame
-
 inat.all <- rbind(inat.amphibians, inat.birds, inat.fishnbugs, inat.mammals, inat.plants, inat.reptiles)
 
 inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
@@ -134,68 +131,96 @@ FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
 FCE.tree.data$Tree_DBH <- as.numeric(FCE.tree.data$Tree_DBH)
 
 #wrangling site coordinates data frame to have matching sites
-FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) #convert to character.
-FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) #remove spaces from SITE codes to join to other datasets.
-FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) #convert back to factor.
+FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) 
+#convert to character
+FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) 
+#remove spaces from SITE codes to join to other datasets
+FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) 
+#convert back to factor
   
 ```
 
-```{r, wrangling nutrients data set for mean phosphorus and nitrogen for each year}
-FCE.phos.data <- FCE.nutrients.data %>%
-  select(SITE_NAME, DATE, TP) %>%
-  mutate(YEAR=year(DATE)) %>%
-  group_by(YEAR) %>%
-  summarise(MEAN_TP=mean(TP))
+```{r, wrangling nutrients data set for mean P and N for each year}
+FCE.phos.yearly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP) %>% #selecting variables of interest
+  mutate(YEAR=year(DATE)) %>% #creating year column
+  group_by(YEAR) %>% #grouping by year
+  summarise(MEAN_TP=mean(TP)) #averaging the TP for each year
 
+#saving as processed data frame
+write.csv(FCE.phos.yearly.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.yearly.data.csv")
   
-FCE.nitro.data <- FCE.nutrients.data %>%
-  select(SITE_NAME, DATE, TN) %>%
-  mutate(YEAR=year(DATE)) %>%
-  group_by(YEAR) %>%
-  summarise(MEAN_TN=mean(TN))
+FCE.nitro.yearly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TN) %>% #selecting variables of interest
+  mutate(YEAR=year(DATE)) %>% #creating year column
+  group_by(YEAR) %>% #grouping by year
+  summarise(MEAN_TN=mean(TN))  #averaging the TN for each year
+
+#saving as a processed data frame
+write.csv(FCE.nitro.yearly.data, row.names = FALSE, file= "./Data/Processed/FCE.nitro.yearly.data.csv")
   
 ```
 
-```{r, wranging nutrients data for mean phosphorus and nitrogen for each month}
-#phosphorus
+```{r, wranging nutrients data for mean P and N for each month}
+#monthly phosphorus averages
 FCE.phos.monthly.data <- FCE.nutrients.data %>%
   select(SITE_NAME, DATE, TP) %>%
   mutate(month = month(DATE)) %>% #adding month column
   mutate(year = year(DATE)) %>% #adding a year column
-  group_by(year, month) %>%
-  summarise(MEAN_TP=mean(TP))
+  group_by(year, month) %>% #grouping by year and month
+  summarise(MEAN_TP=mean(TP)) #averaging the TP for each month of the year
 
 FCE.phos.monthly.data <- FCE.phos.monthly.data %>%
-  mutate("Date"=my(paste0(month,"-",year)))
+  mutate("Date"=my(paste0(month,"-",year))) #creating a new date column
+  #observations are for the first of the month
 
 Months <- as.data.frame(seq(
-  as.Date("2001-05-01"), as.Date("2021-12-01"),"months"))
+  as.Date("2001-05-01"), as.Date("2021-12-01"),"months")) 
+#creating a data frame of monthly dates from May 2001 to December 2021
+#will ultimately allow us to identify months that do not have observations
+#and then interpolate those at a later point
 
-colnames(Months) <- c("Date")
+colnames(Months) <- c("Date") #renaming column name
 
-FCE.phos.monthly.data <- left_join(Months, FCE.phos.monthly.data, by = c("Date"))
+FCE.phos.monthly.data <- left_join(
+  Months, FCE.phos.monthly.data, by = c("Date"))
+#joining data frames so that there is an observation for 
+#each month of the year from May 2001 to December 2021
+
+#saving as a processed data frame
+write.csv(FCE.phos.monthly.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
   
 #nitrogen 
 FCE.nitro.monthly.data <- FCE.nutrients.data %>%
   select(SITE_NAME, DATE, TN) %>%
   mutate(month = month(DATE)) %>% #adding month column
   mutate(year = year(DATE)) %>% #adding a year column
-  group_by(year, month) %>%
-  summarise(MEAN_TN=mean(TN))
+  group_by(year, month) %>% #grouping by year and month
+  summarise(MEAN_TN=mean(TN)) #averaging the TN for each month of the year
 
 FCE.nitro.monthly.data <- FCE.nitro.monthly.data %>%
-  mutate("Date"=my(paste0(month,"-",year)))
+  mutate("Date"=my(paste0(month,"-",year))) #creating a new date column
+  #observations are for the first of the month
 
-FCE.nitro.monthly.data <- left_join(Months, FCE.nitro.monthly.data, by = c("Date"))
+FCE.nitro.monthly.data <- left_join(
+  Months, FCE.nitro.monthly.data, by = c("Date"))
+#joining data frames so that there is an observation for 
+#each month of the year from May 2001 to December 2021
+
+#saving as a processed data frame
+write.csv(FCE.nitro.monthly.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
   
 ```
 
-
 ```{r, wrangling nutrients data set for site differences}
 FCE.site.nutrient.data <- FCE.nutrients.data %>%
-  select(SITE_NAME, DATE, TP, TN) 
-```
+  select(SITE_NAME, DATE, TP, TN) #selecting variables 
+#of interest for site comparisons
 
+#saving as a processed data frame
+write.csv(FCE.site.nutrient.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
+
+```
 
 ```{r, wrangling inaturalist data into counts by year}
 inat.animals.processed.pipe <- inat.animals %>% 
@@ -215,21 +240,27 @@ print(animal.plot)
 
 ```
 
-
 ```{r, changing site coordinates to spatial data frame}
-site.locations.sf <- st_as_sf(FCE.site.coordinates, coords=c('Longitude (Decimal Degrees)', 'Latitude (Decimal Degrees)'),crs=4326)
+site.locations.sf <- st_as_sf(
+  FCE.site.coordinates, coords=c(
+    'Longitude (Decimal Degrees)', 
+    'Latitude (Decimal Degrees)'),crs=4326)
+#creating spatial data frame
+#specifying Longitude as x and Latitude as y
+#using crs 4326
 
-mapview(site.locations.sf)
+mapview(site.locations.sf) #confirming locations of sites
 
 ```
 
 ```{r, adding site coordinates to the nutrient data set}
-
 site.locations.nutrients.sf <-
   merge(x=site.locations.sf, 
         y=FCE.site.nutrient.data,
         by.x="SITE",
         by.y="SITE_NAME")
+#joining the site locations spatial data frames
+#to the sites with nutrient data using merge
 
 ```
 

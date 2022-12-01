@@ -78,7 +78,7 @@ str(FCE.mean.sea.levels)
 ```
 
 ```{r, initial visualizations of nutrient data}
-phos.plot <- ggplot(FCE.phos.data, aes(x=YEAR, y=MEAN_TP)) +
+phos.plot <- ggplot(FCE.phos.yearly.data, aes(x=YEAR, y=MEAN_TP)) +
   geom_point()+
   geom_smooth(method=lm, se=FALSE, color="blue")+
   xlab(expression("Date")) +
@@ -87,7 +87,7 @@ phos.plot <- ggplot(FCE.phos.data, aes(x=YEAR, y=MEAN_TP)) +
           subtitle="Florida Coastal Everglades")
 phos.plot
   
-nitro.plot <- ggplot(FCE.nitro.data, aes(x=YEAR, y=MEAN_TN)) +
+nitro.plot <- ggplot(FCE.nitro.yearly.data, aes(x=YEAR, y=MEAN_TN)) +
   geom_point()+
   geom_smooth(method=lm, se=FALSE, color="blue") +
   xlab(expression("Date")) +

@@ -35,8 +35,7 @@ theme_set(my_theme)
 # Load your datasets
 FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
                                 stringsAsFactors = TRUE)
-FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv",
-                                 stringsAsFactors = TRUE)
+FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv")
 FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
                                stringsAsFactors = TRUE)
 FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
@@ -49,7 +48,6 @@ FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
 
 ```{r, site analysis for nutrients}
 #running anova to see if particular sites have more nitrogen
-
 nitrogen.site.anova <- aov(data=FCE.site.nutrient.data, 
                            TN ~ SITE_NAME)
 summary(nitrogen.site.anova)
@@ -123,14 +121,13 @@ FCE.nitro.monthly.ts.trend <- MannKendall(FCE.nitro.monthly.ts)
 summary(FCE.nitro.monthly.ts.trend) #summary
 ```
 
-```{r, visualizations of time series results}
-
+```{r, visualizations of time series results for nutrients}
 plot.mean.monthly.phos <- ggplot(
   FCE.phos.monthly.data, aes(
     x=Date, y=MEAN_TP)) + #setting axes
   geom_point() + #generating scatter plot
   geom_line() + #generating line plot
-  scale_x_date(date_breaks="1 year", labels=date_format("%m-%d-%Y")) +
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%Y")) +
   #using `scale_x_date` to generate a break every 6 months
   #labels to show month-date-year
   theme(axis.text.x=element_text(angle=60, hjust=1)) + 
@@ -148,7 +145,7 @@ plot.mean.monthly.nitro <- ggplot(
     x=Date, y=MEAN_TN)) + #setting axes
   geom_point() + #generating scatter plot
   geom_line() + #generating line plot
-  scale_x_date(date_breaks="1 year", labels=date_format("%m-%d-%Y")) +
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%Y")) +
   #using `scale_x_date` to generate a break every 6 months
   #labels to show month-date-year
   theme(axis.text.x=element_text(angle=60, hjust=1)) + 
