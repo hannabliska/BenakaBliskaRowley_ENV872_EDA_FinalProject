@@ -79,13 +79,13 @@ anova.nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) 
   ylab(expression("Total Nitrogen (mcmol/L)")) +
   ggtitle(expression("Total Nitrogen Measurements for Sites"),
           subtitle="Florida Coastal Everglades") +
-  annotate("text", x = 1, y = 1500, label = "a") +
-  annotate("text", x = 2, y = 1500, label = "a") +
+  annotate("text", x = 1, y = 1500, label = "bc") +
+  annotate("text", x = 2, y = 1500, label = "bc") +
   annotate("text", x = 3, y = 1500, label = "a") +
-  annotate("text", x = 4, y = 1500, label = "ab") +
-  annotate("text", x = 5, y = 1500, label = "b") +
-  annotate("text", x = 6, y = 1500, label = "bc") +
-  annotate("text", x = 7, y = 1500, label = "bc") +
+  annotate("text", x = 4, y = 1500, label = "a") +
+  annotate("text", x = 5, y = 1500, label = "a") +
+  annotate("text", x = 6, y = 1500, label = "ab") +
+  annotate("text", x = 7, y = 1500, label = "b") +
   annotate("text", x = 8, y = 1500, label = "c")
 anova.nitro.site.plot
 
@@ -95,14 +95,14 @@ anova.phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
   ylab(expression("Total Phosphorus (mcmol/L)")) +
   ggtitle(expression("Total Phosphorus Measurements for Sites"),
           subtitle="Florida Coastal Everglades") +
-  annotate("text", x = 1, y = 200, label = "a") +
-  annotate("text", x = 2, y = 200, label = "b") +
-  annotate("text", x = 3, y = 200, label = "c") +
-  annotate("text", x = 4, y = 200, label = "cd") +
+  annotate("text", x = 1, y = 200, label = "d") +
+  annotate("text", x = 2, y = 200, label = "d") +
+  annotate("text", x = 3, y = 200, label = "cd") +
+  annotate("text", x = 4, y = 200, label = "d") +
   annotate("text", x = 5, y = 200, label = "cd") +
-  annotate("text", x = 6, y = 200, label = "d") +
-  annotate("text", x = 7, y = 200, label = "d") +
-  annotate("text", x = 8, y = 200, label = "d")
+  annotate("text", x = 6, y = 200, label = "c") +
+  annotate("text", x = 7, y = 200, label = "b") +
+  annotate("text", x = 8, y = 200, label = "a")
 anova.phos.site.plot
 ```
 
