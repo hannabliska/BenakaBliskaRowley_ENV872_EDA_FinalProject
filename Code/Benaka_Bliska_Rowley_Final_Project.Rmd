@@ -40,16 +40,23 @@ my_theme <- theme_classic(base_size=12) + theme(
 theme_set(my_theme)
 
 # Load your datasets
-FCE.mean.sea.levels <- read.csv("./Data/Raw/FCE_KeyWestStation_MeanSeaLevels.csv",
-                                stringsAsFactors = TRUE)
-FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv",
-                                 stringsAsFactors = TRUE)
-FCE.nutrients.data <- read.csv("./Data/Raw/LT_ND_Grahl_002.csv",
+FCE.site.coordinates <- read.csv("./Data/Raw/FCE_LTER_site_coordinates.csv")
+FCE.nutrients.data <- read.csv("./Data/Raw/FCE_LTER_Nutrients.csv",
                                stringsAsFactors = TRUE)
-FCE.sawgrass.data <- read.csv("./Data/Raw/LT_PP_Grahl_001.csv",
-                              stringsAsFactors = TRUE)
-FCE.tree.data <- read.csv("./Data/Raw/LT_PP_Rivera_002.csv",
+FCE.tree.data <- read.csv("./Data/Raw/FCE_LTER_Mangroves.csv",
                           stringsAsFactors = TRUE)
+inat.birds <- read.csv("./Data/Raw/inaturalist_birds.csv",
+                       stringsAsFactors = TRUE)
+inat.reptiles <- read.csv("./Data/Raw/inaturalist_reptiles2.csv",
+                          stringsAsFactors = TRUE)
+inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
+                         stringsAsFactors = TRUE)  
+inat.fishnbugs <- read.csv("./Data/Raw/inaturalist_fish_arachninds_insects.csv", 
+                           stringsAsFactors = TRUE)  
+inat.amphibians <- read.csv("./Data/Raw/inaturalist_amphibians.csv",
+                            stringsAsFactors = TRUE)
+inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
+                        stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
 # Project spatial data to UTM 17N
@@ -61,6 +68,14 @@ park.utm <- st_transform(park.boundary,32617)
 
 # Rationale and Research Questions
 
+Mangroves are vital coastal ecosystems that support biological diversity and fortify fragile coastlines. Mangrove trees have adapted to live in water with high salinity, and thus these tropical forest trees have created nurseries and habitat for coastal species along sea-land interfaces (Duke et al., 2014). Further, mangrove ecosystems strengthen the shoreline, as they act as a natural barrier against wave- and storm-induced erosion (Duke et al., 2014). As a consequence of human development, agricultural expansion, and climate-change related factors, the distribution and nature of mangrove communities is changing (Duke et al., 2014).  
+
+The Florida Coastal Everglades Long Term Ecological Research (FCE LTER) Site has been monitoring mangrove ecosystems in the Florida Everglades National Park. Their long-term monitoring programs have helped scientists track long-term changes in the mangrove communities for many years (Florida Coastal Everglades LTER, 2022). Their publicly available datasets report variables related to mangrove health, such as height, diameter, species, and nutrient availability. Additionally, citizen scientists have visited the Florida Everglades National Park and collected data on their observations of mangrove-associated species over time through iNaturalist. These databases pose an opportunity for us to investigate factors that may impact mangrove health and consider areas of the park where mangrove ecosystem conservation efforts may be focused to best protect these vital ecosystems.
+
+Our research questions were:
+1. Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
+2. Are native, mangrove-associated species decreasing in the park and where are these species observed?
+3. How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
 
 \newpage
@@ -73,8 +88,9 @@ park.utm <- st_transform(park.boundary,32617)
 
 # Exploratory Analysis 
 
+
 ## Mangrove Data
-```{r}
+```{r, include = FALSE}
 # Crop mangrove shapefile to Everglades National Park boundary.
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 # Generate map of mangrove habitat in Everglades National Park.
@@ -106,4 +122,8 @@ mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.region
 \newpage
 
 # References
-<add references here if relevant, otherwise delete this section> 
+
+Duke, N., Nagelkerken, I., Agardy, T., Wells, S., & Van Lavieren, H. (2014). The importance of mangroves to people: a call to action. United Nations Environment Programme World Conservation Monitoring Centre (UNEP-WCMC).
+
+Florida Coastal Everglades LTER. (2022). About. https://fcelter.fiu.edu/about/index.html. 
+

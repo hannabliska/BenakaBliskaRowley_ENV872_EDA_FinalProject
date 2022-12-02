@@ -72,6 +72,41 @@ phos.site.anova.groups
 #results indicate that there are four groups of sites: a, b, c, d. There is only one site that is in group a and only one site in group b. 
 ```
 
+```{r, visualization of ANOVA analysis for nutrients}
+anova.nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Total Nitrogen (mcmol/L)")) +
+  ggtitle(expression("Total Nitrogen Measurements for Sites"),
+          subtitle="Florida Coastal Everglades") +
+  annotate("text", x = 1, y = 1500, label = "a") +
+  annotate("text", x = 2, y = 1500, label = "a") +
+  annotate("text", x = 3, y = 1500, label = "a") +
+  annotate("text", x = 4, y = 1500, label = "ab") +
+  annotate("text", x = 5, y = 1500, label = "b") +
+  annotate("text", x = 6, y = 1500, label = "bc") +
+  annotate("text", x = 7, y = 1500, label = "bc") +
+  annotate("text", x = 8, y = 1500, label = "c")
+anova.nitro.site.plot
+
+anova.phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Total Phosphorus (mcmol/L)")) +
+  ggtitle(expression("Total Phosphorus Measurements for Sites"),
+          subtitle="Florida Coastal Everglades") +
+  annotate("text", x = 1, y = 200, label = "a") +
+  annotate("text", x = 2, y = 200, label = "b") +
+  annotate("text", x = 3, y = 200, label = "c") +
+  annotate("text", x = 4, y = 200, label = "cd") +
+  annotate("text", x = 5, y = 200, label = "cd") +
+  annotate("text", x = 6, y = 200, label = "d") +
+  annotate("text", x = 7, y = 200, label = "d") +
+  annotate("text", x = 8, y = 200, label = "d")
+anova.phos.site.plot
+```
+
+
 ```{r, time series analysis for phosphorus}
 FCE.phos.monthly.data$MEAN_TP <- 
   na.approx(FCE.phos.monthly.data$MEAN_TP) #using`na.approx`
