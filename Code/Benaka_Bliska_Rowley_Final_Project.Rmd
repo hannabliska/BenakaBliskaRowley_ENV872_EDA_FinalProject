@@ -82,6 +82,27 @@ Our research questions were:
 
 # Dataset Information
 
+## Mangrove Data Sets
+
+## Species Data Set
+
+## Nutrient Data Set
+Data on nutrient concentrations in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Water Quality Data (Grab Samples) from the Shark River Slough, Everglades National Park (FCE LTER), May 2001 - ongoing.  
+
+This data set obtained nutrient data for 8 long-term mangrove vegetation monitoring plots. Since mangroves are nutrient-sensitive species (Feller et al. 2007), this data set would allow us to understand where mangrove ecosystems may be stressed due to nutrient concentrations. The data set was initially wrangled for utility in R; we renamed columns, changed the format of the data, and joined the coordinate data for each plot to the data set. Due to the sensitivity of mangroves to nitrogen and phosphorus (Feller at al. 2007), we chose to focus our analyses on these two nutrients.
+
+For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date. 
+The final data structure for each data set is as follows:
+***hanna to insert table
+
+For site comparison analysis, we wrangled the data to select only nitrogen and phosphorus for each site using the `select` function in R. 
+
+The final data structure for each data set is as follows:
+***Hanna to insert table
+
+```{r, wrangling}
+
+```
 
 
 \newpage
@@ -97,9 +118,10 @@ mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4) + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0)
 ```
 
+## Species Data
+
 ## Nutrient Data
 
-## Species Data
 
 \newpage
 
@@ -107,10 +129,11 @@ mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.region
 
 
 
-## Question 1: <insert specific question here and add additional subsections for additional questions below, if needed>
+## Question 1: Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
 
-## Question 2: 
+## Question 2: Are native, mangrove-associated species decreasing in the park and where are these species observed?
 
+## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
 
 
@@ -124,6 +147,8 @@ mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.region
 # References
 
 Duke, N., Nagelkerken, I., Agardy, T., Wells, S., & Van Lavieren, H. (2014). The importance of mangroves to people: a call to action. United Nations Environment Programme World Conservation Monitoring Centre (UNEP-WCMC).
+
+Feller, I. C., Lovelock, C. E., & McKee, K. L. (2007). Nutrient addition differentially affects ecological processes of Avicennia germinans in nitrogen versus phosphorus limited mangrove ecosystems. Ecosystems, 10(3), 347-359.
 
 Florida Coastal Everglades LTER. (2022). About. https://fcelter.fiu.edu/about/index.html. 
 
