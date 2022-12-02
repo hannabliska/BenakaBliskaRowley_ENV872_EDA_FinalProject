@@ -364,7 +364,7 @@ Figure 6. Map of Florida Coastal Everglades indicating level of nitrogen measure
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
-There was a significant 
+There was a significant increasing trend in phosphorus concentrations over time (time series analysis, p<
 
 \newpage
 
