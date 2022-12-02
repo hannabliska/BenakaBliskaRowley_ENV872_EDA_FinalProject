@@ -81,6 +81,82 @@ Our research questions were:
 
 # Dataset Information
 
+```{r, renaming columns, include=FALSE}
+
+#renaming column names and removing repeated header row
+colnames(FCE.mean.sea.levels) <- c(
+  "Station_ID", "Year", "Month", "MSL")
+FCE.mean.sea.levels=FCE.mean.sea.levels[-1,]
+
+colnames(FCE.nutrients.data) <- c(
+  "SITE_NAME", "DATE", "TIME", "Salinity", "TN", "TP",
+  "TOC", "NH4", "NandN", "NO2", "SRP", "DOC", "NO3")
+FCE.nutrients.data=FCE.nutrients.data[-1,]
+
+colnames(FCE.sawgrass.data) <- c(
+  "SITE_NAME", "DATE", "Sawgrass_AG_Biomass", "Sawgrass_AG_Biomass_STD",
+  "Sawgrass_Culm_Density", "Sawgrass_Culm_Density_STD") 
+FCE.sawgrass.data=FCE.sawgrass.data[-1,]
+
+colnames(FCE.site.coordinates) <- c(
+  "SITE", "Latitude (Decimal Degrees)", "Longitude (Decimal Degrees)",
+  "Latitude (Degrees, minutes)", "Longitude (Degrees, minutes)",
+  "Northing (UTM)", "Easting (UTM)")
+FCE.site.coordinates=FCE.site.coordinates[-1,]
+
+colnames(FCE.tree.data) <- c(
+  "SITE", "DATE", "Plot_ID", "Tree_TagNumber",
+  "Species.Tree", "Tree_DBH", "Tree_Height")
+FCE.tree.data=FCE.tree.data[-1,]
+
+#wrangling the inaturalist data sets to have the same columns
+inat.birds <- inat.birds %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.reptiles <- inat.reptiles %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.mammals <- inat.mammals %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.fishnbugs <- inat.fishnbugs %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.amphibians <- inat.amphibians %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+inat.plants <- inat.plants %>% 
+  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+
+#combining the inaturalist data sets into one data frame
+inat.all <- rbind(inat.amphibians, inat.birds, inat.fishnbugs, inat.mammals, inat.plants, inat.reptiles)
+
+inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
+
+```
+
+
+```{r, formatting data sets, include=FALSE}
+#formatting date columns
+FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
+FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
+FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
+inat.animals$observed_on <- as.Date(inat.animals$observed_on, format("%Y-%m-%d"))
+
+#formatting numeric values
+FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
+FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
+FCE.tree.data$Tree_DBH <- as.numeric(FCE.tree.data$Tree_DBH)
+
+#wrangling site coordinates data frame to have matching sites
+FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) 
+#convert to character
+FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE) 
+#remove spaces from SITE codes to join to other datasets
+FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) 
+#convert back to factor
+```
+
 ## Mangrove Data Sets
 
 ## Species Data Set
@@ -88,7 +164,7 @@ Our research questions were:
 ## Nutrient Data Set
 Data on nutrient concentrations in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Water Quality Data (Grab Samples) from the Shark River Slough, Everglades National Park (FCE LTER), May 2001 - ongoing.  
 
-This data set obtained nutrient data for 8 long-term mangrove vegetation monitoring plots. Since mangroves are nutrient-sensitive species (Feller et al. 2007), this data set would allow us to understand where mangrove ecosystems may be stressed due to nutrient concentrations. The data set was initially wrangled for utility in R; we renamed columns, changed the format of the data, and joined the coordinate data for each plot to the data set. Due to the sensitivity of mangroves to nitrogen and phosphorus (Feller at al. 2007), we chose to focus our analyses on these two nutrients.
+This data set obtained nutrient data for 8 long-term mangrove vegetation monitoring plots. Since mangroves are nutrient-sensitive species (Feller et al. 2007), this data set would allow us to understand where mangrove ecosystems may be stressed due to nutrient concentrations. The data set was initially wrangled for utility in R; we renamed columns, changed the format of the data, and joined the coordinate data for each plot to the data set. Due to the sensitivity of mangroves to nitrogen and phosphorus (Feller et al. 2007), we chose to focus our analyses on these two nutrients.
 
 For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date. 
 The final data structure for the yearly data sets is as follows:
@@ -109,29 +185,105 @@ The final data structure for the monthly data sets is as follows:
 
 For site comparison analysis, we wrangled the data to select only nitrogen and phosphorus for each site using the `select` function in R. 
 
-The final data structure the data set is as follows:
+The final data structure for the data set is as follows:
+| Variable   | Units            | Range                   | Mean    |
+| ---------- | ---------------- | ----------------------- | ------- |
+| SITE_NAME  | N/A              | 8 different sites       | N/A     |
+| DATE       | YYYY-mm-dd       | 2001-05-23 - 2021-12-06 | N/A     |
+| TP         | mcmol/L          | 1 - 155                 | 45.6    |
+| TN         | mcmol/L          | 1 - 1394                | 698.6   |
+| Latitude   | Degrees, minutes | N/A                     | N/A     |
+| Longitude  | Degrees, minutes | N/A                     | N/A     |
+| Northing   | UTM degrees N    | N/A                     | N/A     |
+| Easting    | UTM degrees W    | N/A                     | N/A     |
+| Geometry   | x,y coordinates  | N/A                     | N/A     |
 
-| Variable   | Units      | Range                   | Mean    |
-| ---------- | ---------- | ----------------------- | ------- |
-| SITE_NAME  | N/A        | 8 different sites       | N/A     |
-| DATE       | YYYY-mm-dd | 2001-05-23 - 2021-12-06 | N/A     |
-| TP         | mcmol/L    | 1 - 155                 | 45.6    |
-| TN         | mcmol/L    | 1 - 1394                | 698.6   |
+```{r, wrangling nutrients data set for mean P and N for each year, include=FALSE}
+FCE.phos.yearly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP) %>% #selecting variables of interest
+  mutate(YEAR=year(DATE)) %>% #creating year column
+  group_by(YEAR) %>% #grouping by year
+  summarise(MEAN_TP=mean(TP)) #averaging the TP for each year
 
-** hanna to add site coordinates
+#saving as processed data frame
+write.csv(FCE.phos.yearly.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.yearly.data.csv")
+  
+FCE.nitro.yearly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TN) %>% #selecting variables of interest
+  mutate(YEAR=year(DATE)) %>% #creating year column
+  group_by(YEAR) %>% #grouping by year
+  summarise(MEAN_TN=mean(TN))  #averaging the TN for each year
 
-```{r, wrangling}
-
+#saving as a processed data frame
+write.csv(FCE.nitro.yearly.data, row.names = FALSE, file= "./Data/Processed/FCE.nitro.yearly.data.csv")
 ```
 
+```{r, wranging nutrients data for mean P and N for each month, include=FALSE}
+#monthly phosphorus averages
+FCE.phos.monthly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP) %>%
+  mutate(month = month(DATE)) %>% #adding month column
+  mutate(year = year(DATE)) %>% #adding a year column
+  group_by(year, month) %>% #grouping by year and month
+  summarise(MEAN_TP=mean(TP)) #averaging the TP for each month of the year
+
+FCE.phos.monthly.data <- FCE.phos.monthly.data %>%
+  mutate("Date"=my(paste0(month,"-",year))) #creating a new date column
+  #observations are for the first of the month
+
+Months <- as.data.frame(seq(
+  as.Date("2001-05-01"), as.Date("2021-12-01"),"months")) 
+#creating a data frame of monthly dates from May 2001 to December 2021
+#will ultimately allow us to identify months that do not have observations
+#and then interpolate those at a later point
+
+colnames(Months) <- c("Date") #renaming column name
+
+FCE.phos.monthly.data <- left_join(
+  Months, FCE.phos.monthly.data, by = c("Date"))
+#joining data frames so that there is an observation for 
+#each month of the year from May 2001 to December 2021
+
+#saving as a processed data frame
+write.csv(FCE.phos.monthly.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
+  
+#nitrogen 
+FCE.nitro.monthly.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TN) %>%
+  mutate(month = month(DATE)) %>% #adding month column
+  mutate(year = year(DATE)) %>% #adding a year column
+  group_by(year, month) %>% #grouping by year and month
+  summarise(MEAN_TN=mean(TN)) #averaging the TN for each month of the year
+
+FCE.nitro.monthly.data <- FCE.nitro.monthly.data %>%
+  mutate("Date"=my(paste0(month,"-",year))) #creating a new date column
+  #observations are for the first of the month
+
+FCE.nitro.monthly.data <- left_join(
+  Months, FCE.nitro.monthly.data, by = c("Date"))
+#joining data frames so that there is an observation for 
+#each month of the year from May 2001 to December 2021
+
+#saving as a processed data frame
+write.csv(FCE.nitro.monthly.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
+```
+
+```{r, wrangling nutrients data set for site differences, include=FALSE}
+FCE.site.nutrient.data <- FCE.nutrients.data %>%
+  select(SITE_NAME, DATE, TP, TN) #selecting variables 
+#of interest for site comparisons
+
+#saving as a processed data frame
+write.csv(FCE.site.nutrient.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
+
+```
 
 \newpage
 
 # Exploratory Analysis 
 
-
 ## Mangrove Data
-```{r, include = FALSE}
+```{r, mangrove distribution, echo=FALSE, include=FALSE}
 # Crop mangrove shapefile to Everglades National Park boundary.
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 # Generate map of mangrove habitat in Everglades National Park.
@@ -142,12 +294,69 @@ mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.region
 
 ## Nutrient Data
 
+To address Research Question #3, we were interested in exploring trends of nutrient concentrations in the vegetation plots over time. We calculated mean measurements of phosphorus and nitrogen for each year in the Florida Coastal Everglades. Our initial visualization of the relationship between time and mean phosphorus as well as mean nitrogen suggested that there was likely an increasing trend in phosphorus concentrations over time (Figure 1) and nitrogen concentrations over time (Figure 2). The results of these visualizations motivated us to later analyze if there was a significant increasing trend in nutrient concentrations over time.
+
+```{r echo=FALSE, phosphorus visualization over time, include=FALSE}
+phos.plot <- ggplot(FCE.phos.yearly.data, aes(x=YEAR, y=MEAN_TP)) +
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE, color="blue")+
+  xlab(expression("Date")) +
+  ylab(expression("Mean Total Phosphorus (mcmol/L)")) +
+  ggtitle(expression("Mean Total Phosphorus Measurements"),
+          subtitle="Florida Coastal Everglades")
+phos.plot
+```
+Figure 1. Mean total phosphorus measurements over time in the Florida Coastal Everglades.
+
+```{r echo=FALSE, nitrogen visualization over time, include=FALSE}
+nitro.plot <- ggplot(FCE.nitro.yearly.data, aes(x=YEAR, y=MEAN_TN)) +
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE, color="blue") +
+  xlab(expression("Date")) +
+  ylab(expression("Mean Total Nitrogen (mcmol/L)")) +
+  ggtitle(expression("Mean Total Nitrogen Measurements"),
+          subtitle="Florida Coastal Everglades")
+nitro.plot
+```
+Figure 2. Mean total nitrogen measurements over time in the Florida Coastal Everglades.
+
+We were also interested in identifying areas of mangrove habitat within the Florida Coastal Everglades that may be stressed due to high nutrient concentrations. Therefore, we initially examined if different mangrove vegetation plots in the park had different phosphorus and nitrogen concentrations. Our initial visualization suggested that some sites, such as site SRS6, may have higher phosphorus concentrations (Figures 3-4). Similarly, our initial visualization suggested the site SRS1d may have higher nitrogen concentrations (Figures 5-6). These visualizations motivated further analysis to determine if the concentrations at different sites were significantly different from one another.
+
+```{r echo=FALSE, phosphorus initial site visualization, include=FALSE}
+phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Total Phosphorus (mcmol/L)")) +
+  ggtitle(expression("Total Phosphorus Measurements for Sites"),
+          subtitle="Florida Coastal Everglades")
+phos.site.plot
+```
+Figure 3. Total phosphorus measurements for sites in the Florida Coastal Everglades.
+
+```{r, echo=FALSE, phosphorus site map, include=FALSE}
+mapview(site.locations.nutrients.sf, zcol="TP")
+```
+Figure 4. Map of Florida Coastal Everglades indicating level of phosphorus measurements per site.
+
+```{r echo=FALSE, nitrogen initial site visualization, include=FALSE}
+nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Total Nitrogen (mcmol/L)")) +
+  ggtitle(expression("Total Nitrogen Measurements for Sites"),
+          subtitle="Florida Coastal Everglades")
+nitro.site.plot
+```
+Figure 5. Total nitrogen measurements for sites in the Florida Coastal Everglades.
+
+```{r, echo=FALSE, nitrogen site map, include=FALSE}
+mapview(site.locations.nutrients.sf, zcol="TN")
+```
+Figure 6. Map of Florida Coastal Everglades indicating level of nitrogen measurements per site.
 
 \newpage
 
 # Analysis
-
-
 
 ## Question 1: Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
 
@@ -155,7 +364,7 @@ mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.region
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
-
+There was a significant 
 
 \newpage
 
