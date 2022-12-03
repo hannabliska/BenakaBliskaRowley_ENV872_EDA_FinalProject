@@ -364,7 +364,172 @@ Figure 6. Map of Florida Coastal Everglades indicating level of nitrogen measure
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
-There was a significant increasing trend in phosphorus concentrations over time (time series analysis, p<
+There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (Figure 1). 
+
+```{r, time series analysis for phosphorus, include=FALSE}
+FCE.phos.monthly.data$MEAN_TP <- 
+  na.approx(FCE.phos.monthly.data$MEAN_TP) #using`na.approx`
+#to fill in missing monthly data
+
+FCE.phos.monthly.ts <- ts(
+  FCE.phos.monthly.data$MEAN_TP, 
+  start=c(2001,5), end=c(2021,12),frequency=12) 
+#generating time series object
+#monthly measurements, using 12
+
+FCE.phos.monthly.ts.decomposed <- stl(
+  FCE.phos.monthly.ts, s.window = "periodic") 
+#decomposing daily time series
+plot(FCE.phos.monthly.ts.decomposed) #plotting components
+
+#running mann kendall
+FCE.phos.monthly.ts.trend <- MannKendall(FCE.phos.monthly.ts) 
+#using `MannKendall` for trend analysis
+summary(FCE.phos.monthly.ts.trend) #summary
+```
+
+```{r, time series visualizations of phosphorus, echo=FALSE, include=FALSE}
+plot.mean.monthly.phos <- ggplot(
+  FCE.phos.monthly.data, aes(
+    x=Date, y=MEAN_TP)) + #setting axes
+  geom_point() + #generating scatter plot
+  geom_line() + #generating line plot
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%Y")) +
+  #using `scale_x_date` to generate a break every 6 months
+  #labels to show month-date-year
+  theme(axis.text.x=element_text(angle=60, hjust=1)) + 
+  #angle for the day-month-year labels
+  xlab(expression("Date")) + #setting x axis label
+  ylab(expression ("Mean Monthly Phosphorus Levels (mcmol/L)")) +
+#setting y axis label
+  geom_smooth(method=lm, se = FALSE, color="red") + #adding linear trend
+  ggtitle(expression("Mean Monthly Phosphorus Levels from 2001-2021"),
+          subtitle="Florida Coastal Everglades")
+print(plot.mean.monthly.phos) #printing plot
+```
+Figure 1. Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades.
+
+There was also significant increasing trend in mean monthly nitrogen levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=9896, p-value =< 2.2e-16). Since 2001, mean monthly nitrogen levels have risen to over 750 mcmol/L (Figure 2). 
+
+```{r, time series analysis for nitrogen, include=FALSE}
+FCE.nitro.monthly.data$MEAN_TN <- 
+  na.approx(FCE.nitro.monthly.data$MEAN_TN) #using`na.approx`
+#to fill in missing monthly data
+
+FCE.nitro.monthly.ts <- ts(
+  FCE.nitro.monthly.data$MEAN_TN, 
+  start=c(2001,5), end=c(2021,12),frequency=12) 
+#generating time series object
+#monthly measurements, using 12
+
+FCE.nitro.monthly.ts.decomposed <- stl(
+  FCE.nitro.monthly.ts, s.window = "periodic") 
+#decomposing daily time series
+plot(FCE.nitro.monthly.ts.decomposed) #plotting components
+
+#running mann kendall
+FCE.nitro.monthly.ts.trend <- MannKendall(FCE.nitro.monthly.ts) 
+#using `MannKendall` for trend analysis
+summary(FCE.nitro.monthly.ts.trend) #summary
+```
+
+```{r, time series visualizations of nitrogen, echo=FALSE, include=FALSE}
+plot.mean.monthly.nitro <- ggplot(
+  FCE.nitro.monthly.data, aes(
+    x=Date, y=MEAN_TN)) + #setting axes
+  geom_point() + #generating scatter plot
+  geom_line() + #generating line plot
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%Y")) +
+  #using `scale_x_date` to generate a break every 6 months
+  #labels to show month-date-year
+  theme(axis.text.x=element_text(angle=60, hjust=1)) + 
+  #angle for the day-month-year labels
+  xlab(expression("Date")) + #setting x axis label
+  ylab(expression ("Mean Monthly Nitrogen Levels (mcmol/L)")) +
+#setting y axis label
+  geom_smooth(method=lm, se = FALSE, color="red") + #adding linear trend
+  ggtitle(expression("Mean Monthly Nitrogen Levels from 2001-2021"),
+          subtitle="Florida Coastal Everglades")
+print(plot.mean.monthly.nitro) #printing plot
+```
+
+The results of the time series analyses indicate that mean monthly concentrations of nitrogen and phosphorus have increased over time in the Florida Coastal Everglades.
+
+In the Florida Coastal Everglades, phosphorus concentrations varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=28.75, p<0.001). The HSD test determined that site SRS6 had a mean phosphorus measurement that was statistically distinct from all other sites. SRS5 also had a mean phosphorus measurement that was statistically distinct from all other sites. It is evident that site SRS6 had the highest mean phosphorus measurements of all sites (Figure 3).
+
+```{r, site analysis for phosphorus, include=FALSE}
+#running anova to see if particular sites have more phosphorus
+phos.site.anova <- aov(data=FCE.site.nutrient.data, 
+                           TP ~ SITE_NAME)
+summary(phos.site.anova)
+
+#evaluating groups
+phos.site.anova.groups <- HSD.test(phos.site.anova, 
+                                       "SITE_NAME", 
+                                       group = TRUE)
+#printing groups
+phos.site.anova.groups
+
+#results indicate that there are four groups of sites: a, b, c, d. There is only one site that is in group a and only one site in group b. 
+```
+
+```{r, visualization of ANOVA analysis for phosphorus, echo=FALSE, include=FALSE}
+anova.phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Phosphorus (mcmol/L)")) +
+  ggtitle(expression("Phosphorus Measurements for Sites"),
+          subtitle="Florida Coastal Everglades") +
+  annotate("text", x = 1, y = 200, label = "d") +
+  annotate("text", x = 2, y = 200, label = "d") +
+  annotate("text", x = 3, y = 200, label = "cd") +
+  annotate("text", x = 4, y = 200, label = "d") +
+  annotate("text", x = 5, y = 200, label = "cd") +
+  annotate("text", x = 6, y = 200, label = "c") +
+  annotate("text", x = 7, y = 200, label = "b") +
+  annotate("text", x = 8, y = 200, label = "a")
+anova.phos.site.plot
+```
+Figure 3. Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades.
+
+Nitrogen concentrations also varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=18.68, p<0.001). The HSD test determined that the mean nitrogen concentrations of site SRS1d, SRS2, SRS3, and SRS4 were statistically similar to one another. These sites had the highest mean nitrogen measurements of all sites (Figure 4). The HSD test also determined that the mean nitrogen measurements of sites SRS1a, SRS1c, and SRS6 were statistically similar. These sites had the lowest mean nitrogen measurements (Figure 4).
+
+```{r, site analysis for nitrogen, include=FALSE}
+#running anova to see if particular sites have more nitrogen
+nitrogen.site.anova <- aov(data=FCE.site.nutrient.data, 
+                           TN ~ SITE_NAME)
+summary(nitrogen.site.anova)
+
+#evaluating groups
+nitrogen.site.anova.groups <- HSD.test(nitrogen.site.anova, 
+                                       "SITE_NAME", 
+                                       group = TRUE)
+#printing groups
+nitrogen.site.anova.groups
+
+#results indicate that there are three groups of sites: a, b, and c.
+```
+
+```{r, visualization of ANOVA analysis for nitrogen, echo=FALSE, include=FALSE}
+anova.nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Nitrogen (mcmol/L)")) +
+  ggtitle(expression("Nitrogen Measurements for Sites"),
+          subtitle="Florida Coastal Everglades") +
+  annotate("text", x = 1, y = 1500, label = "bc") +
+  annotate("text", x = 2, y = 1500, label = "bc") +
+  annotate("text", x = 3, y = 1500, label = "a") +
+  annotate("text", x = 4, y = 1500, label = "a") +
+  annotate("text", x = 5, y = 1500, label = "a") +
+  annotate("text", x = 6, y = 1500, label = "ab") +
+  annotate("text", x = 7, y = 1500, label = "b") +
+  annotate("text", x = 8, y = 1500, label = "c")
+anova.nitro.site.plot
+```
+Figure 4. Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades.
+
+The results of the ANOVAs indicated that particular areas of Everglades National Park have elevated nutrient concentrations. Notably, sites SRS5 and SRS6 had the highest phosphorus concentrations, while sites SRS1d, SRS2, SRS3, and SRS4 have elevated nitrogen concentrations.
 
 \newpage
 
