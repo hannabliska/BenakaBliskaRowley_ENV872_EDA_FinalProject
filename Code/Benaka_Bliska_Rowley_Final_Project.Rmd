@@ -167,25 +167,37 @@ Data on nutrient concentrations in the Everglades National Park were obtained fr
 This data set obtained nutrient data for 8 long-term mangrove vegetation monitoring plots. Since mangroves are nutrient-sensitive species (Feller et al. 2007), this data set would allow us to understand where mangrove ecosystems may be stressed due to nutrient concentrations. The data set was initially wrangled for utility in R; we renamed columns, changed the format of the data, and joined the coordinate data for each plot to the data set. Due to the sensitivity of mangroves to nitrogen and phosphorus (Feller et al. 2007), we chose to focus our analyses on these two nutrients.
 
 For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date. 
-The final data structure for the yearly data sets is as follows:
+The final data structure for the yearly data set for phosphorus (`FCE.phos.yearly.data`) is as follows:
+| Variable   | Units      | Range         | Mean    |
+| ---------- | ---------  | ------------- | ------- |
+| YEAR       | YYYY       | 2001-2021     | N/A     |
+| MEAN_TP    | mcmol/L    | 21.64 - 75.26 | 45.36   |
+
+The final data structure for the yearly data set for nitrogen (`FCE.nitro.yearly.data`) is as follows:
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TN    | mcmol/L    | 416.7 - 950.3 | 699.2   |
-| MEAN_TP    | mcmol/L    | 21.64 - 75.26 | 45.36   |
 
-The final data structure for the monthly data sets is as follows:
+The final data structure for the monthly data set for phosphorus (`FCE.phos.monthly.data`) is as follows:
+| Variable   | Units      | Range                   | Mean    |
+| ---------- | ---------  | ----------------------- | ------- |
+| Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
+| year       | YYYY       | 2001-2021               | N/A     |
+| month      | MM         | 1-12                    | N/A     |
+| MEAN_TP    | mcmol/L    | 5.167-141.833           | 46.021  |
+
+The final data structure for the monthly data set for nitrogen (`FCE.nitro.monthly.data`) is as follows:
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
 | year       | YYYY       | 2001-2021               | N/A     |
 | month      | MM         | 1-12                    | N/A     |
 | MEAN_TN    | mcmol/L    | 147-1232                | 698.3   |
-| MEAN_TP    | mcmol/L    | 5.167-141.833           | 46.021  |
 
 For site comparison analysis, we wrangled the data to select only nitrogen and phosphorus for each site using the `select` function in R. 
 
-The final data structure for the data set is as follows:
+The final data structure for the data set (`FCE.site.nutrient.data`) is as follows:
 | Variable   | Units            | Range                   | Mean    |
 | ---------- | ---------------- | ----------------------- | ------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |

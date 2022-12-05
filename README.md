@@ -21,11 +21,11 @@ caroline.rowley@duke.edu, Principal Investigator
 
 ## Keywords
 
-mangroves, conservation, nutrient availability
+mangroves, biomass, mangrove distribution, conservation, nutrient availability, everglades, native species
 
 ## Database Information
 
-### Florida Coastal Everglades Data Sets
+### Florida Coastal Everglades LTER Data Sets
 Data were collected from the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp). From the Advanced Search, the following search was made: 
 *Sites: selected Florida Coastal Everglades
 
@@ -33,8 +33,7 @@ We then selected the following data sets:
 1. Water Quality Data (Grab Samples) from the Shark River Slough, Everglades National Park (FCE LTER), May 2001 - ongoing
 2. Mangrove Forest Growth from the Shark River Slough, Everglades National Park (FCE), South Florida, USA, January 1995 - ongoing
 
-csv files were saved as `FCE_LTER_Nutrients` and 
-`FCE_LTER_Mangroves`, respectively.
+csv files were saved as `FCE_LTER_Nutrients` and `FCE_LTER_Mangroves`, respectively.
 
 Data on site coordinated were collected from the Florida Coastal Everglades LTER webpage (https://fce-lter.fiu.edu/research/sites/coordinates/). The csv file was saved as `FCE_LTER_site_coordinates.csv`
 
@@ -118,10 +117,12 @@ Code is saved in the code folder of the repository. The following files are deta
 
 ## Quality assurance/quality control
 
-<describe any relevant QA/QC procedures taken with your data. Some ideas can be found here:>
-<https://www.dataone.org/best-practices/develop-quality-assurance-and-quality-control-plan>
-<https://www.dataone.org/best-practices/ensure-basic-quality-control>
-<https://www.dataone.org/best-practices/communicate-data-quality>
-<https://www.dataone.org/best-practices/identify-outliers>
-<https://www.dataone.org/best-practices/identify-values-are-estimated>
-Save
+To ensure basic quality control, we underwent the following procedures:
+
+1. Instrument-collected data: The nitrogen and phosphorus concentrations measured in the `FCE_LTER_Nutrients.csv` data set were collected via ISCO autosamplers, a water quality measurement instrument. It is best practice to ensure that instrument-collected data is reasonable given the instrument and within range (DataONE, 2022). Therefore, nitrogen and phosphorus concentrations were checked to ensure there were no values below zero and that there were no outliers surpassing the expected range of the values.
+2. Dates and times: Several data sets (e.g., `FCE_LTER_Nutrients.csv`, ``FCE_LTER_Mangroves.csv`) included dates and times of observations. To ensure quality control, we implemented the best practice to ensure dates and times observed were accurate and logical (DataONE, 2022).
+3. Geographic coordinates: We obtained geographic coordinates (`FCE_LTER_site_coordinates.csv`) for the mangrove long-term monitoring sites. To ensure quality control, we plotted the site coordiantes using MapViewer to ensure the coordinates did not include errors (DataONE, 2022).
+4. **Isaac and Caroline to look at the observations suggestions to include
+
+##References
+DataONE. (2022). Ensure basic quality control. Accessed online: https://dataoneorg.github.io/Education/bestpractices/ensure-basic-quality. 
