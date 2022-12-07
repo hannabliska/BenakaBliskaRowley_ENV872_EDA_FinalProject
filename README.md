@@ -75,32 +75,32 @@ Files are named according to the following naming convention: `databaseinfo_data
 1. FCE_LTER_Mangroves.csv
 
 2. FCE_LTER_Nutrients.csv
-| Column Name | Column Description          | Format                |
-| ----------- | --------------------------- | --------------------- |
-| SITE_NAME   | Name of LTER site           | text                  |
-| DATE        | Date of collection          | YYYY-MM-DD            |
-| TIME        | Time of collection          | hh:mm                 |
-| Salinity    | Composite salinity          | PSU                   |
-| TN          | Composite total nitrogen    | micro moles per liter |
-| TP          | Composite total phosphorus  | micro moles per liter |
-| TOC         | Total organic carbon        | micro moles per liter |
-| NH4         | Ammonium                    | micro moles per liter |
-| NandN       | Nitrate and nitrite         | micro moles per liter |
-| NO2         | Nitrite                     | micro moles per liter |
-| SRP         | Soluble reactive phosphorus | micro moles per liter |
-| DOC         | Dissolved organic carbon    | micro moles per liter |
-| NO3         | Nitrate                     | micro moles per liter |
+| Column Name | Column Description          | Class    | Format/Units         |
+| ----------- | --------------------------- | -------- |--------------------- |
+| SITE_NAME   | Name of LTER site           | factor   | text                 |
+| DATE        | Date of collection          | date     | YYYY-MM-DD           |
+| TIME        | Time of collection          | factor   | hh:mm                |
+| Salinity    | Composite salinity          | factor   | PSU                  |
+| TN          | Composite total nitrogen    | numeric  | micro moles per liter |
+| TP          | Composite total phosphorus  | numeric  | micro moles per liter |
+| TOC         | Total organic carbon        | factor   | micro moles per liter |
+| NH4         | Ammonium                    | factor   | micro moles per liter |
+| NandN       | Nitrate and nitrite         | factor   | micro moles per liter |
+| NO2         | Nitrite                     | factor   | micro moles per liter |
+| SRP         | Soluble reactive phosphorus | factor   | micro moles per liter |
+| DOC         | Dissolved organic carbon    | factor   | micro moles per liter |
+| NO3         | Nitrate                     | factor   | micro moles per liter |
 
 3. FCE_LTER_site_coordinates.csv
-| Column Name                  | Column Description | Format           |
-| ---------------------------- | ------------------ | ---------------- |
-| SITE                         | Name of LTER site  | text             |
-| LATITUDE (Decimal degrees)   | Latitude of site   | Decimal degrees  |
-| LONGITUDE (Decimal degrees)  | Longitude of site  | Decimal degrees  |
-| LATITUDE (Degrees, minutes)  | Latitude of site   | Degrees, minutes |
-| LONGITUDE (Degrees, minutes) | Longitude of site  | Degrees, minutes |
-| NORTHING (UTM)               | Northing of site   | UTM              |
-| EASTING (UTM)                | Easting of site    | UTM              |
+| Column Name                  | Column Description | Class     | Format/Units     |
+| ---------------------------- | ------------------ | --------- | ---------------- |
+| SITE                         | Name of LTER site  | factor    | text             |
+| LATITUDE (Decimal degrees)   | Latitude of site   | character | Decimal degrees  |
+| LONGITUDE (Decimal degrees)  | Longitude of site  | character | Decimal degrees  |
+| LATITUDE (Degrees, minutes)  | Latitude of site   | character | Degrees, minutes |
+| LONGITUDE (Degrees, minutes) | Longitude of site  | character | Degrees, minutes |
+| NORTHING (UTM)               | Northing of site   | character | UTM              |
+| EASTING (UTM)                | Easting of site    | character | UTM              |
 
 4. **others**
 
