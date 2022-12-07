@@ -71,6 +71,7 @@ Files are named according to the following naming convention: `databaseinfo_data
 **format** indicates the format of the file (e.g., .csv, .txt, .shp, .Rmd)
 
 ## Metadata
+**Hanna to add class for each data**
 1. FCE_LTER_Mangroves.csv
 
 2. FCE_LTER_Nutrients.csv
