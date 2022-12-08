@@ -260,6 +260,24 @@ site.locations.nutrients.sf <-
 
 ```
 
+```{r, wrangling for wood density}
+R.trees <- FCE.tree.data %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="R") %>%
+  mutate(Genus = rep("Rhizophora"))%>%
+  mutate(Species = rep("mangle"))
+
+L.trees <- FCE.tree.data %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height) %>%
+  filter(Species.Tree=="L") %>%
+  mutate(Genus = rep("Laguncularia")) %>%
+  mutate(Species = rep("racemosa"))
+
+getWoodDensity(genus = R.trees$Genus, species = R.trees$Species)
+getWoodDensity(genu = L.trees$Genus, species = L.trees$Species)
+
+```
+
 
 ```{r, wrangling and plotting DBH tree data by species}
 #DBH for Conacarpus erectus
