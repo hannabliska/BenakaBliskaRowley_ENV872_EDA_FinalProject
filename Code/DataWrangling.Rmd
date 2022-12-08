@@ -261,20 +261,28 @@ site.locations.nutrients.sf <-
 ```
 
 ```{r, wrangling for wood density}
-R.trees <- FCE.tree.data %>%
-  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height) %>%
-  filter(Species.Tree=="R") %>%
-  mutate(Genus = rep("Rhizophora"))%>%
-  mutate(Species = rep("mangle"))
 
-L.trees <- FCE.tree.data %>%
-  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height) %>%
+R.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="R") %>%
+  mutate(getWoodDensity(genus = "Rhizophora", species = "mangle")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+R.trees <- merge(x=R.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE) %>%
+  mutate(coordinates = paste(R.trees$`Longitude (Decimal Degrees).x`, R.trees$`Latitude (Decimal Degrees).x`, sep = ", ")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, "Latitude (Decimal Degrees).x", "Longitude (Decimal Degrees).x", geometry)
+
+R.trees <- R.trees %>%
+  mutate(coordinates = paste(R.trees$`Longitude (Decimal Degrees).x`, R.trees$`Latitude (Decimal Degrees).x`, sep = ", "))
+
+L.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, geometry) %>%
   filter(Species.Tree=="L") %>%
-  mutate(Genus = rep("Laguncularia")) %>%
-  mutate(Species = rep("racemosa"))
+  mutate(getWoodDensity(genus = "Laguncularia", species = "racemosa"))
 
 getWoodDensity(genus = R.trees$Genus, species = R.trees$Species)
 getWoodDensity(genu = L.trees$Genus, species = L.trees$Species)
+
+computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = paste(R.trees$`Longitude (Decimal Degrees).x`, R.trees$`Latitude (Decimal Degrees).x`, sep = " "))
 
 ```
 
