@@ -44,12 +44,7 @@ inat.reptiles <- read.csv("./Data/Raw/inaturalist_reptiles2.csv",
                           stringsAsFactors = TRUE)
 inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
                          stringsAsFactors = TRUE)  
-inat.fishnbugs <- read.csv("./Data/Raw/inaturalist_fish_arachninds_insects.csv", 
-                           stringsAsFactors = TRUE)  
-inat.amphibians <- read.csv("./Data/Raw/inaturalist_amphibians.csv",
-                            stringsAsFactors = TRUE)
-inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
-                        stringsAsFactors = TRUE)
+
 
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
@@ -98,19 +93,9 @@ inat.reptiles <- inat.reptiles %>%
 inat.mammals <- inat.mammals %>% 
   select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
 
-inat.fishnbugs <- inat.fishnbugs %>% 
-  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
 
-inat.amphibians <- inat.amphibians %>% 
-  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+inat.all <- rbind(inat.birds, inat.mammals, inat.reptiles)
 
-inat.plants <- inat.plants %>% 
-  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
-
-#combining the inaturalist data sets into one data frame
-inat.all <- rbind(inat.amphibians, inat.birds, inat.fishnbugs, inat.mammals, inat.plants, inat.reptiles)
-
-inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
 
 ```
 
@@ -119,7 +104,7 @@ inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
 FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
 FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
-inat.animals$observed_on <- as.Date(inat.animals$observed_on, format("%Y-%m-%d"))
+inat.all$observed_on <- as.Date(inat.all$observed_on, format("%Y-%m-%d"))
 
 #formatting numeric values
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
@@ -219,20 +204,30 @@ write.csv(FCE.site.nutrient.data, row.names = FALSE, file= "./Data/Processed/FCE
 ```
 
 ```{r, wrangling inaturalist data into counts by year}
-inat.animals.processed.pipe <- inat.animals %>% 
-  mutate(YEAR=year(observed_on))
-  
-inat.animals.processed.pipe <- inat.animals.processed.pipe %>% 
+inat.processed <- inat.all %>% 
+   mutate(YEAR=year(observed_on)) %>% 
+  filter(scientific_name=="Felix concolor"|scientific_name=="Mephitis mephitis"| scientific_name=="Procyon lotor"|scientific_name=="Mustel vision"|scientific_name=="Lutra Canadensis"| scientific_name=="Lynx rufus"| scientific_name=="Odocoileus virginianus"| scientific_name=="Sylvilagus palustris"| scientific_name=="Sigmodon hispidus"| scientific_name=="Oryzomys palustris" | scientific_name == "Alligator mississippiensis" | scientific_name=="Anolis sagrei"|scientific_name=="Crocodylus acutus" | scientific_name == "Apalone ferox" | scientific_name=="Agkistrodon conanti"| scientific_name=="Psuedemys nelsoni"| scientific_name == "Python bivittatus" | scientific_name == "Anhinga anhinga"| scientific_name == "Ardea herodias"| scientific_name =="Pandion haliaetus"| scientific_name == "Ardea alba" | scientific_name == "Phalacrocorax auritus" | scientific_name == "Porphyrio martinica"| scientific_name == "Buteo lineatus" | scientific_name == "Eudocimus albus"| scientific_name =="Butorides virescens" | scientific_name == "Coragyps atratus"| scientific_name =="Mycteria americana" | scientific_name == "Picoides borealis"| scientific_name =="Rostrhamus socialbilis plumbeus" | scientific_name == "Sterna dougallii dougallii")
+
+
+inat.yearcount <- inat.processed %>% 
   mutate(species = scientific_name) %>%
   group_by(YEAR, species) %>% 
   summarise(scientific_name=n())
 
-animal.plot <- ggplot(inat.animals.processed.pipe) +
-  geom_line(aes(x = YEAR, y = scientific_name, color = species), show.legend = FALSE)+
-  xlim(2010,2023)+
-  ylim(0,100)
+
+animal.plot <- ggplot(inat.yearcount) +
+  geom_line(aes(x = YEAR, y = scientific_name, color = species))
+
 
 print(animal.plot)
+
+
+inat.spatial <- inat.processed %>% 
+  st_as_sf(coords = c('longitude', 'latitude'), crs=32617)
+inat.utm <- st_transform(inat.spatial, 32617)
+
+
+mapview(inat.spatial)
 
 ```
 
