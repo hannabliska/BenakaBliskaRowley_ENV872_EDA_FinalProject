@@ -136,7 +136,6 @@ inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
 
 ```
 
-
 ```{r, formatting data sets, include=FALSE}
 #formatting date columns
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
@@ -156,6 +155,19 @@ FCE.site.coordinates$SITE <- gsub('\\s+', '', FCE.site.coordinates$SITE)
 #remove spaces from SITE codes to join to other datasets
 FCE.site.coordinates$SITE <- as.factor(FCE.site.coordinates$SITE) 
 #convert back to factor
+```
+
+```{r, changing site coordinates to spatial data frame, include=FALSE}
+site.locations.sf <- st_as_sf(
+  FCE.site.coordinates, coords=c(
+    'Longitude (Decimal Degrees)', 
+    'Latitude (Decimal Degrees)'),crs=4326)
+#creating spatial data frame
+#specifying Longitude as x and Latitude as y
+#using crs 4326
+
+mapview(site.locations.sf) #confirming locations of sites
+
 ```
 
 ## Mangrove Data Sets
@@ -288,6 +300,17 @@ FCE.site.nutrient.data <- FCE.nutrients.data %>%
 
 #saving as a processed data frame
 write.csv(FCE.site.nutrient.data, row.names = FALSE, file= "./Data/Processed/FCE.phos.monthly.data.csv")
+
+```
+
+```{r, adding site coordinates to the nutrient data set, include=FALSE}
+site.locations.nutrients.sf <-
+  merge(x=site.locations.sf, 
+        y=FCE.site.nutrient.data,
+        by.x="SITE",
+        by.y="SITE_NAME")
+#joining the site locations spatial data frames
+#to the sites with nutrient data using merge
 
 ```
 

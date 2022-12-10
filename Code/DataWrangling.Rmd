@@ -223,8 +223,8 @@ print(animal.plot)
 
 
 inat.spatial <- inat.processed %>% 
-  st_as_sf(coords = c('longitude', 'latitude'), crs=32617)
-inat.utm <- st_transform(inat.spatial, 32617)
+  st_as_sf(coords = c('longitude', 'latitude'), crs=4326)
+inat.utm <- st_transform(inat.spatial, 4326)
 
 
 mapview(inat.spatial)
