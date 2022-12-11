@@ -262,10 +262,18 @@ R.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)
   mutate(getWoodDensity(genus = "Rhizophora", species = "mangle")) %>%
   select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
 
-R.trees <- merge(x=R.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE) %>%
-  mutate(coordinates = paste(R.trees$`Longitude (Decimal Degrees)`, R.trees$`Latitude (Decimal Degrees)`, sep = ", ")) 
+R.trees <- merge(x=R.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+R.trees$`Latitude (Decimal Degrees)` <- as.numeric(R.trees$`Latitude (Decimal Degrees)`)
+R.trees$`Longitude (Decimal Degrees)` <- as.numeric(R.trees$`Longitude (Decimal Degrees)`)
+  
+R.trees.coordinates <- cbind(R.trees$`Longitude (Decimal Degrees)`, R.trees$`Latitude (Decimal Degrees)`)
 
-R.trees <- R.trees %>% select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, coordinates, "Latitude (Decimal Degrees).x", "Longitude (Decimal Degrees).x", geometry)
+R.trees <- R.trees %>%
+  mutate(computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)) %>%
+  rename(AGB = `computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)`)
+R.trees <- R.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
 
 
 L.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
@@ -273,11 +281,8 @@ L.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)
   filter(Species.Tree=="L") %>%
   mutate(getWoodDensity(genus = "Laguncularia", species = "racemosa"))
 
-computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees$coordinates)
 
-computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = cbind(as.numeric(R.trees$`Longitude (Decimal Degrees).x`, R.trees$`Latitude (Decimal Degrees).x`)))
 
-computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = c(as.numeric(R.trees$`Longitude (Decimal Degrees).x`, R.trees$`Latitude (Decimal Degrees).x`)))
 
 ```
 
