@@ -255,7 +255,7 @@ site.locations.nutrients.sf <-
 
 ```
 
-```{r, wrangling for wood density}
+```{r, wrangling for wood density and agb}
 
 R.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
   filter(Species.Tree=="R") %>%
@@ -272,7 +272,13 @@ R.trees <- R.trees %>%
   mutate(computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)) %>%
   rename(AGB = `computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)`)
 R.trees <- R.trees %>%
-  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB) %>%
+  group_by(DATE) %>%
+  summarise(sumAGB=sum(AGB))
+
+ggplot(R.trees, aes(x=DATE,y=sumAGB))+
+  geom_point()+
+  geom_smooth(method = lm)
 
 
 
