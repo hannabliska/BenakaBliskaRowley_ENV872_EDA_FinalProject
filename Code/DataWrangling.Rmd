@@ -269,10 +269,10 @@ R.trees$`Longitude (Decimal Degrees)` <- as.numeric(R.trees$`Longitude (Decimal 
 R.trees.coordinates <- cbind(R.trees$`Longitude (Decimal Degrees)`, R.trees$`Latitude (Decimal Degrees)`)
 
 R.trees <- R.trees %>%
-  mutate(computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)) %>%
+  mutate(computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)) %>% #computes the above ground biomass in metric tons
   rename(AGB = `computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)`)
 R.trees <- R.trees %>%
-  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB) %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
   group_by(DATE) %>%
   summarise(sumAGB=sum(AGB))
 
