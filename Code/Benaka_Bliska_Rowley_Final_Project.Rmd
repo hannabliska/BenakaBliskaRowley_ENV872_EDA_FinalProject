@@ -171,6 +171,9 @@ mapview(site.locations.sf) #confirming locations of sites
 ```
 
 ## Mangrove Data Sets
+Data on mangrove forest growth in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Mangrove Forest Growth from the Shark River Slough, Everglades National Park (FCE), South Florida, USA, January 1995 - ongoing. We also used shapefile data titled Mangrove Habitat in Florida from the Florida Fish and Wildlife Conservation Commission to provide a basic visualization of where mangroves exist in Everglades National Park (https://geodata.myfwc.com/datasets/myfwc::mangrove-habitat-in-florida-1/about).
+
+The forest growth dataset contained dendrologic data for four long-term monitoring sites in the Everglades National Park. The dataset contained diameter-at-breast-height (DBH) and height measurements for four key mangrove speices — *Rhizophora mangle, Laguncularia racemosa, Avicennia germinans,* and *Conacarpus erectus*. Wrangling was performed to join geographic coordinate data to each plot to create a spatial dataframe. Site coordinate data were first transformed to a spatial data frame (`site.locations.sf`) before joining. Utilizing the BIOMASS r package, the above ground biomass of each sampled tree was calculated using the DBH measurements and geographic coordinates contained in this dataset. This data allowed us to estimate mangrove biomass density across the four sites and where mangrove habitat might be decreasing. We elected to remove one of the sites from analysis because it did not overlap with the nutrient data sites, leaving us with three sites: SRS4, SRS5, and SRS6.
 
 ## Species Data Set
 
