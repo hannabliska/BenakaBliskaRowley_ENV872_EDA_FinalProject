@@ -327,6 +327,14 @@ C.trees <- C.trees %>%
 
 treeAGB <- bind_rows(A.trees, C.trees, L.trees, R.trees)
 
+siteAGB <- treeAGB %>%
+  group_by(DATE) %>%
+  summarise(meanAGB=mean(AGB)) #issue with two dates showing NA means when values are available to average.
+
+ggplot(siteAGB, aes(x=DATE,y=meanAGB))+
+  geom_point()+
+  geom_smooth(method=lm)
+
 ```
 
 
