@@ -273,22 +273,59 @@ R.trees <- R.trees %>%
   rename(AGB = `computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)`)
 R.trees <- R.trees %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
-  group_by(DATE) %>%
-  summarise(sumAGB=sum(AGB))
-
-ggplot(R.trees, aes(x=DATE,y=sumAGB))+
-  geom_point()+
-  geom_smooth(method = lm)
-
-
 
 L.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
-  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, geometry) %>%
   filter(Species.Tree=="L") %>%
-  mutate(getWoodDensity(genus = "Laguncularia", species = "racemosa"))
+  mutate(getWoodDensity(genus = "Laguncularia", species = "racemosa")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
 
+L.trees <- merge(x=L.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+L.trees$`Latitude (Decimal Degrees)` <- as.numeric(L.trees$`Latitude (Decimal Degrees)`)
+L.trees$`Longitude (Decimal Degrees)` <- as.numeric(L.trees$`Longitude (Decimal Degrees)`)
+  
+L.trees.coordinates <- cbind(L.trees$`Longitude (Decimal Degrees)`, L.trees$`Latitude (Decimal Degrees)`)
 
+L.trees <- L.trees %>%
+  mutate(computeAGB(L.trees$Tree_DBH, L.trees$meanWD, coord = L.trees.coordinates)) %>% #computes the above ground biomass in metric tons
+  rename(AGB = `computeAGB(L.trees$Tree_DBH, L.trees$meanWD, coord = L.trees.coordinates)`)
+L.trees <- L.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
 
+A.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="A") %>%
+  mutate(getWoodDensity(genus = "Avicennia", species = "germinans")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+A.trees <- merge(x=A.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+A.trees$`Latitude (Decimal Degrees)` <- as.numeric(A.trees$`Latitude (Decimal Degrees)`)
+A.trees$`Longitude (Decimal Degrees)` <- as.numeric(A.trees$`Longitude (Decimal Degrees)`)
+  
+A.trees.coordinates <- cbind(A.trees$`Longitude (Decimal Degrees)`, A.trees$`Latitude (Decimal Degrees)`)
+
+A.trees <- A.trees %>%
+  mutate(computeAGB(A.trees$Tree_DBH, A.trees$meanWD, coord = A.trees.coordinates)) %>% #computes the above ground biomass in metric tons
+  rename(AGB = `computeAGB(A.trees$Tree_DBH, A.trees$meanWD, coord = A.trees.coordinates)`)
+A.trees <- A.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
+C.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="C") %>%
+  mutate(meanWD = rep(0.69)) %>% #wood density for Conacarpus erectus derived from...
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+C.trees <- merge(x=C.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+C.trees$`Latitude (Decimal Degrees)` <- as.numeric(C.trees$`Latitude (Decimal Degrees)`)
+C.trees$`Longitude (Decimal Degrees)` <- as.numeric(C.trees$`Longitude (Decimal Degrees)`)
+  
+C.trees.coordinates <- cbind(C.trees$`Longitude (Decimal Degrees)`, C.trees$`Latitude (Decimal Degrees)`)
+
+C.trees <- C.trees %>%
+  mutate(computeAGB(C.trees$Tree_DBH, C.trees$meanWD, coord = C.trees.coordinates)) %>% #computes the above ground biomass in metric tons
+  rename(AGB = `computeAGB(C.trees$Tree_DBH, C.trees$meanWD, coord = C.trees.coordinates)`)
+C.trees <- C.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
+treeAGB <- bind_rows(A.trees, C.trees, L.trees, R.trees)
 
 ```
 
