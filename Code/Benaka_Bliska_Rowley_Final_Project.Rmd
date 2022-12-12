@@ -177,9 +177,10 @@ mapview(site.locations.sf) #confirming locations of sites
 ## Nutrient Data Set
 Data on nutrient concentrations in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Water Quality Data (Grab Samples) from the Shark River Slough, Everglades National Park (FCE LTER), May 2001 - ongoing.  
 
-This data set obtained nutrient data for 8 long-term mangrove vegetation monitoring plots. Since mangroves are nutrient-sensitive species (Feller et al. 2007), this data set would allow us to understand where mangrove ecosystems may be stressed due to nutrient concentrations. The data set was initially wrangled for utility in R; we renamed columns, changed the format of the data, and joined the coordinate data for each plot to the data set. Due to the sensitivity of mangroves to nitrogen and phosphorus (Feller et al. 2007), we chose to focus our analyses on these two nutrients.
+This data set obtained nutrient data for 8 long-term mangrove vegetation monitoring plots. Since mangroves are nutrient-sensitive species (Feller et al. 2007), this data set would allow us to understand where mangrove ecosystems may be stressed due to nutrient concentrations. The data set was initially wrangled for utility in R; we renamed columns and changed the format of the data. Due to the sensitivity of mangroves to nitrogen and phosphorus (Feller et al. 2007), we chose to focus our analyses on these two nutrients. Additional wrangling was then performed to join the coordinate data to each plot to create a spatial data frame. Site coordinate data were first transformed to a spatial data frame (`site.locations.sf`) before joining.
 
-For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date. 
+For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date.
+
 The final data structure for the yearly data set for phosphorus (`FCE.phos.yearly.data`) is as follows:
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
@@ -211,6 +212,16 @@ The final data structure for the monthly data set for nitrogen (`FCE.nitro.month
 For site comparison analysis, we wrangled the data to select only nitrogen and phosphorus for each site using the `select` function in R. 
 
 The final data structure for the data set (`FCE.site.nutrient.data`) is as follows:
+| Variable   | Units            | Range                   | Mean    |
+| ---------- | ---------------- | ----------------------- | ------- |
+| SITE_NAME  | N/A              | 8 different sites       | N/A     |
+| DATE       | YYYY-mm-dd       | 2001-05-23 - 2021-12-06 | N/A     |
+| TP         | mcmol/L          | 1 - 155                 | 45.6    |
+| TN         | mcmol/L          | 1 - 1394                | 698.6   |
+
+For spatial visualizations of the site nutrient data, we created a spatial data frame using the site coordinate data.
+
+The final data structure for the data set (`site.locations.nutrients.sf`) is as follows:
 | Variable   | Units            | Range                   | Mean    |
 | ---------- | ---------------- | ----------------------- | ------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |
@@ -369,7 +380,7 @@ phos.site.plot
 
 
 ```{r map.site.phos.plot, fig.cap = "Map of Florida Coastal Everglades indicating level of phosphorus measurements per site", echo=FALSE, include=FALSE}
-map.site.phos.plot <- mapview(site.locations.nutrients.sf, zcol="TP")
+map.site.phos.plot <- mapview(site.locations.nutrients.sf, zcol="TP", at = seq(0, 60, 10))
 map.site.phos.plot
 ```
 
@@ -400,7 +411,7 @@ map.site.nitro.plot
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
-There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plot.mean.monthly.phos)).
+There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plot.mean.monthly.phos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
 
 ```{r, time series analysis for phosphorus, include=FALSE}
 FCE.phos.monthly.data$MEAN_TP <- 
@@ -568,6 +579,9 @@ The results of the ANOVAs indicated that particular areas of Everglades National
 
 # Summary and Conclusions
 
+Overall, our results suggest that the nutrient conditions for mangroves in the Florida Everglades have varied both spatially and over time. Nutrient concentrations are indeed rising in the Park, and have increased substantially since the early 2000s, which may be cause for concern for nutrient-sensitive mangroves. It is apparent that some sites within the park have higher concentrations of nutrients than others. In particular, sites SRS5 and SRS6, which are located on the coast in the southwest corner of the park, have the highest phosphorus concentrations, and sites SRS1d, SRS2, and SRS3, which are located in the central and southwest areas of the park, have the highest nitrogen concentrations. This pattern may be observed due to the local hydrology, elevation, and slope of the sites. It is also possible that inputs from agriculture are greatest in particular areas of the park, due to the geographic location of the pollution source. Because agriculture is common in South Florida (FDACS 2022) and eutrophication can increase the mortality of mangroves (Lovelock et al. 2009), this may be a cause of concern for mangroves in the Everglades. We recommend conservation efforts in the park be focused to these identified, vulnerable sites. The Florida Coastal Everglades could also consider future research to determine the most resilient mangrove species to nitrogen and phosphorus inputs and focus re-seeding efforts in these conservation areas to those species. 
+
+***paragraph to tie all together
 
 \newpage
 
@@ -575,7 +589,11 @@ The results of the ANOVAs indicated that particular areas of Everglades National
 
 Duke, N., Nagelkerken, I., Agardy, T., Wells, S., & Van Lavieren, H. (2014). The importance of mangroves to people: a call to action. United Nations Environment Programme World Conservation Monitoring Centre (UNEP-WCMC).
 
+Florida Department of Agriculture and Consumer Services (FDACS (2022)). Florida Agriculture Overview and Statistics. https://www.fdacs.gov/Agriculture-Industry/Florida-Agriculture-Overview-and-Statistics 
+
 Feller, I. C., Lovelock, C. E., & McKee, K. L. (2007). Nutrient addition differentially affects ecological processes of Avicennia germinans in nitrogen versus phosphorus limited mangrove ecosystems. Ecosystems, 10(3), 347-359.
 
 Florida Coastal Everglades LTER. (2022). About. https://fcelter.fiu.edu/about/index.html. 
+
+Lovelock, C. E., Ball, M. C., Martin, K. C., & C. Feller, I. (2009). Nutrient enrichment increases mortality of mangroves. PloS one, 4(5), e5600.
 

@@ -156,11 +156,12 @@ Files are named according to the following naming convention: `databaseinfo_data
 
 Code is saved in the code folder of the repository. The following files are detailed:
 
-| Code Name           | Code Contents        | File Format |
-| ------------------- | -------------------- | ----------- |
-| DataAnalysis.Rmd    | Data analysis        | Rmd         |
-| DataExploration.Rmd | Data exploration     | Rmd         |
-| DataWrangling.Rmd   | Data wrangling       | Rmd         |
+| Code Name                              | Code Contents        | File Format |
+| -------------------------------------- | -------------------- | ----------- |
+| Benaka_Bliska_Rowley_Final_Project.Rmd | All project code     | Rmd         |
+| DataAnalysis.Rmd                       | Data analysis        | Rmd         |
+| DataExploration.Rmd                    | Data exploration     | Rmd         |
+| DataWrangling.Rmd                      | Data wrangling       | Rmd         |
 
 ## Quality assurance/quality control
 
