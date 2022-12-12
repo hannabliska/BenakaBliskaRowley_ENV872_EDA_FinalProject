@@ -33,6 +33,7 @@ library(Kendall)
 library(sf)
 library(mapview)
 library(agricolae)
+library(BIOMASS)
 
 # Set your ggplot theme
 my_theme <- theme_classic(base_size=12) + theme(
@@ -174,6 +175,9 @@ mapview(site.locations.sf) #confirming locations of sites
 Data on mangrove forest growth in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Mangrove Forest Growth from the Shark River Slough, Everglades National Park (FCE), South Florida, USA, January 1995 - ongoing. We also used shapefile data titled Mangrove Habitat in Florida from the Florida Fish and Wildlife Conservation Commission to provide a basic visualization of where mangroves exist in Everglades National Park (https://geodata.myfwc.com/datasets/myfwc::mangrove-habitat-in-florida-1/about).
 
 The forest growth dataset contained dendrologic data for four long-term monitoring sites in the Everglades National Park. The dataset contained diameter-at-breast-height (DBH) and height measurements for four key mangrove speices — *Rhizophora mangle, Laguncularia racemosa, Avicennia germinans,* and *Conacarpus erectus*. Wrangling was performed to join geographic coordinate data to each plot to create a spatial dataframe. Site coordinate data were first transformed to a spatial data frame (`site.locations.sf`) before joining. Utilizing the BIOMASS r package, the above ground biomass of each sampled tree was calculated using the DBH measurements and geographic coordinates contained in this dataset. This data allowed us to estimate mangrove biomass density across the four sites and where mangrove habitat might be decreasing. We elected to remove one of the sites from analysis because it did not overlap with the nutrient data sites, leaving us with three sites: SRS4, SRS5, and SRS6.
+
+To conduct analysis, 
+
 
 ## Species Data Set
 
@@ -333,11 +337,46 @@ site.locations.nutrients.sf <-
 # Exploratory Analysis 
 
 ## Mangrove Data
-```{r, mangrove distribution, echo=FALSE, include=FALSE}
+
+To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure \@ref(fig:mangrovemap)). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrove.site.plot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGB.site.plot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
+
+```{r mangrove distribution, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE, include=FALSE}
 # Crop mangrove shapefile to Everglades National Park boundary.
 mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
 # Generate map of mangrove habitat in Everglades National Park.
-mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4) + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0)
+mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4, layer.name = "Mangrove Habitat") + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")+
+mapview(treeAGB, layer.name = "Monitoring Sites")
+mangrovemap
+```
+
+```{r mangrove.site.plot, fig.cap = "Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+mangrove.site.plot <- ggplot(treeAGB, aes(x=SITE, y=AGB)) +
+  geom_boxplot()+
+  xlab(expression("Site Name")) +
+  ylab(expression("Above Ground Biomass (metric tons)")) +
+  ggtitle(expression("Above Ground Biomass of Mangrove Trees by Site"),
+          subtitle="Florida Coastal Everglades")
+mangrove.site.plot
+```
+
+```{r AGB.sites.plot, fig.cap = "Mean Above Ground Biomass of Mangrove Trees by Year at Sites in Florida Everglades National Park", echo=FALSE, include=FALSE}
+AGB.SRS4.plot <- ggplot(treesSRS4, aes(x=YEAR,y=meanAGB))+
+  geom_point()+  
+  geom_smooth(method = "lm", se=F)+
+  labs(title="SRS4", y="Mean AGB (mt)")
+
+AGB.SRS5.plot <- ggplot(treesSRS5, aes(x=YEAR,y=meanAGB))+
+  geom_point()+  
+  geom_smooth(method = "lm", se=F)+
+  labs(title="SRS5", y="Mean AGB (mt)")
+
+AGB.SRS6.plot <- ggplot(treesSRS6, aes(x=YEAR,y=meanAGB))+
+  geom_point()+  
+  geom_smooth(method = "lm", se=F)+
+  labs(title="SRS6", y="Mean AGB (mt)")
+
+AGB.sites.plot <- plot_grid(AGB.SRS4.plot, AGB.SRS5.plot, AGB.SRS6.plot, ncol=1)
+AGB.sites.plot
 ```
 
 ## Species Data
@@ -599,4 +638,6 @@ Feller, I. C., Lovelock, C. E., & McKee, K. L. (2007). Nutrient addition differe
 Florida Coastal Everglades LTER. (2022). About. https://fcelter.fiu.edu/about/index.html. 
 
 Lovelock, C. E., Ball, M. C., Martin, K. C., & C. Feller, I. (2009). Nutrient enrichment increases mortality of mangroves. PloS one, 4(5), e5600.
+
+Nasser, Ramadan A.. “SPECIFIC GRAVITY , FIBER LENGTH AND CHEMICAL COMPONENTS OF CONOCARPUS ERECTUS AS AFFECTED BY TREE SPACING.” Journal of Agriculture & Environmental Science, Alexandria Univ., Egypt 7(3), (2008).
 

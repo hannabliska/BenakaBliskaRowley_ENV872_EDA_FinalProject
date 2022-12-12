@@ -325,7 +325,9 @@ C.trees <- C.trees %>%
 C.trees <- C.trees %>%
   select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
 
-treeAGB <- bind_rows(A.trees, C.trees, L.trees, R.trees)
+treeAGB <- bind_rows(A.trees, C.trees, L.trees, R.trees) %>%
+  filter(SITE != "TS/Ph8") %>%
+  mutate(YEAR = year(DATE))
 
 siteAGB <- treeAGB %>%
   group_by(DATE) %>%
@@ -334,6 +336,24 @@ siteAGB <- treeAGB %>%
 ggplot(siteAGB, aes(x=DATE,y=meanAGB))+
   geom_point()+
   geom_smooth(method=lm)
+
+```
+
+```{r, wrangling into site dataframes}
+treesSRS4 <- treeAGB %>%
+  filter(SITE == "SRS4") %>%
+  group_by(YEAR) %>%
+  summarise(meanAGB = mean(AGB))
+
+treesSRS5 <- treeAGB %>%
+  filter(SITE == "SRS5") %>%
+  group_by(YEAR) %>%
+  summarise(meanAGB = mean(AGB))
+
+treesSRS6 <- treeAGB %>%
+  filter(SITE == "SRS6") %>%
+  group_by(YEAR) %>%
+  summarise(meanAGB = mean(AGB))
 
 ```
 
