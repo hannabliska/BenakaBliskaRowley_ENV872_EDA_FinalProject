@@ -219,7 +219,7 @@ inat.snailkite <- inat.utm %>%
   filter(scientific_name %in% c("Rostrhamus sociabilis plumbeus"))
 #plotting endangered birds
 endangered.bird.map <- mapview(inat.woodstork, col.regions = "peru" , layer.name = "Wood Stork Observations 2000-2022")+
-  mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")+
+  mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")
 print(endangered.bird.map)
 
 
@@ -297,9 +297,17 @@ inat.house.gecko <-inat.utm %>%
 inat.iguana <-inat.utm %>% 
   filter(scientific_name%in% c("Iguana iguana"))
 inat.brahminy.blind.snake <-inat.utm %>% 
-  filter(scientific_name%in% c("Indotphlops braminus"))
+  filter(scientific_name%in% c("Indotyphlops braminus"))
 #plotting invasive map
 invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
+  mapview(inat.armadillo, col.regions ="mediumorchid2", layer.name= "Nine Banded Armadillo (Invasive) Observations 2000-2022")+
+  mapview(inat.knight.anole, col.regions ="seagreen2", layer.name= "Knight Anole (Invasive) Observations 2000-2022")+
+  mapview(inat.brown.anole, col.regions ="turquoise2", layer.name= "Brown Anole (Invasive) Observations 2000-2022")+
+  mapview(inat.tokay, col.regions ="orange1", layer.name= "Tokay Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.indopacific.gecko, col.regions ="cyan3", layer.name= "Indopacific Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.house.gecko, col.regions ="deeppink2", layer.name= "Tropical House Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.iguana, col.regions ="burlywood3", layer.name= "Common Iguana (Invasive) Observations 2000-2022")+
+  mapview(inat.brahminy.blind.snake, col.regions ="olivedrab2", layer.name= "Brahimy Blind Snake (Invasive) Observations 2000-2022")
 
 print(invasive.map)
 
