@@ -206,12 +206,11 @@ inat.processed <- inat.all %>%
    mutate(YEAR=year(observed_on)) %>% 
   filter(scientific_name=="Calidris canutus"| scientific_name=="Charadrius melodus"|scientific_name=="Mycteria americana"| scientific_name=="Rostrhamus sociabilis plumbeus"| scientific_name=="Sterna dougallii"| scientific_name== "Haliaeetus leucocephalus" | #filtering protected birds
          
-          scientific_name=="Procyon lotor"| scientific_name=="Puma concolor couguar"| scientific_name=="Trichechus manatus" |scientific_name=="Trichechus manatus latirostris" |#filtering protected mammals and raccoon
+          scientific_name=="Puma concolor couguar"| scientific_name=="Trichechus manatus" |scientific_name=="Trichechus manatus latirostris" |#filtering protected mammals and raccoon
            
            scientific_name == "Alligator mississippiensis" |scientific_name=="Crocodylus acutus" | scientific_name == "Gopherus polyphemus" | scientific_name=="Drymarchon couperi"| scientific_name=="Caretta caretta"|  scientific_name == "Chelonia mydas"|  #filtering for protected reptiles
 
-scientific_name == "Python bivittatus"|scientific_name== "	
-Dasypus novemcinctus") %>%  #filtering for invasive species
+scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus") %>%  #filtering for invasive species
 filter(YEAR > '2000-01-01')
 
 
