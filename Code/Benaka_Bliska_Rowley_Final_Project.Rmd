@@ -53,12 +53,6 @@ inat.reptiles <- read.csv("./Data/Raw/inaturalist_reptiles2.csv",
                           stringsAsFactors = TRUE)
 inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
                          stringsAsFactors = TRUE)  
-inat.fishnbugs <- read.csv("./Data/Raw/inaturalist_fish_arachninds_insects.csv", 
-                           stringsAsFactors = TRUE)  
-inat.amphibians <- read.csv("./Data/Raw/inaturalist_amphibians.csv",
-                            stringsAsFactors = TRUE)
-inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
-                        stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
 parks.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp")
 
@@ -118,19 +112,9 @@ inat.reptiles <- inat.reptiles %>%
 inat.mammals <- inat.mammals %>% 
   select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
 
-inat.fishnbugs <- inat.fishnbugs %>% 
-  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
+#binding into one data frame
+inat.all <- rbind(inat.birds, inat.mammals, inat.reptiles)
 
-inat.amphibians <- inat.amphibians %>% 
-  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
-
-inat.plants <- inat.plants %>% 
-  select(observed_on, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, taxon_genus_name)
-
-#combining the inaturalist data sets into one data frame
-inat.all <- rbind(inat.amphibians, inat.birds, inat.fishnbugs, inat.mammals, inat.plants, inat.reptiles)
-
-inat.animals <-rbind(inat.birds, inat.amphibians, inat.mammals, inat.reptiles)
 
 ```
 
@@ -356,6 +340,47 @@ mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE) %>% select(OBJ
 
 
 ## Species Data Set
+iNaturalist data was collected from inaturalist.org/observations/export using the export tool. Three data sets were created using a query, selecting for research grade only observations of reptiles, mammals, and birds within the boundaries of Everglades National Park, US, FL. We then selected the columns included in the data set: id, observed_on_string, observed_on, time_observed_at, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, and taxon_genus_name.The data was downloaded on November 28, 2022.
+
+This data set contained observations of citizen science data, typically a photo and the geographical coordinates of where the species was seen, and a date/time associated with the observation. Some of these coordinates were obscured, which impacted spatial analysis. Once the data set was imported, it was filtered for federally listed species of mammals, birds, and reptiles found in Everglades National Park. This included 10 species of bird, though only six species were present in the data. Three species of mammal and six species of reptile listed as Endangered, Threatened, Candidate, Proposed Threatened, or Threatened due to similarity of appearance were chosen from the data set. Species were selected based on Table 1. Federally Listed Species and Designated Critical Habitat in Everglades National Park (https://www.nps.gov/ever/learn/nature/techecklist.htm).
+
+To wrangle the data set, first the necessary columns were selected for. Then, the three files (reptiles, bird, mammals) were combined into a single data frame using rbind. Next, a column containing only the year was added, and the data was filtered for federally protected species, and filtered for observations made after 2000. The data frame was then used to produce two new data frames: one containing the number of observations of each species by year, and a spatial data set by tranforming the latitude and longitude coordinates on to the UTM geographical reference coordinate system.
+
+```{r, wrangling inaturalist data}
+#adding a year column, filtering for federally listed species and invasive species, filtering for observations after 2000 
+inat.processed <- inat.all %>% 
+   mutate(YEAR=year(observed_on)) %>% 
+  filter(scientific_name=="Calidris canutus"| scientific_name=="Charadrius melodus"|scientific_name=="Mycteria americana"| scientific_name=="Rostrhamus sociabilis plumbeus"| scientific_name=="Sterna dougallii"| scientific_name== "Haliaeetus leucocephalus" | #filtering protected birds
+         
+          scientific_name=="Puma concolor couguar"| scientific_name=="Trichechus manatus" |scientific_name=="Trichechus manatus latirostris" |#filtering protected mammals and raccoon
+           
+           scientific_name == "Alligator mississippiensis" |scientific_name=="Crocodylus acutus" | scientific_name == "Gopherus polyphemus" | scientific_name=="Drymarchon couperi"| scientific_name=="Caretta caretta"|  scientific_name == "Chelonia mydas"|  #filtering for protected reptiles
+
+scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus") %>%  #filtering for invasive species
+filter(YEAR > '2000-01-01')
+
+
+#grouping species data by year counts
+inat.yearcount <- inat.processed %>% 
+  mutate(species = scientific_name) %>%
+  filter(YEAR > '2000-01-01') %>% 
+  group_by(YEAR, species) %>% 
+  summarise(scientific_name=n())
+
+#visualizing year data
+animal.plot <- ggplot(inat.yearcount) +
+  geom_line(aes(x = YEAR, y = scientific_name, color = species))
+print(animal.plot)
+
+#converting to spatial data
+inat.spatial <- inat.processed %>% 
+  st_as_sf(coords = c('longitude', 'latitude'), crs=4326)
+inat.utm <- st_transform(inat.spatial, 4326)
+
+#visualizing spatial data
+mapview(inat.spatial)
+
+```
 
 ## Nutrient Data Set
 Data on nutrient concentrations in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Water Quality Data (Grab Samples) from the Shark River Slough, Everglades National Park (FCE LTER), May 2001 - ongoing.  
@@ -857,3 +882,4 @@ Lovelock, C. E., Ball, M. C., Martin, K. C., & C. Feller, I. (2009). Nutrient en
 
 Nasser, Ramadan A.. “SPECIFIC GRAVITY , FIBER LENGTH AND CHEMICAL COMPONENTS OF CONOCARPUS ERECTUS AS AFFECTED BY TREE SPACING.” Journal of Agriculture & Environmental Science, Alexandria Univ., Egypt 7(3), (2008).
 
+National Park Service (NPS (2021)). Everglades National Park, Florida: Threatened and Endangered Species. https://www.nps.gov/ever/learn/nature/techecklist.htm

@@ -54,7 +54,7 @@ iNaturalist data was collected from inaturalist.org/observations/export using th
 
 We then selected the columns included in the data set: id, observed_on_string, observed_on, time_observed_at, latitude, longitude, scientific_name, common_name, iconic_taxon_name, taxon_id, taxon_order_name, and taxon_genus_name.
 
-The csv files were saved as `inaturalist_reptiles2`, `inaturalist_mammals`, and `inaturalist_reptiles2` in the raw data folder.
+The csv files were saved as `inaturalist_reptiles2`, `inaturalist_mammals`, and `inaturalist_birds` in the raw data folder.
 
 Data were accessed on 2022-11-28.
 
@@ -159,7 +159,39 @@ Files are named according to the following naming convention: `databaseinfo_data
 | Shape_Area                   | Area of polygon    | numeric   | Subject to coordinate system |
 | geometry                     | Coordinate pair    | list      | (Longitude, Latitude)        |
 
-6. **others**
+6.inaturalist_reptiles2.csv 
+| Column Name         | Column Description          | Class    | Format/Units           |
+| ------------------- | --------------------------- | -------- | ---------------------- |
+| id                  | Unique id of observation    | int      | numeric                |
+| observed_on_string  | Date as input by observer   | factor   | numeric and characters |
+| observed_on         | Normalized date             | date     | YYYY-MM-DD             |
+| time_observed_at    | Normalized datetime         | factor   | YYYY-MM-DD hh:mm:ss    |
+| latitude            | Publically shared latitude  | numeric  | degrees, latitude      |
+| longitude           | Publically shared longitude | numeric  | degrees, longitude     |
+| scientific_name     | Latin Genus species         | factor   | Genus species          |
+| common_name         | Common name or vernacular   | factor   | Common Name            |
+| iconic_taxon_name   | Higher level taxonomic id   | factor   | Class (Linnaeus)       |
+| taxon_id            | Unique identity # for taxon | int      | numeric                |
+| taxon_order_name    | Latin Order of taxon        | factor   | Order (Linnaeus)       |
+| taxon_genus_name    | Latin Genus of taxon        | factor   | Genus  (Linnaeus)      | 
+
+6.inaturalist_mammals.csv 
+| Column Name         | Column Description          | Class    | Format/Units           |
+| ------------------- | --------------------------- | -------- | ---------------------- |
+| id                  | Unique id of observation    | int      | numeric                |
+| observed_on_string  | Date as input by observer   | factor   | numeric and characters |
+| observed_on         | Normalized date             | date     | YYYY-MM-DD             |
+| time_observed_at    | Normalized datetime         | factor   | YYYY-MM-DD hh:mm:ss    |
+| latitude            | Publically shared latitude  | numeric  | degrees, latitude      |
+| longitude           | Publically shared longitude | numeric  | degrees, longitude     |
+| scientific_name     | Latin Genus species         | factor   | Genus species          |
+| common_name         | Common name or vernacular   | factor   | Common Name            |
+| iconic_taxon_name   | Higher level taxonomic id   | factor   | Class (Linnaeus)       |
+| taxon_id            | Unique identity # for taxon | int      | numeric                |
+| taxon_order_name    | Latin Order of taxon        | factor   | Order (Linnaeus)       |
+| taxon_genus_name    | Latin Genus of taxon        | factor   | Genus  (Linnaeus)      | 
+
+6.inaturalist_birds.csv 
 | Column Name         | Column Description          | Class    | Format/Units           |
 | ------------------- | --------------------------- | -------- | ---------------------- |
 | id                  | Unique id of observation    | int      | numeric                |
