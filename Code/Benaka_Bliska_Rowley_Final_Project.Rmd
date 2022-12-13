@@ -4,8 +4,14 @@ title: Identifying Priority Conservation Areas in the Florida Everglades for Man
 author: "Isaac Benaka, Hanna Bliska, and Caroline Rowley"
 date: "Fall 2022"
 output:
+<<<<<<< HEAD
   pdf_document: default
   bookdown: default
+=======
+  html_document:
+    df_print: paged
+  pdf_document: default
+>>>>>>> 46352c11b6280109626c2ab174b32acb9cbaa3af
 subtitle: Final Project, ENV 872
 editor_options:
   chunk_output_type: console
@@ -78,19 +84,10 @@ Our research questions were:
 ```{r, renaming columns, include=FALSE}
 
 #renaming column names and removing repeated header row
-colnames(FCE.mean.sea.levels) <- c(
-  "Station_ID", "Year", "Month", "MSL")
-FCE.mean.sea.levels=FCE.mean.sea.levels[-1,]
-
 colnames(FCE.nutrients.data) <- c(
   "SITE_NAME", "DATE", "TIME", "Salinity", "TN", "TP",
   "TOC", "NH4", "NandN", "NO2", "SRP", "DOC", "NO3")
 FCE.nutrients.data=FCE.nutrients.data[-1,]
-
-colnames(FCE.sawgrass.data) <- c(
-  "SITE_NAME", "DATE", "Sawgrass_AG_Biomass", "Sawgrass_AG_Biomass_STD",
-  "Sawgrass_Culm_Density", "Sawgrass_Culm_Density_STD") 
-FCE.sawgrass.data=FCE.sawgrass.data[-1,]
 
 colnames(FCE.site.coordinates) <- c(
   "SITE", "Latitude (Decimal Degrees)", "Longitude (Decimal Degrees)",
@@ -122,9 +119,8 @@ inat.all <- rbind(inat.birds, inat.mammals, inat.reptiles)
 ```{r, formatting data sets, include=FALSE}
 #formatting date columns
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
-FCE.sawgrass.data$DATE <- as.Date(FCE.sawgrass.data$DATE, format="%Y-%m-%d")
 FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
-inat.animals$observed_on <- as.Date(inat.animals$observed_on, format("%Y-%m-%d"))
+inat.all$observed_on <- as.Date(inat.all$observed_on, format("%Y-%m-%d"))
 
 #formatting numeric values
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
