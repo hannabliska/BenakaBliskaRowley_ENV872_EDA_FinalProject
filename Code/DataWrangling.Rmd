@@ -210,7 +210,7 @@ inat.processed <- inat.all %>%
            
            scientific_name == "Alligator mississippiensis" |scientific_name=="Crocodylus acutus" | scientific_name == "Gopherus polyphemus" | scientific_name=="Drymarchon couperi"| scientific_name=="Caretta caretta"|  scientific_name == "Chelonia mydas"|  #filtering for protected reptiles
 
-scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus") %>%  #filtering for invasive species
+scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus" | scientific_name == "Anolis equestris"|scientific_name == "Anolis sagrei"|scientific_name == "Gekko gecko"|scientific_name == "Hemidactylus garnotii"|scientific_name == "Hemidactylus mabouia"|scientific_name == "Iguana iguana"|scientific_name == "Indotyphlops braminus") %>%  #filtering for invasive species
 filter(YEAR > '2000-01-01')
 
 

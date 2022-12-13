@@ -279,11 +279,28 @@ protected.mammal.map <- mapview(inat.cougar, col.regions="peru", layer.name= "Fl
 mapview(inat.west.indian.manatee, col.regions="seagreen2", layer.name= "West Indian Manatee (Threatened) Observations 2000-2022")
 print(protected.mammal.map)
 
-#filtering for invasive pythons
+#filtering for invasive species
 inat.python <-inat.utm %>% 
   filter(scientific_name%in% c("Python bivittatus"))
+inat.armadillo <- inat.utm %>% 
+  filter(scientific_name%in% c("Dasypus novemcinctus"))
+inat.knight.anole <-inat.utm %>% 
+  filter(scientific_name%in% c("Anolis equestris"))
+inat.brown.anole <-inat.utm %>% 
+  filter(scientific_name%in% c("Anolis sagrei"))
+inat.tokay <-inat.utm %>% 
+  filter(scientific_name%in% c("Gekko gecko"))
+inat.indopacific.gecko <-inat.utm %>% 
+  filter(scientific_name%in% c("Hemidactylus garnotii"))
+inat.house.gecko <-inat.utm %>% 
+  filter(scientific_name%in% c("Hemidactylus mabouia"))
+inat.iguana <-inat.utm %>% 
+  filter(scientific_name%in% c("Iguana iguana"))
+inat.brahminy.blind.snake <-inat.utm %>% 
+  filter(scientific_name%in% c("Indotphlops braminus"))
 #plotting invasive map
-invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")
+invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
+
 print(invasive.map)
 
 ```
