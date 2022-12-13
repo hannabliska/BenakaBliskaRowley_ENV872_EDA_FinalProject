@@ -39,6 +39,9 @@ Data on site coordinates were collected from the Florida Coastal Everglades LTER
 
 Data were accessed on 2022-11-15.
 
+### Above Ground Biomass Calculations
+The biomass r package was used to find wood density values and calculate above ground biomass for mangrove species sampled in the Florida Coastal Everglades LTER Data Set. The generated data can be found in `treeAGB.csv` in the Processed data folder.
+
 ### Mangrove Distribution Data
 Mangrove habitat spatial data was collected from the Florida Fish and Wildlife Conservation Commission GIS & Mapping Data website (https://geodata.myfwc.com/datasets/myfwc::mangrove-habitat-in-florida-1/about). The shapefile data were saved as `Mangrove_Habitat_in_Florida` under the Spatial data folder.
 
