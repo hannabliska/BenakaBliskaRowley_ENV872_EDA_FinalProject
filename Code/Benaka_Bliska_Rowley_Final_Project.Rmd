@@ -4,9 +4,8 @@ title: Identifying Priority Conservation Areas in the Florida Everglades for Man
 author: "Isaac Benaka, Hanna Bliska, and Caroline Rowley"
 date: "Fall 2022"
 output:
-bookdown::html_document2: default
-    toc: true
-  pdf_document: default
+  bookdown::html_document2: default
+
 subtitle: Final Project, ENV 872
 editor_options:
   chunk_output_type: console
@@ -540,26 +539,26 @@ site.locations.nutrients.sf <-
 
 ## Mangrove Data
 
-To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure \@ref(fig:mangrovemap)). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrove.site.plot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGB.site.plot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
+To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure \@ref(fig:mangrovemap)). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrovesiteplot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGBsiteplot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
 
-```{r mangrove distribution, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE}
+```{r mangrovemap, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE}
 # Generate map of mangrove habitat in Everglades National Park.
 mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4, layer.name = "Mangrove Habitat") + mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")+
 mapview(treeAGB, layer.name = "Monitoring Sites")
 mangrovemap
 ```
 
-```{r mangrove.site.plot, fig.cap = "Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades", echo=FALSE}
-mangrove.site.plot <- ggplot(treeAGB, aes(x=SITE, y=AGB)) +
+```{r mangrovesiteplot, fig.cap = "Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades", echo=FALSE}
+mangrovesiteplot <- ggplot(treeAGB, aes(x=SITE, y=AGB)) +
   geom_boxplot()+
   xlab(expression("Site Name")) +
   ylab(expression("Above Ground Biomass (metric tons)")) +
   ggtitle(expression("Above Ground Biomass of Mangrove Trees by Site"),
           subtitle="Florida Coastal Everglades")
-mangrove.site.plot
+mangrovesiteplot
 ```
 
-```{r AGB.sites.plot, fig.cap = "Mean Above Ground Biomass of Mangrove Trees by Year at Sites in Florida Everglades National Park", echo=FALSE}
+```{r AGBsitesplot, fig.cap = "Mean Above Ground Biomass of Mangrove Trees by Year at Sites in Florida Everglades National Park", echo=FALSE}
 AGB.SRS4.plot <- ggplot(treesSRS4, aes(x=YEAR,y=meanAGB))+
   geom_point()+  
   geom_smooth(method = "lm", se=F)+
@@ -575,8 +574,8 @@ AGB.SRS6.plot <- ggplot(treesSRS6, aes(x=YEAR,y=meanAGB))+
   geom_smooth(method = "lm", se=F)+
   labs(title="SRS6", y="Mean AGB (mt)")
 
-AGB.sites.plot <- plot_grid(AGB.SRS4.plot, AGB.SRS5.plot, AGB.SRS6.plot, ncol=1)
-AGB.sites.plot
+AGBsitesplot <- plot_grid(AGB.SRS4.plot, AGB.SRS5.plot, AGB.SRS6.plot, ncol=1)
+AGBsitesplot
 ```
 
 ## Species Data
