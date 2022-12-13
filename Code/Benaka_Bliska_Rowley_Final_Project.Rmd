@@ -60,10 +60,7 @@ inat.amphibians <- read.csv("./Data/Raw/inaturalist_amphibians.csv",
 inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
                         stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
-park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park") %>% select(UNIT_NAME, geometry)
-# Project spatial data to UTM 17N
-mangrove.utm <- st_transform(mangrove.sf,32617)
-park.utm <- st_transform(park.boundary,32617)
+parks.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp")
 
 ```
 
@@ -212,7 +209,148 @@ The final spatial dataset for the mangrove habitat area in Everglades National P
 | SOURCEDATE | YYYY             | 1999 - 2016   | N/A     |
 | geometry   | x,y coordinates  | N/A           | N/A     |
 
-```{r}
+```{r, wrangling for wood density and AGB across the three sites of interest, include=FALSE}
+#create dataframe for Rhizophora mangle and calculate wood density
+R.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="R") %>%
+  mutate(getWoodDensity(genus = "Rhizophora", species = "mangle")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+#add geographic coordinates
+R.trees <- merge(x=R.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE) 
+R.trees$`Latitude (Decimal Degrees)` <- as.numeric(R.trees$`Latitude (Decimal Degrees)`)
+R.trees$`Longitude (Decimal Degrees)` <- as.numeric(R.trees$`Longitude (Decimal Degrees)`)
+  
+#create dataframe of coordinates for each mangrove observation
+R.trees.coordinates <- cbind(R.trees$`Longitude (Decimal Degrees)`, R.trees$`Latitude (Decimal Degrees)`)
+
+#compute the above ground biomass in metric tons and add to species dataframe
+R.trees <- R.trees %>%
+  mutate(computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)) %>% 
+  rename(AGB = `computeAGB(R.trees$Tree_DBH, R.trees$meanWD, coord = R.trees.coordinates)`)
+R.trees <- R.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
+#create dataframe for Laguncularia racemosa and calculate wood density
+L.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="L") %>%
+  mutate(getWoodDensity(genus = "Laguncularia", species = "racemosa")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+#add geographic coordinates
+L.trees <- merge(x=L.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+L.trees$`Latitude (Decimal Degrees)` <- as.numeric(L.trees$`Latitude (Decimal Degrees)`)
+L.trees$`Longitude (Decimal Degrees)` <- as.numeric(L.trees$`Longitude (Decimal Degrees)`)
+  
+#create dataframe of coordinates for each mangrove observation
+L.trees.coordinates <- cbind(L.trees$`Longitude (Decimal Degrees)`, L.trees$`Latitude (Decimal Degrees)`)
+
+#compute the above ground biomass in metric tons and add to species dataframe
+L.trees <- L.trees %>%
+  mutate(computeAGB(L.trees$Tree_DBH, L.trees$meanWD, coord = L.trees.coordinates)) %>% 
+  rename(AGB = `computeAGB(L.trees$Tree_DBH, L.trees$meanWD, coord = L.trees.coordinates)`)
+L.trees <- L.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
+#create dataframe for Avicennia germinans and calculate wood density
+A.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="A") %>%
+  mutate(getWoodDensity(genus = "Avicennia", species = "germinans")) %>%
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+#add geographic coordinates
+A.trees <- merge(x=A.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+A.trees$`Latitude (Decimal Degrees)` <- as.numeric(A.trees$`Latitude (Decimal Degrees)`)
+A.trees$`Longitude (Decimal Degrees)` <- as.numeric(A.trees$`Longitude (Decimal Degrees)`)
+
+#create dataframe of coordinates for each mangrove observation
+A.trees.coordinates <- cbind(A.trees$`Longitude (Decimal Degrees)`, A.trees$`Latitude (Decimal Degrees)`)
+
+#compute the above ground biomass in metric tons and add to species dataframe
+A.trees <- A.trees %>%
+  mutate(computeAGB(A.trees$Tree_DBH, A.trees$meanWD, coord = A.trees.coordinates)) %>% 
+  rename(AGB = `computeAGB(A.trees$Tree_DBH, A.trees$meanWD, coord = A.trees.coordinates)`)
+A.trees <- A.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
+#create dataframe for Conacarpus erectus and calculate wood density
+C.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
+  filter(Species.Tree=="C") %>%
+  mutate(meanWD = rep(0.69)) %>% #wood density value for Conacarpus erectus
+  select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
+
+#add geographic coordinates
+C.trees <- merge(x=C.trees, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+C.trees$`Latitude (Decimal Degrees)` <- as.numeric(C.trees$`Latitude (Decimal Degrees)`)
+C.trees$`Longitude (Decimal Degrees)` <- as.numeric(C.trees$`Longitude (Decimal Degrees)`)
+
+#create dataframe of coordinates for each mangrove observation
+C.trees.coordinates <- cbind(C.trees$`Longitude (Decimal Degrees)`, C.trees$`Latitude (Decimal Degrees)`)
+
+#compute the above ground biomass in metric tons and add to species dataframe
+C.trees <- C.trees %>%
+  mutate(computeAGB(C.trees$Tree_DBH, C.trees$meanWD, coord = C.trees.coordinates)) %>% 
+  rename(AGB = `computeAGB(C.trees$Tree_DBH, C.trees$meanWD, coord = C.trees.coordinates)`)
+C.trees <- C.trees %>%
+  select(SITE, DATE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry, AGB)
+
+treeAGB <- bind_rows(A.trees, C.trees, L.trees, R.trees) %>% #combine species dataframes together
+  filter(SITE != "TS/Ph8") %>% #remove site outside of area of interest
+  mutate(YEAR = year(DATE)) #change YEAR column values to date class
+
+#saving as a processed data frame
+write.csv(treeAGB, row.names = FALSE, file= "./Data/Processed/treeAGB.csv")
+
+```
+
+```{r, wrangling into site dataframes, include=FALSE}
+Years <- as.data.frame(seq(2000,2019,1)) #create dataframe with list of years
+colnames(Years) <- c("YEAR") #add complete list of years to dataframes that are missing observations for those years
+
+
+treesSRS4 <- treeAGB %>%
+  filter(SITE == "SRS4") %>% #select for site
+  group_by(YEAR) %>% #grouping by year
+  summarise(meanAGB = mean(AGB)) #find mean AGB for each year
+treesSRS4 <- left_join(Years, treesSRS4, by = c("YEAR")) #add years where data is missing for interpolation
+#saving as a processed data frame
+write.csv(treesSRS4, row.names = FALSE, file= "./Data/Processed/treesSRS4.csv")
+
+
+treesSRS5 <- treeAGB %>%
+  filter(SITE == "SRS5") %>% #select for site
+  group_by(YEAR) %>% #grouping by year
+  summarise(meanAGB = mean(AGB)) #find mean AGB for each year
+treesSRS5 <- left_join(Years, treesSRS5, by = c("YEAR"))#add years where data is missing for interpolation
+#saving as a processed data frame
+write.csv(treesSRS5, row.names = FALSE, file= "./Data/Processed/treesSRS5.csv")
+
+
+treesSRS6 <- treeAGB %>%
+  filter(SITE == "SRS6") %>% #select for site
+  group_by(YEAR) %>% #grouping by year
+  summarise(meanAGB = mean(AGB)) #find mean AGB for each year
+treesSRS6 <- left_join(Years, treesSRS6, by = c("YEAR"))#add years where data is missing for interpolation
+#saving as a processed data frame
+write.csv(treesSRS6, row.names = FALSE, file= "./Data/Processed/treesSRS6.csv")
+
+```
+
+```{r, wrangling for Everglades National Park boundary polygon, include=FALSE}
+#Filter for Everglades National Park boundary
+park.boundary <- parks.boundary %>% filter(UNIT_NAME == "Everglades National Park") %>% select(UNIT_NAME, geometry) #pare down columns
+
+# Project spatial data to UTM 17N
+park.utm <- st_transform(park.boundary,32617)
+
+```
+
+```{r, wrangling mangrove habtiat shapefile, include=FALSE}
+# Project spatial data to UTM 17N
+mangrove.utm <- st_transform(mangrove.sf,32617)
+
+# Crop mangrove shapefile to Everglades National Park boundary.
+mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE) %>% select(OBJECTID, SOURCEDATE, geometry)
 
 ```
 
@@ -380,10 +518,8 @@ site.locations.nutrients.sf <-
 To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure \@ref(fig:mangrovemap)). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrove.site.plot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGB.site.plot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
 
 ```{r mangrove distribution, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE, include=FALSE}
-# Crop mangrove shapefile to Everglades National Park boundary.
-mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE) %>% select(OBJECTID, SOURCEDATE, geometry)
 # Generate map of mangrove habitat in Everglades National Park.
-mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4, layer.name = "Mangrove Habitat") + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")+
+mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4, layer.name = "Mangrove Habitat") + mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")+
 mapview(treeAGB, layer.name = "Monitoring Sites")
 mangrovemap
 ```
