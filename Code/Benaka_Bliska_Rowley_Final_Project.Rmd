@@ -491,7 +491,7 @@ map.site.nitro.plot
 There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plot.mean.monthly.phos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
 
 ```{r, time series analysis for mangrove sites, include=FALSE}
-treesSRS4$meanAGB <- na.approx(treesSRS4$meanAGB) #using`na.approx` fato fill in missing monthly data
+treesSRS4$meanAGB <- na.approx(treesSRS4$meanAGB) #using`na.approx` to fill in missing yearly data
 
 FCE.phos.monthly.ts <- ts(
   FCE.phos.monthly.data$MEAN_TP, 
