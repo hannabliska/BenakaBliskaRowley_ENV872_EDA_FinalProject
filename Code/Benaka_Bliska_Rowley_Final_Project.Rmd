@@ -488,6 +488,47 @@ map.site.nitro.plot
 
 ## Question 1: Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
 
+There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plot.mean.monthly.phos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
+
+```{r, time series analysis for mangrove sites, include=FALSE}
+treesSRS4$meanAGB <- na.approx(treesSRS4$meanAGB) #using`na.approx` fato fill in missing monthly data
+
+FCE.phos.monthly.ts <- ts(
+  FCE.phos.monthly.data$MEAN_TP, 
+  start=c(2001,5), end=c(2021,12),frequency=12) 
+#generating time series object
+#monthly measurements, using 12
+
+FCE.phos.monthly.ts.decomposed <- stl(
+  FCE.phos.monthly.ts, s.window = "periodic") 
+#decomposing daily time series
+plot(FCE.phos.monthly.ts.decomposed) #plotting components
+
+#running mann kendall
+FCE.phos.monthly.ts.trend <- MannKendall(FCE.phos.monthly.ts) 
+#using `MannKendall` for trend analysis
+summary(FCE.phos.monthly.ts.trend) #summary
+```
+
+```{r plot.mean.monthly.phos, fig.cap="Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+plot.mean.monthly.phos <- ggplot(
+  FCE.phos.monthly.data, aes(
+    x=Date, y=MEAN_TP)) + #setting axes
+  geom_point() + #generating scatter plot
+  geom_line() + #generating line plot
+  scale_x_date(date_breaks="1 year", labels=date_format("%m-%Y")) +
+  #using `scale_x_date` to generate a break every 6 months
+  #labels to show month-date-year
+  theme(axis.text.x=element_text(angle=60, hjust=1)) + 
+  #angle for the day-month-year labels
+  xlab(expression("Date")) + #setting x axis label
+  ylab(expression ("Mean Monthly Phosphorus Levels (mcmol/L)")) +
+#setting y axis label
+  geom_smooth(method=lm, se = FALSE, color="red") + #adding linear trend
+  ggtitle(expression("Mean Monthly Phosphorus Levels from 2001-2021"),
+          subtitle="Florida Coastal Everglades")
+print(plot.mean.monthly.phos) #printing plot
+```
 ## Question 2: Are native, mangrove-associated species decreasing in the park and where are these species observed?
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
