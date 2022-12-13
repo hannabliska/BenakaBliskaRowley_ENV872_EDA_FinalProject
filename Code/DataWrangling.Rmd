@@ -343,20 +343,32 @@ ggplot(siteAGB, aes(x=DATE,y=meanAGB))+
 ```
 
 ```{r, wrangling into site dataframes}
+Years <- as.data.frame(seq(2000,2019,1))
+
+colnames(Years) <- c("YEAR")
+
+
 treesSRS4 <- treeAGB %>%
   filter(SITE == "SRS4") %>%
   group_by(YEAR) %>%
   summarise(meanAGB = mean(AGB))
+treesSRS4 <- left_join(
+  Years, treesSRS4, by = c("YEAR"))  
+
 
 treesSRS5 <- treeAGB %>%
   filter(SITE == "SRS5") %>%
   group_by(YEAR) %>%
   summarise(meanAGB = mean(AGB))
+treesSRS5 <- left_join(
+  Years, treesSRS5, by = c("YEAR"))
 
 treesSRS6 <- treeAGB %>%
   filter(SITE == "SRS6") %>%
   group_by(YEAR) %>%
   summarise(meanAGB = mean(AGB))
+treesSRS6 <- left_join(
+  Years, treesSRS6, by = c("YEAR"))
 
 ```
 
