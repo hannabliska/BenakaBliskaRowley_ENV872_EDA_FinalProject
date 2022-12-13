@@ -684,24 +684,20 @@ treesSRS6.ts <- ts(
   start=c(2000,01), end=c(2017,01),frequency=1) 
 plot(treesSRS6.ts)
 
-#decomposing time series
-treesSRS4.ts.decomp <- stl(treesSRS4.ts, s.window="per")
-treesSRS5.ts.decomp <- stl(treesSRS5.ts, s.window="periodic")
-treesSRS6.ts.decomp <- stl(treesSRS6.ts, s.window="periodic")
-
 #plotting components
-plot(treesSRS4.ts.decomp) 
-plot(treesSRS5.ts.decomp) 
-plot(treesSRS6.ts.decomp) 
+plot(treesSRS4.ts) 
+plot(treesSRS5.ts) 
+plot(treesSRS6.ts) 
 
 #running Mann Kendall
 treesSRS4.ts.trend <- MannKendall(treesSRS4.ts) 
-
-
+treesSRS5.ts.trend <- MannKendall(treesSRS5.ts) 
+treesSRS6.ts.trend <- MannKendall(treesSRS6.ts) 
 
 #results of `MannKendall` for trend analysis
 summary(treesSRS4.ts.trend)
-
+summary(treesSRS5.ts.trend)
+summary(treesSRS6.ts.trend)
 
 ```
 
