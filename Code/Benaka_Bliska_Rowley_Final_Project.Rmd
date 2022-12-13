@@ -191,6 +191,9 @@ The final spatial dataset for the mangrove habitat area in Everglades National P
 | geometry   | x,y coordinates  | N/A           | N/A     |
 
 ```{r, wrangling for wood density and AGB across the three sites of interest, include=FALSE}
+
+FCE.tree.data.sites <- merge(x=FCE.tree.data, y=FCE.site.coordinates, by="SITE", all.x = TRUE)
+
 #create dataframe for Rhizophora mangle and calculate wood density
 R.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
   filter(Species.Tree=="R") %>%
