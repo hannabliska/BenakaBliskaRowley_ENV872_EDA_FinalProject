@@ -6,6 +6,7 @@ date: "Fall 2022"
 output:
   html_document:
     df_print: paged
+    toc: true
   pdf_document: default
 subtitle: Final Project, ENV 872
 editor_options:
@@ -152,6 +153,7 @@ The forest growth dataset contained dendrologic data for four long-term monitori
 To conduct analysis, we wrangled the data into three separate monitoring site dataframes to compare them against one another and determine site-by-site trends. Because the number of observations was not consistent across the sites over time, we elected to compare the average above ground biomass for individual trees at each site as opposed to summing the above ground biomass estimations together. To do this, we used the `group_by` and `summarise` functions in R to find the mean above ground biomass of trees at each site for each year that observations were available.
 
 The final data structure containing above ground biomass estimations for measured mangroves at the three sites of interest in Everglades National Park (`treeAGB`) is as follows:
+
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | SITE       | N/A        | 3 sites                 | N/A     |
@@ -165,18 +167,21 @@ The final data structure containing above ground biomass estimations for measure
 | YEAR       | YYYY       | 1995 - 2019             | 2008    |
 
 The final yearly datasets for mean above ground biomass of trees by site (`treesSRS4`,`treesSRS5`,`treesSRS6`) is as follows:
+
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 1995 - 2019   | N/A     |
 | meanAGB    | metric tons| 0 - 1239.2250 | 324.991 |
 
 The final spatial dataset for Everglades National Park boundary (`park.boundary`) is as follows:
+
 | Variable   | Units            | Range         | Mean    |
 | ---------- | ---------------- | ------------- | ------- |
 | UNIT_NAME  | N/A              | N/A           | N/A     |
 | geometry   | x,y coordinates  | N/A           | N/A     |
 
 The final spatial dataset for the mangrove habitat area in Everglades National Park (`mangrove.area`) is as follows:
+
 | Variable   | Units            | Range         | Mean    |
 | ---------- | ---------------- | ------------- | ------- |
 | OBJECTID   | N/A              | N/A           | N/A     |
@@ -381,19 +386,21 @@ This data set obtained nutrient data for 8 long-term mangrove vegetation monitor
 For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date.
 
 The final data structure for the yearly data set for phosphorus (`FCE.phos.yearly.data`) is as follows:
+
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TP    | mcmol/L    | 21.64 - 75.26 | 45.36   |
 
-
 The final data structure for the yearly data set for nitrogen (`FCE.nitro.yearly.data`) is as follows:
+
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TN    | mcmol/L    | 416.7 - 950.3 | 699.2   |
 
 The final data structure for the monthly data set for phosphorus (`FCE.phos.monthly.data`) is as follows:
+
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
@@ -402,6 +409,7 @@ The final data structure for the monthly data set for phosphorus (`FCE.phos.mont
 | MEAN_TP    | mcmol/L    | 5.167-141.833           | 46.021  |
 
 The final data structure for the monthly data set for nitrogen (`FCE.nitro.monthly.data`) is as follows:
+
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
@@ -412,6 +420,7 @@ The final data structure for the monthly data set for nitrogen (`FCE.nitro.month
 For site comparison analysis, we wrangled the data to select only nitrogen and phosphorus for each site using the `select` function in R. 
 
 The final data structure for the data set (`FCE.site.nutrient.data`) is as follows:
+
 | Variable   | Units            | Range                   | Mean    |
 | ---------- | ---------------- | ----------------------- | ------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |
@@ -422,6 +431,7 @@ The final data structure for the data set (`FCE.site.nutrient.data`) is as follo
 For spatial visualizations of the site nutrient data, we created a spatial data frame using the site coordinate data.
 
 The final data structure for the data set (`site.locations.nutrients.sf`) is as follows:
+
 | Variable   | Units            | Range                   | Mean    |
 | ---------- | ---------------- | ----------------------- | ------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |

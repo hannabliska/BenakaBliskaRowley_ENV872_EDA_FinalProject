@@ -1,17 +1,19 @@
 ---
-title: Identifying Priority Conservation Areas in the Florida Everglades for Mangrove Habitat
-subtitle: Final Project, ENV 872
-author: Isaac Benaka, Hanna Bliska, and Caroline Rowley
-date: Fall 2022
+title: Identifying Priority Conservation Areas in the Florida Everglades for Mangrove
+  Habitat
+author: "Isaac Benaka, Hanna Bliska, and Caroline Rowley"
+date: "Fall 2022"
 output:
- pdf_document: default
-editor_options: 
+  html_document:
+    df_print: paged
+  pdf_document: default
+subtitle: Final Project, ENV 872
+editor_options:
   chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 # Set your working directory
-#setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
 getwd()
 
 # Load your packages
@@ -47,6 +49,12 @@ inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
                          stringsAsFactors = TRUE)  
 ```
 
+The final spatial dataset for Everglades National Park boundary (`park.boundary`) is as follows:
+
+| Variable   | Units            | Range         | Mean    |
+| ---------- | ---------------- | ------------- | ------- |
+| UNIT_NAME  | N/A              | N/A           | N/A     |
+| geometry   | x,y coordinates  | N/A           | N/A     |
 
 # Data Exploration
 
