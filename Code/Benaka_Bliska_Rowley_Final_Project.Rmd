@@ -4,14 +4,10 @@ title: Identifying Priority Conservation Areas in the Florida Everglades for Man
 author: "Isaac Benaka, Hanna Bliska, and Caroline Rowley"
 date: "Fall 2022"
 output:
-<<<<<<< HEAD
-  pdf_document: default
-  bookdown: default
-=======
   html_document:
     df_print: paged
+    toc: true
   pdf_document: default
->>>>>>> 46352c11b6280109626c2ab174b32acb9cbaa3af
 subtitle: Final Project, ENV 872
 editor_options:
   chunk_output_type: console
@@ -73,9 +69,9 @@ Mangroves are vital coastal ecosystems that support biological diversity and for
 The Florida Coastal Everglades Long Term Ecological Research (FCE LTER) Site has been monitoring mangrove ecosystems in the Florida Everglades National Park. Their long-term monitoring programs have helped scientists track long-term changes in the mangrove communities for many years (Florida Coastal Everglades LTER, 2022). Their publicly available datasets report variables related to mangrove health, such as height, diameter, species, and nutrient availability. Additionally, citizen scientists have visited the Florida Everglades National Park and collected data on their observations of mangrove-associated species over time through iNaturalist. These databases pose an opportunity for us to investigate factors that may impact mangrove health and consider areas of the park where mangrove ecosystem conservation efforts may be focused to best protect these vital ecosystems.
 
 Our research questions were:
-1. Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
-2. Are native, mangrove-associated species decreasing in the park and where are these species observed?
-3. How has nutrient availability changed over time and where are the areas of highest concern (i.e., highest nutrient levels) for mangroves?
+#1. Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
+#2. Are native, mangrove-associated species decreasing in the park and where are these species observed?
+#3. How has nutrient availability changed over time and where are the areas of highest concern (i.e., highest nutrient levels) for mangroves?
 
 \newpage
 
@@ -145,8 +141,6 @@ site.locations.sf <- st_as_sf(
 #specifying Longitude as x and Latitude as y
 #using crs 4326
 
-mapview(site.locations.sf) #confirming locations of sites
-
 ```
 
 ## Mangrove Data Sets
@@ -159,6 +153,7 @@ The forest growth dataset contained dendrologic data for four long-term monitori
 To conduct analysis, we wrangled the data into three separate monitoring site dataframes to compare them against one another and determine site-by-site trends. Because the number of observations was not consistent across the sites over time, we elected to compare the average above ground biomass for individual trees at each site as opposed to summing the above ground biomass estimations together. To do this, we used the `group_by` and `summarise` functions in R to find the mean above ground biomass of trees at each site for each year that observations were available.
 
 The final data structure containing above ground biomass estimations for measured mangroves at the three sites of interest in Everglades National Park (`treeAGB`) is as follows:
+
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | SITE       | N/A        | 3 sites                 | N/A     |
@@ -172,18 +167,21 @@ The final data structure containing above ground biomass estimations for measure
 | YEAR       | YYYY       | 1995 - 2019             | 2008    |
 
 The final yearly datasets for mean above ground biomass of trees by site (`treesSRS4`,`treesSRS5`,`treesSRS6`) is as follows:
+
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 1995 - 2019   | N/A     |
 | meanAGB    | metric tons| 0 - 1239.2250 | 324.991 |
 
 The final spatial dataset for Everglades National Park boundary (`park.boundary`) is as follows:
+
 | Variable   | Units            | Range         | Mean    |
 | ---------- | ---------------- | ------------- | ------- |
 | UNIT_NAME  | N/A              | N/A           | N/A     |
 | geometry   | x,y coordinates  | N/A           | N/A     |
 
 The final spatial dataset for the mangrove habitat area in Everglades National Park (`mangrove.area`) is as follows:
+
 | Variable   | Units            | Range         | Mean    |
 | ---------- | ---------------- | ------------- | ------- |
 | OBJECTID   | N/A              | N/A           | N/A     |
@@ -351,7 +349,7 @@ This data set contained observations of citizen science data, typically a photo 
 
 To wrangle the data set, first the necessary columns were selected for. Then, the three files (reptiles, bird, mammals) were combined into a single data frame using rbind. Next, a column containing only the year was added, and the data was filtered for federally protected species, and filtered for observations made after 2000. The data frame was then used to produce two new data frames: one containing the number of observations of each species by year, and a spatial data set by tranforming the latitude and longitude coordinates on to the UTM geographical reference coordinate system.
 
-```{r, wrangling inaturalist data}
+```{r, wrangling inaturalist data, include=FALSE}
 #adding a year column, filtering for federally listed species and invasive species, filtering for observations after 2000 
 inat.processed <- inat.all %>% 
    mutate(YEAR=year(observed_on)) %>% 
@@ -372,20 +370,13 @@ inat.yearcount <- inat.processed %>%
   group_by(YEAR, species) %>% 
   summarise(scientific_name=n())
 
-#visualizing year data
-animal.plot <- ggplot(inat.yearcount) +
-  geom_line(aes(x = YEAR, y = scientific_name, color = species))
-print(animal.plot)
-
 #converting to spatial data
 inat.spatial <- inat.processed %>% 
   st_as_sf(coords = c('longitude', 'latitude'), crs=4326)
 inat.utm <- st_transform(inat.spatial, 4326)
 
-#visualizing spatial data
-mapview(inat.spatial)
-
 ```
+
 
 ## Nutrient Data Set
 Data on nutrient concentrations in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Water Quality Data (Grab Samples) from the Shark River Slough, Everglades National Park (FCE LTER), May 2001 - ongoing.  
@@ -395,19 +386,21 @@ This data set obtained nutrient data for 8 long-term mangrove vegetation monitor
 For time series analysis, we wrangled the data to determine the mean monthly and yearly nitrogen and phosphorus measurements within the monitoring sites. For the yearly measurements, we extracted the years from the date observations to create a new year column, and then averaged the nitrogen and phosphorus measurements within each year using the `group_by` and `summarize` functions in R. For the monthly measurements, we extracted the months from the date observations to create a new month column, and then averaged the nitrogen and phosphorus measurements within each month using the `group_by` and `summarize` functions in R. We then created a sequence of all of the months between the first and last data observation (May 2001 to December 2021) and joined this data to the original data frame to ensure there was an observation for every month between the first and last data observation date.
 
 The final data structure for the yearly data set for phosphorus (`FCE.phos.yearly.data`) is as follows:
+
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TP    | mcmol/L    | 21.64 - 75.26 | 45.36   |
 
-
 The final data structure for the yearly data set for nitrogen (`FCE.nitro.yearly.data`) is as follows:
+
 | Variable   | Units      | Range         | Mean    |
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TN    | mcmol/L    | 416.7 - 950.3 | 699.2   |
 
 The final data structure for the monthly data set for phosphorus (`FCE.phos.monthly.data`) is as follows:
+
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
@@ -416,6 +409,7 @@ The final data structure for the monthly data set for phosphorus (`FCE.phos.mont
 | MEAN_TP    | mcmol/L    | 5.167-141.833           | 46.021  |
 
 The final data structure for the monthly data set for nitrogen (`FCE.nitro.monthly.data`) is as follows:
+
 | Variable   | Units      | Range                   | Mean    |
 | ---------- | ---------  | ----------------------- | ------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
@@ -426,6 +420,7 @@ The final data structure for the monthly data set for nitrogen (`FCE.nitro.month
 For site comparison analysis, we wrangled the data to select only nitrogen and phosphorus for each site using the `select` function in R. 
 
 The final data structure for the data set (`FCE.site.nutrient.data`) is as follows:
+
 | Variable   | Units            | Range                   | Mean    |
 | ---------- | ---------------- | ----------------------- | ------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |
@@ -436,6 +431,7 @@ The final data structure for the data set (`FCE.site.nutrient.data`) is as follo
 For spatial visualizations of the site nutrient data, we created a spatial data frame using the site coordinate data.
 
 The final data structure for the data set (`site.locations.nutrients.sf`) is as follows:
+
 | Variable   | Units            | Range                   | Mean    |
 | ---------- | ---------------- | ----------------------- | ------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |
@@ -547,14 +543,14 @@ site.locations.nutrients.sf <-
 
 To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure \@ref(fig:mangrovemap)). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrove.site.plot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGB.site.plot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
 
-```{r mangrove distribution, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE, include=FALSE}
+```{r mangrove distribution, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE}
 # Generate map of mangrove habitat in Everglades National Park.
 mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4, layer.name = "Mangrove Habitat") + mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")+
 mapview(treeAGB, layer.name = "Monitoring Sites")
 mangrovemap
 ```
 
-```{r mangrove.site.plot, fig.cap = "Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r mangrove.site.plot, fig.cap = "Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades", echo=FALSE}
 mangrove.site.plot <- ggplot(treeAGB, aes(x=SITE, y=AGB)) +
   geom_boxplot()+
   xlab(expression("Site Name")) +
@@ -564,7 +560,7 @@ mangrove.site.plot <- ggplot(treeAGB, aes(x=SITE, y=AGB)) +
 mangrove.site.plot
 ```
 
-```{r AGB.sites.plot, fig.cap = "Mean Above Ground Biomass of Mangrove Trees by Year at Sites in Florida Everglades National Park", echo=FALSE, include=FALSE}
+```{r AGB.sites.plot, fig.cap = "Mean Above Ground Biomass of Mangrove Trees by Year at Sites in Florida Everglades National Park", echo=FALSE}
 AGB.SRS4.plot <- ggplot(treesSRS4, aes(x=YEAR,y=meanAGB))+
   geom_point()+  
   geom_smooth(method = "lm", se=F)+
@@ -586,11 +582,23 @@ AGB.sites.plot
 
 ## Species Data
 
+
+```{r, move to exploratory analysis section, echo=FALSE}
+#visualizing year data
+animal.plot <- ggplot(inat.yearcount) +
+  geom_line(aes(x = YEAR, y = scientific_name, color = species))
+print(animal.plot)
+
+#visualizing spatial data
+mapview(inat.spatial)
+```
+
+
 ## Nutrient Data
 
 To address Research Question #3, we were interested in exploring trends of nutrient concentrations in the vegetation plots over time. We calculated mean measurements of phosphorus and nitrogen for each year in the Florida Coastal Everglades. Our initial visualization of the relationship between time and mean phosphorus as well as mean nitrogen suggested that there was likely an increasing trend in phosphorus concentrations over time (See Figure \@ref(fig:phos.plot)) and nitrogen concentrations over time (See Figure \@ref(fig:nitro.plot)). The results of these visualizations motivated us to later analyze if there was a significant increasing trend in nutrient concentrations over time.
 
-```{r phos.plot, fig.cap = "Mean total phosphorus measurements over time in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r phos.plot, fig.cap = "Mean total phosphorus measurements over time in the Florida Coastal Everglades", echo=FALSE}
 phos.plot <- ggplot(FCE.phos.yearly.data, aes(x=YEAR, y=MEAN_TP)) +
   geom_point()+
   geom_smooth(method=lm, se=FALSE, color="blue")+
@@ -602,7 +610,7 @@ phos.plot
 ```
 
 
-```{r nitro.plot, fig.cap = "Mean total nitrogen measurements over time in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r nitro.plot, fig.cap = "Mean total nitrogen measurements over time in the Florida Coastal Everglades", echo=FALSE}
 nitro.plot <- ggplot(FCE.nitro.yearly.data, aes(x=YEAR, y=MEAN_TN)) +
   geom_point()+
   geom_smooth(method=lm, se=FALSE, color="blue") +
@@ -615,7 +623,7 @@ nitro.plot
 
 We were also interested in identifying areas of mangrove habitat within the Florida Coastal Everglades that may be stressed due to high nutrient concentrations. Therefore, we initially examined if different mangrove vegetation plots in the park had different phosphorus and nitrogen concentrations. Our initial visualization suggested that some sites, such as site SRS6, may have higher phosphorus concentrations ((See Figure \@ref(fig:phos.site.plot)), See Figure \@ref(fig:map.site.phos.plot)). Similarly, our initial visualization suggested the site SRS1d may have higher nitrogen concentrations ((See Figure \@ref(fig:nitro.site.plot)), See Figure \@ref(fig:map.site.nitro.plot)). These visualizations motivated further analysis to determine if the concentrations at different sites were significantly different from one another.
 
-```{r phos.site.plot, fig.cap = "Total phosphorus measurements for sites in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r phos.site.plot, fig.cap = "Total phosphorus measurements for sites in the Florida Coastal Everglades", echo=FALSE}
 phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
   geom_boxplot()+
   xlab(expression("Site Name")) +
@@ -626,13 +634,13 @@ phos.site.plot
 ```
 
 
-```{r map.site.phos.plot, fig.cap = "Map of Florida Coastal Everglades indicating level of phosphorus measurements per site", echo=FALSE, include=FALSE}
+```{r map.site.phos.plot, fig.cap = "Map of Florida Coastal Everglades indicating level of phosphorus measurements per site", echo=FALSE}
 map.site.phos.plot <- mapview(site.locations.nutrients.sf, zcol="TP", at = seq(0, 60, 10))
 map.site.phos.plot
 ```
 
 
-```{r nitro.site.plot, fig.cap = "Total nitrogen measurements for sites in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r nitro.site.plot, fig.cap = "Total nitrogen measurements for sites in the Florida Coastal Everglades", echo=FALSE}
 nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
   geom_boxplot()+
   xlab(expression("Site Name")) +
@@ -643,7 +651,7 @@ nitro.site.plot
 ```
 
 
-```{r map.site.nitro.plot, fig.cap = "Map of Florida Coastal Everglades indicating level of nitrogen measurements per site", echo=FALSE, include=FALSE}
+```{r map.site.nitro.plot, fig.cap = "Map of Florida Coastal Everglades indicating level of nitrogen measurements per site", echo=FALSE}
 map.site.nitro.plot <- mapview(site.locations.nutrients.sf, zcol="TN")
 map.site.nitro.plot
 ```
@@ -729,7 +737,7 @@ FCE.phos.monthly.ts.trend <- MannKendall(FCE.phos.monthly.ts)
 summary(FCE.phos.monthly.ts.trend) #summary
 ```
 
-```{r plot.mean.monthly.phos, fig.cap="Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r plot.mean.monthly.phos, fig.cap="Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades", echo=FALSE}
 plot.mean.monthly.phos <- ggplot(
   FCE.phos.monthly.data, aes(
     x=Date, y=MEAN_TP)) + #setting axes
@@ -773,7 +781,7 @@ FCE.nitro.monthly.ts.trend <- MannKendall(FCE.nitro.monthly.ts)
 summary(FCE.nitro.monthly.ts.trend) #summary
 ```
 
-```{r plot.mean.monthly.nitro, fig.cap="Mean monthly nitrogen levels from 2001-2021 in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r plot.mean.monthly.nitro, fig.cap="Mean monthly nitrogen levels from 2001-2021 in the Florida Coastal Everglades", echo=FALSE}
 plot.mean.monthly.nitro <- ggplot(
   FCE.nitro.monthly.data, aes(
     x=Date, y=MEAN_TN)) + #setting axes
@@ -813,7 +821,7 @@ phos.site.anova.groups
 #results indicate that there are four groups of sites: a, b, c, d. There is only one site that is in group a and only one site in group b. 
 ```
 
-```{r anova.phos.site.plot, fig.cap="Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r anova.phos.site.plot, fig.cap="Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades", echo=FALSE}
 anova.phos.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
   geom_boxplot()+
   xlab(expression("Site Name")) +
@@ -849,7 +857,7 @@ nitrogen.site.anova.groups
 #results indicate that there are three groups of sites: a, b, and c.
 ```
 
-```{r anova.nitro.site.plot, fig.cap= "Nitrogen measurements for mangrove habitat sites in the Florida Coastal Everglades", echo=FALSE, include=FALSE}
+```{r anova.nitro.site.plot, fig.cap= "Nitrogen measurements for mangrove habitat sites in the Florida Coastal Everglades", echo=FALSE}
 anova.nitro.site.plot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
   geom_boxplot()+
   xlab(expression("Site Name")) +
