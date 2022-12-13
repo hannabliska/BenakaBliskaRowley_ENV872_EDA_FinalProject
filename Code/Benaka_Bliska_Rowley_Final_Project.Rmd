@@ -3,9 +3,13 @@ title: Identifying Priority Conservation Areas in the Florida Everglades for Man
   Habitat
 author: "Isaac Benaka, Hanna Bliska, and Caroline Rowley"
 date: "Fall 2022"
+<<<<<<< HEAD
 output:
   bookdown::html_document2: default
 
+=======
+output: html_document
+>>>>>>> 6d99ed4c886f6b048a714a6d8b843d5daab7ec22
 subtitle: Final Project, ENV 872
 editor_options:
   chunk_output_type: console
