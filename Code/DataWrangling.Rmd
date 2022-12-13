@@ -226,7 +226,8 @@ inat.yearcount <- inat.processed %>%
 
 #visualizing year data
 animal.plot <- ggplot(inat.yearcount) +
-  geom_line(aes(x = YEAR, y = scientific_name, color = species))
+  geom_line(aes(x = YEAR, y = scientific_name, color = species))+
+  ylab("Number of Observations")
 print(animal.plot)
 
 #converting to spatial data
@@ -235,7 +236,7 @@ inat.spatial <- inat.processed %>%
 inat.utm <- st_transform(inat.spatial, 4326)
 
 #visualizing spatial data
-mapview(inat.spatial)
+mapview(inat.spatial, layer.name= "All iNaturalist Observations 2000-2022")
 
 ```
 
