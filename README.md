@@ -39,6 +39,9 @@ Data on site coordinates were collected from the Florida Coastal Everglades LTER
 
 Data were accessed on 2022-11-15.
 
+### Above Ground Biomass Calculations
+The biomass r package was used to find wood density values and calculate above ground biomass for mangrove species sampled in the Florida Coastal Everglades LTER Data Set. The generated data can be found in `treeAGB.csv` in the Processed data folder.
+
 ### Mangrove Distribution Data
 Mangrove habitat spatial data was collected from the Florida Fish and Wildlife Conservation Commission GIS & Mapping Data website (https://geodata.myfwc.com/datasets/myfwc::mangrove-habitat-in-florida-1/about). The shapefile data were saved as `Mangrove_Habitat_in_Florida` under the Spatial data folder.
 
@@ -195,8 +198,8 @@ To ensure basic quality control, we underwent the following procedures:
 1. Instrument-collected data: The nitrogen and phosphorus concentrations measured in the `FCE_LTER_Nutrients.csv` data set were collected via ISCO autosamplers, a water quality measurement instrument. It is best practice to ensure that instrument-collected data is reasonable given the instrument and within range (DataONE, 2022). Therefore, nitrogen and phosphorus concentrations were checked to ensure there were no values below zero and that there were no outliers surpassing the expected range of the values.
 2. Dates and times: Several data sets (e.g., `FCE_LTER_Nutrients.csv`, ``FCE_LTER_Mangroves.csv`) included dates and times of observations. To ensure quality control, we implemented the best practice to ensure dates and times observed were accurate and logical (DataONE, 2022).
 3. Geographic coordinates: We obtained geographic coordinates (`FCE_LTER_site_coordinates.csv`) for the mangrove long-term monitoring sites. To ensure quality control, we plotted the site coordinates using MapViewer to ensure the coordinates did not include errors (DataONE, 2022).
-4.iNaturalist data: only research grade observations were accepted into the data set. Limitations of this data set are discussed in the **insert section** of the report.
-4. **Isaac and Caroline to look at the observations suggestions to include
+4. iNaturalist data: only research grade observations were accepted into the data set. Limitations of this data set are discussed in the **insert section** of the report.
+5. Ensured that classes in dataframes were consistent with the type of data contained in columns.
 
 ##References
 DataONE. (2022). Ensure basic quality control. Accessed online: https://dataoneorg.github.io/Education/bestpractices/ensure-basic-quality. 
