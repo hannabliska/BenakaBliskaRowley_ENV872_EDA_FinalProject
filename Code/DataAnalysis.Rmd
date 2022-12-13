@@ -11,7 +11,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 # Set your working directory
-setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
+#setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
 getwd()
 
 # Load your packages
@@ -38,6 +38,13 @@ FCE.nutrients.data <- read.csv("./Data/Raw/FCE_LTER_Nutrients.csv",
                                stringsAsFactors = TRUE)
 FCE.tree.data <- read.csv("./Data/Raw/FCE_LTER_Mangroves.csv",
                           stringsAsFactors = TRUE)
+inat.birds <- read.csv("./Data/Raw/inaturalist_birds.csv",
+                       stringsAsFactors = TRUE)
+inat.reptiles <- read.csv("./Data/Raw/inaturalist_reptiles2.csv",
+                          stringsAsFactors = TRUE)
+inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
+                         stringsAsFactors = TRUE)  
+
 ```
 
 # Exploratory Analysis 
@@ -201,6 +208,83 @@ plot_grid(R.SRS5.plot, A.SRS5.plot, L.SRS5.plot, ncol=1)
 
 #SRS6
 plot_grid(R.SRS6.plot, A.SRS6plot, L.SRS6plot, ncol=1)
+
+```
+
+```{r, mapping the iNaturalist data}
+#filtering for endangered birds
+inat.woodstork <- inat.utm %>% 
+  filter(scientific_name %in% c("Mycteria americana"))
+inat.snailkite <- inat.utm %>% 
+  filter(scientific_name %in% c("Rostrhamus sociabilis plumbeus"))
+#plotting endangered birds
+endangered.bird.map <- mapview(inat.woodstork, col.regions = "peru" , layer.name = "Wood Stork Observations 2000-2022")+
+  mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")+
+print(endangered.bird.map)
+
+
+#filtering for threatened birds
+inat.baldeagle <-inat.utm %>% 
+  filter(scientific_name %in% c("Haliaeetus leucocephalus"))
+inat.pipingplover <-inat.utm %>% 
+  filter(scientific_name %in% c("Charadrius melodus"))
+inat.redknot <-inat.utm %>% 
+  filter(scientific_name %in% c("Calidris canutus"))
+inat.roseatetern <-inat.utm %>% 
+  filter(scientific_name %in% c("Sterna dougallii"))
+#plotting threatened birds
+threatened.bird.map <- mapview(inat.pipingplover, col.regions = "seagreen2", layer.name = "Piping Plover Observations 2000-2022")+
+  mapview(inat.baldeagle, col.regions = "mediumorchid2", layer.name = "Bald Eagle Observations 2000-2002")+
+  mapview(inat.redknot, col.regions = "orange1", layer.name = "Red Knot Observations 2000-2022")+
+  mapview(inat.roseatetern, col.regions = "turquoise2", layer.name= "Roseate Tern Observations 2000-2022")
+print(threatened.bird.map)
+
+#filtering for protected reptiles
+inat.greenseaturtle <- inat.utm %>% 
+  filter(scientific_name%in% c("Chelonia mydas"))
+inat.loggerhead <- inat.utm %>% 
+  filter(scientific_name %in% c("Caretta caretta"))
+inat.tortoise <-inat.utm %>% 
+  filter(scientific_name%in%c("Gopherus polyphemus"))
+inat.indigosnake <- inat.utm %>% 
+  filter(scientific_name%in% c("Drymarchon couperi"))
+#plotting protected reptiles
+protected.reptiles.map <- mapview(inat.greenseaturtle, col.regions="mediumorchid2", layer.name= "Green Sea Turtle (Endangered) Observations 2000-2022")+
+  mapview(inat.loggerhead, col.regions="seagreen2", layer.name = "Loggerhead Sea Turtle (Threatened) Observations 2000-2022")+
+    mapview(inat.tortoise, col.regions="turquoise2", layer.name="Gopher Tortoise (proposed Threatened Candidate) Observations 2000-2022")+
+  mapview(inat.indigosnake, col.regions= "peru", layer.name="Eastern Indigo Snake (Threatened) Observations 2000-2022")
+print(protected.reptiles.map)
+
+#filtering for crocodiles and alligators
+inat.crocodile <-inat.utm %>% 
+  filter(scientific_name%in% c("Crocodylus acutus"))
+inat.alligator <-inat.utm %>% 
+  filter(scientific_name%in%c("Alligator mississippiensis"))
+
+#plotting threatened reptiles
+alligator.and.croc.map <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile Observations 2000-2022")+
+  mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Proposed Threatened) Observations 2000-2022")
+print(alligator.and.croc.map)
+
+#filtering for protected mammals
+inat.cougar <-inat.utm %>% 
+  filter(scientific_name %in% c("Puma concolor couguar"))
+inat.florida.manatee <- inat.utm %>% 
+  filter(scientific_name%in%c("Trichechus manatus latirostris"))
+inat.west.indian.manatee <- inat.utm %>% 
+  filter(scientific_name%in%c("Trichechus manatus"))
+#plotting protected mammals
+protected.mammal.map <- mapview(inat.cougar, col.regions="peru", layer.name= "Florida Panther (Endangered) Observations 2000-2022")+
+  mapview(inat.florida.manatee, col.regions="mediumorchid2", layer.name= "Florida Manatee (Threatened) Observations 2000-2022")+
+mapview(inat.west.indian.manatee, col.regions="seagreen2", layer.name= "West Indian Manatee (Threatened) Observations 2000-2022")
+print(protected.mammal.map)
+
+#filtering for invasive pythons
+inat.python <-inat.utm %>% 
+  filter(scientific_name%in% c("Python bivittatus"))
+#plotting invasive map
+invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")
+print(invasive.map)
 
 ```
 

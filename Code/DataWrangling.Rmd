@@ -204,32 +204,34 @@ write.csv(FCE.site.nutrient.data, row.names = FALSE, file= "./Data/Processed/FCE
 ```{r, wrangling inaturalist data into counts by year}
 inat.processed <- inat.all %>% 
    mutate(YEAR=year(observed_on)) %>% 
-  filter(scientific_name=="Caldris canutus"| scientific_name=="Charadrius melodus"|scientific_name=="Mycteria americana"| scientific_name=="Rostrhamus sociabilis plumbeus"| scientific_name=="Sterna dougallii"| scientific_name== "Haliaeetus leucocephalus" | scientific_name=="Falco peregrinus"| #filtering protected birds
+  filter(scientific_name=="Calidris canutus"| scientific_name=="Charadrius melodus"|scientific_name=="Mycteria americana"| scientific_name=="Rostrhamus sociabilis plumbeus"| scientific_name=="Sterna dougallii"| scientific_name== "Haliaeetus leucocephalus" | #filtering protected birds
          
-          scientific_name=="Procyon lotor"| scientific_name=="Puma concolor couguar"| scientific_name=="Trichechus manatus" |scientific_name=="Trichechus manatus latirostris" |#filtering protected mammals and raccoon
+          scientific_name=="Puma concolor couguar"| scientific_name=="Trichechus manatus" |scientific_name=="Trichechus manatus latirostris" |#filtering protected mammals and raccoon
            
            scientific_name == "Alligator mississippiensis" |scientific_name=="Crocodylus acutus" | scientific_name == "Gopherus polyphemus" | scientific_name=="Drymarchon couperi"| scientific_name=="Caretta caretta"|  scientific_name == "Chelonia mydas"|  #filtering for protected reptiles
 
-scientific_name == "Python bivittatus") #filtering for invasive species
+scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus") %>%  #filtering for invasive species
+filter(YEAR > '2000-01-01')
 
+
+#grouping species data by year counts
 inat.yearcount <- inat.processed %>% 
   mutate(species = scientific_name) %>%
+  filter(YEAR > '2000-01-01') %>% 
   group_by(YEAR, species) %>% 
   summarise(scientific_name=n())
 
-
+#visualizing year data
 animal.plot <- ggplot(inat.yearcount) +
   geom_line(aes(x = YEAR, y = scientific_name, color = species))
-
-
 print(animal.plot)
 
-
+#converting to spatial data
 inat.spatial <- inat.processed %>% 
   st_as_sf(coords = c('longitude', 'latitude'), crs=4326)
 inat.utm <- st_transform(inat.spatial, 4326)
 
-
+#visualizing spatial data
 mapview(inat.spatial)
 
 ```
