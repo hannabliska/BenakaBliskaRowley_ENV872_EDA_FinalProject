@@ -11,7 +11,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 # Set your working directory
-setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
+#setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
 getwd()
 
 # Load your packages
@@ -39,6 +39,12 @@ FCE.nutrients.data <- read.csv("./Data/Raw/FCE_LTER_Nutrients.csv",
                                stringsAsFactors = TRUE)
 FCE.tree.data <- read.csv("./Data/Raw/FCE_LTER_Mangroves.csv",
                           stringsAsFactors = TRUE)
+inat.birds <- read.csv("./Data/Raw/inaturalist_birds.csv",
+                       stringsAsFactors = TRUE)
+inat.reptiles <- read.csv("./Data/Raw/inaturalist_reptiles2.csv",
+                          stringsAsFactors = TRUE)
+inat.mammals <- read.csv("./Data/Raw/inaturalist_mammals.csv",
+                         stringsAsFactors = TRUE)  
 ```
 
 
@@ -70,7 +76,20 @@ head(FCE.mean.sea.levels)
 summary(FCE.mean.sea.levels)
 str(FCE.mean.sea.levels)
 
+#exploring the iNaturalist mammal data set
+head(inat.mammals)
+summary(inat.mammals)
+str(inat.mammals)
 
+#exploring the iNaturalist bird data set
+head(inat.birds)
+summary(inat.birds)
+str(inat.birds)
+
+#exploring the iNaturalist reptile data set
+head(inat.reptiles)
+summary(inat.reptiles)
+str(inat.reptiles)
 ```
 
 ```{r, initial visualizations of nutrient data}
