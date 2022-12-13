@@ -219,7 +219,7 @@ inat.snailkite <- inat.utm %>%
   filter(scientific_name %in% c("Rostrhamus sociabilis plumbeus"))
 #plotting endangered birds
 endangered.bird.map <- mapview(inat.woodstork, col.regions = "peru" , layer.name = "Wood Stork Observations 2000-2022")+
-  mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")+
+  mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")
 print(endangered.bird.map)
 
 
@@ -236,7 +236,8 @@ inat.roseatetern <-inat.utm %>%
 threatened.bird.map <- mapview(inat.pipingplover, col.regions = "seagreen2", layer.name = "Piping Plover Observations 2000-2022")+
   mapview(inat.baldeagle, col.regions = "mediumorchid2", layer.name = "Bald Eagle Observations 2000-2002")+
   mapview(inat.redknot, col.regions = "orange1", layer.name = "Red Knot Observations 2000-2022")+
-  mapview(inat.roseatetern, col.regions = "turquoise2", layer.name= "Roseate Tern Observations 2000-2022")
+  mapview(inat.roseatetern, col.regions = "turquoise2", layer.name= "Roseate Tern Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 print(threatened.bird.map)
 
 #filtering for protected reptiles
@@ -252,7 +253,8 @@ inat.indigosnake <- inat.utm %>%
 protected.reptiles.map <- mapview(inat.greenseaturtle, col.regions="mediumorchid2", layer.name= "Green Sea Turtle (Endangered) Observations 2000-2022")+
   mapview(inat.loggerhead, col.regions="seagreen2", layer.name = "Loggerhead Sea Turtle (Threatened) Observations 2000-2022")+
     mapview(inat.tortoise, col.regions="turquoise2", layer.name="Gopher Tortoise (proposed Threatened Candidate) Observations 2000-2022")+
-  mapview(inat.indigosnake, col.regions= "peru", layer.name="Eastern Indigo Snake (Threatened) Observations 2000-2022")
+  mapview(inat.indigosnake, col.regions= "peru", layer.name="Eastern Indigo Snake (Threatened) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 print(protected.reptiles.map)
 
 #filtering for crocodiles and alligators
@@ -263,7 +265,8 @@ inat.alligator <-inat.utm %>%
 
 #plotting threatened reptiles
 alligator.and.croc.map <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile Observations 2000-2022")+
-  mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Proposed Threatened) Observations 2000-2022")
+  mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Proposed Threatened) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 print(alligator.and.croc.map)
 
 #filtering for protected mammals
@@ -276,7 +279,8 @@ inat.west.indian.manatee <- inat.utm %>%
 #plotting protected mammals
 protected.mammal.map <- mapview(inat.cougar, col.regions="peru", layer.name= "Florida Panther (Endangered) Observations 2000-2022")+
   mapview(inat.florida.manatee, col.regions="mediumorchid2", layer.name= "Florida Manatee (Threatened) Observations 2000-2022")+
-mapview(inat.west.indian.manatee, col.regions="seagreen2", layer.name= "West Indian Manatee (Threatened) Observations 2000-2022")
+mapview(inat.west.indian.manatee, col.regions="seagreen2", layer.name= "West Indian Manatee (Threatened) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 print(protected.mammal.map)
 
 #filtering for invasive species
@@ -297,9 +301,18 @@ inat.house.gecko <-inat.utm %>%
 inat.iguana <-inat.utm %>% 
   filter(scientific_name%in% c("Iguana iguana"))
 inat.brahminy.blind.snake <-inat.utm %>% 
-  filter(scientific_name%in% c("Indotphlops braminus"))
+  filter(scientific_name%in% c("Indotyphlops braminus"))
 #plotting invasive map
 invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
+  mapview(inat.armadillo, col.regions ="mediumorchid2", layer.name= "Nine Banded Armadillo (Invasive) Observations 2000-2022")+
+  mapview(inat.knight.anole, col.regions ="seagreen2", layer.name= "Knight Anole (Invasive) Observations 2000-2022")+
+  mapview(inat.brown.anole, col.regions ="turquoise2", layer.name= "Brown Anole (Invasive) Observations 2000-2022")+
+  mapview(inat.tokay, col.regions ="orange1", layer.name= "Tokay Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.indopacific.gecko, col.regions ="cyan3", layer.name= "Indopacific Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.house.gecko, col.regions ="deeppink2", layer.name= "Tropical House Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.iguana, col.regions ="burlywood3", layer.name= "Common Iguana (Invasive) Observations 2000-2022")+
+  mapview(inat.brahminy.blind.snake, col.regions ="olivedrab2", layer.name= "Brahimy Blind Snake (Invasive) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 
 print(invasive.map)
 
