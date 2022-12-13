@@ -115,7 +115,7 @@ inat.all <- rbind(inat.birds, inat.mammals, inat.reptiles)
 #formatting date columns
 FCE.nutrients.data$DATE <- as.Date(FCE.nutrients.data$DATE, format="%Y-%m-%d")
 FCE.tree.data$DATE <- as.Date(FCE.tree.data$DATE, format = "%Y-%m-%d")
-inat.all$observed_on <- as.Date(inat.animals$observed_on, format("%Y-%m-%d"))
+inat.all$observed_on <- as.Date(inat.all$observed_on, format("%Y-%m-%d"))
 
 #formatting numeric values
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
