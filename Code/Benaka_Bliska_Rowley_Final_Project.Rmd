@@ -543,7 +543,7 @@ site.locations.nutrients.sf <-
 
 ## Mangrove Data
 
-To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure \@ref(fig:mangrovemap)). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrovesiteplot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGBsiteplot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
+To address Research Question #1, we sought to explore trends in above ground biomass for mangroves in the Florida Everglades National Park over time. We focused on three mangrove monitoring sites that overlapped with nutrient data collection sites (See Figure A). The three sites displayed a wide range of above ground biomass for trees that were sampled from 1996 - present (See Figure \@ref(fig:mangrovesiteplot)). We calculated the mean above ground biomass for trees in each site across each year of data collection. Visualizing these data suggested that SRS4 displayed no trend in mean tree AGB growth, while SRS5 and SRS6 displayed possible increasing and decreasing trends respectively (See Figure \@ref(fig:AGBsitesplot)). However, to understand if the different sites had scientifically significant trends, we would need to conduct further analysis.
 
 ```{r mangrovemap, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE}
 # Generate map of mangrove habitat in Everglades National Park.
@@ -551,7 +551,7 @@ mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green
 mapview(treeAGB, layer.name = "Monitoring Sites")
 mangrovemap
 ```
-
+Figure A: Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
 ```{r mangrovesiteplot, fig.cap = "Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades", echo=FALSE}
 mangrovesiteplot <- ggplot(treeAGB, aes(x=SITE, y=AGB)) +
   geom_boxplot()+
@@ -623,7 +623,7 @@ nitroplot <- ggplot(FCE.nitro.yearly.data, aes(x=YEAR, y=MEAN_TN)) +
 nitroplot
 ```
 
-We were also interested in identifying areas of mangrove habitat within the Florida Coastal Everglades that may be stressed due to high nutrient concentrations. Therefore, we initially examined if different mangrove vegetation plots in the park had different phosphorus and nitrogen concentrations. Our initial visualization suggested that some sites, such as site SRS6, may have higher phosphorus concentrations ((See Figure \@ref(fig:phos.site.plot)), See Figure \@ref(fig:map.site.phos.plot)). Similarly, our initial visualization suggested the site SRS1d may have higher nitrogen concentrations ((See Figure \@ref(fig:nitro.site.plot)), See Figure \@ref(fig:map.site.nitro.plot)). These visualizations motivated further analysis to determine if the concentrations at different sites were significantly different from one another.
+We were also interested in identifying areas of mangrove habitat within the Florida Coastal Everglades that may be stressed due to high nutrient concentrations. Therefore, we initially examined if different mangrove vegetation plots in the park had different phosphorus and nitrogen concentrations. Our initial visualization suggested that some sites, such as site SRS6, may have higher phosphorus concentrations ((See Figure \@ref(fig:phos.site.plot)), See Figure B). Similarly, our initial visualization suggested the site SRS1d may have higher nitrogen concentrations ((See Figure \@ref(fig:nitro.site.plot)), See Figure C). These visualizations motivated further analysis to determine if the concentrations at different sites were significantly different from one another.
 
 ```{r phossiteplot, fig.cap = "Total phosphorus measurements for sites in the Florida Coastal Everglades", echo=FALSE}
 phossiteplot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
@@ -640,7 +640,7 @@ phossiteplot
 mapsitephosplot <- mapview(site.locations.nutrients.sf, zcol="TP", at = seq(0, 60, 10))
 mapsitephosplot
 ```
-
+Figure B: Map of Florida Coastal Everglades indicating level of phosphorus measurements per site
 
 ```{r nitrositeplot, fig.cap = "Total nitrogen measurements for sites in the Florida Coastal Everglades", echo=FALSE}
 nitrositeplot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TN)) +
@@ -657,6 +657,7 @@ nitrositeplot
 mapsitenitroplot <- mapview(site.locations.nutrients.sf, zcol="TN")
 mapsitenitroplot
 ```
+Figure C: Map of Florida Coastal Everglades indicating level of nitrogen measurements per site
 
 \newpage
 
