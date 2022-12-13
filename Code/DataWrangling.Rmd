@@ -107,6 +107,7 @@ inat.all$observed_on <- as.Date(inat.all$observed_on, format("%Y-%m-%d"))
 FCE.nutrients.data$TP <- as.numeric(FCE.nutrients.data$TP)
 FCE.nutrients.data$TN <- as.numeric(FCE.nutrients.data$TN)
 FCE.tree.data$Tree_DBH <- as.numeric(FCE.tree.data$Tree_DBH)
+FCE.tree.data$Tree_Height <- as.numeric(FCE.tree.data$Tree_Height)
 
 #wrangling site coordinates data frame to have matching sites
 FCE.site.coordinates$SITE <- as.character(FCE.site.coordinates$SITE) 
