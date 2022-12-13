@@ -58,9 +58,6 @@ park.utm <- st_transform(park.boundary,32617)
 # Data Wrangling
 ```{r, renaming the columns for the data sets}
 #renaming column names and removing repeated header row
-colnames(FCE.mean.sea.levels) <- c(
-  "Station_ID", "Year", "Month", "MSL")
-FCE.mean.sea.levels=FCE.mean.sea.levels[-1,]
 
 colnames(FCE.nutrients.data) <- c(
   "SITE_NAME", "DATE", "TIME", "Salinity", "TN", "TP",
@@ -206,8 +203,13 @@ write.csv(FCE.site.nutrient.data, row.names = FALSE, file= "./Data/Processed/FCE
 ```{r, wrangling inaturalist data into counts by year}
 inat.processed <- inat.all %>% 
    mutate(YEAR=year(observed_on)) %>% 
-  filter(scientific_name=="Felix concolor"|scientific_name=="Mephitis mephitis"| scientific_name=="Procyon lotor"|scientific_name=="Mustel vision"|scientific_name=="Lutra Canadensis"| scientific_name=="Lynx rufus"| scientific_name=="Odocoileus virginianus"| scientific_name=="Sylvilagus palustris"| scientific_name=="Sigmodon hispidus"| scientific_name=="Oryzomys palustris" | scientific_name == "Alligator mississippiensis" | scientific_name=="Anolis sagrei"|scientific_name=="Crocodylus acutus" | scientific_name == "Apalone ferox" | scientific_name=="Agkistrodon conanti"| scientific_name=="Psuedemys nelsoni"| scientific_name == "Python bivittatus" | scientific_name == "Anhinga anhinga"| scientific_name == "Ardea herodias"| scientific_name =="Pandion haliaetus"| scientific_name == "Ardea alba" | scientific_name == "Phalacrocorax auritus" | scientific_name == "Porphyrio martinica"| scientific_name == "Buteo lineatus" | scientific_name == "Eudocimus albus"| scientific_name =="Butorides virescens" | scientific_name == "Coragyps atratus"| scientific_name =="Mycteria americana" | scientific_name == "Picoides borealis"| scientific_name =="Rostrhamus socialbilis plumbeus" | scientific_name == "Sterna dougallii dougallii")
+  filter(scientific_name=="Caldris canutus"| scientific_name=="Charadrius melodus"|scientific_name=="Mycteria americana"| scientific_name=="Rostrhamus sociabilis plumbeus"| scientific_name=="Sterna dougallii"| scientific_name== "Haliaeetus leucocephalus" | scientific_name=="Falco peregrinus"| #filtering protected birds
+         
+          scientific_name=="Procyon lotor"| scientific_name=="Puma concolor couguar"| scientific_name=="Trichechus manatus" |scientific_name=="Trichechus manatus latirostris" |#filtering protected mammals and raccoon
+           
+           scientific_name == "Alligator mississippiensis" |scientific_name=="Crocodylus acutus" | scientific_name == "Gopherus polyphemus" | scientific_name=="Drymarchon couperi"| scientific_name=="Caretta caretta"|  scientific_name == "Chelonia mydas"|  #filtering for protected reptiles
 
+scientific_name == "Python bivittatus") #filtering for invasive species
 
 inat.yearcount <- inat.processed %>% 
   mutate(species = scientific_name) %>%
