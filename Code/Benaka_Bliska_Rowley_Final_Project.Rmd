@@ -60,7 +60,7 @@ inat.amphibians <- read.csv("./Data/Raw/inaturalist_amphibians.csv",
 inat.plants <- read.csv("./Data/Raw/inaturalist_plants_fungi.csv",
                         stringsAsFactors = TRUE)
 mangrove.sf <- st_read("./Data/Spatial/Mangrove_Habitat_in_Florida/Mangrove_Habitat_in_Florida.shp")
-park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park")
+park.boundary <- st_read("./Data/Spatial/park/nps_boundary.shp") %>% filter(UNIT_NAME == "Everglades National Park") %>% select(UNIT_NAME, geometry)
 # Project spatial data to UTM 17N
 mangrove.utm <- st_transform(mangrove.sf,32617)
 park.utm <- st_transform(park.boundary,32617)
@@ -172,11 +172,49 @@ mapview(site.locations.sf) #confirming locations of sites
 ```
 
 ## Mangrove Data Sets
-Data on mangrove forest growth in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Mangrove Forest Growth from the Shark River Slough, Everglades National Park (FCE), South Florida, USA, January 1995 - ongoing. We also used shapefile data titled Mangrove Habitat in Florida from the Florida Fish and Wildlife Conservation Commission to provide a basic visualization of where mangroves exist in Everglades National Park (https://geodata.myfwc.com/datasets/myfwc::mangrove-habitat-in-florida-1/about).
+Data on mangrove forest growth in the Everglades National Park were obtained from the Florida Coastal Everglades Long Term Ecological Research Site (FCE LTER). We downloaded the data on November 15, 2022 using the Environmental Data Initiative Data Portal (https://portal.edirepository.org/nis/home.jsp), where publicly available data for LTERs can be accessed. The data set selected was titled Mangrove Forest Growth from the Shark River Slough, Everglades National Park (FCE), South Florida, USA, January 1995 - ongoing. 
+
+To create a spatial visualization of mangroves and sites in Everglades National Park, we used shapefile data titled Mangrove Habitat in Florida from the Florida Fish and Wildlife Conservation Commission to provide a basic visualization of where mangroves exist in Everglades National Park (https://geodata.myfwc.com/datasets/myfwc::mangrove-habitat-in-florida-1/about). We also used a shapefile of national park boundaries from the National Park Service (https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True).
 
 The forest growth dataset contained dendrologic data for four long-term monitoring sites in the Everglades National Park. The dataset contained diameter-at-breast-height (DBH) and height measurements for four key mangrove speices — *Rhizophora mangle, Laguncularia racemosa, Avicennia germinans,* and *Conacarpus erectus*. Wrangling was performed to join geographic coordinate data to each plot to create a spatial dataframe. Site coordinate data were first transformed to a spatial data frame (`site.locations.sf`) before joining. Utilizing the BIOMASS r package, the above ground biomass of each sampled tree was calculated using the DBH measurements and geographic coordinates contained in this dataset. This data allowed us to estimate mangrove biomass density across the four sites and where mangrove habitat might be decreasing. We elected to remove one of the sites from analysis because it did not overlap with the nutrient data sites, leaving us with three sites: SRS4, SRS5, and SRS6.
 
-To conduct analysis, 
+To conduct analysis, we wrangled the data into three separate monitoring site dataframes to compare them against one another and determine site-by-site trends. Because the number of observations was not consistent across the sites over time, we elected to compare the average above ground biomass for individual trees at each site as opposed to summing the above ground biomass estimations together. To do this, we used the `group_by` and `summarise` functions in R to find the mean above ground biomass of trees at each site for each year that observations were available.
+
+The final data structure containing above ground biomass estimations for measured mangroves at the three sites of interest in Everglades National Park (`treeAGB`) is as follows:
+| Variable   | Units      | Range                   | Mean    |
+| ---------- | ---------  | ----------------------- | ------- |
+| SITE       | N/A        | 3 sites                 | N/A     |
+| DATE       | YYYY-MM-DD | 1995-01-13 - 2019-10-16 | N/A     |
+| Species.Tree| Abbrev.   | 4 species               | N/A     |
+| Tree_DBH   | cm         | 1 - 835                 | 334.3   |
+| Tree_Height| m          | -9999 - 8               | N/A     |
+| meanWD     | kg/m^3     | 0.61 - 0.8977           | 0.817   |
+| AGB        | metric tons| 0 - 1239.2250           | 324.991 |
+| geometry   | x,y coords | NA                      | NA      |
+| YEAR       | YYYY       | 1995 - 2019             | 2008    |
+
+The final yearly datasets for mean above ground biomass of trees by site (`treesSRS4`,`treesSRS5`,`treesSRS6`) is as follows:
+| Variable   | Units      | Range         | Mean    |
+| ---------- | ---------  | ------------- | ------- |
+| YEAR       | YYYY       | 1995 - 2019   | N/A     |
+| meanAGB    | metric tons| 0 - 1239.2250 | 324.991 |
+
+The final spatial dataset for Everglades National Park boundary (`park.boundary`) is as follows:
+| Variable   | Units            | Range         | Mean    |
+| ---------- | ---------------- | ------------- | ------- |
+| UNIT_NAME  | N/A              | N/A           | N/A     |
+| geometry   | x,y coordinates  | N/A           | N/A     |
+
+The final spatial dataset for the mangrove habitat area in Everglades National Park (`mangrove.area`) is as follows:
+| Variable   | Units            | Range         | Mean    |
+| ---------- | ---------------- | ------------- | ------- |
+| OBJECTID   | N/A              | N/A           | N/A     |
+| SOURCEDATE | YYYY             | 1999 - 2016   | N/A     |
+| geometry   | x,y coordinates  | N/A           | N/A     |
+
+```{r}
+
+```
 
 
 ## Species Data Set
@@ -193,6 +231,7 @@ The final data structure for the yearly data set for phosphorus (`FCE.phos.yearl
 | ---------- | ---------  | ------------- | ------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TP    | mcmol/L    | 21.64 - 75.26 | 45.36   |
+
 
 The final data structure for the yearly data set for nitrogen (`FCE.nitro.yearly.data`) is as follows:
 | Variable   | Units      | Range         | Mean    |
@@ -342,7 +381,7 @@ To address Research Question #1, we sought to explore trends in above ground bio
 
 ```{r mangrove distribution, fig.cap = "Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park", echo=FALSE, include=FALSE}
 # Crop mangrove shapefile to Everglades National Park boundary.
-mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE)
+mangrove.area <- mangrove.utm[park.utm,] %>% group_by(SOURCEDATE) %>% select(OBJECTID, SOURCEDATE, geometry)
 # Generate map of mangrove habitat in Everglades National Park.
 mangrovemap <- mapview(mangrove.area, color = "green", col.regions = "dark green", alpha.regions = .4, layer.name = "Mangrove Habitat") + mapview(park.boundary, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")+
 mapview(treeAGB, layer.name = "Monitoring Sites")
