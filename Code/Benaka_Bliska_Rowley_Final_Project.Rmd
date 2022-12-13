@@ -3,14 +3,19 @@ title: Identifying Priority Conservation Areas in the Florida Everglades for Man
   Habitat
 author: "Isaac Benaka, Hanna Bliska, and Caroline Rowley"
 date: "Fall 2022"
-<<<<<<< HEAD
-output:
-  bookdown::html_document2: default
 
-=======
-output: html_document
->>>>>>> 6d99ed4c886f6b048a714a6d8b843d5daab7ec22
-subtitle: Final Project, ENV 872
+output:
+  bookdown::html_document2:
+    df_print: paged
+    toc: true
+    fig_caption: yes
+  pdf_document:
+    keep_tex: yes
+    fig_caption: yes  
+subtitle: https://github.com/hannabliska/BenakaBliskaRowley_ENV872_EDA_FinalProject
+geometry: margin=2.54cm
+fontsize: 12pt
+mainfont: Times New Roman
 editor_options:
   chunk_output_type: console
 ---
@@ -157,7 +162,7 @@ To conduct analysis, we wrangled the data into three separate monitoring site da
 The final data structure containing above ground biomass estimations for measured mangroves at the three sites of interest in Everglades National Park (`treeAGB`) is as follows:
 
 | Variable   | Units      | Range                   | Mean    |
-| ---------- | ---------  | ----------------------- | ------- |
+|:---------- |:---------  |:----------------------- |:------- |
 | SITE       | N/A        | 3 sites                 | N/A     |
 | DATE       | YYYY-MM-DD | 1995-01-13 - 2019-10-16 | N/A     |
 | Species.Tree| Abbrev.   | 4 species               | N/A     |
@@ -171,21 +176,21 @@ The final data structure containing above ground biomass estimations for measure
 The final yearly datasets for mean above ground biomass of trees by site (`treesSRS4`,`treesSRS5`,`treesSRS6`) is as follows:
 
 | Variable   | Units      | Range         | Mean    |
-| ---------- | ---------  | ------------- | ------- |
+|:---------- |:---------  |:------------- |:------- |
 | YEAR       | YYYY       | 1995 - 2019   | N/A     |
 | meanAGB    | metric tons| 0 - 1239.2250 | 324.991 |
 
 The final spatial dataset for Everglades National Park boundary (`park.boundary`) is as follows:
 
 | Variable   | Units            | Range         | Mean    |
-| ---------- | ---------------- | ------------- | ------- |
+|:---------- |:---------------- |:------------- |:------- |
 | UNIT_NAME  | N/A              | N/A           | N/A     |
 | geometry   | x,y coordinates  | N/A           | N/A     |
 
 The final spatial dataset for the mangrove habitat area in Everglades National Park (`mangrove.area`) is as follows:
 
 | Variable   | Units            | Range         | Mean    |
-| ---------- | ---------------- | ------------- | ------- |
+|:---------- |:---------------- |:------------- |:------- |
 | OBJECTID   | N/A              | N/A           | N/A     |
 | SOURCEDATE | YYYY             | 1999 - 2016   | N/A     |
 | geometry   | x,y coordinates  | N/A           | N/A     |
@@ -390,21 +395,21 @@ For time series analysis, we wrangled the data to determine the mean monthly and
 The final data structure for the yearly data set for phosphorus (`FCE.phos.yearly.data`) is as follows:
 
 | Variable   | Units      | Range         | Mean    |
-| ---------- | ---------  | ------------- | ------- |
+|:---------- |:---------  |:------------- |:------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TP    | mcmol/L    | 21.64 - 75.26 | 45.36   |
 
 The final data structure for the yearly data set for nitrogen (`FCE.nitro.yearly.data`) is as follows:
 
 | Variable   | Units      | Range         | Mean    |
-| ---------- | ---------  | ------------- | ------- |
+|:---------- |:---------  |:------------- |:------- |
 | YEAR       | YYYY       | 2001-2021     | N/A     |
 | MEAN_TN    | mcmol/L    | 416.7 - 950.3 | 699.2   |
 
 The final data structure for the monthly data set for phosphorus (`FCE.phos.monthly.data`) is as follows:
 
 | Variable   | Units      | Range                   | Mean    |
-| ---------- | ---------  | ----------------------- | ------- |
+|:---------- |:---------  |:----------------------- |:------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
 | year       | YYYY       | 2001-2021               | N/A     |
 | month      | MM         | 1-12                    | N/A     |
@@ -413,7 +418,7 @@ The final data structure for the monthly data set for phosphorus (`FCE.phos.mont
 The final data structure for the monthly data set for nitrogen (`FCE.nitro.monthly.data`) is as follows:
 
 | Variable   | Units      | Range                   | Mean    |
-| ---------- | ---------  | ----------------------- | ------- |
+|:---------- |:---------  |:----------------------- |:------- |
 | Date       | YYYY-MM-DD | 2001-05-01 - 2021-12-01 | N/A     |
 | year       | YYYY       | 2001-2021               | N/A     |
 | month      | MM         | 1-12                    | N/A     |
@@ -424,7 +429,7 @@ For site comparison analysis, we wrangled the data to select only nitrogen and p
 The final data structure for the data set (`FCE.site.nutrient.data`) is as follows:
 
 | Variable   | Units            | Range                   | Mean    |
-| ---------- | ---------------- | ----------------------- | ------- |
+|:---------- |:---------------- |:----------------------- |:------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |
 | DATE       | YYYY-mm-dd       | 2001-05-23 - 2021-12-06 | N/A     |
 | TP         | mcmol/L          | 1 - 155                 | 45.6    |
@@ -435,7 +440,7 @@ For spatial visualizations of the site nutrient data, we created a spatial data 
 The final data structure for the data set (`site.locations.nutrients.sf`) is as follows:
 
 | Variable   | Units            | Range                   | Mean    |
-| ---------- | ---------------- | ----------------------- | ------- |
+|:---------- |:---------------- |:----------------------- |:------- |
 | SITE_NAME  | N/A              | 8 different sites       | N/A     |
 | DATE       | YYYY-mm-dd       | 2001-05-23 - 2021-12-06 | N/A     |
 | TP         | mcmol/L          | 1 - 155                 | 45.6    |
@@ -598,7 +603,7 @@ mapview(inat.spatial)
 
 ## Nutrient Data
 
-To address Research Question #3, we were interested in exploring trends of nutrient concentrations in the vegetation plots over time. We calculated mean measurements of phosphorus and nitrogen for each year in the Florida Coastal Everglades. Our initial visualization of the relationship between time and mean phosphorus as well as mean nitrogen suggested that there was likely an increasing trend in phosphorus concentrations over time (See Figure \@ref(fig:phos.plot)) and nitrogen concentrations over time (See Figure \@ref(fig:nitro.plot)). The results of these visualizations motivated us to later analyze if there was a significant increasing trend in nutrient concentrations over time.
+To address Research Question #3, we were interested in exploring trends of nutrient concentrations in the vegetation plots over time. We calculated mean measurements of phosphorus and nitrogen for each year in the Florida Coastal Everglades. Our initial visualization of the relationship between time and mean phosphorus as well as mean nitrogen suggested that there was likely an increasing trend in phosphorus concentrations over time (See Figure \@ref(fig:phosplot)) and nitrogen concentrations over time (See Figure \@ref(fig:nitroplot)). The results of these visualizations motivated us to later analyze if there was a significant increasing trend in nutrient concentrations over time.
 
 ```{r phosplot, fig.cap = "Mean total phosphorus measurements over time in the Florida Coastal Everglades", echo=FALSE}
 phosplot <- ggplot(FCE.phos.yearly.data, aes(x=YEAR, y=MEAN_TP)) +
@@ -623,7 +628,7 @@ nitroplot <- ggplot(FCE.nitro.yearly.data, aes(x=YEAR, y=MEAN_TN)) +
 nitroplot
 ```
 
-We were also interested in identifying areas of mangrove habitat within the Florida Coastal Everglades that may be stressed due to high nutrient concentrations. Therefore, we initially examined if different mangrove vegetation plots in the park had different phosphorus and nitrogen concentrations. Our initial visualization suggested that some sites, such as site SRS6, may have higher phosphorus concentrations ((See Figure \@ref(fig:phos.site.plot)), See Figure B). Similarly, our initial visualization suggested the site SRS1d may have higher nitrogen concentrations ((See Figure \@ref(fig:nitro.site.plot)), See Figure C). These visualizations motivated further analysis to determine if the concentrations at different sites were significantly different from one another.
+We were also interested in identifying areas of mangrove habitat within the Florida Coastal Everglades that may be stressed due to high nutrient concentrations. Therefore, we initially examined if different mangrove vegetation plots in the park had different phosphorus and nitrogen concentrations. Our initial visualization suggested that some sites, such as site SRS6, may have higher phosphorus concentrations ((See Figure \@ref(fig:phossiteplot)), See Figure B). Similarly, our initial visualization suggested the site SRS1d may have higher nitrogen concentrations ((See Figure \@ref(fig:nitrositeplot)), See Figure C). These visualizations motivated further analysis to determine if the concentrations at different sites were significantly different from one another.
 
 ```{r phossiteplot, fig.cap = "Total phosphorus measurements for sites in the Florida Coastal Everglades", echo=FALSE}
 phossiteplot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
@@ -665,7 +670,7 @@ Figure C: Map of Florida Coastal Everglades indicating level of nitrogen measure
 
 ## Question 1: Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
 
-There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plot.mean.monthly.phos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
+There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plotmeanmonthlyphos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
 
 ```{r, time series analysis for mangrove sites, include=FALSE}
 meanAGB <- treeAGB %>%
@@ -716,7 +721,7 @@ summary(treesSRS6.ts.trend)
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
-There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plot.mean.monthly.phos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
+There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plotmeanmonthlyphos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
 
 ```{r, time series analysis for phosphorus, include=FALSE}
 FCE.phos.monthly.data$MEAN_TP <- 
@@ -760,7 +765,7 @@ plotmeanmonthlyphos <- ggplot(
 print(plotmeanmonthlyphos) #printing plot
 ```
 
-There was also significant increasing trend in mean monthly nitrogen levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=9896, p-value =< 2.2e-16). Since 2001, mean monthly nitrogen levels have risen to over 750 mcmol/L (See Figure \@ref(fig:plot.mean.monthly.nitro)). 
+There was also significant increasing trend in mean monthly nitrogen levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=9896, p-value =< 2.2e-16). Since 2001, mean monthly nitrogen levels have risen to over 750 mcmol/L (See Figure \@ref(fig:plotmeanmonthlynitro)). 
 
 ```{r, time series analysis for nitrogen, include=FALSE}
 FCE.nitro.monthly.data$MEAN_TN <- 
@@ -806,7 +811,7 @@ print(plotmeanmonthlynitro) #printing plot
 
 The results of the time series analyses indicate that mean monthly concentrations of nitrogen and phosphorus have increased over time in the Florida Coastal Everglades.
 
-In the Florida Coastal Everglades, phosphorus concentrations varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=28.75, p<0.001). The HSD test determined that site SRS6 had a mean phosphorus measurement that was statistically distinct from all other sites. SRS5 also had a mean phosphorus measurement that was statistically distinct from all other sites. It is evident that site SRS6 had the highest mean phosphorus measurements of all sites (See Figure \@ref(fig:anova.phos.site.plot)). 
+In the Florida Coastal Everglades, phosphorus concentrations varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=28.75, p<0.001). The HSD test determined that site SRS6 had a mean phosphorus measurement that was statistically distinct from all other sites. SRS5 also had a mean phosphorus measurement that was statistically distinct from all other sites. It is evident that site SRS6 had the highest mean phosphorus measurements of all sites (See Figure \@ref(fig:anovaphossiteplot)). 
 
 ```{r, site analysis for phosphorus, include=FALSE}
 #running anova to see if particular sites have more phosphorus
@@ -842,7 +847,7 @@ anovaphossiteplot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
 anovaphossiteplot
 ```
 
-Nitrogen concentrations also varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=18.68, p<0.001). The HSD test determined that the mean nitrogen concentrations of site SRS1d, SRS2, SRS3, and SRS4 were statistically similar to one another. These sites had the highest mean nitrogen measurements of all sites (Figure 4). The HSD test also determined that the mean nitrogen measurements of sites SRS1a, SRS1c, and SRS6 were statistically similar. These sites had the lowest mean nitrogen measurements (See Figure \@ref(fig:anova.nitro.site.plot)).
+Nitrogen concentrations also varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=18.68, p<0.001). The HSD test determined that the mean nitrogen concentrations of site SRS1d, SRS2, SRS3, and SRS4 were statistically similar to one another. These sites had the highest mean nitrogen measurements of all sites (Figure 4). The HSD test also determined that the mean nitrogen measurements of sites SRS1a, SRS1c, and SRS6 were statistically similar. These sites had the lowest mean nitrogen measurements (See Figure \@ref(fig:anovanitrositeplot)).
 
 ```{r, site analysis for nitrogen, include=FALSE}
 #running anova to see if particular sites have more nitrogen
