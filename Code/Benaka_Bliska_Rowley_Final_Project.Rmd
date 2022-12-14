@@ -670,7 +670,7 @@ Figure C: Map of Florida Coastal Everglades indicating level of nitrogen measure
 
 ## Question 1: Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
 
-There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plotmeanmonthlyphos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
+After filling in missing yearly values for each site using `na.approx`, we used the `ts` function to create time series graphs of mean above ground biomass for trees in each of the three sites (See Figures \@ref(fig:SRS5tsplot), \@ref(fig:SRS6tsplot), \@ref(fig:SRS4tsplot)). Using Mann-Kendall tests, we determined that site SRS5 had a significant decreasing trend in average above ground biomass (score = -71, p-value = 0.008015). Mangroves at site SRS6 had a *nearly* significant decreasing trend in above ground biomass (score = -51, p-value = 0.05824), while site SRS4 displayed no statistically significant trend in above ground biomass over time (score = -27, p-value = 0.32471).
 
 ```{r, time series analysis for mangrove sites, include=FALSE}
 meanAGB <- treeAGB %>%
@@ -701,9 +701,9 @@ treesSRS6.ts <- ts(
 plot(treesSRS6.ts)
 
 #plotting components
-plot(treesSRS4.ts) 
-plot(treesSRS5.ts) 
-plot(treesSRS6.ts) 
+SRS4tsplot <- plot(treesSRS4.ts) 
+SRS5tsplot <- plot(treesSRS5.ts) 
+SRS6tsplot <- plot(treesSRS6.ts) 
 
 #running Mann Kendall
 treesSRS4.ts.trend <- MannKendall(treesSRS4.ts) 
@@ -714,6 +714,21 @@ treesSRS6.ts.trend <- MannKendall(treesSRS6.ts)
 summary(treesSRS4.ts.trend)
 summary(treesSRS5.ts.trend)
 summary(treesSRS6.ts.trend)
+
+```
+
+```{r SRS4tsplot, fig.cap = "Time series of mean above ground biomass for trees in SRS4", echo=FALSE}
+SRS4tsplot <- plot(treesSRS4.ts) 
+
+```
+
+```{r SRS5tsplot, fig.cap = "Time series of mean above ground biomass for trees in SRS5", echo=FALSE}
+SRS5tsplot <- plot(treesSRS5.ts) 
+
+```
+
+```{r SRS6tsplot, fig.cap = "Time series of mean above ground biomass for trees in SRS6", echo=FALSE}
+SRS6tsplot <- plot(treesSRS6.ts) 
 
 ```
 
@@ -888,6 +903,8 @@ The results of the ANOVAs indicated that particular areas of Everglades National
 \newpage
 
 # Summary and Conclusions
+
+Our analysis of mangrove habitats in Everglades National Park shows that the average above ground biomass for trees in sites SRS5 and SRS6 likely decreased since 2000. While the nutrient analysis indicates that high nitrogen and phosphorus concentrations are present at these sites, we are unable to conclude that reductions in mean above ground biomass over time are a result of nutrient loads. Nevertheless, we believe that sites SRS5 and SRS6 are good candidates for mangrove habitat restoration because of the decreasing mean above ground biomass measurements for mangroves over time.
 
 Overall, our results suggest that the nutrient conditions for mangroves in the Florida Everglades have varied both spatially and over time. Nutrient concentrations are indeed rising in the Park, and have increased substantially since the early 2000s, which may be cause for concern for nutrient-sensitive mangroves. It is apparent that some sites within the park have higher concentrations of nutrients than others. In particular, sites SRS5 and SRS6, which are located on the coast in the southwest corner of the park, have the highest phosphorus concentrations, and sites SRS1d, SRS2, and SRS3, which are located in the central and southwest areas of the park, have the highest nitrogen concentrations. This pattern may be observed due to the local hydrology, elevation, and slope of the sites. It is also possible that inputs from agriculture are greatest in particular areas of the park, due to the geographic location of the pollution source. Because agriculture is common in South Florida (FDACS 2022) and eutrophication can increase the mortality of mangroves (Lovelock et al. 2009), this may be a cause of concern for mangroves in the Everglades. We recommend conservation efforts in the park be focused to these identified, vulnerable sites. The Florida Coastal Everglades could also consider future research to determine the most resilient mangrove species to nitrogen and phosphorus inputs and focus re-seeding efforts in these conservation areas to those species. 
 
