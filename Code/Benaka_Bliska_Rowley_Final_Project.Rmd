@@ -24,57 +24,95 @@ editor_options:
 \newpage
 
 ## List of Tables
-*Dataset Information*
-- Table 1. `treeAGB` Data Structure.
-- Table 2. `treesSRS4`,`treesSRS5`,`treesSRS6` Data Structure.
-- Table 3. `park.boundary` Data Structure.
-- Table 4. `mangrove.area` Data Structure.
-- Table 5. `inat.yearcount` Data Structure.
-- Table 6. `inat.species.total` Data Structure.
-- Table 7. `inat.utm` Data Structure.
-- Table 8. `FCE.phos.yearly.data` Data Structure.
-- Table 9. `FCE.nitro.yearly.data` Data Structure.
-- Table 10. `FCE.phos.monthly.data` Data structure.
-- Table 11. `FCE.nitro.monthly.data` Data Structure.
-- Table 12. `FCE.site.nutrient.data` Data Structure.
-- Table 13. `site.locations.nutrients.sf`
+**Dataset Information**
+
+1. Table 1. `treeAGB` Data Structure.
+
+2. Table 2. `treesSRS4`,`treesSRS5`,`treesSRS6` Data Structure.
+
+3. Table 3. `park.boundary` Data Structure.
+
+4. Table 4. `mangrove.area` Data Structure.
+
+5. Table 5. `inat.yearcount` Data Structure.
+
+6. Table 6. `inat.species.total` Data Structure.
+
+7. Table 7. `inat.utm` Data Structure.
+
+8. Table 8. `FCE.phos.yearly.data` Data Structure.
+
+9. Table 9. `FCE.nitro.yearly.data` Data Structure.
+
+10. Table 10. `FCE.phos.monthly.data` Data structure.
+
+11. Table 11. `FCE.nitro.monthly.data` Data Structure.
+
+12. Table 12. `FCE.site.nutrient.data` Data Structure.
+
+13. Table 13. `site.locations.nutrients.sf`
 
 \newpage
 
 ## List of Figures
-*Exploratory Analysis*
-- Figure \@ref(fig:mangrovesiteplot): Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
-- Figure \@ref(fig:AGBsitesplot): Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades
-- Figure \@ref(fig:animalplot): Number of Observations per Species by Year
-- Figure \@ref(fig:totalspeciesplot): Total Observations of Species 2000-2022
-- Figure \@ref(fig:phosplot): Mean total phosphorus measurements over time in the Florida Coastal Everglades 
-- Figure \@ref(fig:nitroplot): Mean total nitrogen measurements over time in the Florida Coastal Everglades
-- Figure \@ref(fig:phossiteplot): Total phosphorus measurements for sites in the Florida Coastal Everglades
-- Figure \@ref(fig:nitrositeplot): Total nitrogen measurements for sites in the Florida Coastal Everglades
+**Exploratory Analysis**
 
-*Analysis*
-- Figure \@ref(fig:SRS4tsplot): Time series of mean above ground biomass for trees in SRS4
-- Figure \@ref(fig:SRS5tsplot): Time series of mean above ground biomass for trees in SRS5
-- Figure \@ref(fig:SRS6tsplot): Time series of mean above ground biomass for trees in SRS6
-- Figure \@ref(fig:plotmeanmonthlyphos): Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades
-- Figure \@ref(fig:plotmeanmonthlynitro): Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades
-- Figure \@ref(fig:anovaphossiteplot): Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades
-- Figure \@ref(fig:anovanitrositeplot): Nitrogen measurements for mangrove habitat sites in the Florida Coastal Everglades
+1. Figure \@ref(fig:mangrovesiteplot): Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
+
+2. Figure \@ref(fig:AGBsitesplot): Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades
+
+3. Figure \@ref(fig:animalplot): Number of Observations per Species by Year
+
+4. Figure \@ref(fig:totalspeciesplot): Total Observations of Species 2000-2022
+
+5. Figure \@ref(fig:phosplot): Mean total phosphorus measurements over time in the Florida Coastal Everglades 
+
+6. Figure \@ref(fig:nitroplot): Mean total nitrogen measurements over time in the Florida Coastal Everglades
+
+7. Figure \@ref(fig:phossiteplot): Total phosphorus measurements for sites in the Florida Coastal Everglades
+
+8. Figure \@ref(fig:nitrositeplot): Total nitrogen measurements for sites in the Florida Coastal Everglades
+
+**Analysis**
+
+1. Figure \@ref(fig:SRS4tsplot): Time series of mean above ground biomass for trees in SRS4
+
+2. Figure \@ref(fig:SRS5tsplot): Time series of mean above ground biomass for trees in SRS5
+
+3. Figure \@ref(fig:SRS6tsplot): Time series of mean above ground biomass for trees in SRS6
+
+4. Figure \@ref(fig:plotmeanmonthlyphos): Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades
+
+5. Figure \@ref(fig:plotmeanmonthlynitro): Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades
+
+6. Figure \@ref(fig:anovaphossiteplot): Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades
+
+7. Figure \@ref(fig:anovanitrositeplot): Nitrogen measurements for mangrove habitat sites in the Florida Coastal Everglades
 
 ## List of Mapview Figures
-*Exploratory Analysis*
-- Figure A: Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
-- Figure B: Map of all iNaturalist Observations 2000-2022.
-- Figure C: Map of Florida Coastal Everglades indicating level of phosphorus measurements per site
-- Figure D: Map of Florida Coastal Everglades indicating level of nitrogen measurements per site
+**Exploratory Analysis**
 
-*Analysis*
-- Figure E: Map of Endangered Bird Observations 2000-2022
-- Figure F: Map of Threated Bird Observations 2000-2022
-- Figure G: Map of Protected Reptile Observations 2000-2022
-- Figure H: Map of American Alligator and American Crocodile Observations 2000-2022
-- Figure I: Map of Protected Mammal Observations 2000-2022
-- Figure J: Map of Invasive Species Observations 2000-2022
+1. Figure A: Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
+
+2. Figure B: Map of all iNaturalist Observations 2000-2022.
+
+3. Figure C: Map of Florida Coastal Everglades indicating level of phosphorus measurements per site
+
+4. Figure D: Map of Florida Coastal Everglades indicating level of nitrogen measurements per site
+
+**Analysis**
+
+1. Figure E: Map of Endangered Bird Observations 2000-2022
+
+2. Figure F: Map of Threated Bird Observations 2000-2022
+
+3. Figure G: Map of Protected Reptile Observations 2000-2022
+
+4. Figure H: Map of American Alligator and American Crocodile Observations 2000-2022
+
+5. Figure I: Map of Protected Mammal Observations 2000-2022
+
+6. Figure J: Map of Invasive Species Observations 2000-2022
  
 \newpage
 
@@ -127,9 +165,12 @@ Mangroves are vital coastal ecosystems that support biological diversity and for
 The Florida Coastal Everglades Long Term Ecological Research (FCE LTER) Site has been monitoring mangrove ecosystems in the Florida Everglades National Park. Their long-term monitoring programs have helped scientists track long-term changes in the mangrove communities for many years (Florida Coastal Everglades LTER, 2022). Their publicly available datasets report variables related to mangrove health, such as height, diameter, species, and nutrient availability. Additionally, citizen scientists have visited the Florida Everglades National Park and collected data on their observations of mangrove-associated species over time through iNaturalist. These databases pose an opportunity for us to investigate factors that may impact mangrove health and consider areas of the park where mangrove ecosystem conservation efforts may be focused to best protect these vital ecosystems.
 
 Our research questions were:
-#1. Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
-#2. Are native, mangrove-associated species decreasing in the park and where are these species observed?
-#3. How has nutrient availability changed over time and where are the areas of highest concern (i.e., highest nutrient levels) for mangroves?
+
+1. Where are mangrove forests spatially located and how has the biomass of mangroves changed over time?
+
+2. Are native, mangrove-associated species decreasing in the park and where are these species observed?
+
+3. How has nutrient availability changed over time and where are the areas of highest concern (i.e., highest nutrient levels) for mangroves?
 
 \newpage
 
@@ -325,7 +366,7 @@ A.trees <- A.trees %>%
 #create dataframe for Conacarpus erectus and calculate wood density
 C.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
   filter(Species.Tree=="C") %>%
-  mutate(meanWD = rep(0.69)) %>% #wood density value for Conacarpus erectus
+  mutate(meanWD = rep(0.69)) %>% #wood density value for Conacarpus erectus derived from (Nasser, 2008)
   select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
 
 #add geographic coordinates
@@ -994,16 +1035,16 @@ Figure I: Map of Protected Mammal Observations 2000-2022
 
 ```{r invasivemap, fig.cap = "Invasive Species Observations 2000-2022", echo=FALSE, message=FALSE, warning=FALSE}
 #plotting invasive map
-invasivemap<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
-  mapview(inat.armadillo, col.regions ="mediumorchid2", layer.name= "Nine Banded Armadillo (Invasive) Observations 2000-2022")+
-  mapview(inat.knight.anole, col.regions ="seagreen2", layer.name= "Knight Anole (Invasive) Observations 2000-2022")+
-  mapview(inat.brown.anole, col.regions ="turquoise2", layer.name= "Brown Anole (Invasive) Observations 2000-2022")+
-  mapview(inat.tokay, col.regions ="orange1", layer.name= "Tokay Gecko (Invasive) Observations 2000-2022")+
-  mapview(inat.indopacific.gecko, col.regions ="cyan3", layer.name= "Indopacific Gecko (Invasive) Observations 2000-2022")+
-  mapview(inat.house.gecko, col.regions ="deeppink2", layer.name= "Tropical House Gecko (Invasive) Observations 2000-2022")+
-  mapview(inat.iguana, col.regions ="burlywood3", layer.name= "Common Iguana (Invasive) Observations 2000-2022")+
-  mapview(inat.brahminy.blind.snake, col.regions ="olivedrab2", layer.name= "Brahimy Blind Snake (Invasive) Observations 2000-2022")+
-  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
+invasivemap<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.armadillo, col.regions ="mediumorchid2", layer.name= "Nine Banded Armadillo (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.knight.anole, col.regions ="seagreen2", layer.name= "Knight Anole (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.brown.anole, col.regions ="turquoise2", layer.name= "Brown Anole (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.tokay, col.regions ="orange1", layer.name= "Tokay Gecko (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.indopacific.gecko, col.regions ="cyan3", layer.name= "Indopacific Gecko (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.house.gecko, col.regions ="deeppink2", layer.name= "Tropical House Gecko (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.iguana, col.regions ="burlywood3", layer.name= "Common Iguana (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(inat.brahminy.blind.snake, col.regions ="olivedrab2", layer.name= "Brahimy Blind Snake (Invasive) Observations 2000-2022", homebutton=FALSE)+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary", homebutton=FALSE)
 invasivemap
 ```
 
@@ -1137,7 +1178,7 @@ anovaphossiteplot <- ggplot(FCE.site.nutrient.data, aes(x=SITE_NAME, y=TP)) +
 anovaphossiteplot
 ```
 
-Nitrogen concentrations also varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=18.68, p<0.001). The HSD test determined that the mean nitrogen concentrations of site SRS1d, SRS2, SRS3, and SRS4 were statistically similar to one another. These sites had the highest mean nitrogen measurements of all sites (Figure 4). The HSD test also determined that the mean nitrogen measurements of sites SRS1a, SRS1c, and SRS6 were statistically similar. These sites had the lowest mean nitrogen measurements (See Figure \@ref(fig:anovanitrositeplot)).
+Nitrogen concentrations also varied significantly among the 8 mangrove habitat sites (ANOVA, df=7, F=18.68, p<0.001). The HSD test determined that the mean nitrogen concentrations of site SRS1d, SRS2, SRS3, and SRS4 were statistically similar to one another. These sites had the highest mean nitrogen measurements of all sites (See Figure \@ref(fig:anovanitrositeplot)). The HSD test also determined that the mean nitrogen measurements of sites SRS1a, SRS1c, and SRS6 were statistically similar. These sites had the lowest mean nitrogen measurements (See Figure \@ref(fig:anovanitrositeplot)).
 
 ```{r, site analysis for nitrogen, include=FALSE}
 #running anova to see if particular sites have more nitrogen
@@ -1179,11 +1220,13 @@ The results of the ANOVAs indicated that particular areas of Everglades National
 
 # Summary and Conclusions
 
-Our analysis of mangrove habitats in Everglades National Park shows that the average above ground biomass for trees in sites SRS5 and SRS6 likely decreased since 2000. While the nutrient analysis indicates that high nitrogen and phosphorus concentrations are present at these sites, we are unable to conclude that reductions in mean above ground biomass over time are a result of nutrient loads. Nevertheless, we believe that sites SRS5 and SRS6 are good candidates for mangrove habitat restoration because of the decreasing mean above ground biomass measurements for mangroves over time.
+Our analysis of mangrove habitats in Everglades National Park shows that the average above ground biomass for trees in sites SRS5 and SRS6 likely decreased since 2000. While the nutrient analysis indicates that high nitrogen and phosphorus concentrations are present at these sites, we are unable to conclude that reductions in mean above ground biomass over time are a result of increasing nutrient loads. Nevertheless, we believe that sites SRS5 and SRS6 are good candidates for mangrove habitat restoration because of the decreasing mean above ground biomass measurements for mangroves over time.
 
 The iNaturalist data appears to indicate that the area near SRS5 and SRS6, located in southwest corner in the park, is important habitat for the Piping Plover, Loggerhead Sea Turtle, and the West Indian Manatee. These species have all been identified as Threatened or Endangered, and as having critical habitat inside Everglades National Park. Though the iNaturalist data has significant limitations, it was informative enough to show agreement with the nutrient and mangrove data in terms of site prioritization. Prioritizing sites SRS5 and SRS6 for mangrove restoration will likely provide the greatest benefit to the three identified species, whose conservation efforts should be prioritized due to their reliance on habitat within Everglades National Park.
 
-Overall, our results suggest that the nutrient conditions for mangroves in the Florida Everglades have varied both spatially and over time. Nutrient concentrations are indeed rising in the Park, and have increased substantially since the early 2000s, which may be cause for concern for nutrient-sensitive mangroves. It is apparent that some sites within the park have higher concentrations of nutrients than others. In particular, sites SRS5 and SRS6, which are located on the coast in the southwest corner of the park, have the highest phosphorus concentrations, and sites SRS1d, SRS2, and SRS3, which are located in the central and southwest areas of the park, have the highest nitrogen concentrations. This pattern may be observed due to the local hydrology, elevation, and slope of the sites. It is also possible that inputs from agriculture are greatest in particular areas of the park, due to the geographic location of the pollution source. Because agriculture is common in South Florida (FDACS 2022) and eutrophication can increase the mortality of mangroves (Lovelock et al. 2009), this may be a cause of concern for mangroves in the Everglades. We recommend conservation efforts in the park be focused to these identified, vulnerable sites. The Florida Coastal Everglades could also consider future research to determine the most resilient mangrove species to nitrogen and phosphorus inputs and focus re-seeding efforts in these conservation areas to those species. 
+Overall, our results suggest that the nutrient conditions for mangroves in the Florida Everglades have varied both spatially and over time. Nutrient concentrations are indeed rising in the Park, and have increased substantially since the early 2000s, which may be cause for concern for nutrient-sensitive mangroves. It is apparent that some sites within the park have higher concentrations of nutrients than others. In particular, sites SRS5 and SRS6, which are located on the coast in the southwest corner of the park, have the highest phosphorus concentrations. This pattern may be observed due to the local hydrology, elevation, and slope of the sites. It is also possible that inputs from agriculture are greatest in particular areas of the park, due to the geographic location of the pollution source. Because agriculture is common in South Florida (FDACS 2022) and eutrophication can increase the mortality of mangroves (Lovelock et al. 2009), this may be a cause of concern for mangroves in the Everglades. 
+
+We recommend conservation efforts in the park be focused to sites SRS5 and SRS6. Our analysis indicates that these sites contain critical habitat that are experiencing loss of mangrove vegetation and high nutrient loads. The Florida Coastal Everglades could consider future research to determine the most resilient mangrove species to nitrogen and phosphorus inputs and focus re-seeding efforts in these conservation areas to those species. 
 
 \newpage
 
