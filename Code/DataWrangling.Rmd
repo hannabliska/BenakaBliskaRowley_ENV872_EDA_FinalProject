@@ -221,14 +221,37 @@ filter(YEAR > '2000-01-01')
 inat.yearcount <- inat.processed %>% 
   mutate(species = scientific_name) %>%
   filter(YEAR > '2000-01-01') %>% 
-  group_by(YEAR, species) %>% 
-  summarise(scientific_name=n())
+  group_by(YEAR, species, common_name) %>% 
+  summarise(observation_count=n())
+
+#grouping species by total overall observations
+inat.species.total <-inat.yearcount %>% 
+  select(YEAR, species, common_name, observation_count) %>% 
+  group_by(species, common_name) %>% 
+  summarise(observation_count, sum(observation_count))  
+
+  
+colnames(inat.species.total)<-c("SPECIES", "COMMON_NAME", "OBSERVATION", "TOTAL_OBSERVATIONS_PER_SPECIES") 
+inat.species.total <- inat.species.total %>% select("SPECIES", "COMMON_NAME", "TOTAL_OBSERVATIONS_PER_SPECIES") %>% group_by(COMMON_NAME, TOTAL_OBSERVATIONS_PER_SPECIES)
 
 #visualizing year data
 animal.plot <- ggplot(inat.yearcount) +
-  geom_line(aes(x = YEAR, y = scientific_name, color = species))+
-  ylab("Number of Observations")
+  geom_line(aes(x = YEAR, y = observation_count, color = common_name))+
+  ylab("Number of Observations")+
+  xlab("Year")+
+  labs(title = "Number of Observations per Species by Year")+
+  guides(color=guide_legend("Species"))
 print(animal.plot)
+
+total.species.plot <-ggplot(inat.species.total, aes(x=COMMON_NAME, y= TOTAL_OBSERVATIONS_PER_SPECIES))+
+  geom_bar(stat = "identity")+
+  ylab("Species")+
+  xlab("Total Observations")+
+  labs(title= "Total Observations of Species 2000-2022")+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+print(total.species.plot)
+
+
 
 #converting to spatial data
 inat.spatial <- inat.processed %>% 
