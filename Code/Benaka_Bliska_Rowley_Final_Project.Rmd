@@ -384,9 +384,9 @@ inat.species.total <-inat.yearcount %>%
 colnames(inat.species.total)<-c("SPECIES", "COMMON_NAME", "OBSERVATION", "TOTAL_OBSERVATIONS_PER_SPECIES") 
 
 #converting to spatial data
-inat.spatial <- inat.processed %>% 
+inatspatial <- inat.processed %>% 
   st_as_sf(coords = c('longitude', 'latitude'), crs=4326)
-inat.utm <- st_transform(inat.spatial, 4326)
+inat.utm <- st_transform(inatspatial, 4326)
 
 ```
 
@@ -596,31 +596,31 @@ AGBsitesplot
 ## Species Data
 
 
-```{r animal.plot, fig.cap= "Number of Observations per Species by Year", echo=FALSE}
+```{r animalplot, fig.cap= "Number of Observations per Species by Year", echo=FALSE}
 #visualizing year data
-animal.plot <- ggplot(inat.yearcount) +
+animalplot <- ggplot(inat.yearcount) +
   geom_line(aes(x = YEAR, y = observation_count, color = common_name))+
   ylab("Number of Observations")+
   xlab("Year")+
   labs(title = "Number of Observations per Species by Year")+
   guides(color=guide_legend("Species"))
-print(animal.plot)
+print(animalplot)
 ```
 
-```{r total.species.plot, fig.cap= "Total Observations of Species 2000-2022", echo=FALSE}
+```{r totalspeciesplot, fig.cap= "Total Observations of Species 2000-2022", echo=FALSE}
 #visualizing total observations
-total.species.plot <-ggplot(inat.species.total, aes(x=COMMON_NAME, y= TOTAL_OBSERVATIONS_PER_SPECIES))+
+totalspeciesplot <-ggplot(inat.species.total, aes(x=COMMON_NAME, y= TOTAL_OBSERVATIONS_PER_SPECIES))+
   geom_bar(stat = "identity")+
   ylab("Species")+
   xlab("Total Observations")+
   labs(title= "Total Observations of Species 2000-2022")+
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-print(total.species.plot)
+print(totalspeciesplot)
 ```
 
-```{r inat.spatial, fig.cap="All iNaturalist Observations 2000-2022", echo=FALSE}
+```{r inatspatial, fig.cap="All iNaturalist Observations 2000-2022", echo=FALSE}
 #visualizing spatial data
-mapview(inat.spatial, layer.name= "All iNaturalist Observations 2000-2022")
+mapview(inatspatial, layer.name= "All iNaturalist Observations 2000-2022")
 
 ```
 
@@ -821,54 +821,54 @@ inat.brahminy.blind.snake <-inat.utm %>%
 
 ```
 
-```{r endangered.bird.map, fig.cap = "Endangered Bird Observations 2000-2022", echo=FALSE}
+```{r endangeredbirdmap, fig.cap = "Endangered Bird Observations 2000-2022", echo=FALSE}
 
 #plotting endangered birds
-endangered.bird.map <- mapview(inat.woodstork, col.regions = "peru" , layer.name = "Wood Stork Observations 2000-2022")+
+endangeredbirdmap <- mapview(inat.woodstork, col.regions = "peru" , layer.name = "Wood Stork Observations 2000-2022")+
   mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")
-print(endangered.bird.map)
+print(endangeredbirdmap)
 ```
 
-```{r threatened.bird.map, fig.cap = "Threatened Bird Observations 2000-2022", echo=FALSE}
+```{r threatenedbirdmap, fig.cap = "Threatened Bird Observations 2000-2022", echo=FALSE}
 #plotting threatened birds
-threatened.bird.map <- mapview(inat.pipingplover, col.regions = "seagreen2", layer.name = "Piping Plover Observations 2000-2022")+
+threatenedbirdmap <- mapview(inat.pipingplover, col.regions = "seagreen2", layer.name = "Piping Plover Observations 2000-2022")+
   mapview(inat.baldeagle, col.regions = "mediumorchid2", layer.name = "Bald Eagle Observations 2000-2002")+
   mapview(inat.redknot, col.regions = "orange1", layer.name = "Red Knot Observations 2000-2022")+
   mapview(inat.roseatetern, col.regions = "turquoise2", layer.name= "Roseate Tern Observations 2000-2022")+
   mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
-print(threatened.bird.map)
+print(threatenedbirdmap)
 ```
 
-```{r protected.reptiles.map, fig.cap = "Protected Reptile Observations 2000-2022", echo=FALSE}
+```{r protectedreptilesmap, fig.cap = "Protected Reptile Observations 2000-2022", echo=FALSE}
 #plotting protected reptiles
-protected.reptiles.map <- mapview(inat.greenseaturtle, col.regions="mediumorchid2", layer.name= "Green Sea Turtle (Endangered) Observations 2000-2022")+
+protectedreptilesmap <- mapview(inat.greenseaturtle, col.regions="mediumorchid2", layer.name= "Green Sea Turtle (Endangered) Observations 2000-2022")+
   mapview(inat.loggerhead, col.regions="seagreen2", layer.name = "Loggerhead Sea Turtle (Threatened) Observations 2000-2022")+
     mapview(inat.tortoise, col.regions="turquoise2", layer.name="Gopher Tortoise (proposed Threatened Candidate) Observations 2000-2022")+
   mapview(inat.indigosnake, col.regions= "peru", layer.name="Eastern Indigo Snake (Threatened) Observations 2000-2022")+
   mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
-print(protected.reptiles.map)
+print(protectedreptilesmap)
 ```
 
-```{r alligator.and.croc.map, fig.cap = "Alligator and Crocodile Observations 2000-2022", echo=FALSE}
+```{r alligatorandcrocmap, fig.cap = "Alligator and Crocodile Observations 2000-2022", echo=FALSE}
 #plotting threatened reptiles
-alligator.and.croc.map <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile (Threatened) Observations 2000-2022")+
+alligatorandcrocmap <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile (Threatened) Observations 2000-2022")+
   mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Threatened) Observations 2000-2022")+
   mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
-print(alligator.and.croc.map)
+print(alligatorandcrocmap)
 ```
 
-```{r protected.mammal.map, fig.cap = "Protected Mammal Observations 2000-2022", echo=FALSE}
+```{r protectedmammalmap, fig.cap = "Protected Mammal Observations 2000-2022", echo=FALSE}
 #plotting protected mammals
-protected.mammal.map <- mapview(inat.cougar, col.regions="peru", layer.name= "Florida Panther (Endangered) Observations 2000-2022")+
+protectedmammalmap <- mapview(inat.cougar, col.regions="peru", layer.name= "Florida Panther (Endangered) Observations 2000-2022")+
   mapview(inat.florida.manatee, col.regions="mediumorchid2", layer.name= "Florida Manatee (Threatened) Observations 2000-2022")+
 mapview(inat.west.indian.manatee, col.regions="seagreen2", layer.name= "West Indian Manatee (Threatened) Observations 2000-2022")+
   mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
-print(protected.mammal.map)
+print(protectedmammalmap)
 ```
 
-```{r invasive.map, fig.cap = "Invasive Species Observations 2000-2022", echo=FALSE}
+```{r invasivemap, fig.cap = "Invasive Species Observations 2000-2022", echo=FALSE}
 #plotting invasive map
-invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
+invasivemap<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
   mapview(inat.armadillo, col.regions ="mediumorchid2", layer.name= "Nine Banded Armadillo (Invasive) Observations 2000-2022")+
   mapview(inat.knight.anole, col.regions ="seagreen2", layer.name= "Knight Anole (Invasive) Observations 2000-2022")+
   mapview(inat.brown.anole, col.regions ="turquoise2", layer.name= "Brown Anole (Invasive) Observations 2000-2022")+
@@ -879,7 +879,7 @@ invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Py
   mapview(inat.brahminy.blind.snake, col.regions ="olivedrab2", layer.name= "Brahimy Blind Snake (Invasive) Observations 2000-2022")+
   mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 
-print(invasive.map)
+print(invasivemap)
 ```
 
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
