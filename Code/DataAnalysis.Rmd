@@ -264,8 +264,8 @@ inat.alligator <-inat.utm %>%
   filter(scientific_name%in%c("Alligator mississippiensis"))
 
 #plotting threatened reptiles
-alligator.and.croc.map <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile Observations 2000-2022")+
-  mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Proposed Threatened) Observations 2000-2022")+
+alligator.and.croc.map <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile (Threatened) Observations 2000-2022")+
+  mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Threatened) Observations 2000-2022")+
   mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
 print(alligator.and.croc.map)
 
