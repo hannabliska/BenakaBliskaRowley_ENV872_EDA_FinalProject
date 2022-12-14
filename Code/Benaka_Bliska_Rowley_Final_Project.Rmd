@@ -265,7 +265,7 @@ A.trees <- A.trees %>%
 #create dataframe for Conacarpus erectus and calculate wood density
 C.trees <- st_as_sf(FCE.tree.data.sites, coords = c("Longitude (Decimal Degrees)","Latitude (Decimal Degrees)"), crs=4326) %>%
   filter(Species.Tree=="C") %>%
-  mutate(meanWD = rep(0.69)) %>% #wood density value for Conacarpus erectus
+  mutate(meanWD = rep(0.69)) %>% #wood density value for Conacarpus erectus derived from (Nasser, 2008)
   select(DATE, SITE, Species.Tree, Tree_DBH, Tree_Height, meanWD, geometry)
 
 #add geographic coordinates
