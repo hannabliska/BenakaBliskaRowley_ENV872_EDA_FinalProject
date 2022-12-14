@@ -25,18 +25,31 @@ editor_options:
 
 ## List of Tables
 **Dataset Information**
+
 1. Table 1. `treeAGB` Data Structure.
+
 2. Table 2. `treesSRS4`,`treesSRS5`,`treesSRS6` Data Structure.
+
 3. Table 3. `park.boundary` Data Structure.
+
 4. Table 4. `mangrove.area` Data Structure.
+
 5. Table 5. `inat.yearcount` Data Structure.
+
 6. Table 6. `inat.species.total` Data Structure.
+
 7. Table 7. `inat.utm` Data Structure.
+
 8. Table 8. `FCE.phos.yearly.data` Data Structure.
+
 9. Table 9. `FCE.nitro.yearly.data` Data Structure.
+
 10. Table 10. `FCE.phos.monthly.data` Data structure.
+
 11. Table 11. `FCE.nitro.monthly.data` Data Structure.
+
 12. Table 12. `FCE.site.nutrient.data` Data Structure.
+
 13. Table 13. `site.locations.nutrients.sf`
 
 \newpage
