@@ -43,37 +43,62 @@ editor_options:
 
 ## List of Figures
 **Exploratory Analysis**
+
 1. Figure \@ref(fig:mangrovesiteplot): Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
+
 2. Figure \@ref(fig:AGBsitesplot): Above Ground Biomass of Mangrove Trees by Site in the Florida Coastal Everglades
+
 3. Figure \@ref(fig:animalplot): Number of Observations per Species by Year
+
 4. Figure \@ref(fig:totalspeciesplot): Total Observations of Species 2000-2022
+
 5. Figure \@ref(fig:phosplot): Mean total phosphorus measurements over time in the Florida Coastal Everglades 
+
 6. Figure \@ref(fig:nitroplot): Mean total nitrogen measurements over time in the Florida Coastal Everglades
+
 7. Figure \@ref(fig:phossiteplot): Total phosphorus measurements for sites in the Florida Coastal Everglades
+
 8. Figure \@ref(fig:nitrositeplot): Total nitrogen measurements for sites in the Florida Coastal Everglades
 
 **Analysis**
+
 1. Figure \@ref(fig:SRS4tsplot): Time series of mean above ground biomass for trees in SRS4
+
 2. Figure \@ref(fig:SRS5tsplot): Time series of mean above ground biomass for trees in SRS5
+
 3. Figure \@ref(fig:SRS6tsplot): Time series of mean above ground biomass for trees in SRS6
+
 4. Figure \@ref(fig:plotmeanmonthlyphos): Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades
+
 5. Figure \@ref(fig:plotmeanmonthlynitro): Mean monthly phosphorus levels from 2001-2021 in the Florida Coastal Everglades
+
 6. Figure \@ref(fig:anovaphossiteplot): Phosphorus measurements for mangrove habitat sites in the Florida Coastal Everglades
+
 7. Figure \@ref(fig:anovanitrositeplot): Nitrogen measurements for mangrove habitat sites in the Florida Coastal Everglades
 
 ## List of Mapview Figures
 **Exploratory Analysis**
+
 1. Figure A: Map of Mangrove Monitoring Sites in Florida Coastal Everglades National Park
+
 2. Figure B: Map of all iNaturalist Observations 2000-2022.
+
 3. Figure C: Map of Florida Coastal Everglades indicating level of phosphorus measurements per site
+
 4. Figure D: Map of Florida Coastal Everglades indicating level of nitrogen measurements per site
 
 **Analysis**
+
 1. Figure E: Map of Endangered Bird Observations 2000-2022
+
 2. Figure F: Map of Threated Bird Observations 2000-2022
+
 3. Figure G: Map of Protected Reptile Observations 2000-2022
+
 4. Figure H: Map of American Alligator and American Crocodile Observations 2000-2022
+
 5. Figure I: Map of Protected Mammal Observations 2000-2022
+
 6. Figure J: Map of Invasive Species Observations 2000-2022
  
 \newpage
