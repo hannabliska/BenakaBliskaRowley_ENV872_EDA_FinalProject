@@ -758,6 +758,130 @@ SRS6tsplot <- plot(treesSRS6.ts)
 
 ## Question 2: Are native, mangrove-associated species decreasing in the park and where are these species observed?
 
+```{r, preparing iNaturalist data for mapping, include=FALSE}
+#filtering for endangered birds
+inat.woodstork <- inat.utm %>% 
+  filter(scientific_name %in% c("Mycteria americana"))
+inat.snailkite <- inat.utm %>% 
+  filter(scientific_name %in% c("Rostrhamus sociabilis plumbeus"))
+
+#filtering for threatened birds
+inat.baldeagle <-inat.utm %>% 
+  filter(scientific_name %in% c("Haliaeetus leucocephalus"))
+inat.pipingplover <-inat.utm %>% 
+  filter(scientific_name %in% c("Charadrius melodus"))
+inat.redknot <-inat.utm %>% 
+  filter(scientific_name %in% c("Calidris canutus"))
+inat.roseatetern <-inat.utm %>% 
+  filter(scientific_name %in% c("Sterna dougallii"))
+
+#filtering for protected reptiles
+inat.greenseaturtle <- inat.utm %>% 
+  filter(scientific_name%in% c("Chelonia mydas"))
+inat.loggerhead <- inat.utm %>% 
+  filter(scientific_name %in% c("Caretta caretta"))
+inat.tortoise <-inat.utm %>% 
+  filter(scientific_name%in%c("Gopherus polyphemus"))
+inat.indigosnake <- inat.utm %>% 
+  filter(scientific_name%in% c("Drymarchon couperi"))
+
+#filtering for crocodiles and alligators
+inat.crocodile <-inat.utm %>% 
+  filter(scientific_name%in% c("Crocodylus acutus"))
+inat.alligator <-inat.utm %>% 
+  filter(scientific_name%in%c("Alligator mississippiensis"))
+
+#filtering for protected mammals
+inat.cougar <-inat.utm %>% 
+  filter(scientific_name %in% c("Puma concolor couguar"))
+inat.florida.manatee <- inat.utm %>% 
+  filter(scientific_name%in%c("Trichechus manatus latirostris"))
+inat.west.indian.manatee <- inat.utm %>% 
+  filter(scientific_name%in%c("Trichechus manatus"))
+
+#filtering for invasive species
+inat.python <-inat.utm %>% 
+  filter(scientific_name%in% c("Python bivittatus"))
+inat.armadillo <- inat.utm %>% 
+  filter(scientific_name%in% c("Dasypus novemcinctus"))
+inat.knight.anole <-inat.utm %>% 
+  filter(scientific_name%in% c("Anolis equestris"))
+inat.brown.anole <-inat.utm %>% 
+  filter(scientific_name%in% c("Anolis sagrei"))
+inat.tokay <-inat.utm %>% 
+  filter(scientific_name%in% c("Gekko gecko"))
+inat.indopacific.gecko <-inat.utm %>% 
+  filter(scientific_name%in% c("Hemidactylus garnotii"))
+inat.house.gecko <-inat.utm %>% 
+  filter(scientific_name%in% c("Hemidactylus mabouia"))
+inat.iguana <-inat.utm %>% 
+  filter(scientific_name%in% c("Iguana iguana"))
+inat.brahminy.blind.snake <-inat.utm %>% 
+  filter(scientific_name%in% c("Indotyphlops braminus"))
+
+```
+
+```{r endangered.bird.map, fig.cap = "Endangered Bird Observations 2000-2022", echo=FALSE}
+
+#plotting endangered birds
+endangered.bird.map <- mapview(inat.woodstork, col.regions = "peru" , layer.name = "Wood Stork Observations 2000-2022")+
+  mapview(inat.snailkite, col.regions = "cyan3", layer.name= "Everglade Snail Kite Observations 2000-2022")
+print(endangered.bird.map)
+```
+
+```{r threatened.bird.map, fig.cap = "Threatened Bird Observations 2000-2022", echo=FALSE}
+#plotting threatened birds
+threatened.bird.map <- mapview(inat.pipingplover, col.regions = "seagreen2", layer.name = "Piping Plover Observations 2000-2022")+
+  mapview(inat.baldeagle, col.regions = "mediumorchid2", layer.name = "Bald Eagle Observations 2000-2002")+
+  mapview(inat.redknot, col.regions = "orange1", layer.name = "Red Knot Observations 2000-2022")+
+  mapview(inat.roseatetern, col.regions = "turquoise2", layer.name= "Roseate Tern Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
+print(threatened.bird.map)
+```
+
+```{r protected.reptiles.map, fig.cap = "Protected Reptile Observations 2000-2022", echo=FALSE}
+#plotting protected reptiles
+protected.reptiles.map <- mapview(inat.greenseaturtle, col.regions="mediumorchid2", layer.name= "Green Sea Turtle (Endangered) Observations 2000-2022")+
+  mapview(inat.loggerhead, col.regions="seagreen2", layer.name = "Loggerhead Sea Turtle (Threatened) Observations 2000-2022")+
+    mapview(inat.tortoise, col.regions="turquoise2", layer.name="Gopher Tortoise (proposed Threatened Candidate) Observations 2000-2022")+
+  mapview(inat.indigosnake, col.regions= "peru", layer.name="Eastern Indigo Snake (Threatened) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
+print(protected.reptiles.map)
+```
+
+```{r alligator.and.croc.map, fig.cap = "Alligator and Crocodile Observations 2000-2022", echo=FALSE}
+#plotting threatened reptiles
+alligator.and.croc.map <- mapview(inat.crocodile, col.regions="seagreen2", layer.name = "American Crocodile (Threatened) Observations 2000-2022")+
+  mapview(inat.alligator, col.regions="peru", layer.name = "American Alligator (Threatened) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
+print(alligator.and.croc.map)
+```
+
+```{r protected.mammal.map, fig.cap = "Protected Mammal Observations 2000-2022", echo=FALSE}
+#plotting protected mammals
+protected.mammal.map <- mapview(inat.cougar, col.regions="peru", layer.name= "Florida Panther (Endangered) Observations 2000-2022")+
+  mapview(inat.florida.manatee, col.regions="mediumorchid2", layer.name= "Florida Manatee (Threatened) Observations 2000-2022")+
+mapview(inat.west.indian.manatee, col.regions="seagreen2", layer.name= "West Indian Manatee (Threatened) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
+print(protected.mammal.map)
+```
+
+```{r invasive.map, fig.cap = "Invasive Species Observations 2000-2022", echo=FALSE}
+#plotting invasive map
+invasive.map<- mapview(inat.python, col.regions ="peru", layer.name= "Burmese Python (Invasive) Observations 2000-2022")+
+  mapview(inat.armadillo, col.regions ="mediumorchid2", layer.name= "Nine Banded Armadillo (Invasive) Observations 2000-2022")+
+  mapview(inat.knight.anole, col.regions ="seagreen2", layer.name= "Knight Anole (Invasive) Observations 2000-2022")+
+  mapview(inat.brown.anole, col.regions ="turquoise2", layer.name= "Brown Anole (Invasive) Observations 2000-2022")+
+  mapview(inat.tokay, col.regions ="orange1", layer.name= "Tokay Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.indopacific.gecko, col.regions ="cyan3", layer.name= "Indopacific Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.house.gecko, col.regions ="deeppink2", layer.name= "Tropical House Gecko (Invasive) Observations 2000-2022")+
+  mapview(inat.iguana, col.regions ="burlywood3", layer.name= "Common Iguana (Invasive) Observations 2000-2022")+
+  mapview(inat.brahminy.blind.snake, col.regions ="olivedrab2", layer.name= "Brahimy Blind Snake (Invasive) Observations 2000-2022")+
+  mapview(park.utm, color = 'black', lwd = 2, col.regions = "black", alpha.regions = 0, layer.name = "Everglades National Park Boundary")
+
+print(invasive.map)
+```
+
 ## Question 3: How has nutrient availability changed over time and where are the areas of highest concern for mangroves?
 
 There was a significant increasing trend in mean monthly phosphorus levels in the Florida Coastal Everglades over time (Mann-Kendall test, score=12204, p-value =< 2.2e-16). It is evident that the trend has increasing at a relatively consistent rate over time (See Figure \@ref(fig:plotmeanmonthlyphos)). The Mann-Kendall test was performed after determining there was no seasonality in the data.
