@@ -28,7 +28,7 @@ editor_options:
 \newpage
 
 ```{r setup, include=FALSE}
-# Set your working directory
+#Set your working directory
 #setwd("~/Desktop/BenakaBliskaRowley_ENV872_EDA_FinalProject")
 getwd()
 
@@ -366,16 +366,22 @@ inat.processed <- inat.all %>%
            
            scientific_name == "Alligator mississippiensis" |scientific_name=="Crocodylus acutus" | scientific_name == "Gopherus polyphemus" | scientific_name=="Drymarchon couperi"| scientific_name=="Caretta caretta"|  scientific_name == "Chelonia mydas"|  #filtering for protected reptiles
 
-scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus") %>%  #filtering for invasive species
+scientific_name == "Python bivittatus"|scientific_name== "Dasypus novemcinctus" | scientific_name == "Anolis equestris"|scientific_name == "Anolis sagrei"|scientific_name == "Gekko gecko"|scientific_name == "Hemidactylus garnotii"|scientific_name == "Hemidactylus mabouia"|scientific_name == "Iguana iguana"|scientific_name == "Indotyphlops braminus") %>%  #filtering for invasive species
 filter(YEAR > '2000-01-01')
-
 
 #grouping species data by year counts
 inat.yearcount <- inat.processed %>% 
   mutate(species = scientific_name) %>%
   filter(YEAR > '2000-01-01') %>% 
-  group_by(YEAR, species) %>% 
-  summarise(scientific_name=n())
+  group_by(YEAR, species, common_name) %>% 
+  summarise(observation_count=n())
+
+#grouping species by total overall observations
+inat.species.total <-inat.yearcount %>% 
+  select(YEAR, species, common_name, observation_count) %>% 
+  group_by(species, common_name) %>% 
+  summarise(observation_count, sum(observation_count))  
+colnames(inat.species.total)<-c("SPECIES", "COMMON_NAME", "OBSERVATION", "TOTAL_OBSERVATIONS_PER_SPECIES") 
 
 #converting to spatial data
 inat.spatial <- inat.processed %>% 
@@ -590,14 +596,32 @@ AGBsitesplot
 ## Species Data
 
 
-```{r, move to exploratory analysis section, echo=FALSE}
+```{r animal.plot, fig.cap= "Number of Observations per Species by Year", echo=FALSE}
 #visualizing year data
 animal.plot <- ggplot(inat.yearcount) +
-  geom_line(aes(x = YEAR, y = scientific_name, color = species))
+  geom_line(aes(x = YEAR, y = observation_count, color = common_name))+
+  ylab("Number of Observations")+
+  xlab("Year")+
+  labs(title = "Number of Observations per Species by Year")+
+  guides(color=guide_legend("Species"))
 print(animal.plot)
+```
 
+```{r total.species.plot, fig.cap= "Total Observations of Species 2000-2022", echo=FALSE}
+#visualizing total observations
+total.species.plot <-ggplot(inat.species.total, aes(x=COMMON_NAME, y= TOTAL_OBSERVATIONS_PER_SPECIES))+
+  geom_bar(stat = "identity")+
+  ylab("Species")+
+  xlab("Total Observations")+
+  labs(title= "Total Observations of Species 2000-2022")+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+print(total.species.plot)
+```
+
+```{r inat.spatial, fig.cap="All iNaturalist Observations 2000-2022", echo=FALSE}
 #visualizing spatial data
-mapview(inat.spatial)
+mapview(inat.spatial, layer.name= "All iNaturalist Observations 2000-2022")
+
 ```
 
 
